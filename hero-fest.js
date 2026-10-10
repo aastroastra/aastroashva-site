@@ -761,6 +761,23 @@
     A.add('dl3', X('M-26 -68Q-24 -84 -12 -80Q-6 -92 4 -84Q12 -92 18 -80Q30 -82 26 -68M-24 -66Q-29 -58 -24 -52M22 -66Q26 -59 22 -53', PU), 2000, 800);
     A.add('lf', X('M-20 -66C-30 -76 -36 -90 -34 -100C-26 -92 -22 -80 -20 -66M20 -66C30 -76 36 -90 34 -100C26 -92 22 -80 20 -66', PU), 2200, 600);
     A.add('dl3', X('M-46 0Q-44 -10 -32 -10Q-24 -10 -24 0ZM-10 0Q-8 -9 0 -9Q8 -9 10 0ZM24 0Q24 -10 32 -10Q44 -10 46 0Z', PT), 1100, 700);
+    // Til-gul on a plate (left) and a small Lohri fire (right).
+    if (!phone) {
+      var tp = mk(cx - 150 * u, py, u * 1.05);
+      A.add('dl3', X('M-36 0Q0 10 36 0Q0 -8 -36 0Z', tp), 1800, 700);
+      A.add('mod', C(tp, -14, -9, 9) + C(tp, 4, -9, 9) + C(tp, 21, -8, 8) + C(tp, -4, -22, 9), 2000, 600);
+      A.add('fdot', C(tp, -16, -10, 1) + C(tp, -10, -6, 1) + C(tp, 4, -12, 1) + C(tp, 8, -6, 1) + C(tp, 22, -10, 1) + C(tp, -4, -24, 1) + C(tp, 0, -19, 1), 2300, 300, cg(A, 'var(--fest-marigold)'));
+      var lf = mk(cx + 150 * u, py, u * 1.05), lg2 = g(A, '');
+      A.add('dl3', X('M-30 0L30 0M-26 0L6 -18M26 0L-6 -18M-12 0L12 -14M12 0L-12 -14', lf), 1800, 800);
+      glow(A, lf(0, -26)[0], lf(0, -26)[1], 40 * u, 2200, lg2, .5, 'var(--fest-saffron)');
+      [[-8, 0], [8, 0], [0, -8]].forEach(function (q, k) {
+        var fg = g(A, '', lg2);
+        A.add('flame', X('M' + q[0] + ' ' + (q[1] - 44) + 'C' + (q[0] + 9) + ' ' + (q[1] - 30) + ' ' + (q[0] + 9) + ' ' + (q[1] - 18) + ' ' + q[0] + ' ' + (q[1] - 10) + 'C' + (q[0] - 9) + ' ' + (q[1] - 18) + ' ' + (q[0] - 9) + ' ' + (q[1] - 30) + ' ' + q[0] + ' ' + (q[1] - 44) + 'Z', lf), 2300 + k * 120, 500, fg);
+        var fp = lf(q[0], q[1] - 10);
+        flicker(A, fg, fp[0], fp[1], 3000 + k * 300);
+      });
+      for (var sp2 = 0; sp2 < 6; sp2++) speck(A, lf(0, -40)[0] + (sp2 - 3) * 4, lf(0, -40)[1], 1.4 * u, 'var(--fest-saffron)', (sp2 - 2.5) * 6, -50 - sp2 * 8, 2600 + sp2 * 300, 3000 + sp2 * 400);
+    }
     var fire = g(A, '');
     [-17, 17].forEach(function (fx, j) {
       var fg = g(A, '', fire);
@@ -817,9 +834,16 @@
     A.add('fdot', C(LT, 0, -50, 2.4), 2500, 200, cg(A, 'var(--fest-red)'));
     trifoil(A, mk(cx, lb - 82 * ls, ls * .8), 2600);
     if (!phone) { litLamp(A, cx - 160 * u, lb, u * .62, 2300); litLamp(A, cx + 160 * u, lb, u * .62, 2400); }
-    var drop = g(A, ''), d0 = lb - 140 * ls;
-    A.add('ff', X('M0 -6C4 0 4 4 0 6C-4 4 -4 0 0 -6Z', mk(cx, d0, ls * 1.2)), 2800, 300, cg(A, 'var(--fest-sky)', drop));
-    if (!A.reduce) A.loop(drop, [{ transform: 'translateY(0)', opacity: 0 }, { opacity: 1, offset: .2 }, { opacity: 1, offset: .85 }, { transform: 'translateY(' + f(42 * ls) + 'px)', opacity: 0 }], { duration: 2400, delay: 3400, iterations: Infinity, easing: 'ease-in' });
+    // Abhishek: a small copper lota, tilted, pouring a thin stream onto the lingam.
+    var LT2 = mk(cx + 44 * ls, lb - 128 * ls, ls, 34);
+    A.add('ac', X('M-12 -10C-22 -6 -24 12 -12 20C-4 24 4 24 12 20C24 12 22 -6 12 -10ZM-12 -10L-10 -16L10 -16L12 -10M-14 -17Q0 -21 14 -17', LT2), 2000, 900);
+    var lip = LT2(-14, -17), top2 = [cx, lb - 86 * ls];
+    A.add('fs2', 'M' + pt(lip) + 'Q' + pt([lip[0] - 6 * ls, lip[1] + 14 * ls]) + ' ' + pt(top2), 2700, 700, cg(A, 'var(--fest-sky)'));
+    [0, 1, 2].forEach(function (k) {
+      var drop = g(A, '');
+      A.add('ff', X('M0 -4C3 0 3 3 0 4C-3 3 -3 0 0 -4Z', mk(top2[0], top2[1], ls)), 2900, 300, cg(A, 'var(--fest-sky)', drop));
+      if (!A.reduce) A.loop(drop, [{ transform: 'translate(0,0)', opacity: 0 }, { opacity: 1, offset: .2 }, { transform: 'translate(' + f((k - 1) * 14 * ls) + 'px,' + f(18 * ls) + 'px)', opacity: 0 }], { duration: 1800, delay: 3400 + k * 600, iterations: Infinity, easing: 'ease-in' });
+    });
   };
 
   /* ---------- Ganesh Chaturthi ---------- */
@@ -1203,6 +1227,21 @@
     // Trees in the side columns, gifts at their feet.
     if (!phone) sideX(A, u).forEach(function (x, i) { tree(A, x, B - Math.max(18, H * .025), Math.min(u * 1.25, (H * .62) / 250), 1100 + i * 150); });
     else { tree(A, L + 52, B - 30, .62, 1100); tree(A, R - 52, B - 30, .62, 1200); }
+    // The star over everything, top centre, and a wreath below the words.
+    var sy = phone ? T0 + 70 : T0 + Math.max(70, H * .11), sgl = g(A, '');
+    glow(A, cx, sy, (phone ? 40 : 54 * u), 1000, sgl, .5, 'var(--lagna)');
+    var sr = phone ? 16 : 22 * u;
+    A.add('ff', 'M' + pt([cx, sy - sr]) + 'L' + pt([cx + sr * .18, sy - sr * .18]) + 'L' + pt([cx + sr, sy]) + 'L' + pt([cx + sr * .18, sy + sr * .18]) + 'L' + pt([cx, sy + sr * 1.9]) + 'L' + pt([cx - sr * .18, sy + sr * .18]) + 'L' + pt([cx - sr, sy]) + 'L' + pt([cx - sr * .18, sy - sr * .18]) + 'Z', 1200, 900, cg(A, 'var(--lagna)', sgl));
+    A.add('fs2', 'M' + pt([cx - sr * .6, sy - sr * .6]) + 'L' + pt([cx + sr * .6, sy + sr * .6]) + 'M' + pt([cx + sr * .6, sy - sr * .6]) + 'L' + pt([cx - sr * .6, sy + sr * .6]), 1700, 500, cg(A, 'var(--lagna)', sgl));
+    breathe(A, sgl, cx, sy, 4200, 3200, 1.08);
+    var wr = phone ? 34 : 48 * u, wy = phone ? B - 100 : B - Math.max(70, H * .1), wd = '';
+    for (var wi = 0; wi < 22; wi++) { var wa = wi * Math.PI * 2 / 22; wd += X('M0 0C4 -3 5 -8 2 -12C-1 -8 -2 -3 0 0Z', mk(cx + wr * Math.cos(wa), wy + wr * Math.sin(wa), (phone ? .9 : u * 1.2), wa * 180 / Math.PI + 90)); }
+    A.add('lf', wd, 1500, 1400);
+    A.add('lfo', circ(cx, wy, wr * .86) + circ(cx, wy, wr * 1.12), 1400, 1200);
+    var berries = '';
+    [[.3, -1], [.9, 1], [1.6, -1], [2.4, 1], [3.3, -1], [4.1, 1], [5, -1], [5.7, 1]].forEach(function (b) { berries += circ(cx + wr * Math.cos(b[0]), wy + wr * Math.sin(b[0]), (phone ? 2.2 : 3 * u)); });
+    A.add('ff', berries, 2200, 400, cg(A, 'var(--fest-red)'));
+    A.add('ff', X('M0 0C-10 -8 -18 -4 -14 4C-10 10 -4 6 0 0C4 6 10 10 14 4C18 -4 10 -8 0 0ZM-2 2L-8 18M2 2L8 18', mk(cx, wy + wr, (phone ? .9 : u * 1.2))), 2400, 600, cg(A, 'var(--fest-red)'));
     // A few slow snowflakes.
     var nS = phone ? 10 : 22;
     for (var s2 = 0; s2 < nS; s2++) {
@@ -1240,6 +1279,15 @@
       if (!phone) A.add('dl2', 'M' + pt([x + (b[0] < .5 ? -1 : 1) * r * .3, B]) + 'Q' + pt([x, (y + B) / 2]) + ' ' + pt([x, y + r * .3]), 600 + i * 150, 900);
       burst(A, x, y, r, b[3], 1300 + i * 250, i);
     });
+    // A clock at midnight below the words: the year turns.
+    var cr = phone ? 34 : Math.min(48 * u, H * .07), cy2 = phone ? B - 110 : B - Math.max(cr + 26, H * .12), clk = g(A, ''), ticks = '';
+    glow(A, cx, cy2, cr * 2.2, 1600, clk, .35, 'var(--lagna)');
+    A.add('mod', circ(cx, cy2, cr), 1500, 900, clk);
+    for (var ti = 0; ti < 12; ti++) { var ta = ti * Math.PI / 6 - Math.PI / 2, t0r = cr * (ti % 3 ? .84 : .74); ticks += 'M' + pt([cx + t0r * Math.cos(ta), cy2 + t0r * Math.sin(ta)]) + 'L' + pt([cx + cr * .92 * Math.cos(ta), cy2 + cr * .92 * Math.sin(ta)]); }
+    A.add('dl3', ticks, 1900, 600, clk);
+    A.add('ac2', 'M' + pt([cx, cy2]) + 'L' + pt([cx, cy2 - cr * .55]) + 'M' + pt([cx, cy2]) + 'L' + pt([cx + 1, cy2 - cr * .8]), 2300, 500, clk);
+    A.add('adot', circ(cx, cy2, 2.4 * u), 2500, 200, clk);
+    breathe(A, clk, cx, cy2, 3000, 4200, 1.03);
     // Confetti specks rising from the bottom band.
     var nS = phone ? 12 : 26;
     for (var s2 = 0; s2 < nS; s2++) speck(A, L + 20 + rn() * (W - 40), B - 30 - rn() * H * .15, (1 + rn() * 1.6) * u, ['var(--lagna)', 'var(--holi-pink)', 'var(--fest-sky)', 'var(--fest-leaf)'][s2 % 4], (rn() - .5) * 30, -(50 + rn() * 70), 7000 + rn() * 5000, 2600 + rn() * 5000);
@@ -1406,6 +1454,11 @@
       A.add('dl2', 'M' + pt([mid - rMid, yd]) + 'Q' + pt([mid, yd + rMid * .35]) + ' ' + pt([mid + rMid, yd]), 1600, 600);
       A.add('dl3', circ(mx, my, rM), 1800, 600);
     }
+    // Name the bodies, small, under each.
+    var nameY = yd + (phone ? 40 : 58 * u), cs2 = phone ? 10 : 11 * Math.max(1, u);
+    txt(A, sx, nameY, 'Sun', 'सूर्य', cs2, 2600);
+    if (solar) { txt(A, mid, yd + rMid + 18 * u, 'Moon', 'चंद्र', cs2, 2700); txt(A, ex, yd + rE + 18 * u, 'Earth', 'पृथ्वी', cs2, 2800); }
+    else { txt(A, mid, yd + rMid + 18 * u, 'Earth', 'पृथ्वी', cs2, 2700); txt(A, mx, my + rM + 16 * u, 'Moon', 'चंद्र', cs2, 2800); }
     // The sequence across the top band.
     var n = phone ? 5 : 7, gap = phone ? (W - 60) / (n - 1) : Math.min(78 * u, W * .07), ty = phone ? T0 + 90 : T0 + Math.max(64, H * .1), r = phone ? 13 : 16 * u;
     for (var k = 0; k < n; k++) {
@@ -1592,17 +1645,20 @@
     }
   };
 
-  function veena(A, x, by, h, s, t) {
-    var g1 = g(A, ''), top = by - h;
-    A.add('ac', 'M' + pt([x - 3 * s, by - 40 * s]) + 'L' + pt([x - 3 * s, top + 30 * s]) + 'M' + pt([x + 3 * s, by - 40 * s]) + 'L' + pt([x + 3 * s, top + 30 * s]), t, 1300, g1);
-    A.add('mod', circ(x, by - 26 * s, 28 * s), t + 300, 800, g1);
-    A.add('ac', circ(x, by - 26 * s, 20 * s), t + 600, 600, g1);
-    A.add('mod', circ(x, top + 20 * s, 18 * s), t + 400, 800, g1);
+  // A Saraswati veena lying on a diagonal: the big resonator (kudam), the
+  // fretted neck, the small gourd under it and the curled head.
+  function veena(A, x, y, len, s, ang, t) {
+    var T = mk(x, y, s, ang), g1 = g(A, ''), L2 = len / s;
+    A.add('mod', X('M-34 0C-34 -26 -14 -36 6 -34C26 -32 38 -16 38 0C38 18 22 34 2 34C-20 34 -34 20 -34 0Z', T), t, 1000, g1);
+    A.add('ac', X('M-22 -4C-22 -18 -8 -24 6 -22C20 -20 26 -10 26 0C26 12 16 22 2 22C-12 22 -22 12 -22 -4Z', T), t + 400, 700, g1);
+    A.add('ac', 'M' + pt(T(36, -6)) + 'L' + pt(T(L2 - 30, -6)) + 'M' + pt(T(36, 6)) + 'L' + pt(T(L2 - 30, 6)), t + 300, 1200, g1);
     var fr = '';
-    for (var y = by - 70 * s; y > top + 46 * s; y -= 22 * s) fr += 'M' + pt([x - 6 * s, y]) + 'L' + pt([x + 6 * s, y]);
-    A.add('dl3', fr, t + 900, 500, g1);
-    A.add('dl2', 'M' + pt([x - 1.2 * s, by - 54 * s]) + 'L' + pt([x - 1.2 * s, top + 2 * s]) + 'M' + pt([x + 1.2 * s, by - 54 * s]) + 'L' + pt([x + 1.2 * s, top + 2 * s]), t + 1100, 900, g1);
-    A.add('ac', 'M' + pt([x, top + 2 * s]) + 'C' + pt([x + 4 * s, top - 10 * s]) + ' ' + pt([x + 14 * s, top - 12 * s]) + ' ' + pt([x + 12 * s, top - 2 * s]), t + 1300, 400, g1);
+    for (var k = 50; k < L2 - 50; k += 16) fr += 'M' + pt(T(k, -6)) + 'L' + pt(T(k, -11));
+    A.add('dl3', fr, t + 900, 600, g1);
+    A.add('mod', C(T, L2 - 80, 26, 17), t + 700, 600, g1);
+    A.add('dl3', 'M' + pt(T(L2 - 80, 6)) + 'L' + pt(T(L2 - 80, 9)), t + 800, 200, g1);
+    A.add('ac', X('M' + (L2 - 30) + ' -6C' + (L2 - 10) + ' -8 ' + (L2 + 4) + ' -20 ' + (L2 - 4) + ' -32C' + (L2 - 10) + ' -40 ' + (L2 - 22) + ' -34 ' + (L2 - 18) + ' -26C' + (L2 - 15) + ' -20 ' + (L2 - 8) + ' -22 ' + (L2 - 9) + ' -28M' + (L2 - 30) + ' 6C' + (L2 - 14) + ' 6 ' + (L2 - 2) + ' 0 ' + (L2 - 2) + ' -10', T), t + 1100, 600, g1);
+    A.add('dl2', 'M' + pt(T(-4, -2)) + 'L' + pt(T(L2 - 34, -2)) + 'M' + pt(T(-4, 2)) + 'L' + pt(T(L2 - 34, 2)), t + 1300, 1000, g1);
   }
   F['vasant-panchami'] = function (A) {
     var u = unit(A), L = A.L, T0 = A.T, R = A.R, B = A.B, W = A.W, H = A.H, cx = (L + R) / 2, phone = A.phone, rn = rnd(91);
@@ -1622,11 +1678,19 @@
     if (!phone) {
       var xs = sideX(A, u);
       var vg = g(A, '');
-      veena(A, xs[0], B - Math.max(70, H * .12), H * .58, u * 1.15, 1200);
+      veena(A, L + Math.max(90, 120 * u), B - Math.max(80, H * .13), Math.min(H * .56, 380 * u), u * 1.25, -76, 1200);
       var bs = u * 1.2, bx = xs[1], bb = B - Math.max(80, H * .14), BT = mk(bx, bb, bs);
       A.add('mod', X('M-44 0L44 0L44 -12L-44 -12ZM-40 -12L40 -12L40 -24L-40 -24ZM-46 -24L46 -24L46 -36L-46 -36Z', BT), 1300, 900);
       A.add('fs', X('M-40 -6L40 -6M-36 -18L36 -18M-42 -30L42 -30', BT), 1700, 500);
       lotus(A, mk(bx, bb - 38 * bs, bs * .9), 1900);
+      // Saraswati's swan, gliding above the books.
+      var SW = mk(bx + 6 * u, T0 + H * .42, u * 1.35), swg = g(A, '');
+      A.add('mod', X('M-34 0C-34 -14 -12 -22 8 -18C16 -16 18 -26 16 -36C14 -46 20 -54 28 -52L36 -50L29 -47C25 -47 23 -41 25 -33C29 -19 27 -4 14 0Z', SW), 1500, 1200, swg);
+      A.add('dl3', X('M-28 -6C-16 -16 0 -16 8 -10M-24 -2C-12 -10 2 -10 10 -6', SW), 2000, 600, swg);
+      A.add('adot', C(SW, 26, -48, 1.3), 2300, 200, swg);
+      A.add('ac', X('M36 -50L41 -49L36 -47', SW), 2300, 300, swg);
+      A.add('dl2', X('M-44 6Q-30 2 -16 6Q-2 10 12 6Q26 2 40 6', SW), 2200, 600, swg);
+      A.loop(swg, [{ transform: 'translate(0,0)' }, { transform: 'translate(0,-4px)' }], { duration: 3200, delay: 3000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
     }
     // A swan's feather of a sun, soft, at the top.
     var sy = phone ? T0 + 96 : T0 + Math.max(66, H * .1), sgg = g(A, '');
