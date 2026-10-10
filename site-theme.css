@@ -21,12 +21,16 @@
   --status-bad-bg:color-mix(in srgb,var(--status-bad) 9%,var(--bg));
 }
 /* Festival colours for the hero canvases (hero-fest.js), named for what
-   they are. Leaf green and saffron serve every festival. Navratri: the nine day colours (2026 list: orange, white, red,
+   they are. Leaf green, saffron, red (kumkum, rakhi, hibiscus), sky blue and marigold serve every festival. Holi: six gulal colours, kept in every theme (B&W included), as Holi is colour. Navratri: the day colours (2027 adds pink; 2026 list: orange, white, red,
    royal blue, yellow, green, grey, purple, peacock green). Each stroke colour
    is at least 3:1 on its theme's background (white is drawn as pearl on the
    light themes, where true white would vanish). */
-[data-theme$="light"] { --nav-orange:#D45D0C; --nav-white:#8C8476; --nav-red:#C62828; --nav-royal-blue:#2F55D4; --nav-yellow:#A07800; --nav-green:#1E8A3E; --nav-grey:#6B6B6B; --nav-purple:#7B3FC4; --nav-peacock-green:#0E8577; --fest-leaf:#2E7D32; --fest-saffron:#E8711A; }
-[data-theme$="dark"] { --nav-orange:#FF9A4D; --nav-white:#F2EEE6; --nav-red:#FF6B6B; --nav-royal-blue:#7C9BFF; --nav-yellow:#F5C542; --nav-green:#5CCB7A; --nav-grey:#A8A8A8; --nav-purple:#B88AF0; --nav-peacock-green:#3CC9B5; --fest-leaf:#6CC27A; --fest-saffron:#FF9A4D; }
+[data-theme$="light"] { --nav-orange:#D45D0C; --nav-white:#8C8476; --nav-red:#C62828; --nav-royal-blue:#2F55D4; --nav-yellow:#A07800; --nav-green:#1E8A3E; --nav-grey:#6B6B6B; --nav-purple:#7B3FC4; --nav-peacock-green:#0E8577; --fest-leaf:#2E7D32; --fest-saffron:#E8711A;
+  --holi-pink:#D6336C; --holi-yellow:#A37A00; --holi-green:#2B8A3E; --holi-blue:#1C6FD0; --holi-orange:#D9530A; --holi-purple:#7048E8;
+  --fest-red:#C62828; --fest-sky:#1C6FD0; --fest-marigold:#A87300; --nav-pink:#D6336C; }
+[data-theme$="dark"] { --nav-orange:#FF9A4D; --nav-white:#F2EEE6; --nav-red:#FF6B6B; --nav-royal-blue:#7C9BFF; --nav-yellow:#F5C542; --nav-green:#5CCB7A; --nav-grey:#A8A8A8; --nav-purple:#B88AF0; --nav-peacock-green:#3CC9B5; --fest-leaf:#6CC27A; --fest-saffron:#FF9A4D;
+  --holi-pink:#FF7AA8; --holi-yellow:#FFD43B; --holi-green:#69DB7C; --holi-blue:#74C0FC; --holi-orange:#FFA94D; --holi-purple:#B197FC;
+  --fest-red:#FF6B6B; --fest-sky:#74C0FC; --fest-marigold:#FFC94D; --nav-pink:#FF7AA8; }
 /* The footer's heart: a warm red in every theme. */
 :root { --heart:#D6304F; }
 [data-theme$="dark"] { --heart:#FB7185; }

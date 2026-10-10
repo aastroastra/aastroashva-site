@@ -99,7 +99,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" media="print" onload="this.media='all'" />
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" /></noscript>
-<link rel="stylesheet" href="/site-theme.css?v=5" />
+<link rel="stylesheet" href="/site-theme.css?v=6" />
 <link rel="stylesheet" href="/landing.css?v=4" />
 <link rel="stylesheet" href="/mm-section.css" />
 <link rel="stylesheet" href="/thread.css?v=7" />
@@ -125,9 +125,9 @@
        hero-c.js) decides: a dated preset active on this clock, else its
        canvas, else kundali-north. hero-c.js refreshes the config after paint
        and swaps only if it differs. Every canvas fills the same rectangle. */
-    var CV=['kundali-north','kundali-south','diya','navratri','dussehra'];
+    var CV=['kundali-north','kundali-south','diya','navratri','dussehra','holi','karwa-chauth','chhath','sankranti','shivratri','ganesh-chaturthi','janmashtami','raksha-bandhan','onam','ugadi-gudi-padwa','eid','christmas','new-year','purnima','pitru-paksha','eclipse','transit','dev-uthani','vasant-panchami','ram-navami','hanuman-jayanti','akshaya-tritiya','rath-yatra','teej','nag-panchami'];
     window.AA_CANVASES=CV;
-    window.AA_FEST_V='2';
+    window.AA_FEST_V='3';
     window.AA_pickCanvas=function(c){
       window.AA_CANVAS_PRESET=null;
       if(!c||typeof c!=='object') return null;
@@ -149,11 +149,44 @@
       return Math.max(1,Math.min(9,ist(Date.now())-ist(f)+1));
     };
     var DEVI=[['Shailaputri','शैलपुत्री','पहला'],['Brahmacharini','ब्रह्मचारिणी','दूसरा'],['Chandraghanta','चंद्रघंटा','तीसरा'],['Kushmanda','कूष्मांडा','चौथा'],['Skandamata','स्कंदमाता','पाँचवाँ'],['Katyayani','कात्यायनी','छठा'],['Kalaratri','कालरात्रि','सातवाँ'],['Mahagauri','महागौरी','आठवाँ'],['Siddhidatri','सिद्धिदात्री','नौवाँ']];
+    /* Purnima's occasion comes from the preset id (sharad-, kartik-,
+       buddha-, guru-purnima-YYYY) or ?occasion=. Eclipses and planet sign
+       changes come from these tables (dates from drikpanchang New Delhi,
+       sign changes checked against our own engine, dates only): the entry
+       inside the active preset's window, else ?ev=<date>, else the next one. */
+    var PURNIMA={sharad:['Sharad Purnima','शरद पूर्णिमा'],kartik:['Kartik Purnima · Guru Nanak Jayanti','कार्तिक पूर्णिमा · गुरु नानक जयंती'],buddha:['Buddha Purnima','बुद्ध पूर्णिमा'],guru:['Guru Purnima','गुरु पूर्णिमा']};
+    window.AA_EVENTS={
+      eclipse:[['2027-02-21','lunar','Penumbral lunar eclipse · 21 Feb 2027','उपच्छाया चंद्र ग्रहण · 21 फ़रवरी 2027'],
+               ['2027-08-02','solar','Solar eclipse · 2 Aug 2027','सूर्य ग्रहण · 2 अगस्त 2027']],
+      transit:[['2026-10-31','ju',3,4,0,'Jupiter enters Leo · 31 Oct 2026','गुरु सिंह राशि में · 31 अक्टूबर 2026'],
+               ['2026-12-05','ra',10,9,1,'Rahu and Ketu change signs · 5 Dec 2026','राहु-केतु का राशि परिवर्तन · 5 दिसंबर 2026'],
+               ['2027-01-25','ju',4,3,1,'Jupiter returns to Cancer · 25 Jan 2027','गुरु वक्री होकर कर्क में · 25 जनवरी 2027'],
+               ['2027-06-03','sa',11,0,0,'Saturn enters Aries · 3 Jun 2027','शनि मेष राशि में · 3 जून 2027'],
+               ['2027-06-26','ju',3,4,0,'Jupiter enters Leo again · 26 Jun 2027','गुरु फिर सिंह राशि में · 26 जून 2027'],
+               ['2027-10-20','sa',0,11,1,'Saturn returns to Pisces · 20 Oct 2027','शनि वक्री होकर मीन में · 20 अक्टूबर 2027'],
+               ['2027-11-26','ju',4,5,0,'Jupiter enters Virgo · 26 Nov 2027','गुरु कन्या राशि में · 26 नवंबर 2027']]
+    };
+    window.AA_pickEvent=function(kind){
+      var L=window.AA_EVENTS[kind], p=window.AA_CANVAS_PRESET, q=null, i;
+      try{ q=new URLSearchParams(location.search).get('ev'); }catch(e){}
+      var day=function(t){ var x=new Date(t+19800000); return x.toISOString().slice(0,10); };
+      if(p&&p.canvas===kind){ var a=day(Date.parse(p.from)), b=day(Date.parse(p.until)); for(i=0;i<L.length;i++) if(L[i][0]>=a&&L[i][0]<=b) return L[i]; }
+      if(q) for(i=0;i<L.length;i++) if(L[i][0]===q) return L[i];
+      var today=day(Date.now());
+      for(i=0;i<L.length;i++) if(L[i][0]>=today) return L[i];
+      return L[L.length-1];
+    };
     window.AA_festGreet=function(){
-      if(d.getAttribute('data-canvas')!=='navratri') return;
-      var n=window.AA_navDay(), v=DEVI[n-1], e=document.querySelector('.ev-f[data-f="navratri"]');
+      var c=d.getAttribute('data-canvas'), e=document.querySelector('.ev-f[data-f="'+c+'"]'), t=null;
       if(!e) return;
-      e.innerHTML='<span lang="en">Navratri · Day '+n+' · '+v[0]+'</span><span lang="hi">नवरात्रि · '+v[2]+' दिन · '+v[1]+'</span>';
+      if(c==='navratri'){ var n=window.AA_navDay(), v=DEVI[n-1]; t=['Navratri · Day '+n+' · '+v[0],'नवरात्रि · '+v[2]+' दिन · '+v[1]]; }
+      else if(c==='purnima'){
+        var p=window.AA_CANVAS_PRESET, o=null; try{ o=new URLSearchParams(location.search).get('occasion'); }catch(x){}
+        if(!o&&p&&p.canvas==='purnima') o=String(p.id).split('-')[0];
+        t=PURNIMA[o]||null;
+      }
+      else if(c==='eclipse'||c==='transit'){ var ev=window.AA_pickEvent(c); t=c==='eclipse'?[ev[2],ev[3]]:[ev[5],ev[6]]; }
+      if(t) e.innerHTML='<span lang="en">'+t[0]+'</span><span lang="hi">'+t[1]+'</span>';
     };
     var cv=null, cq=null;
     try{ cq=new URLSearchParams(location.search).get('canvas'); }catch(e){}
@@ -170,7 +203,7 @@
   })();
 </script>
 <script src="/site-theme.js" defer></script>
-<link rel="stylesheet" href="/hero-c.css?v=14" />
+<link rel="stylesheet" href="/hero-c.css?v=15" />
 <script src="/hero-c.js?v=17" defer></script>
 </head>
 <body>
@@ -237,7 +270,7 @@
 <section class="hc" id="hero-c" aria-labelledby="hc-title">
   <div class="hc-sky" data-hc-sky aria-hidden="true"></div>
   <div class="hc-copy">
-    <p class="hc-eyebrow"><span class="ev-base"><span lang="en">Vedic astrology, computed</span><span lang="hi">वैदिक ज्योतिष, गणना से</span></span><span class="ev-diya"><span lang="en">Shubh Deepavali</span><span lang="hi">शुभ दीपावली</span></span><span class="ev-f" data-f="navratri"><span lang="en">Shubh Navratri</span><span lang="hi">शुभ नवरात्रि</span></span><span class="ev-f" data-f="dussehra"><span lang="en">Shubh Vijayadashami</span><span lang="hi">शुभ विजयादशमी</span></span></p>
+    <p class="hc-eyebrow"><span class="ev-base"><span lang="en">Vedic astrology, computed</span><span lang="hi">वैदिक ज्योतिष, गणना से</span></span><span class="ev-diya"><span lang="en">Shubh Deepavali</span><span lang="hi">शुभ दीपावली</span></span><span class="ev-f" data-f="navratri"><span lang="en">Shubh Navratri</span><span lang="hi">शुभ नवरात्रि</span></span><span class="ev-f" data-f="dussehra"><span lang="en">Shubh Vijayadashami</span><span lang="hi">शुभ विजयादशमी</span></span><span class="ev-f" data-f="holi"><span lang="en">Happy Holi</span><span lang="hi">होली की शुभकामनाएं</span></span><span class="ev-f" data-f="karwa-chauth"><span lang="en">Happy Karwa Chauth</span><span lang="hi">करवा चौथ की शुभकामनाएं</span></span><span class="ev-f" data-f="chhath"><span lang="en">Chhath Puja ki shubhkamnayein</span><span lang="hi">छठ पूजा की शुभकामनाएं</span></span><span class="ev-f" data-f="sankranti"><span lang="en">Happy Makar Sankranti</span><span lang="hi">मकर संक्रांति की शुभकामनाएं</span></span><span class="ev-f" data-f="shivratri"><span lang="en">Shubh Maha Shivratri</span><span lang="hi">शुभ महाशिवरात्रि</span></span><span class="ev-f" data-f="ganesh-chaturthi"><span lang="en">Ganpati Bappa Morya</span><span lang="hi">गणपति बप्पा मोरया</span></span><span class="ev-f" data-f="janmashtami"><span lang="en">Shubh Janmashtami</span><span lang="hi">शुभ जन्माष्टमी</span></span><span class="ev-f" data-f="raksha-bandhan"><span lang="en">Happy Raksha Bandhan</span><span lang="hi">रक्षाबंधन की शुभकामनाएं</span></span><span class="ev-f" data-f="onam"><span lang="en">Happy Onam</span><span lang="hi">ओणम की शुभकामनाएं</span></span><span class="ev-f" data-f="ugadi-gudi-padwa"><span lang="en">Happy Gudi Padwa and Ugadi</span><span lang="hi">गुड़ी पड़वा और उगादी की शुभकामनाएं</span></span><span class="ev-f" data-f="eid"><span lang="en">Eid Mubarak</span><span lang="hi">ईद मुबारक</span></span><span class="ev-f" data-f="christmas"><span lang="en">Merry Christmas</span><span lang="hi">क्रिसमस की शुभकामनाएं</span></span><span class="ev-f" data-f="new-year"><span lang="en">Happy New Year</span><span lang="hi">नववर्ष की शुभकामनाएं</span></span><span class="ev-f" data-f="purnima"><span lang="en">Purnima</span><span lang="hi">पूर्णिमा</span></span><span class="ev-f" data-f="pitru-paksha"><span lang="en">Pitru Paksha · remembering our ancestors</span><span lang="hi">पितृ पक्ष · पूर्वजों का स्मरण</span></span><span class="ev-f" data-f="eclipse"><span lang="en">Eclipse</span><span lang="hi">ग्रहण</span></span><span class="ev-f" data-f="transit"><span lang="en">Planet sign change</span><span lang="hi">ग्रह गोचर</span></span><span class="ev-f" data-f="dev-uthani"><span lang="en">Dev Uthani Ekadashi</span><span lang="hi">देवउठनी एकादशी</span></span><span class="ev-f" data-f="vasant-panchami"><span lang="en">Shubh Vasant Panchami</span><span lang="hi">शुभ वसंत पंचमी</span></span><span class="ev-f" data-f="ram-navami"><span lang="en">Shubh Ram Navami</span><span lang="hi">शुभ राम नवमी</span></span><span class="ev-f" data-f="hanuman-jayanti"><span lang="en">Hanuman Jayanti</span><span lang="hi">हनुमान जयंती</span></span><span class="ev-f" data-f="akshaya-tritiya"><span lang="en">Shubh Akshaya Tritiya</span><span lang="hi">शुभ अक्षय तृतीया</span></span><span class="ev-f" data-f="rath-yatra"><span lang="en">Jagannath Rath Yatra</span><span lang="hi">जगन्नाथ रथ यात्रा</span></span><span class="ev-f" data-f="teej"><span lang="en">Happy Hariyali Teej</span><span lang="hi">हरियाली तीज की शुभकामनाएं</span></span><span class="ev-f" data-f="nag-panchami"><span lang="en">Nag Panchami</span><span lang="hi">नाग पंचमी</span></span></p>
     <script>window.AA_festGreet&&window.AA_festGreet();</script>
     <h1 class="hc-word" id="hc-title"><span aria-hidden="true">ASTROASHVA</span><span class="sr-only">AstroAshva</span></h1>
     <p class="hc-tag"><span lang="en">One who believes</span><span lang="hi">विश्वास करने वाले के लिए</span></p>

@@ -95,7 +95,24 @@ html:not([data-canvas^="kundali"]) .hc-houses, html:not([data-canvas^="kundali"]
 @media (min-width:769px) { [data-canvas="kundali-south"] .hc-copy { top:50%; } }
 .hc-eyebrow .ev-diya, .hc-eyebrow .ev-f, html:not([data-canvas^="kundali"]) .hc-eyebrow .ev-base { display:none; }
 [data-canvas="diya"] .hc-eyebrow .ev-diya,
-[data-canvas="navratri"] .ev-f[data-f="navratri"], [data-canvas="dussehra"] .ev-f[data-f="dussehra"] { display:inline; }
+[data-canvas="navratri"] .ev-f[data-f="navratri"], [data-canvas="dussehra"] .ev-f[data-f="dussehra"],
+[data-canvas="holi"] .ev-f[data-f="holi"], [data-canvas="karwa-chauth"] .ev-f[data-f="karwa-chauth"],
+[data-canvas="chhath"] .ev-f[data-f="chhath"], [data-canvas="sankranti"] .ev-f[data-f="sankranti"],
+[data-canvas="shivratri"] .ev-f[data-f="shivratri"], [data-canvas="ganesh-chaturthi"] .ev-f[data-f="ganesh-chaturthi"],
+[data-canvas="janmashtami"] .ev-f[data-f="janmashtami"], [data-canvas="raksha-bandhan"] .ev-f[data-f="raksha-bandhan"],
+[data-canvas="onam"] .ev-f[data-f="onam"], [data-canvas="ugadi-gudi-padwa"] .ev-f[data-f="ugadi-gudi-padwa"],
+[data-canvas="eid"] .ev-f[data-f="eid"], [data-canvas="christmas"] .ev-f[data-f="christmas"],
+[data-canvas="new-year"] .ev-f[data-f="new-year"], [data-canvas="purnima"] .ev-f[data-f="purnima"],
+[data-canvas="pitru-paksha"] .ev-f[data-f="pitru-paksha"], [data-canvas="eclipse"] .ev-f[data-f="eclipse"],
+[data-canvas="transit"] .ev-f[data-f="transit"],
+[data-canvas="dev-uthani"] .ev-f[data-f="dev-uthani"],
+[data-canvas="vasant-panchami"] .ev-f[data-f="vasant-panchami"],
+[data-canvas="ram-navami"] .ev-f[data-f="ram-navami"],
+[data-canvas="hanuman-jayanti"] .ev-f[data-f="hanuman-jayanti"],
+[data-canvas="akshaya-tritiya"] .ev-f[data-f="akshaya-tritiya"],
+[data-canvas="rath-yatra"] .ev-f[data-f="rath-yatra"],
+[data-canvas="teej"] .ev-f[data-f="teej"],
+[data-canvas="nag-panchami"] .ev-f[data-f="nag-panchami"] { display:inline; }
 .hc-lines .dl { fill:none; stroke:var(--ink-line); stroke-width:1; stroke-linecap:round; stroke-linejoin:round; }
 .hc-lines .ac { fill:none; stroke:var(--lagna); stroke-width:1.25; stroke-linecap:round; stroke-linejoin:round; }
 .hc-lines .flame { fill:color-mix(in srgb,var(--lagna) 22%,transparent); stroke:var(--lagna); stroke-width:1.25; stroke-linejoin:round; }
@@ -112,9 +129,22 @@ html:not([data-canvas^="kundali"]) .hc-houses, html:not([data-canvas^="kundali"]
 .hc-lines .ff { fill:color-mix(in srgb,var(--fc,var(--lagna)) 18%,transparent); stroke:var(--fc,var(--lagna)); stroke-width:1.2; stroke-linejoin:round; }
 .hc-lines .ff2 { fill:color-mix(in srgb,var(--fc,var(--lagna)) 8%,transparent); stroke:var(--fc,var(--lagna)); stroke-width:1.2; }
 .hc-lines .lf { fill:color-mix(in srgb,var(--fest-leaf) 10%,transparent); stroke:var(--fest-leaf); stroke-width:1; stroke-linecap:round; stroke-linejoin:round; }
+.hc-lines .lfo { fill:none; stroke:var(--fest-leaf); stroke-width:1; stroke-linecap:round; }
+.hc-lines .mod { fill:var(--bg); stroke:color-mix(in srgb,var(--fg) 45%,var(--bg)); stroke-width:1.1; stroke-linejoin:round; }
+.hc-lines .pf { fill:color-mix(in srgb,var(--fc) 55%,transparent); stroke:var(--fc); stroke-width:.8; stroke-linejoin:round; }
+.hc-lines .pw { fill:var(--bg); stroke:var(--ink-line); stroke-width:.8; }
+.hc-lines .om { font-family:'Tiro Devanagari Sanskrit','Noto Serif Devanagari',serif; font-weight:400; text-anchor:middle; dominant-baseline:central; fill:color-mix(in srgb,var(--lagna) 16%,transparent); stroke:var(--lagna); stroke-width:1.1; }
+.hc-lines .shade { fill:color-mix(in srgb,var(--fc) 9%,transparent); stroke:none; }
+.hc-lines .zg { font-family:'Noto Sans Symbols','Segoe UI Symbol','Apple Symbols',sans-serif; text-anchor:middle; dominant-baseline:central; fill:color-mix(in srgb,var(--fg) 45%,var(--bg)); }
+.hc-lines .zg.on { fill:var(--lagna); }
+.hc-lines .zr { font:600 14px var(--font-body); text-anchor:middle; dominant-baseline:central; fill:var(--lagna); }
+.hc-lines .pg path, .hc-lines .pg circle { fill:none; stroke:var(--lagna); stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
+.hc-lines .dim { fill:var(--bg); stroke:none; }
 .hc-lines .flag { fill:color-mix(in srgb,var(--fest-saffron) 78%,transparent); stroke:var(--fest-saffron); stroke-width:1.2; stroke-linejoin:round; }
 /* Glows: softer where the accent is black. */
 [data-theme="mono-light"] .hc-lines { --gk:.4; }
+.hc-lines .heap { fill:color-mix(in srgb,var(--fc) 72%,transparent); stroke:var(--fc); stroke-width:1; stroke-linejoin:round; }
+.hc-lines .bead { fill:var(--bg); stroke:color-mix(in srgb,var(--fg) 45%,var(--bg)); stroke-width:1.1; }
 .hc-lines .adot { fill:var(--lagna); stroke:none; }
 .hc-lines .fdot { fill:var(--fc,var(--lagna)); stroke:none; }
 .hc-lines .idot { fill:var(--ink-line); stroke:none; }
@@ -262,6 +292,13 @@ html[data-lang="hi"] .hc-tag { letter-spacing:0; }
   .hc-stores { margin-top:32px; gap:12px; }
 }
 @media (max-width:580px) { .hc { --hc-nav:62px; } }
+/* Long greeting lines stay on one line on phones. */
+@media (max-width:480px) {
+  [data-canvas="pitru-paksha"] .hc-eyebrow, [data-canvas="eclipse"] .hc-eyebrow, [data-canvas="transit"] .hc-eyebrow,
+  [data-canvas="purnima"] .hc-eyebrow, [data-canvas="navratri"] .hc-eyebrow { font-size:11px; letter-spacing:.1em; padding-left:.1em; }
+  html[data-lang="hi"][data-canvas="pitru-paksha"] .hc-eyebrow, html[data-lang="hi"][data-canvas="eclipse"] .hc-eyebrow,
+  html[data-lang="hi"][data-canvas="transit"] .hc-eyebrow, html[data-lang="hi"][data-canvas="purnima"] .hc-eyebrow { font-size:13px; letter-spacing:0; }
+}
 @media (max-width:380px) {
   .hc .play-badge img { height:50px; }
   .hc .store-badge { height:50px; min-width:0; padding:0 14px; }
