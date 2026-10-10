@@ -240,7 +240,7 @@
 
     // The garba ring: dancers circle the words, smaller and fainter at the
     // back (top), as on a floor seen from a little above.
-    var cy0 = H * .47, rx = Math.min(W * .43, W / 2 - 60), ry = H * .33;
+    var cy0 = H * .47, rx = Math.min(W * .43, W / 2 - 60), ry = H * .355;
     var back = g(A, '');
     if (!phone) {
       A.add('dl2', ell(cx, cy0, rx, ry), 900, 2600, back, true);
@@ -251,8 +251,8 @@
         dancer(A, inner, 2200 + i * 110, i % 2);
         var a0 = i / N;
         var at = function (fr) {
-          var a = (a0 + fr) * Math.PI * 2, sn = Math.sin(a), sc = (.72 + .3 * (sn + 1) / 2) * u;
-          return { transform: 'translate(' + f(cx + rx * Math.cos(a)) + 'px,' + f(cy0 + ry * sn) + 'px) scale(' + sc.toFixed(3) + ')', opacity: (.5 + .5 * (sn + 1) / 2).toFixed(2) };
+          var a = (a0 + fr) * Math.PI * 2, sn = Math.sin(a), sc = (.66 + .34 * (1 - sn) / 2) * u;
+          return { transform: 'translate(' + f(cx + rx * Math.cos(a)) + 'px,' + f(cy0 + ry * sn) + 'px) scale(' + sc.toFixed(3) + ')', opacity: (.42 + .58 * (1 - sn) / 2).toFixed(2) };
         };
         var s0 = at(0);
         gd.style.transform = s0.transform; gd.style.opacity = s0.opacity;
@@ -279,13 +279,14 @@
     // stands behind the fifth.
     var s = phone ? Math.min(.46, W / 820) : .78 * u, gap = phone ? (W - 48) / 9 : Math.min(84 * u, (W - 200) / 9);
     var by = phone ? B - 96 : B - Math.max(22, H * .035);
-    var ks = phone ? s * 1.05 : s * 1.3;
-    kalash(A, cx, by - 20 * s, ks, 1400);
+    // The kalash stands on a low step above the fifth lamp, so all nine show.
+    var ks = phone ? s * 1.05 : s * 1.12, kb = by - 50 * s;
+    kalash(A, cx, kb, ks, 1400);
+    A.add('dl2', 'M' + pt([cx - 40 * ks, kb + 2 * s]) + 'L' + pt([cx + 40 * ks, kb + 2 * s]), 1300, 600);
     for (var n = 0; n < 9; n++) {
       var st = n + 1 < day ? 'past' : n + 1 === day ? 'lit' : 'unlit';
       // The fifth lamp burns at the kalash's foot.
       var lx = cx + (n - 4) * gap, ly = by;
-      if (n === 4) { ly = by + 4 * s; veil(A, lx, ly - 8 * s, 34 * s, 12 * s); }
       var fl = lamp(A, lx, ly, s, st, 1600 + n * 180);
       if (fl && st === 'lit') {
         var fb = ly - 16 * s;
@@ -306,31 +307,46 @@
     var u = unit(A), L = A.L, T0 = A.T, R = A.R, B = A.B, W = A.W, H = A.H, cx = (L + R) / 2, phone = A.phone;
     A.hc.style.removeProperty('--fc');
     A.frame();
-    // The bow: a recurve limb drawn double, a grip, a straight string.
-    var bh = phone ? Math.min(130, H * .17) : Math.min(320 * u, H * .52);
-    var bx = phone ? L + 40 : L + Math.max(110, 150 * u), byc = phone ? T0 + 24 + bh / 2 : T0 + H * .55;
-    var bw = bh * .13;
-    var top = [bx + bw * .25, byc - bh / 2], bot = [bx + bw * .25, byc + bh / 2];
+    // The bow, tilted to aim up and right: its belly towards the target, the
+    // string drawn back with the arrow nocked. At the release the string
+    // snaps straight and the arrow flies the trail to the burst.
+    var bh = phone ? Math.min(120, H * .16) : Math.min(250 * u, H * .34);
+    var bw = bh * .16, aim = phone ? -28 : -14;
+    var bx = phone ? L + 62 : L + Math.max(110, 150 * u), byc = phone ? T0 + 40 + bh / 2 : T0 + 24 + bh / 2;
+    // Local frame: +x is the arrow's way, the bow stands along y.
+    var ca = Math.cos(aim * Math.PI / 180), sa = Math.sin(aim * Math.PI / 180);
+    var BT = function (x, y) { return [bx + x * ca - y * sa, byc + x * sa + y * ca]; };
+    BT.s = 1; BT.ox = bx; BT.oy = byc;
+    var h2 = bh / 2;
     function limb(o) {
-      return 'M' + pt([top[0] + o, top[1]]) + 'C' + pt([bx - bw * 1.1 + o, byc - bh * .36]) + ' ' + pt([bx - bw * 1.2 + o, byc - bh * .1]) + ' ' + pt([bx - bw * 1.2 + o, byc]) +
-        'C' + pt([bx - bw * 1.2 + o, byc + bh * .1]) + ' ' + pt([bx - bw * 1.1 + o, byc + bh * .36]) + ' ' + pt([bot[0] + o, bot[1]]);
+      return X('M-6 ' + (-h2) + 'C' + (bw * .9 + o) + ' ' + (-bh * .36) + ' ' + (bw + o) + ' ' + (-bh * .1) + ' ' + (bw + o) + ' 0C' + (bw + o) + ' ' + (bh * .1) + ' ' + (bw * .9 + o) + ' ' + (bh * .36) + ' -6 ' + h2, BT);
     }
     A.add('ac2', limb(0), 700, 1100);
     A.add('dl3', limb(-4 * u), 800, 1100);
-    A.add('ac', 'M' + pt(top) + 'Q' + pt([top[0] + bw * .5, top[1] - bw * .5]) + ' ' + pt([top[0] + bw * .65, top[1] - bw * .1]) +
-      'M' + pt(bot) + 'Q' + pt([bot[0] + bw * .5, bot[1] + bw * .5]) + ' ' + pt([bot[0] + bw * .65, bot[1] + bw * .1]), 1500, 400);
-    A.add('ac', 'M' + pt([bx - bw * 1.25, byc - 9 * u]) + 'L' + pt([bx - bw * .95, byc - 9 * u]) + 'M' + pt([bx - bw * 1.25, byc + 9 * u]) + 'L' + pt([bx - bw * .95, byc + 9 * u]), 1500, 300);
-    A.add('dl3', 'M' + pt(top) + 'L' + pt(bot), 1300, 600);
+    A.add('ac', X('M-6 ' + (-h2) + 'Q-12 ' + (-h2 - 6) + ' -17 ' + (-h2 - 1) + 'M-6 ' + h2 + 'Q-12 ' + (h2 + 6) + ' -17 ' + (h2 + 1), BT), 1500, 400);
+    A.add('ac', X('M' + (bw - 3) + ' -10L' + (bw + 3) + ' -10M' + (bw - 3) + ' 10L' + (bw + 3) + ' 10M' + (bw - 3) + ' 0L' + (bw + 3) + ' 0', BT), 1500, 300);
+    var nockX = -bw * 1.1, nock = BT(nockX, 0), aLen = bw * 2.1 + 34 * u;
+    var drawnS = g(A, ''), restS = g(A, '');
+    A.add('dl3', X('M-6 ' + (-h2) + 'L' + nockX + ' 0L-6 ' + h2, BT), 1300, 600, drawnS);
+    A.add('dl3', X('M-6 ' + (-h2) + 'L-6 ' + h2, BT), 0, 1, restS);
+    if (A.reduce) drawnS.style.opacity = '0';
+    else {
+      restS.style.opacity = '0';
+      A.loop(drawnS, [{ opacity: 1 }, { opacity: 0 }], { delay: 2000, duration: 90, fill: 'forwards' });
+      A.loop(restS, [{ opacity: 0 }, { opacity: 1 }], { delay: 2000, duration: 90, fill: 'forwards' });
+    }
 
-    // The flight: from the string to the burst, top right.
-    var p0 = [top[0], byc], p2 = phone ? [R - 48, T0 + 96] : [R - Math.max(150, 190 * u), T0 + Math.max(70, H * .12)];
-    var p1 = phone ? [cx - 20, T0 - 10] : [cx - 120 * u, T0 - H * .08];
+    // The flight: from the nock, along the aim, over the top to the burst.
+    var p0 = nock, p2 = phone ? [R - 48, T0 + 96] : [R - Math.max(150, 190 * u), T0 + Math.max(70, H * .12)];
+    var topY = phone ? T0 + 6 : T0 - H * .02, dd = (p0[1] - topY) / Math.max(.2, -sa);
+    var p1 = [p0[0] + ca * dd, p0[1] + sa * dd];
+    if (p1[0] > p2[0] - 40) { p1[0] = p2[0] - 40; }
     var trail = 'M' + pt(p0) + 'Q' + pt(p1) + ' ' + pt(p2);
     var id = 'hcf-trail';
     var defs = A.svg.querySelector('defs') || A.el('defs', {});
     var lg = A.el('linearGradient', { id: id, gradientUnits: 'userSpaceOnUse', x1: f(p0[0]), y1: f(p0[1]), x2: f(p2[0]), y2: f(p2[1]) }, defs);
-    A.el('stop', { offset: '0', style: 'stop-color:var(--lagna);stop-opacity:0' }, lg);
-    A.el('stop', { offset: '.7', style: 'stop-color:var(--lagna);stop-opacity:.45' }, lg);
+    A.el('stop', { offset: '0', style: 'stop-color:var(--lagna);stop-opacity:.55' }, lg);
+    A.el('stop', { offset: '.5', style: 'stop-color:var(--lagna);stop-opacity:.4' }, lg);
     A.el('stop', { offset: '1', style: 'stop-color:var(--lagna);stop-opacity:.95' }, lg);
     A.add('trail', trail, 2000, 1700);
     // A few sparks left hanging in the air along the way.
@@ -349,32 +365,32 @@
     }
     bg.style.transformOrigin = f(p2[0]) + 'px ' + f(p2[1]) + 'px';
     A.loop(bg, [{ transform: 'scale(1)', opacity: 1 }, { transform: 'scale(1.08)', opacity: .7 }, { transform: 'scale(1)', opacity: 1 }], { duration: 3600, iterations: Infinity, delay: 4200, easing: 'ease-in-out' });
-    // The arrow, travelling the trail by arc length, then at rest at the burst.
+    // The arrow (its tip at local 0): at rest on the string, then in flight.
     var pts = [], lens = [0], tot = 0;
-    for (var k = 0; k <= 80; k++) {
-      var tt = k / 80, mt = 1 - tt;
+    for (var k = 0; k <= 120; k++) {
+      var tt = k / 120, mt = 1 - tt;
       pts.push([mt * mt * p0[0] + 2 * mt * tt * p1[0] + tt * tt * p2[0], mt * mt * p0[1] + 2 * mt * tt * p1[1] + tt * tt * p2[1]]);
       if (k) { tot += Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][1] - pts[k - 1][1]); lens.push(tot); }
     }
-    function along(fr) {
-      var want = fr * tot, k = 1;
-      while (k < 80 && lens[k] < want) k++;
-      var a = pts[k - 1], b = pts[k];
-      return 'translate(' + f(b[0]) + 'px,' + f(b[1]) + 'px) rotate(' + (Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI).toFixed(1) + 'deg)';
+    function along(dist) {
+      var k = 1;
+      while (k < 120 && lens[k] < dist) k++;
+      var a = pts[k - 1], b = pts[k], r = (dist - lens[k - 1]) / Math.max(1e-6, lens[k] - lens[k - 1]);
+      return 'translate(' + f(a[0] + (b[0] - a[0]) * r) + 'px,' + f(a[1] + (b[1] - a[1]) * r) + 'px) rotate(' + (Math.atan2(b[1] - a[1], b[0] - a[0]) * 180 / Math.PI).toFixed(1) + 'deg)';
     }
-    var ar = g(A, ''), AT = mk(0, 0, u);
-    A.el('path', { 'class': 'ac2', d: X('M-56 0L-2 0', AT) }, ar);
+    var arW = g(A, ''), ar = g(A, '', arW), AT = mk(0, 0, u);
+    A.el('path', { 'class': 'ac2', d: 'M' + f(-aLen) + ' 0L' + f(-2 * u) + ' 0' }, ar);
     A.el('path', { 'class': 'ff', style: '--fc:var(--lagna)', d: X('M2 0L-11 -5L-8 0L-11 5Z', AT) }, ar);
-    A.el('path', { 'class': 'ac', d: X('M-50 0L-58 -6M-44 0L-52 -6M-50 0L-58 6M-44 0L-52 6', AT) }, ar);
-    var end = along(1);
-    ar.style.transform = end;
+    A.el('path', { 'class': 'ac', d: 'M' + f(-aLen + 6 * u) + ' 0L' + f(-aLen - 2 * u) + ' ' + f(-6 * u) + 'M' + f(-aLen + 12 * u) + ' 0L' + f(-aLen + 4 * u) + ' ' + f(-6 * u) + 'M' + f(-aLen + 6 * u) + ' 0L' + f(-aLen - 2 * u) + ' ' + f(6 * u) + 'M' + f(-aLen + 12 * u) + ' 0L' + f(-aLen + 4 * u) + ' ' + f(6 * u) }, ar);
+    ar.style.transform = along(tot);
     if (!A.reduce && ar.animate) {
       var kf = [];
-      for (var j = 0; j <= 40; j++) {
-        var e = j / 40, ez = e < .5 ? 2 * e * e : 1 - Math.pow(-2 * e + 2, 2) / 2;
-        kf.push({ transform: along(ez), opacity: j === 0 ? 0 : 1 });
+      for (var j = 0; j <= 48; j++) {
+        var e = j / 48, ez = e < .5 ? 2 * e * e : 1 - Math.pow(-2 * e + 2, 2) / 2;
+        kf.push({ transform: along(aLen + (tot - aLen) * ez) });
       }
       A.loop(ar, kf, { duration: 1700, delay: 2000, fill: 'backwards' });
+      A.loop(arW, [{ opacity: 0 }, { opacity: 1 }], { delay: 1300, duration: 600, fill: 'backwards' });
     }
 
     // The lamp of truth: a samai on its foot, a tall steady flame.
@@ -390,17 +406,19 @@
     A.add('ac', X('M0 -112C3 -106 3 -100 0 -94C-3 -100 -3 -106 0 -112Z', LT), 2900, 400, fl);
     fl.style.transformOrigin = f(lx) + 'px ' + f(lb - 84 * ls) + 'px';
     A.loop(fl, [{ transform: 'scale(1,1)' }, { transform: 'scale(.95,1.05)' }, { transform: 'scale(1.02,.97)' }, { transform: 'scale(1,1)' }], { duration: 2200, iterations: Infinity, delay: 3600, easing: 'ease-in-out' });
-    // The victory flag in the right column, fluttering towards the words.
+    // Victory flags in both lower columns, fluttering towards the words.
     if (!phone) {
-      var fx = R - Math.max(110, 150 * u), fh = Math.min(300 * u, H * .5), fb2 = B - Math.max(20, H * .03), FT = mk(fx, fb2, 1);
-      A.add('dl3', 'M' + pt([fx - 6 * u, fb2]) + 'L' + pt([fx + 6 * u, fb2]) + 'M' + pt([fx, fb2]) + 'L' + pt([fx, fb2 - fh]), 900, 1200);
-      A.add('ac', C(FT, 0, -fh - 5 * u, 4 * u) + 'M' + pt([fx, fb2 - fh - 9 * u]) + 'L' + pt([fx, fb2 - fh - 18 * u]), 1900, 400);
-      var flag = g(A, ''), fw = 96 * u, fy = fb2 - fh;
-      A.add('flag', 'M' + pt([fx, fy]) + 'Q' + pt([fx - fw * .5, fy + 8 * u]) + ' ' + pt([fx - fw, fy + 22 * u]) + 'L' + pt([fx - fw * .42, fy + 31 * u]) +
-        'Q' + pt([fx - fw * .7, fy + 44 * u]) + ' ' + pt([fx - fw * .9, fy + 60 * u]) + 'Q' + pt([fx - fw * .45, fy + 60 * u]) + ' ' + pt([fx, fy + 64 * u]) + 'Z', 2100, 900, flag);
-      flag.style.transformOrigin = f(fx) + 'px ' + f(fy + 32 * u) + 'px';
-      A.loop(flag, [{ transform: 'skewY(0deg) scaleX(1)' }, { transform: 'skewY(-2.5deg) scaleX(.97)' }, { transform: 'skewY(1.5deg) scaleX(1)' }, { transform: 'skewY(0deg) scaleX(1)' }], { duration: 4200, iterations: Infinity, delay: 3400, easing: 'ease-in-out' });
-      A.add('dl2', 'M' + pt([fx - 40 * u, fb2]) + 'Q' + pt([fx, fb2 - 6 * u]) + ' ' + pt([fx + 40 * u, fb2]), 1000, 600);
+      [1, -1].forEach(function (sd, fi) {
+        var fx = sd > 0 ? R - Math.max(110, 150 * u) : L + Math.max(110, 150 * u), fh = H * .4, fb2 = B - Math.max(20, H * .03), FT = mk(fx, fb2, 1);
+        A.add('dl3', 'M' + pt([fx - 6 * u, fb2]) + 'L' + pt([fx + 6 * u, fb2]) + 'M' + pt([fx, fb2]) + 'L' + pt([fx, fb2 - fh]), 900 + fi * 120, 1200);
+        A.add('ac', C(FT, 0, -fh - 5 * u, 4 * u) + 'M' + pt([fx, fb2 - fh - 9 * u]) + 'L' + pt([fx, fb2 - fh - 18 * u]), 1900 + fi * 120, 400);
+        var flag = g(A, ''), fw = 92 * u * sd, fy = fb2 - fh;
+        A.add('flag', 'M' + pt([fx, fy]) + 'Q' + pt([fx - fw * .5, fy + 8 * u]) + ' ' + pt([fx - fw, fy + 22 * u]) + 'L' + pt([fx - fw * .42, fy + 31 * u]) +
+          'Q' + pt([fx - fw * .7, fy + 44 * u]) + ' ' + pt([fx - fw * .9, fy + 60 * u]) + 'Q' + pt([fx - fw * .45, fy + 60 * u]) + ' ' + pt([fx, fy + 64 * u]) + 'Z', 2100 + fi * 120, 900, flag);
+        flag.style.transformOrigin = f(fx) + 'px ' + f(fy + 32 * u) + 'px';
+        A.loop(flag, [{ transform: 'skewY(0deg) scaleX(1)' }, { transform: 'skewY(' + (-2.5 * sd) + 'deg) scaleX(.97)' }, { transform: 'skewY(' + (1.5 * sd) + 'deg) scaleX(1)' }, { transform: 'skewY(0deg) scaleX(1)' }], { duration: 4200 + fi * 500, iterations: Infinity, delay: 3400 + fi * 300, easing: 'ease-in-out' });
+        A.add('dl2', 'M' + pt([fx - 40 * u, fb2]) + 'Q' + pt([fx, fb2 - 6 * u]) + ' ' + pt([fx + 40 * u, fb2]), 1000, 600);
+      });
     }
     // Apta leaves, the gold of Dussehra, either side of the lamp.
     var ax = phone ? 70 : 110 * u;
