@@ -958,11 +958,24 @@
     } else {
       feather(A, [L + 30, B - 40], 170, 18, 1100);
     }
-    // A pot of butter below the words, small footprints walking to it.
-    var ms = phone ? .7 : u * 1.15, my = phone ? B - 84 : B - Math.max(24, H * .04), MT = mk(cx, my, ms);
-    A.add('dl3', X('M-22 -4C-34 -14 -32 -40 -14 -46L14 -46C32 -40 34 -14 22 -4ZM-16 -4L-12 0L12 0L16 -4M-15 -46L-13 -52L13 -52L15 -46', MT), 1500, 900);
-    A.add('fs', X('M-28 -28Q0 -22 28 -28', MT), 1900, 500, cg(A, 'var(--fest-red)'));
-    A.add('mod', X('M-14 -52Q-16 -62 -8 -62Q-6 -70 2 -66Q10 -70 12 -60Q18 -58 14 -52Z', MT), 2100, 500);
+    // The palna below the words: an arched frame, the cradle swinging on its
+    // cords, a garland on the arch, a pot of butter beside it.
+    var ms = phone ? .62 : Math.min(u * 1.1, (H * .24) / 140), my = phone ? B - 70 : B - Math.max(20, H * .03), MT = mk(cx, my, ms);
+    A.add('dl3', X('M-70 0L-62 -110M70 0L62 -110M-62 -110Q0 -150 62 -110M-84 0L-56 0M56 0L84 0', MT), 1200, 1300);
+    A.add('ac', X('M-66 -60L-58 -60M58 -60L66 -60', MT), 1700, 300);
+    for (var gm = 1; gm < 8; gm++) { var tg2 = gm / 8, gx = -62 + 124 * tg2, gy = -110 - 40 * 4 * tg2 * (1 - tg2) * .5 + 8 * Math.sin(Math.PI * tg2); var gp = MT(gx, gy + 6); marigold(A, gp[0], gp[1], 4.5 * ms, gm % 2 ? 'var(--fest-saffron)' : 'var(--fest-marigold)', 1900 + gm * 50); }
+    var cr2 = g(A, ''), hang = MT(0, -126);
+    A.add('dl2', X('M0 -126L-30 -60M0 -126L30 -60', MT), 1600, 700, cr2);
+    A.add('mod', X('M-40 -60Q0 -54 40 -60Q38 -30 0 -26Q-38 -30 -40 -60Z', MT), 1800, 800, cr2);
+    A.add('ff', X('M-30 -56Q0 -50 30 -56Q24 -44 0 -42Q-24 -44 -30 -56Z', MT), 2200, 500, cg(A, 'var(--fest-sky)', cr2));
+    A.add('fs', X('M-38 -48Q0 -40 38 -48', MT), 2300, 400, cg(A, 'var(--fest-red)', cr2));
+    sway(A, cr2, hang[0], hang[1], 3, 2800, 3200);
+    if (!phone) {
+      var PT2 = mk(cx + 120 * ms, my, ms * .8);
+      A.add('dl3', X('M-22 -4C-34 -14 -32 -40 -14 -46L14 -46C32 -40 34 -14 22 -4ZM-16 -4L-12 0L12 0L16 -4M-15 -46L-13 -52L13 -52L15 -46', PT2), 2000, 900);
+      A.add('fs', X('M-28 -28Q0 -22 28 -28', PT2), 2300, 500, cg(A, 'var(--fest-red)'));
+      A.add('mod', X('M-14 -52Q-16 -62 -8 -62Q-6 -70 2 -66Q10 -70 12 -60Q18 -58 14 -52Z', PT2), 2500, 500);
+    }
   };
 
   /* ---------- Raksha Bandhan: one rakhi thread around the words ---------- */
@@ -1134,6 +1147,14 @@
     // Two gudis in the side columns.
     if (!phone) sideX(A, u).forEach(function (x, i) { gudi(A, x, B - Math.max(20, H * .03), Math.min(H * .6, 420 * u), u * 1.15, 1100 + i * 150, i === 1); });
     else { gudi(A, L + 46, B - 40, 200, .6, 1100, false); gudi(A, R - 46, B - 40, 200, .6, 1200, true); }
+    // The first sunrise of the new year, below the thoranam.
+    var dy2 = phone ? T0 + 92 : T0 + Math.max(84, H * .13), dr2 = phone ? 16 : 20 * u, dg2 = g(A, '');
+    glow(A, cx, dy2, dr2 * 3, 900, dg2, .4, 'var(--lagna)');
+    A.add('ff', 'M' + pt([cx - dr2, dy2]) + 'A' + f(dr2) + ' ' + f(dr2) + ' 0 0 1 ' + pt([cx + dr2, dy2]) + 'Z', 1100, 900, cg(A, 'var(--lagna)', dg2));
+    var ry2 = '';
+    for (var rk = 0; rk <= 8; rk++) { var ra = Math.PI + rk * Math.PI / 8; ry2 += 'M' + pt([cx + dr2 * 1.3 * Math.cos(ra), dy2 + dr2 * 1.3 * Math.sin(ra)]) + 'L' + pt([cx + dr2 * (rk % 2 ? 1.7 : 2) * Math.cos(ra), dy2 + dr2 * (rk % 2 ? 1.7 : 2) * Math.sin(ra)]); }
+    A.add('ac', ry2 + 'M' + pt([cx - dr2 * 2.4, dy2]) + 'L' + pt([cx + dr2 * 2.4, dy2]), 1300, 700, dg2);
+    breathe(A, dg2, cx, dy2, 6000, 3200, 1.05);
     // A lotus rangoli below the words.
     var rs = phone ? .6 : u, ry = phone ? B - 96 : B - Math.max(70, 84 * u), RT = mk(cx, ry, rs), rg = g(A, '');
     for (var k = 0; k < 8; k++) A.add('fs', X('M0 -10C8 -18 8 -34 0 -44C-8 -34 -8 -18 0 -10Z', mk(cx, ry, rs, k * 45)), 1800 + k * 70, 500, cg(A, k % 2 ? 'var(--fest-saffron)' : 'var(--fest-red)', rg));
@@ -1388,6 +1409,16 @@
     var u = unit(A), L = A.L, T0 = A.T, R = A.R, B = A.B, W = A.W, H = A.H, cx = (L + R) / 2, phone = A.phone;
     A.hc.style.setProperty('--fc', 'color-mix(in srgb,var(--fg) 55%,var(--bg))');
     A.frame();
+    // A peepal branch reaching in from the top left, its leaves barely moving.
+    if (!phone) {
+      var pb = g(A, ''), px0 = L, py0 = T0 + H * .06, px1 = L + W * .2, py1 = T0 + H * .12;
+      A.add('dl3', 'M' + pt([px0, py0]) + 'Q' + pt([L + W * .1, py0 - 6]) + ' ' + pt([px1, py1]), 900, 1400, pb);
+      for (var pl = 0; pl < 6; pl++) {
+        var t3 = .15 + pl * .15, lx3 = px0 + (px1 - px0) * t3, ly3 = py0 + (py1 - py0) * t3 * t3, lg3 = g(A, '', pb);
+        A.add('dl3', X('M0 0L0 8M0 8C-12 12 -18 26 -14 36C-10 44 -2 46 0 58C2 46 10 44 14 36C18 26 12 12 0 8Z', mk(lx3, ly3, u * .75, pl % 2 ? 18 : -14)), 1300 + pl * 120, 800, lg3);
+        sway(A, lg3, lx3, ly3, 1.4, 5200 + pl * 600, 3600);
+      }
+    }
     // A thin waning moon (Krishna paksha) and a few faint stars, nothing more.
     var my = phone ? T0 + 96 : T0 + Math.max(70, H * .11);
     A.add('dl3', crescent(cx, my, phone ? 20 : 24 * u, 200), 900, 1600);
@@ -1717,6 +1748,8 @@
     A.add('dl3', X('M-150 0L-150 -110L-120 -110L-120 0M120 0L120 -110L150 -110L150 0M-120 -90L120 -90M-120 -100L120 -100M-80 0L-80 -60Q0 -120 80 -60L80 0M-158 -110L-112 -110L-120 -130L-150 -130ZM112 -110L158 -110L150 -130L120 -130Z', GT), 1000, 1600);
     A.add('dl3', X('M-135 -130L-135 -150M135 -130L135 -150M-40 -100Q0 -150 40 -100', GT), 1600, 700);
     A.add('ac', X('M-60 0L-60 -50Q0 -96 60 -50L60 0', GT), 1900, 900);
+    for (var tq = 1; tq < 9; tq++) { var tt = tq / 9, p = GT(-110 + 220 * tt, -86 + 12 * Math.sin(Math.PI * tt)); marigold(A, p[0], p[1], 4.5 * gs, tq % 2 ? 'var(--fest-saffron)' : 'var(--fest-marigold)', 2000 + tq * 60); }
+    A.add('ac', X('M-135 -150C-141 -156 -141 -164 -135 -168C-129 -164 -129 -156 -135 -150M135 -150C129 -156 129 -164 135 -168C141 -164 141 -156 135 -150', GT), 2200, 400);
     [-135, 135].forEach(function (fx, i) {
       var fg = g(A, ''), p0 = GT(fx, -150);
       A.add('flag', X('M' + fx + ' -150L' + (fx + (i ? -30 : 30)) + ' -143L' + fx + ' -136Z', GT), 2200 + i * 100, 500, fg);
@@ -1746,12 +1779,18 @@
     var sy = phone ? T0 + 90 : T0 + Math.max(66, H * .1), sg = g(A, '');
     glow(A, cx, sy, 52 * u, 500, sg, .5);
     A.add('ff', circ(cx, sy, 17 * u), 700, 900, sg);
+    var hr = '';
+    for (var hk = 0; hk < 16; hk++) { var ha = hk * Math.PI / 8; hr += 'M' + pt([cx + 22 * u * Math.cos(ha), sy + 22 * u * Math.sin(ha)]) + 'L' + pt([cx + (hk % 2 ? 28 : 34) * u * Math.cos(ha), sy + (hk % 2 ? 28 : 34) * u * Math.sin(ha)]); }
+    A.add('fs', hr, 1000, 700, sg);
     breathe(A, sg, cx, sy, 6000, 3000, 1.06);
     // The gada, standing in the left column (or below the words on phones).
     var gx = phone ? cx - 90 : sideX(A, u)[0], gb = phone ? B - 60 : B - Math.max(24, H * .04), gh = phone ? 160 : H * .62, gs = phone ? .7 : u * 1.2, GT = mk(gx, gb - gh, gs);
     A.add('dl3', 'M' + pt([gx - 3 * gs, gb]) + 'L' + pt([gx - 3 * gs, gb - gh + 60 * gs]) + 'M' + pt([gx + 3 * gs, gb]) + 'L' + pt([gx + 3 * gs, gb - gh + 60 * gs]), 900, 1300);
     A.add('ff', X('M0 0C22 0 34 18 34 36C34 54 22 64 0 64C-22 64 -34 54 -34 36C-34 18 -22 0 0 0Z', GT), 1300, 1000);
-    A.add('fs', X('M-34 30Q0 40 34 30M-30 48Q0 56 30 48M0 0L0 -12M-6 -12L6 -12', GT) + C(GT, 0, -16, 4), 1700, 600);
+    A.add('fs', X('M-34 30Q0 40 34 30M-30 48Q0 56 30 48M0 0L0 -12M-6 -12L6 -12M-26 14Q0 22 26 14M0 64L0 72M-8 72L8 72', GT) + C(GT, 0, -16, 4), 1700, 600);
+    var gd2 = '';
+    for (var gk = 0; gk < 7; gk++) gd2 += C(GT, -24 + gk * 8, 39 + Math.abs(gk - 3) * -.8, 1.4);
+    A.add('fdot', gd2, 2100, 300);
     A.add('fs', 'M' + pt([gx - 6 * gs, gb - 30 * gs]) + 'L' + pt([gx + 6 * gs, gb - 30 * gs]) + 'M' + pt([gx - 6 * gs, gb - 50 * gs]) + 'L' + pt([gx + 6 * gs, gb - 50 * gs]), 1800, 300);
     // The mountain with the glowing sanjeevani herb, right column.
     var mx = phone ? cx + 90 : sideX(A, u)[1], mb = phone ? B - 60 : B - Math.max(24, H * .04), ms = phone ? .6 : u * 1.25, MT = mk(mx, mb, ms);
@@ -1760,6 +1799,9 @@
     glow(A, hp[0], hp[1] - 12 * ms, 34 * ms, 2300, hg, .55, 'var(--fest-leaf)');
     A.add('lfo', X('M-6 -110L-6 -128M-6 -118Q-16 -126 -18 -134M-6 -122Q4 -130 8 -138M-6 -128Q-8 -138 -4 -144', MT), 2400, 600, hg);
     breathe(A, hg, hp[0], hp[1] - 12 * ms, 4000, 3200, 1.12);
+    var cl2 = g(A, '');
+    A.add('dl2', X('M-50 10Q-56 -6 -38 -8Q-34 -26 -14 -22Q-2 -38 18 -26Q38 -30 40 -10Q56 -8 50 10Z', mk(mx - 60 * ms, mb - 150 * ms, ms * .6)), 1600, 900, cl2);
+    A.loop(cl2, [{ transform: 'translateX(0)' }, { transform: 'translateX(8px)' }], { duration: 7000, delay: 3000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
     // A saffron flag below the words.
     var fg = g(A, ''), fx = cx, fyb = phone ? B - 60 : B - Math.max(24, H * .04), fh = phone ? 80 : 120 * u;
     A.add('dl3', 'M' + pt([fx, fyb]) + 'L' + pt([fx, fyb - fh]), 1200, 900);
@@ -1773,14 +1815,17 @@
     A.hc.style.setProperty('--fc', 'var(--lagna)');
     A.frame();
     // A kalash of rice crowned with gold coins, coin stacks either side.
-    var s = phone ? .85 : u * 1.2, by = phone ? B - 80 : B - Math.max(22, H * .035), KT = mk(cx, by, s);
-    A.add('dl3', X('M-16 -80C-18 -68 -42 -64 -42 -42C-42 -20 -28 -8 -18 -6L18 -6C28 -8 42 -20 42 -42C42 -64 18 -68 16 -80ZM-20 -82Q0 -78 20 -82Q0 -86 -20 -82Z', KT), 1000, 1100);
-    A.add('fs', X('M-41 -48Q0 -40 41 -48M-38 -30Q0 -22 38 -30', KT), 1500, 600, cg(A, 'var(--fest-red)'));
-    A.add('mod', X('M-22 -82Q-18 -104 0 -108Q18 -104 22 -82Z', KT), 1700, 600);
+    var s = phone ? .7 : u * 1.05, by = phone ? B - 80 : B - Math.max(22, H * .035), KT = mk(cx, by, s);
+    // A purna kalash on a heap of rice, coins spilling, a glow of plenty.
+    var pg = g(A, '');
+    glow(A, cx, by - 70 * s, 110 * s, 1400, pg, .35);
+    breathe(A, pg, cx, by - 70 * s, 6000, 3200, 1.05);
+    A.add('dl3', X('M-70 0Q-40 -22 0 -24Q40 -22 70 0', KT), 900, 900);
     var rice = '';
-    for (var i = 0; i < 16; i++) rice += C(KT, (rn() - .5) * 34, -86 - rn() * 18, .9);
-    A.add('idot', rice, 2000, 400);
-    [[-8, -104, 0], [6, -100, 0], [0, -112, 0]].forEach(function (c, j) { A.add('ff', X('M-7 0Q0 -4 7 0Q0 4 -7 0Z', mk(KT(c[0], c[1])[0], KT(c[0], c[1])[1], s * 1.2, -10 + j * 10)), 2200 + j * 100, 400); });
+    for (var i = 0; i < 40; i++) { var rx = (rn() - .5) * 130, rh = 20 * (1 - Math.pow(Math.abs(rx) / 65, 2)); rice += C(KT, rx, -rn() * rh, .9); }
+    A.add('idot', rice, 1300, 500);
+    kalash(A, cx, by - 18 * s, s * 1.05, 1200);
+    [[-52, -4], [-38, -2], [44, -3], [56, -1], [30, 0]].forEach(function (c, j) { A.add('ff', ell(KT(c[0], c[1])[0], KT(c[0], c[1])[1], 7 * s, 2.6 * s), 2400 + j * 80, 300); });
     [-1, 1].forEach(function (sd) {
       for (var k = 0; k < (sd < 0 ? 5 : 4); k++) {
         var x = cx + sd * 90 * s, y = by - k * 7 * s;
@@ -1811,6 +1856,16 @@
     var u = unit(A), L = A.L, T0 = A.T, R = A.R, B = A.B, W = A.W, H = A.H, cx = (L + R) / 2, phone = A.phone;
     A.hc.style.removeProperty('--fc');
     A.frame();
+    // The chariots of Balabhadra and Subhadra, smaller, behind on either side.
+    if (!phone) [-1, 1].forEach(function (sd, ci) {
+      var s2 = Math.min(u * .62, (H * .16) / 190), b2 = B - Math.max(30, H * .045), C2 = mk(cx + sd * 230 * u, b2, s2), cg2 = g(A, '');
+      cg2.setAttribute('opacity', '.75');
+      A.add('dl3', X('M-110 -40L110 -40L110 -60L-110 -60ZM-96 -60L-96 -110L96 -110L96 -60M-40 -60L-40 -110M40 -60L40 -110', C2), 1400 + ci * 150, 1200, cg2);
+      A.add('ff', X('M-104 -110L104 -110L80 -136L-80 -136ZM-80 -136L80 -136L58 -160L-58 -160ZM-58 -160L58 -160L30 -184L-30 -184Z', C2), 1800 + ci * 150, 900, cg(A, ci ? 'var(--fest-leaf)' : 'var(--fest-sky)', cg2));
+      A.add('dl3', X('M0 -184L0 -206', C2), 2100, 300, cg2);
+      A.add('flag', X('M0 -206L28 -200L0 -194Z', C2), 2300, 400, cg2);
+      [-70, 0, 70].forEach(function (wx) { var c = C2(wx, -20), r = 20 * s2; A.add('ac', circ(c[0], c[1], r) + circ(c[0], c[1], r * .3), 1700, 600, cg2); });
+    });
     // The chariot below the words: a tiered canopy, a flag, wheels.
     var s = phone ? .55 : Math.min(u * 1.05, (H * .26) / 190), by = phone ? B - 40 : B - Math.max(18, H * .025), CT = mk(cx, by, s);
     A.add('dl3', X('M-110 -40L110 -40L110 -60L-110 -60ZM-96 -60L-96 -110L96 -110L96 -60M-60 -60L-60 -110M60 -60L60 -110M0 -60L0 -110', CT), 1000, 1500);
@@ -1855,13 +1910,17 @@
     A.loop(cl, [{ transform: 'translateX(0)' }, { transform: 'translateX(10px)' }], { duration: 9000, delay: 3000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
     var nD = phone ? 12 : 26;
     for (var d = 0; d < nD; d++) {
-      var dx = phone ? L + 20 + rn() * (W - 40) : (d % 2 ? L + 30 + rn() * W * .26 : R - 30 - rn() * W * .26), dy = T0 + H * (phone ? .12 : .16) + rn() * 40;
-      var dr = A.el('path', { 'class': 'fs2', d: 'M' + pt([dx, dy]) + 'L' + pt([dx - 2, dy + 8 * u]), style: '--fc:var(--fest-sky)' });
+      var dx = phone ? L + 20 + rn() * (W - 40) : (d % 2 ? L + 30 + rn() * W * .26 : R - 30 - rn() * W * .26), dy = T0 + (phone ? 90 + rn() * 30 : H * .16 + rn() * 40);
+      var dr = A.el('path', { 'class': 'fs', d: 'M' + pt([dx, dy]) + 'L' + pt([dx - 2.5, dy + 11 * u]), style: '--fc:var(--fest-sky)' });
       if (A.reduce) continue;
-      A.loop(dr, [{ transform: 'translate(0,0)', opacity: 0 }, { opacity: .8, offset: .2 }, { transform: 'translate(-8px,' + f(H * .3) + 'px)', opacity: 0 }], { duration: 3000 + rn() * 2500, delay: 2600 + rn() * 4000, iterations: Infinity, fill: 'backwards', easing: 'ease-in' });
+      A.loop(dr, [{ transform: 'translate(0,0)', opacity: 0 }, { opacity: .8, offset: .2 }, { transform: 'translate(-8px,' + f(phone ? 70 : H * .3) + 'px)', opacity: 0 }], { duration: 3000 + rn() * 2500, delay: 2600 + rn() * 4000, iterations: Infinity, fill: 'backwards', easing: 'ease-in' });
     }
     // A flower-twined swing hanging from a branch, left column, gently swinging.
-    var sx = phone ? L + 60 : sideX(A, u)[0], top = T0 + 4, seatY = phone ? T0 + H * .26 : T0 + H * .62, sw = (phone ? 28 : 46) * u, swg = g(A, '');
+    var sx = phone ? L + 60 : sideX(A, u)[0], top = T0 + (phone ? 16 : 40 * u), seatY = phone ? T0 + H * .26 : T0 + H * .62, sw = (phone ? 28 : 46) * u, swg = g(A, '');
+    // The branch it hangs from, leafy, reaching in from the frame.
+    var br = g(A, ''), bd = 'M' + pt([L, top - 14 * u]) + 'Q' + pt([sx, top - 18 * u]) + ' ' + pt([sx + sw * 2.2, top + 6 * u]);
+    A.add('dl3', bd + 'M' + pt([L, top - 8 * u]) + 'Q' + pt([sx, top - 10 * u]) + ' ' + pt([sx + sw * 2.2, top + 8 * u]), 800, 1200, br);
+    for (var lv = 0; lv < 9; lv++) { var lt = lv / 8, lx = L + (sx + sw * 2.2 - L) * lt, ly = top - 12 * u + 14 * u * lt * lt; mleaf(A, mk(lx, ly, (phone ? .55 : u * .8), lv % 2 ? 30 : -30), 1300 + lv * 60, br, 'lf'); }
     A.add('dl3', 'M' + pt([sx - sw, top]) + 'L' + pt([sx - sw, seatY]) + 'M' + pt([sx + sw, top]) + 'L' + pt([sx + sw, seatY]), 1000, 1300, swg);
     A.add('mod', 'M' + pt([sx - sw - 8 * u, seatY]) + 'L' + pt([sx + sw + 8 * u, seatY]) + 'L' + pt([sx + sw + 8 * u, seatY + 8 * u]) + 'L' + pt([sx - sw - 8 * u, seatY + 8 * u]) + 'Z', 1600, 600, swg);
     for (var f2 = 0; f2 < 7; f2++) { var fy = top + 30 + f2 * (seatY - top - 40) / 7; marigold(A, sx - sw, fy, 4 * u, 'var(--holi-pink)', 1800 + f2 * 60, swg); marigold(A, sx + sw, fy + 10, 4 * u, 'var(--fest-marigold)', 1830 + f2 * 60, swg); }
