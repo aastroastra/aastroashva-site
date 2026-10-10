@@ -117,6 +117,7 @@ html:not([data-canvas^="kundali"]) .hc-houses, html:not([data-canvas^="kundali"]
 .hc-lines .ac { fill:none; stroke:var(--lagna); stroke-width:1.25; stroke-linecap:round; stroke-linejoin:round; }
 .hc-lines .flame { fill:color-mix(in srgb,var(--lagna) 22%,transparent); stroke:var(--lagna); stroke-width:1.25; stroke-linejoin:round; }
 .hc-lines .dot { fill:var(--ink-line); stroke:none; }
+.hc-lines .flame { transform-box:fill-box; transform-origin:50% 100%; }
 /* Festival canvases (hero-fest.js): a lighter ink for the far layer, a
    firmer one for the focal pieces, the accent at two weights, and the
    festival's own colour (--fc, set per canvas from the festival tokens in
@@ -140,6 +141,8 @@ html:not([data-canvas^="kundali"]) .hc-houses, html:not([data-canvas^="kundali"]
 .hc-lines .zr { font:600 14px var(--font-body); text-anchor:middle; dominant-baseline:central; fill:var(--lagna); }
 .hc-lines .pg path, .hc-lines .pg circle { fill:none; stroke:var(--lagna); stroke-width:1.9; stroke-linecap:round; stroke-linejoin:round; }
 .hc-lines .dim { fill:var(--bg); stroke:none; }
+.hc-lines .fcap { font:500 12px var(--font-body); letter-spacing:.04em; text-anchor:middle; dominant-baseline:central; fill:var(--muted); }
+.hc-lines .fcap.on { fill:var(--lagna); }
 .hc-lines .flag { fill:color-mix(in srgb,var(--fest-saffron) 78%,transparent); stroke:var(--fest-saffron); stroke-width:1.2; stroke-linejoin:round; }
 /* Glows: softer where the accent is black. */
 [data-theme="mono-light"] .hc-lines { --gk:.4; }

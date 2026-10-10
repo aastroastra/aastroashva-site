@@ -149,6 +149,11 @@
         }
       });
     }
+    // A few sparkles in the side columns, twinkling once lit (diyaLife).
+    if (!phone) [[.07, .3, 7], [.17, .22, 5], [.12, .52, 6], [.93, .28, 7], [.83, .2, 5], [.88, .5, 6]].forEach(function (k, i) {
+      var x = L + (R - L) * k[0], y = T + (B - T) * k[1], r = k[2];
+      lines.push(['ac spk', 'M' + f2(x) + ' ' + f2(y - r) + 'Q' + f2(x) + ' ' + f2(y) + ' ' + f2(x + r) + ' ' + f2(y) + 'Q' + f2(x) + ' ' + f2(y) + ' ' + f2(x) + ' ' + f2(y + r) + 'Q' + f2(x) + ' ' + f2(y) + ' ' + f2(x - r) + ' ' + f2(y) + 'Q' + f2(x) + ' ' + f2(y) + ' ' + f2(x) + ' ' + f2(y - r), (2600 + i * 150) + ',500']);
+    });
     // The lamps: an open bowl with a lip, a small foot, and a flame.
     var count = phone ? 5 : (W > 1000 ? 9 : 7);
     var s = Math.min(phone ? 34 : 54, (R - L) / (count * 2.4), H * .085);
@@ -213,7 +218,41 @@
     if (!drawn) Array.prototype.forEach.call(svg.querySelectorAll('[data-t]'), function (n) {
       if (n.tagName !== 'path' || n.hasAttribute('data-fade')) n.style.opacity = '0';
     });
+    if (cv === 'diya') diyaLife();
+    else if (cv.indexOf('kundali') === 0 && !phone) chartLife();
     if (want && !drawn) draw();
+  }
+
+  /* Diya, alive: a warm glow under every flame, each flame flickering on its
+     own beat, the sparkles twinkling. The charts: the Lagna outline breathes.
+     Transform and opacity only; nothing runs for reduced motion. */
+  function diyaLife() {
+    var defs = el('defs', {}, null);
+    svg.insertBefore(defs, svg.firstChild);
+    var rg = el('radialGradient', { id: 'hc-dg' }, defs);
+    el('stop', { offset: '0', style: 'stop-color:var(--lagna);stop-opacity:calc(var(--gk,1) * .5)' }, rg);
+    el('stop', { offset: '.5', style: 'stop-color:var(--lagna);stop-opacity:calc(var(--gk,1) * .16)' }, rg);
+    el('stop', { offset: '1', style: 'stop-color:var(--lagna);stop-opacity:0' }, rg);
+    Array.prototype.forEach.call(svg.querySelectorAll('path.flame'), function (p, i) {
+      var b = p.getBBox(), t = p.getAttribute('data-t').split(',');
+      var c = el('circle', { cx: f2(b.x + b.width / 2), cy: f2(b.y + b.height * .62), r: f2(b.height * 1.4), fill: 'url(#hc-dg)', 'data-t': (+t[0] + 200) + ',' + (+t[1] + 700) }, null);
+      svg.insertBefore(c, defs.nextSibling);
+      if (!drawn) c.style.opacity = '0';
+      if (reduce || !p.animate) return;
+      var d = 1300 + (i * 337) % 900, at = +t[0] + +t[1] + 600;
+      anims.push(p.animate([{ transform: 'scale(1,1)' }, { transform: 'scale(.93,1.08)' }, { transform: 'scale(1.03,.95)' }, { transform: 'scale(1,1)' }], { duration: d, delay: at, iterations: Infinity, easing: 'ease-in-out' }));
+      anims.push(c.animate([{ opacity: 1 }, { opacity: .7 }, { opacity: 1 }], { duration: d * 1.7, delay: at + 400, iterations: Infinity, easing: 'ease-in-out' }));
+    });
+    if (!reduce) Array.prototype.forEach.call(svg.querySelectorAll('path.spk'), function (p, i) {
+      if (!p.animate) return;
+      anims.push(p.animate([{ opacity: 1 }, { opacity: .2 }, { opacity: 1 }], { duration: 2200 + i * 430, delay: 4200 + i * 260, iterations: Infinity, easing: 'ease-in-out' }));
+    });
+  }
+  function chartLife() {
+    if (reduce) return;
+    Array.prototype.forEach.call(svg.querySelectorAll('path.lagna'), function (p) {
+      if (p.animate) anims.push(p.animate([{ opacity: 1 }, { opacity: .45 }, { opacity: 1 }], { duration: 5200, delay: 3600, iterations: Infinity, easing: 'ease-in-out' }));
+    });
   }
 
   /* ---------- Festival canvases (hero-fest.js) ----------

@@ -127,7 +127,7 @@
        and swaps only if it differs. Every canvas fills the same rectangle. */
     var CV=['kundali-north','kundali-south','diya','navratri','dussehra','holi','karwa-chauth','chhath','sankranti','shivratri','ganesh-chaturthi','janmashtami','raksha-bandhan','onam','ugadi-gudi-padwa','eid','christmas','new-year','purnima','pitru-paksha','eclipse','transit','dev-uthani','vasant-panchami','ram-navami','hanuman-jayanti','akshaya-tritiya','rath-yatra','teej','nag-panchami'];
     window.AA_CANVASES=CV;
-    window.AA_FEST_V='3';
+    window.AA_FEST_V='4';
     window.AA_pickCanvas=function(c){
       window.AA_CANVAS_PRESET=null;
       if(!c||typeof c!=='object') return null;
@@ -152,14 +152,15 @@
     /* Purnima's occasion comes from the preset id (sharad-, kartik-,
        buddha-, guru-purnima-YYYY) or ?occasion=. Eclipses and planet sign
        changes come from these tables (dates from drikpanchang New Delhi,
-       sign changes checked against our own engine, dates only): the entry
+       sign changes checked against our own engine, dates only; eclipse
+       times for Delhi from timeanddate.com): the entry
        inside the active preset's window, else ?ev=<date>, else the next one. */
     var PURNIMA={sharad:['Sharad Purnima','शरद पूर्णिमा'],kartik:['Kartik Purnima · Guru Nanak Jayanti','कार्तिक पूर्णिमा · गुरु नानक जयंती'],buddha:['Buddha Purnima','बुद्ध पूर्णिमा'],guru:['Guru Purnima','गुरु पूर्णिमा']};
     window.AA_EVENTS={
-      eclipse:[['2027-02-21','lunar','Penumbral lunar eclipse · 21 Feb 2027','उपच्छाया चंद्र ग्रहण · 21 फ़रवरी 2027'],
-               ['2027-08-02','solar','Solar eclipse · 2 Aug 2027','सूर्य ग्रहण · 2 अगस्त 2027']],
+      eclipse:[['2027-02-21','lunar','Penumbral lunar eclipse · 21 Feb 2027','उपच्छाया चंद्र ग्रहण · 21 फ़रवरी 2027','Seen from Delhi: 02:42 to 06:43 IST, greatest at 04:42','दिल्ली से: 02:42 से 06:43 IST, मध्य 04:42 पर'],
+               ['2027-08-02','solar','Partial solar eclipse · 2 Aug 2027','आंशिक सूर्य ग्रहण · 2 अगस्त 2027','Seen from Delhi: 15:52 to 17:03 IST, about 8% of the Sun','दिल्ली से: 15:52 से 17:03 IST, सूर्य का लगभग 8%']],
       transit:[['2026-10-31','ju',3,4,0,'Jupiter enters Leo · 31 Oct 2026','गुरु सिंह राशि में · 31 अक्टूबर 2026'],
-               ['2026-12-05','ra',10,9,1,'Rahu and Ketu change signs · 5 Dec 2026','राहु-केतु का राशि परिवर्तन · 5 दिसंबर 2026'],
+               ['2026-12-05','ra',10,9,1,'Rahu enters Capricorn · Ketu enters Cancer','राहु मकर में · केतु कर्क में'],
                ['2027-01-25','ju',4,3,1,'Jupiter returns to Cancer · 25 Jan 2027','गुरु वक्री होकर कर्क में · 25 जनवरी 2027'],
                ['2027-06-03','sa',11,0,0,'Saturn enters Aries · 3 Jun 2027','शनि मेष राशि में · 3 जून 2027'],
                ['2027-06-26','ju',3,4,0,'Jupiter enters Leo again · 26 Jun 2027','गुरु फिर सिंह राशि में · 26 जून 2027'],
@@ -203,8 +204,8 @@
   })();
 </script>
 <script src="/site-theme.js" defer></script>
-<link rel="stylesheet" href="/hero-c.css?v=15" />
-<script src="/hero-c.js?v=17" defer></script>
+<link rel="stylesheet" href="/hero-c.css?v=16" />
+<script src="/hero-c.js?v=18" defer></script>
 </head>
 <body>
 <script src="/app-bar.js?v=2"></script>
