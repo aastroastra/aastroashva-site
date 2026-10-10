@@ -99,7 +99,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" media="print" onload="this.media='all'" />
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" /></noscript>
-<link rel="stylesheet" href="/site-theme.css?v=4" />
+<link rel="stylesheet" href="/site-theme.css?v=5" />
 <link rel="stylesheet" href="/landing.css?v=4" />
 <link rel="stylesheet" href="/mm-section.css" />
 <link rel="stylesheet" href="/thread.css?v=7" />
@@ -125,23 +125,44 @@
        hero-c.js) decides: a dated preset active on this clock, else its
        canvas, else kundali-north. hero-c.js refreshes the config after paint
        and swaps only if it differs. Every canvas fills the same rectangle. */
-    var CV=['kundali-north','kundali-south','diya'];
+    var CV=['kundali-north','kundali-south','diya','navratri','dussehra'];
     window.AA_CANVASES=CV;
+    window.AA_FEST_V='1';
     window.AA_pickCanvas=function(c){
+      window.AA_CANVAS_PRESET=null;
       if(!c||typeof c!=='object') return null;
       var now=Date.now(), ps=Array.isArray(c.presets)?c.presets:[];
       for(var i=0;i<ps.length;i++){
         var p=ps[i]; if(!p||CV.indexOf(p.canvas)<0) continue;
         var f=Date.parse(p.from), u=Date.parse(p.until);
-        if(f<=now&&now<=u) return p.canvas;
+        if(f<=now&&now<=u){ window.AA_CANVAS_PRESET=p; return p.canvas; }
       }
       return CV.indexOf(c.canvas)>=0?c.canvas:null;
+    };
+    /* Navratri counts the nights: day 1 is the active preset's first IST
+       date (else 11 Oct 2026); ?day=1..9 previews a day. */
+    window.AA_navDay=function(){
+      var q=0; try{ q=+new URLSearchParams(location.search).get('day'); }catch(e){}
+      if(q>=1&&q<=9) return Math.floor(q);
+      var p=window.AA_CANVAS_PRESET, f=Date.parse(p&&p.canvas==='navratri'?p.from:'2026-10-11T00:00:00+05:30');
+      var ist=function(t){ return Math.floor((t+19800000)/86400000); };
+      return Math.max(1,Math.min(9,ist(Date.now())-ist(f)+1));
+    };
+    var DEVI=[['Shailaputri','शैलपुत्री','पहला'],['Brahmacharini','ब्रह्मचारिणी','दूसरा'],['Chandraghanta','चंद्रघंटा','तीसरा'],['Kushmanda','कूष्मांडा','चौथा'],['Skandamata','स्कंदमाता','पाँचवाँ'],['Katyayani','कात्यायनी','छठा'],['Kalaratri','कालरात्रि','सातवाँ'],['Mahagauri','महागौरी','आठवाँ'],['Siddhidatri','सिद्धिदात्री','नौवाँ']];
+    window.AA_festGreet=function(){
+      if(d.getAttribute('data-canvas')!=='navratri') return;
+      var n=window.AA_navDay(), v=DEVI[n-1], e=document.querySelector('.ev-f[data-f="navratri"]');
+      if(!e) return;
+      e.innerHTML='<span lang="en">Navratri · Day '+n+' · '+v[0]+'</span><span lang="hi">नवरात्रि · '+v[2]+' दिन · '+v[1]+'</span>';
     };
     var cv=null, cq=null;
     try{ cq=new URLSearchParams(location.search).get('canvas'); }catch(e){}
     if(CV.indexOf(cq)>=0){ cv=cq; window.AA_CANVAS_OVERRIDE=cq; }
     else { try{ cv=window.AA_pickCanvas(JSON.parse(localStorage.getItem('aa-site-hero')||'null')); }catch(e){} }
     d.setAttribute('data-canvas',cv||'kundali-north');
+    if(cv&&cv.indexOf('kundali')!==0&&cv!=='diya'){
+      var fl=document.createElement('link'); fl.rel='preload'; fl.as='script'; fl.href='/hero-fest.js?v='+window.AA_FEST_V; document.head.appendChild(fl);
+    }
     if(h==='a'){
       var k=document.createElement('link'); k.rel='preload'; k.as='image'; k.setAttribute('fetchpriority','high');
       k.href='shots/landing/'+l+'/12-kundali-hero-360.webp'; document.head.appendChild(k);
@@ -149,8 +170,8 @@
   })();
 </script>
 <script src="/site-theme.js" defer></script>
-<link rel="stylesheet" href="/hero-c.css?v=13" />
-<script src="/hero-c.js?v=16" defer></script>
+<link rel="stylesheet" href="/hero-c.css?v=14" />
+<script src="/hero-c.js?v=17" defer></script>
 </head>
 <body>
 <script src="/app-bar.js?v=2"></script>
@@ -216,7 +237,8 @@
 <section class="hc" id="hero-c" aria-labelledby="hc-title">
   <div class="hc-sky" data-hc-sky aria-hidden="true"></div>
   <div class="hc-copy">
-    <p class="hc-eyebrow"><span class="ev-base"><span lang="en">Vedic astrology, computed</span><span lang="hi">वैदिक ज्योतिष, गणना से</span></span><span class="ev-diya"><span lang="en">Shubh Deepavali</span><span lang="hi">शुभ दीपावली</span></span></p>
+    <p class="hc-eyebrow"><span class="ev-base"><span lang="en">Vedic astrology, computed</span><span lang="hi">वैदिक ज्योतिष, गणना से</span></span><span class="ev-diya"><span lang="en">Shubh Deepavali</span><span lang="hi">शुभ दीपावली</span></span><span class="ev-f" data-f="navratri"><span lang="en">Shubh Navratri</span><span lang="hi">शुभ नवरात्रि</span></span><span class="ev-f" data-f="dussehra"><span lang="en">Shubh Vijayadashami</span><span lang="hi">शुभ विजयादशमी</span></span></p>
+    <script>window.AA_festGreet&&window.AA_festGreet();</script>
     <h1 class="hc-word" id="hc-title"><span aria-hidden="true">ASTROASHVA</span><span class="sr-only">AstroAshva</span></h1>
     <p class="hc-tag"><span lang="en">One who believes</span><span lang="hi">विश्वास करने वाले के लिए</span></p>
     <div class="hc-stores">

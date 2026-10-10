@@ -182,9 +182,12 @@
       // Where the diagonals cross the inner diamond.
       ul: [(L + cx) / 2, (T + cy) / 2], ur: [(R + cx) / 2, (T + cy) / 2], ll: [(L + cx) / 2, (B + cy) / 2], lr: [(R + cx) / 2, (B + cy) / 2] };
     var g = el('g', {}, svg), lines = [];
+    festPending = false;
     if (cv === 'diya') diya(q, lines, W, Ht, phone);
     else if (cv === 'kundali-south') south(q, g, lines);
-    else north(q, g, lines);
+    else if (cv === 'kundali-north') north(q, g, lines);
+    else if (window.AA_FEST && window.AA_FEST[cv]) window.AA_FEST[cv](festApi(q, lines, W, Ht, phone));
+    else { festPending = true; loadFest(); return; }
     // Four lines from the corners of the screen (as it stands at the top of
     // the page) to the chart's corners. They slide in with the intro, then
     // stay as a faint hairline; rebuilt with the chart on every resize. They
@@ -198,14 +201,54 @@
       });
     }
     lines.forEach(function (d) {
-      var p = el('path', { 'class': d[0], d: d[1], 'data-t': d[2] }, svg);
+      var p = el('path', { 'class': d[0], d: d[1], 'data-t': d[2] }, d[3] || svg);
+      if (d[4]) { p.setAttribute('data-fade', ''); return; }
       var len = Math.ceil(p.getTotalLength()) + 2;
       p.style.strokeDasharray = len + ' ' + len;
       p.style.strokeDashoffset = drawn ? '0' : String(len);
       if (d[0] === 'flame' && !drawn) p.style.opacity = '0';
       p._len = len;
     });
+    // Everything else with a time (fills, glows, text, fading paths) fades in.
+    if (!drawn) Array.prototype.forEach.call(svg.querySelectorAll('[data-t]'), function (n) {
+      if (n.tagName !== 'path' || n.hasAttribute('data-fade')) n.style.opacity = '0';
+    });
     if (want && !drawn) draw();
+  }
+
+  /* ---------- Festival canvases (hero-fest.js) ----------
+     Everything but the two charts and the diya lives in hero-fest.js, loaded
+     only when one of them is on (index.html preloads it before paint). Each
+     one draws into the same rectangle through this small API; drawings use
+     the same draw-on and fade-in timings as the charts, and their gentle
+     idle loops are transform and opacity only (WAAPI, paused with the hero,
+     never run for reduced motion). */
+  var festPending = false, festReq = false;
+  function loadFest() {
+    if (festReq) return;
+    festReq = true;
+    var s = document.createElement('script');
+    s.src = '/hero-fest.js?v=' + (window.AA_FEST_V || '1');
+    s.onload = function () { build(); };
+    document.head.appendChild(s);
+  }
+  function festApi(q, lines, W, H, phone) {
+    return {
+      L: q.tl[0], T: q.tl[1], R: q.br[0], B: q.br[1], W: W, H: H, phone: phone, reduce: reduce, svg: svg, hc: hc,
+      // A stroke drawn on at t ms over dur ms ([class, d, "t,dur", parent, fade]).
+      add: function (cls, d, t, dur, parent, fade) { lines.push([cls, d, Math.round(t) + ',' + Math.round(dur), parent, fade]); },
+      el: function (tag, attrs, parent) { return el(tag, attrs, parent || svg); },
+      // The frame (desktop only), drawn as the charts draw theirs.
+      frame: function () { if (!phone) lines.push(['hl', P([q.tm, q.tr, q.br, q.bm]), '550,1800'], ['hl', P([q.tm, q.tl, q.bl, q.bm]), '550,1800']); },
+      // An idle loop: starts after the entrance, runs while the hero is visible.
+      loop: function (node, frames, opts) {
+        if (reduce || !node.animate) return null;
+        var a = node.animate(frames, opts);
+        anims.push(a);
+        if (hc.classList.contains('paused')) a.pause();
+        return a;
+      }
+    };
   }
 
   /* Switch to another canvas in place (config arriving after paint). The
@@ -214,6 +257,7 @@
     if ((window.AA_CANVASES || []).indexOf(id) < 0 || id === canvasId()) return;
     hide();
     root.setAttribute('data-canvas', id);
+    if (window.AA_festGreet) window.AA_festGreet();
     build();
     svg.classList.remove('swap'); void svg.getBoundingClientRect(); svg.classList.add('swap');
   }
@@ -222,10 +266,15 @@
   // script) and for the hero to be on screen in a visible tab.
   function draw() {
     want = true;
-    if (drawn || !svg.querySelector('path')) return;
+    if (drawn || festPending || !svg.querySelector('path')) return;
     drawn = true;
-    Array.prototype.forEach.call(svg.querySelectorAll('path'), function (p) {
+    Array.prototype.forEach.call(svg.querySelectorAll('[data-t]'), function (p) {
       var t = p.getAttribute('data-t').split(',');
+      if (p.tagName !== 'path' || p.hasAttribute('data-fade')) {
+        p.style.opacity = '';
+        if (p.animate) anims.push(p.animate([{ opacity: 0 }, { opacity: 1 }], { delay: +t[0], duration: +t[1], easing: 'ease-out', fill: 'backwards' }));
+        return;
+      }
       p.style.strokeDashoffset = '0';
       var flame = p.classList.contains('flame');
       if (flame) p.style.opacity = '';

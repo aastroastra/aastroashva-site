@@ -90,15 +90,37 @@ html[data-lang="hi"] .hc-h b { font-size:13px; letter-spacing:.01em; padding-lef
 [data-canvas="kundali-south"] .hc-h[data-h="10"] { --x:.125; --y:.625; }
 [data-canvas="kundali-south"] .hc-h[data-h="11"] { --x:.125; --y:.375; }
 [data-canvas="kundali-south"] .hc-h[data-h="12"] { --x:.125; --y:.125; }
-[data-canvas="diya"] .hc-houses, [data-canvas="diya"] .hc-cap { display:none; }
+html:not([data-canvas^="kundali"]) .hc-houses, html:not([data-canvas^="kundali"]) .hc-cap { display:none; }
 /* South: the words sit in the open middle four cells, centred on them. */
 @media (min-width:769px) { [data-canvas="kundali-south"] .hc-copy { top:50%; } }
-.hc-eyebrow .ev-diya, [data-canvas="diya"] .hc-eyebrow .ev-base { display:none; }
-[data-canvas="diya"] .hc-eyebrow .ev-diya { display:inline; }
+.hc-eyebrow .ev-diya, .hc-eyebrow .ev-f, html:not([data-canvas^="kundali"]) .hc-eyebrow .ev-base { display:none; }
+[data-canvas="diya"] .hc-eyebrow .ev-diya,
+[data-canvas="navratri"] .ev-f[data-f="navratri"], [data-canvas="dussehra"] .ev-f[data-f="dussehra"] { display:inline; }
 .hc-lines .dl { fill:none; stroke:var(--ink-line); stroke-width:1; stroke-linecap:round; stroke-linejoin:round; }
 .hc-lines .ac { fill:none; stroke:var(--lagna); stroke-width:1.25; stroke-linecap:round; stroke-linejoin:round; }
 .hc-lines .flame { fill:color-mix(in srgb,var(--lagna) 22%,transparent); stroke:var(--lagna); stroke-width:1.25; stroke-linejoin:round; }
 .hc-lines .dot { fill:var(--ink-line); stroke:none; }
+/* Festival canvases (hero-fest.js): a lighter ink for the far layer, a
+   firmer one for the focal pieces, the accent at two weights, and the
+   festival's own colour (--fc, set per canvas from the festival tokens in
+   site-theme.css) for strokes (.fs), soft fills (.ff) and glows (.fg). */
+.hc-lines .dl2 { fill:none; stroke:var(--ink-line); stroke-width:.8; stroke-linecap:round; stroke-linejoin:round; opacity:.7; }
+.hc-lines .dl3 { fill:none; stroke:color-mix(in srgb,var(--fg) 38%,var(--bg)); stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round; }
+.hc-lines .ac2 { fill:none; stroke:var(--lagna); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+.hc-lines .fs { fill:none; stroke:var(--fc,var(--lagna)); stroke-width:1.3; stroke-linecap:round; stroke-linejoin:round; }
+.hc-lines .fs2 { fill:none; stroke:var(--fc,var(--lagna)); stroke-width:.9; stroke-linecap:round; stroke-linejoin:round; opacity:.75; }
+.hc-lines .ff { fill:color-mix(in srgb,var(--fc,var(--lagna)) 18%,transparent); stroke:var(--fc,var(--lagna)); stroke-width:1.2; stroke-linejoin:round; }
+.hc-lines .ff2 { fill:color-mix(in srgb,var(--fc,var(--lagna)) 8%,transparent); stroke:var(--fc,var(--lagna)); stroke-width:1.2; }
+.hc-lines .lf { fill:color-mix(in srgb,var(--fest-leaf) 10%,transparent); stroke:var(--fest-leaf); stroke-width:1; stroke-linecap:round; stroke-linejoin:round; }
+.hc-lines .flag { fill:color-mix(in srgb,var(--fest-saffron) 78%,transparent); stroke:var(--fest-saffron); stroke-width:1.2; stroke-linejoin:round; }
+/* Glows: softer where the accent is black. */
+[data-theme="mono-light"] .hc-lines { --gk:.4; }
+.hc-lines .adot { fill:var(--lagna); stroke:none; }
+.hc-lines .fdot { fill:var(--fc,var(--lagna)); stroke:none; }
+.hc-lines .idot { fill:var(--ink-line); stroke:none; }
+.hc-lines .trail { fill:none; stroke:url(#hcf-trail); stroke-width:1.6; stroke-linecap:round; }
+.hc-lines .unlit { fill:none; stroke:var(--ink-line); stroke-width:1; stroke-dasharray:2 2.5; }
+[data-theme$="dark"] .hc-lines .fs, [data-theme$="dark"] .hc-lines .ff, [data-theme$="dark"] .hc-lines .ac2 { filter:drop-shadow(0 0 3px color-mix(in srgb,var(--fc,var(--lagna)) 55%,transparent)); }
 .hc-lines.swap { animation:hc-in .5s ease both; }
 @media (prefers-reduced-motion:reduce) { .hc-lines.swap { animation:none; } }
 
@@ -224,9 +246,9 @@ html[data-lang="hi"] .hc-tag { letter-spacing:0; }
   .hc-sky .gl .f { fill:currentColor; stroke:none; }
   .hc-sky .su { color:var(--tint); }
   /* Diya on phones: the toran and the lamps, faint, behind the words. */
-  [data-canvas="diya"] .hc-sky { display:none; }
-  [data-canvas="diya"] .hc-stage { display:block; position:absolute; inset:0; top:0; bottom:0; z-index:0; pointer-events:none; }
-  [data-canvas="diya"] .hc-lines .dl { stroke:color-mix(in srgb,var(--fg) 30%,var(--bg)); }
+  html:not([data-canvas^="kundali"]) .hc-sky { display:none; }
+  html:not([data-canvas^="kundali"]) .hc-stage { display:block; position:absolute; inset:0; top:0; bottom:0; z-index:0; pointer-events:none; }
+  html:not([data-canvas^="kundali"]) .hc-lines .dl { stroke:color-mix(in srgb,var(--fg) 30%,var(--bg)); }
   .hc-cue {
     display:grid; place-items:center; position:absolute; left:50%; bottom:16px; width:44px; height:44px; margin-left:-22px;
     border:0; border-radius:50%; background:none; color:var(--fg2); cursor:pointer; -webkit-tap-highlight-color:transparent;

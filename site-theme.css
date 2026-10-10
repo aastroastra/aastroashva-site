@@ -20,6 +20,13 @@
   --status-good-bg:color-mix(in srgb,var(--status-good) 9%,var(--bg));
   --status-bad-bg:color-mix(in srgb,var(--status-bad) 9%,var(--bg));
 }
+/* Festival colours for the hero canvases (hero-fest.js), named for what
+   they are. Leaf green and saffron serve every festival. Navratri: the nine day colours (2026 list: orange, white, red,
+   royal blue, yellow, green, grey, purple, peacock green). Each stroke colour
+   is at least 3:1 on its theme's background (white is drawn as pearl on the
+   light themes, where true white would vanish). */
+[data-theme$="light"] { --nav-orange:#D45D0C; --nav-white:#8C8476; --nav-red:#C62828; --nav-royal-blue:#2F55D4; --nav-yellow:#A07800; --nav-green:#1E8A3E; --nav-grey:#6B6B6B; --nav-purple:#7B3FC4; --nav-peacock-green:#0E8577; --fest-leaf:#2E7D32; --fest-saffron:#E8711A; }
+[data-theme$="dark"] { --nav-orange:#FF9A4D; --nav-white:#F2EEE6; --nav-red:#FF6B6B; --nav-royal-blue:#7C9BFF; --nav-yellow:#F5C542; --nav-green:#5CCB7A; --nav-grey:#A8A8A8; --nav-purple:#B88AF0; --nav-peacock-green:#3CC9B5; --fest-leaf:#6CC27A; --fest-saffron:#FF9A4D; }
 /* The footer's heart: a warm red in every theme. */
 :root { --heart:#D6304F; }
 [data-theme$="dark"] { --heart:#FB7185; }
