@@ -280,6 +280,34 @@
       "title": "Shared data, navigation and recovery",
       "expected": "Both apps preserve account isolation, API contracts and recoverable loading/error behavior.",
       "priority": "P2"
+    },
+    {
+      "id": "credit-history",
+      "area": "Money",
+      "title": "Credit history and transaction details",
+      "expected": "Wallet history and details use the shared ledger, with equivalent filters, pending states, recovery actions and readable support references.",
+      "priority": "P2"
+    },
+    {
+      "id": "referrals",
+      "area": "Entry and identity",
+      "title": "Referral invites and code redemption",
+      "expected": "The same account and programme gates control sharing and redemption; rewards and activation status come from the server without duplicate grants.",
+      "priority": "P2"
+    },
+    {
+      "id": "chat-invite-credits",
+      "area": "AstroAI",
+      "title": "Invite and credit controls in chat",
+      "expected": "Chat exposes the shared invite eligibility and current wallet balance, opening the existing invite and wallet flows.",
+      "priority": "P2"
+    },
+    {
+      "id": "review-prompt",
+      "area": "Platform",
+      "title": "Store review prompt policy",
+      "expected": "Equivalent account-scoped eligibility, quiet-moment rules and remote kill switch govern native App Store and Google Play review requests.",
+      "priority": "P2"
     }
   ]
 }
