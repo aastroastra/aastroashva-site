@@ -31,12 +31,17 @@ html.hero-a-on .hc, html.hero-b-on .hc { display:none !important; }
   --lagna:var(--tint);
   --e:cubic-bezier(.2,.7,0,1);
   --hc-h:clamp(600px, calc(100svh - 72px), 1040px);
+  /* Ten letters finish at 1.821s; hold the completed word briefly. */
+  --hc-intro-end:2.2s;
+  --mala-base:#8B4828; --mala-light:#C17B45; --mala-shadow:#4B2518;
+  --mala-ridge:#5D301E; --mala-thread:#D46720; --mala-thread-light:#F6C26A;
   position:relative; margin:0 auto;
   width:min(calc(100% - 2 * var(--gutter)), calc(var(--maxw) - 2 * var(--gutter)));
   height:var(--hc-h);
 }
 [data-theme="yellow-light"] .hc { --lagna:#C98A06; }
 [data-theme$="dark"] .hc { --ink-line:color-mix(in srgb,var(--fg) 22%,var(--bg)); --wash:color-mix(in srgb,var(--fg) 5.5%,transparent); }
+[data-theme$="dark"] .hc { --mala-base:#A96339; --mala-light:#D6985B; --mala-shadow:#58301F; --mala-ridge:#62351D; --mala-thread:#F19A45; --mala-thread-light:#FFD38A; }
 
 /* ---------- The chart ---------- */
 .hc-stage { position:absolute; left:0; right:0; top:24px; bottom:32px; -webkit-tap-highlight-color:transparent; }
@@ -147,6 +152,12 @@ html:not([data-canvas^="kundali"]) .hc-houses, html:not([data-canvas^="kundali"]
    the Navratri day's colour. Both update through inherited theme tokens. */
 .hc-lines .nav-dancer { --fc:var(--tint); }
 .hc-lines .nav-dancer .dl2, .hc-lines .nav-dancer .dl3 { stroke:var(--fc); }
+.hc-lines .mala-bead { stroke:var(--mala-shadow); stroke-width:.45; stroke-linejoin:round; }
+.hc-lines .mala-groove { fill:none; stroke:var(--mala-ridge); stroke-width:.55; stroke-linecap:round; }
+.hc-lines .mala-glint { fill:none; stroke:var(--mala-light); stroke-width:.45; stroke-linecap:round; opacity:.75; }
+.hc-lines .mala-cord, .hc-lines .mala-tassel { fill:none; stroke:var(--mala-thread); stroke-width:1.1; stroke-linecap:round; stroke-linejoin:round; }
+.hc-lines .mala-knot { fill:var(--mala-thread); stroke:var(--mala-shadow); stroke-width:.4; }
+.hc-lines .mala-wrap { fill:none; stroke:var(--mala-thread-light); stroke-width:.6; stroke-linecap:round; }
 .hc-lines .lf { fill:color-mix(in srgb,var(--fest-leaf) 10%,transparent); stroke:var(--fest-leaf); stroke-width:1; stroke-linecap:round; stroke-linejoin:round; }
 .hc-lines .lfo { fill:none; stroke:var(--fest-leaf); stroke-width:1; stroke-linecap:round; }
 .hc-lines .mod { fill:var(--bg); stroke:color-mix(in srgb,var(--fg) 45%,var(--bg)); stroke-width:1.1; stroke-linejoin:round; }
@@ -225,17 +236,19 @@ html[data-lang="hi"] .hc-tag { letter-spacing:0; }
 
 /* ---------- Entrance: the brand settles, then its surroundings appear ---------- */
 @media (prefers-reduced-motion:no-preference) {
-  .hc-copy > .hc-eyebrow, .hc-copy > .hc-tag { animation:hc-up 1.2s var(--m-ease) 1.65s both; }
-  .hc-stage { animation:hc-in 1.6s ease 1.65s both; }
-  .hc-sky svg { animation:hc-in 1.6s ease 1.65s both; }
-  .hc-copy > .hc-cue { animation:hc-in .8s ease 1.4s both, hc-bob 2.4s ease-in-out 2.2s infinite; }
+  .hc-copy > .hc-eyebrow, .hc-copy > .hc-tag { animation:hc-up 1.2s var(--m-ease) var(--hc-intro-end) both; }
+  .hc-copy > .hc-stores, .hc-copy > .hc-stat { animation:hc-after-type .8s ease var(--hc-intro-end) both; }
+  .hc-stage { animation:hc-in 1.6s ease var(--hc-intro-end) both; }
+  .hc-sky svg { animation:hc-in 1.6s ease var(--hc-intro-end) both; }
+  .hc-copy > .hc-cue { animation:hc-in .8s ease var(--hc-intro-end) both, hc-bob 2.4s ease-in-out 3s infinite; }
   .hc-copy > .hc-cue.gone { animation:none; }
   /* House words wait for the chart to start drawing (hero-c.js adds .go). */
   html.js .hc-stage:not(.go) .hc-h { opacity:0; }
-  .hc-stage.go .hc-h { animation:hc-in .8s var(--m-ease) both; animation-delay:calc(2.05s + var(--n) * var(--m-stagger)); }
+  .hc-stage.go .hc-h { animation:hc-in .8s var(--m-ease) both; animation-delay:calc(var(--hc-intro-end) + .4s + var(--n) * var(--m-stagger)); }
   .hc.paused, .hc.paused * { animation-play-state:paused !important; }
 }
 @keyframes hc-up { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
+@keyframes hc-after-type { from { opacity:0; visibility:hidden; } to { opacity:1; visibility:visible; } }
 @media (prefers-reduced-motion:no-preference) and (max-width:768px) {
   .hc-sky .ring { animation:hc-spin 240s linear infinite; }
   .hc-sky .spin { animation:hc-spin var(--p) linear infinite; animation-delay:var(--d); }

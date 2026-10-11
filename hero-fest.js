@@ -115,14 +115,36 @@
       A.add('fs2', X('M-4 -8L4 -8M-4 -3L4 -3', T), t + 800, 400, p);
       lotus(A, mk(T.ox, T.oy + 44 * T.s, T.s), t + 700, p);
     },
-    // 2 Brahmacharini: a centred mala with a small tassel.
+    // 2 Brahmacharini: rudraksha seeds on a saffron cord, with a guru bead.
     function (A, T, t, p) {
-      for (var i = 0; i < 24; i++) {
-        var a = Math.PI / 2 + (i + .5) * 2 * Math.PI / 25;
-        A.add('fs', C(T, 25 * Math.cos(a), -8 + 25 * Math.sin(a), 2.3), t + i * 40, 300, p);
+      var mala = g(A, 'nav-mala', p), id = 'hcf-rudraksha-' + (++gid);
+      var defs = A.svg.querySelector('defs') || A.el('defs', {}, A.svg);
+      var shade = A.el('radialGradient', { id: id, cx: '32%', cy: '25%', r: '75%' }, defs);
+      [['0', '--mala-light'], ['.55', '--mala-base'], ['1', '--mala-shadow']].forEach(function (s) {
+        A.el('stop', { offset: s[0], style: 'stop-color:var(' + s[1] + ')' }, shade);
+      });
+      var cord = g(A, 'mala-string', mala);
+      A.add('mala-cord', ell(T.ox, T.oy - 12 * T.s, 22 * T.s, 31 * T.s) + X('M-3 19Q0 22 0 25Q0 22 3 19M0 28L0 33', T), t, 700, cord);
+      function bead(x, y, scale, turn, at) {
+        var pos = T(x, y), B = mk(pos[0], pos[1], T.s * scale, turn);
+        var holder = g(A, 'mala-seed', mala);
+        holder.style.fill = 'url(#' + id + ')';
+        // Uneven seed lobes and fine longitudinal furrows, rather than rings.
+        A.add('mala-bead', X('M0 -3C.7 -3.4 1.3 -2.7 1.8 -2.5C2.6 -2.5 2.5 -1.5 2.9 -1C3.4 -.4 2.8 .4 3 .9C3 1.7 2.1 1.8 1.8 2.4C1.5 3.1 .7 2.8 0 3.2C-.7 3.3 -1.1 2.7 -1.8 2.5C-2.6 2.4 -2.4 1.5 -2.9 1C-3.4 .4 -2.8 -.4 -3 -.9C-3 -1.6 -2.2 -1.9 -1.8 -2.5C-1.3 -3.1 -.6 -2.8 0 -3Z', B), at, 450, holder, true);
+        A.add('mala-groove', X('M-.8 -2.5C-1.8 -1.5 -.5 -.8 -1.3 .1C-2 .9 -.7 1.6 -.6 2.6M.8 -2.5C1.8 -1.4 .4 -.6 1.2 .2C1.9 1 .7 1.7 .6 2.6M-2.5 -.7L-2 -.2M2.4 .8L2 1.2', B), at + 80, 400, holder, true);
+        A.add('mala-glint', X('M-1.8 -1.9Q-1.1 -2.5 -.6 -2.4M.1 -1.7Q-.3 -.7 .1 -.2', B), at + 80, 400, holder, true);
       }
-      A.add('ff', C(T, 0, 19.5, 3.4), t + 1000, 300, p);
-      A.add('fs2', X('M0 23L-4 40M0 23L0 41M0 23L4 40', T), t + 1100, 500, p);
+      for (var i = 0; i < 27; i++) {
+        var a = Math.PI / 2 + .16 + i * (Math.PI * 2 - .32) / 26;
+        bead(22 * Math.cos(a), -12 + 31 * Math.sin(a), .88 + .04 * Math.sin(i * 2.4), i * 31, t + i * 25);
+      }
+      bead(0, 24.5, 1.2, 8, t + 750);
+      A.add('mala-knot', X('M-1.7 29Q0 28.2 1.7 29L2.1 33Q0 34 -2.1 33Z', T), t + 900, 400, mala, true);
+      A.add('mala-wrap', X('M-1.6 29.5L1.7 30M-1.8 31L1.9 31.5M-1.9 32.5L1.9 33', T), t + 950, 400, mala);
+      for (var k = -3; k <= 3; k++) {
+        A.add('mala-tassel', X('M' + f(k * .5) + ' 33Q' + f(k * .8) + ' 41 ' + f(k * 1.7) + ' ' + f(48 - Math.abs(k) * .6), T), t + 1000 + (k + 3) * 25, 600, mala);
+      }
+      A.add('mala-wrap', X('M-.4 34Q-1 41 -1.4 47M1 34Q2 40 3.1 46', T), t + 1200, 500, mala);
     },
     // 3 Chandraghanta: a bell hung from a horned crescent.
     function (A, T, t, p) {
@@ -273,7 +295,7 @@
       var sy = T0 + Math.max(66, H * .1), ss = u * 1.12;
       var sym = g(A, 'nav-day-symbol');
       veil(A, cx, sy, 58 * ss, 62 * ss, sym);
-      glow(A, cx, sy, 70 * ss, 300, sym, .22);
+      glow(A, cx, sy, 70 * ss, 300, sym, day === 2 ? .1 : .22, day === 2 ? 'var(--mala-light)' : undefined);
       var spin = DEVI[day - 1](A, mk(cx, sy, ss), 700, sym);
       if (spin && spin.spin) {
         spin.spin.style.transformOrigin = f(spin.cx) + 'px ' + f(spin.cy) + 'px';
