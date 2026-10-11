@@ -14,3 +14,31 @@
   from { opacity:0; transform:translateY(.42em) rotateX(-70deg); }
   to { opacity:1; transform:translateY(0) rotateX(0); }
 }
+
+/* Homepage: a soft fill rises through fixed letterforms, then stays solid.
+   The roll above remains available to the launch-film renderer. */
+.brand-reveal--fill { perspective:none; }
+.brand-reveal--fill .brand-glyph { animation:none; }
+@media (prefers-reduced-motion:no-preference) {
+  @supports ((mask-image:linear-gradient(#000,#000)) or (-webkit-mask-image:linear-gradient(#000,#000))) {
+    .brand-reveal--fill .brand-cell::before {
+      opacity:.28;
+      -webkit-text-fill-color:transparent;
+      -webkit-text-stroke:.65px currentColor;
+    }
+    .brand-reveal--fill .brand-glyph {
+      -webkit-mask-image:linear-gradient(to bottom,transparent 45%,#000 55%);
+      mask-image:linear-gradient(to bottom,transparent 45%,#000 55%);
+      -webkit-mask-size:100% 240%;
+      mask-size:100% 240%;
+      -webkit-mask-repeat:no-repeat;
+      mask-repeat:no-repeat;
+      animation:brand-fill 2.8s cubic-bezier(.4,0,.2,1) both;
+      animation-delay:calc(.18s + var(--letter) * .028s);
+    }
+  }
+}
+@keyframes brand-fill {
+  from { -webkit-mask-position:50% 0%; mask-position:50% 0%; }
+  to { -webkit-mask-position:50% 100%; mask-position:50% 100%; }
+}
