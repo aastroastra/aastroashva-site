@@ -255,7 +255,7 @@
       var ring = g(A, '');
       var N = 10, per = 140000;
       for (var i = 0; i < N; i++) {
-        var gd = g(A, '', ring), inner = g(A, '', gd);
+        var gd = g(A, '', ring), inner = g(A, 'nav-dancer', gd);
         dancer(A, inner, 2200 + i * 110, i % 2);
         var a0 = i / N;
         var at = function (fr) {

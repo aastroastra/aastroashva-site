@@ -47,18 +47,17 @@
   /* ---------- Real app screenshots, per language ----------
      Images carry data-shot="name"; the source is picked here so a Hindi
      visitor never downloads the English set first. */
-  /* Which capture each image shows: only captures of the site theme's family.
+  /* Which capture each image shows: only captures of the selected site theme.
      What exists (shots/landing/<lang>...):
        <lang>/          Yellow·Light, every screen (Android size)
        <lang>/yd, /md   Yellow·Dark, B&W·Dark, for the screens in DARK
-       <lang>-and/      White·Light Android for the screens in WL
+       <lang>-and/      White·Light Android for the screens in WL; /yd, /md
+                        contain the story six in the two dark themes
        <lang>-and/ml    B&W·Light Android for the screens in ML
        <lang>-ios/      White·Light iPhone for the screens in IOS; /yd, /md dark
                         (the story six), /ml B&W·Light (ML_IOS), /yl Yellow·Light (IOS_YL)
-     Families: Yellow (Yellow·Light, Yellow·Dark), White (White·Light),
-     B&W (B&W·Light first, then B&W·Dark where no light capture exists).
-     The story's side phones take the lightest capture of the family. A
-     screen with no capture in the family borrows the same feature's covered
+     Every phone follows the exact selected theme, including the story's
+     side phones. A screen with no capture in that theme borrows its covered
      screen (SUB) where the image allows it (data-sub); otherwise it is hidden
      rather than shown in another theme. */
   var STORY = {'05-multimatch-results': 1, '07n-numerology': 1, '09-match-score': 1, '12-kundali-hero': 1, '15-chat-answer': 1, '20-palm-takeaways': 1};
@@ -78,14 +77,11 @@
     var t = root.getAttribute('data-theme') || '';
     return t === 'yellow-dark' ? 'yd' : t === 'mono-dark' ? 'md' : '';
   }
-  // The capture families to try, in order, for an image in this theme.
-  function familyFor(img) {
+  // Never fall back across light/dark modes or accent palettes.
+  function familyFor() {
     var t = root.getAttribute('data-theme') || 'white-light';
-    var side = img.hasAttribute('data-light');
-    if (t === 'white-light') return ['wl'];
-    if (t.indexOf('mono') === 0) return side ? ['ml'] : t === 'mono-light' ? ['ml', 'md'] : ['md'];
-    if (t === 'yellow-dark' && !side) return ['yd', 'yl'];
-    return ['yl'];
+    return [t === 'yellow-light' ? 'yl' : t === 'yellow-dark' ? 'yd' :
+      t === 'mono-light' ? 'ml' : t === 'mono-dark' ? 'md' : 'wl'];
   }
   // The folder for one screen in one family, or null when it was never captured.
   function capture(name, ios, fam) {
@@ -93,11 +89,12 @@
     if (fam === 'wl') return ios ? (IOS[name] ? lang + '-ios/' + name : null) : (WL[name] ? lang + '-and/' + name : null);
     if (fam === 'ml') return ios ? (ML_IOS[name] ? lang + '-ios/ml/' + name : null) : (ML[name] ? lang + '-and/ml/' + name : null);
     if (ios) return STORY[name] ? lang + '-ios/' + fam + '/' + name : null;
+    if (STORY[name]) return lang + '-and/' + fam + '/' + name;
     return DARK[name] ? lang + '/' + fam + '/' + name : null;
   }
   function shotBase(img) {
     var name = img.getAttribute('data-shot'), ios = img.getAttribute('data-dev') === 'ios';
-    var fams = familyFor(img), names = [name];
+    var fams = familyFor(), names = [name];
     if (img.hasAttribute('data-sub') && SUB[name]) names.push(SUB[name]);
     for (var i = 0; i < names.length; i++) for (var k = 0; k < fams.length; k++) {
       var f = capture(names[i], ios, fams[k]);

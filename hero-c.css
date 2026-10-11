@@ -129,6 +129,10 @@ html:not([data-canvas^="kundali"]) .hc-houses, html:not([data-canvas^="kundali"]
 .hc-lines .fs2 { fill:none; stroke:var(--fc,var(--lagna)); stroke-width:.9; stroke-linecap:round; stroke-linejoin:round; opacity:.75; }
 .hc-lines .ff { fill:color-mix(in srgb,var(--fc,var(--lagna)) 18%,transparent); stroke:var(--fc,var(--lagna)); stroke-width:1.2; stroke-linejoin:round; }
 .hc-lines .ff2 { fill:color-mix(in srgb,var(--fc,var(--lagna)) 8%,transparent); stroke:var(--fc,var(--lagna)); stroke-width:1.2; }
+/* The dancers wear the selected theme's accent; the Devi symbol retains
+   the Navratri day's colour. Both update through inherited theme tokens. */
+.hc-lines .nav-dancer { --fc:var(--tint); }
+.hc-lines .nav-dancer .dl2, .hc-lines .nav-dancer .dl3 { stroke:var(--fc); }
 .hc-lines .lf { fill:color-mix(in srgb,var(--fest-leaf) 10%,transparent); stroke:var(--fest-leaf); stroke-width:1; stroke-linecap:round; stroke-linejoin:round; }
 .hc-lines .lfo { fill:none; stroke:var(--fest-leaf); stroke-width:1; stroke-linecap:round; }
 .hc-lines .mod { fill:var(--bg); stroke:color-mix(in srgb,var(--fg) 45%,var(--bg)); stroke-width:1.1; stroke-linejoin:round; }
