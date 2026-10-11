@@ -1,3 +1,23 @@
+## Calculation transparency, 11 October 2026
+
+The public home section `/#our-engine` explains the staged API rollout in English
+and Hindi, credits Astronomy Engine 2.1.19 (MIT), distinguishes JPL position
+comparisons from astrological claims, and provides a correction email template
+and review guidance. The footer links directly to it. This is an email intake,
+not a ticket portal or a promise of individual review for every reading.
+
+Its dated feature scope was checked against production routing: planetary
+positions, major dasha periods, Sarvashtakavarga and horoscope text are enabled
+on our engine; other features still use a provider during comparison testing.
+Update the snapshot when that scope changes. The backend's existing JPL fixture
+tests passed for seven bodies at twenty sample dates spanning 1900–2050.
+These are sample position checks, not a certification of the app or its readings.
+Keep NASA/JPL non-endorsement and the distinction between the open-source library
+and AstroAshva's own API explicit. Do not publish private engine review documents.
+
+The AshvaAI explainer also labels its example and acknowledges variable,
+fallible AI explanations instead of promising identical answers.
+
 ## Hero canvas, 11 October 2026
 
 The drawing behind the home page title is a pluggable canvas: `kundali-north`
