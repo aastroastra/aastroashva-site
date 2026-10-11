@@ -19,10 +19,12 @@
    The roll above remains available to the launch-film renderer. */
 .brand-reveal--type { perspective:none; }
 .brand-reveal--type .brand-cell::before { content:none; }
-.brand-reveal--type .brand-glyph { animation:none; }
+.brand-reveal--type .brand-glyph { animation:none; opacity:1; }
 @media (prefers-reduced-motion:no-preference) {
   .brand-reveal--type .brand-glyph {
-    animation:brand-type 1ms step-end both;
+    /* Hide only during the delay. A finished letter uses its visible base
+       style, so fractional end-time rounding cannot leave it transparent. */
+    animation:brand-type .12s step-start backwards;
     animation-delay:calc(.2s + var(--letter) * .18s);
   }
 }

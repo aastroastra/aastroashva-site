@@ -31,7 +31,7 @@ html.hero-a-on .hc, html.hero-b-on .hc { display:none !important; }
   --lagna:var(--tint);
   --e:cubic-bezier(.2,.7,0,1);
   --hc-h:clamp(600px, calc(100svh - 72px), 1040px);
-  /* Ten letters finish at 1.821s; hold the completed word briefly. */
+  /* Typing finishes before 2s; hold the completed word briefly. */
   --hc-intro-end:2.2s;
   --mala-base:#8B4828; --mala-light:#C17B45; --mala-shadow:#4B2518;
   --mala-ridge:#5D301E; --mala-thread:#D46720; --mala-thread-light:#F6C26A;
