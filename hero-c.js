@@ -342,7 +342,13 @@
      whole rectangle and both gaps always fit the first screen. */
   var header = document.querySelector('.hero-invocation') || document.querySelector('.site-header');
   function fitHero() {
-    if (narrow.matches || !header) { hc.style.height = ''; stage.style.top = ''; stage.style.bottom = ''; return; }
+    if (narrow.matches || !header) {
+      hc.style.height = ''; stage.style.top = ''; stage.style.bottom = '';
+      // Deduct the real header and invocation, including wrapped text/fonts.
+      hc.style.setProperty('--hc-top', (hc.getBoundingClientRect().top + window.scrollY) + 'px');
+      return;
+    }
+    hc.style.removeProperty('--hc-top');
     var y = window.scrollY || window.pageYOffset || 0;
     var hb = header.getBoundingClientRect().bottom + y, ht = hc.getBoundingClientRect().top + y;
     var vh = window.innerHeight, extra = Math.max(0, ht - hb);

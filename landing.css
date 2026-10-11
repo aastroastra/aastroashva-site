@@ -57,11 +57,16 @@ html[data-lang="hi"] .h2 { letter-spacing:0; line-height:1.18; }
 .sec-head .lead { margin:0 auto; }
 
 /* ---------- Header (site-theme.css), tightened for the home page ---------- */
-.site-header { border-bottom:none; background:transparent; min-height:0; padding:16px var(--gutter); max-width:var(--maxw); margin:0 auto; }
+.site-header { position:relative; z-index:5; border-bottom:none; background:transparent; min-height:0; padding:16px var(--gutter); max-width:var(--maxw); margin:0 auto; }
 .site-brand .site-mark { width:32px; height:32px; }
 .lang-seg { display:inline-flex; border:1px solid var(--line); border-radius:999px; padding:3px; gap:2px; }
 .lang-seg button { border:none; background:transparent; color:var(--fg2); font:600 12px var(--font-body); padding:6px 11px; border-radius:999px; cursor:pointer; min-height:30px; }
 .lang-seg button[aria-pressed="true"] { background:var(--tint-grad); color:var(--on-accent); }
+.home-theme-picker { position:relative; display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 12px; border:1px solid var(--line); border-radius:999px; color:var(--fg2); font:600 12px var(--font-body); }
+.home-theme-picker svg { width:14px; height:14px; }
+.home-theme-swatch { width:12px; height:12px; flex:none; border-radius:50%; background:var(--tint); box-shadow:0 0 0 3px var(--bg),0 0 0 4px var(--line); margin:0 3px; }
+.home-theme-picker select { position:absolute; inset:0; width:100%; height:100%; opacity:0; cursor:pointer; font:inherit; }
+.home-theme-picker:focus-within { outline:2px solid var(--tint); outline-offset:4px; }
 .site-nav a { font-size:13px; }
 @media (max-width:580px) {
   .site-header { flex-wrap:nowrap; align-items:center; padding:12px 16px; gap:10px; }
@@ -135,7 +140,7 @@ html[data-lang="hi"] .tagline { letter-spacing:0; }
 .hero-note a, .dl-note a { color:var(--fg); text-underline-offset:3px; }
 
 /* ---------- 2. Scroll story ---------- */
-.story { position:relative; height:600vh; margin-top:clamp(64px,9vw,120px); }
+.story { position:relative; height:600vh; height:600svh; margin-top:clamp(64px,9vw,120px); }
 .story-pin { position:sticky; top:0; height:100vh; height:100svh; overflow:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; }
 .mantra { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:space-evenly; pointer-events:none; padding:3vh 0; }
 .m-row {
@@ -157,9 +162,8 @@ html[data-lang="hi"] .tagline { letter-spacing:0; }
 .story .phone { --pw:min(clamp(196px,19vw,292px), calc((100svh - 300px) * 1206 / 2622)); }
 /* Two phones, staggered for depth, showing the same feature: an Android phone
    (punch-hole camera, slim bezel, squarer corners) and an iPhone (Dynamic
-   Island, rounder corners). Inside each, the screens are stacked and the
-   current one fades out before the next fades in, so a phone never shows two
-   screens at once. */
+   Island, rounder corners). Screens are stacked, with the next screenshot
+   fading over the current one so the frame stays filled through a scroll. */
 .story .phone.and { padding:6px; border-radius:calc(var(--pw) * .1); }
 .story .phone.and .screen { border-radius:calc(var(--pw) * .075); }
 .story .phone.and .screen::after { content:""; position:absolute; z-index:3; top:calc(var(--pw) * .03); left:50%; width:calc(var(--pw) * .045); aspect-ratio:1; margin-left:calc(var(--pw) * -.0225); border-radius:50%; background:#0B0B0C; box-shadow:0 0 0 1.5px rgba(255,255,255,.06); }
@@ -197,7 +201,7 @@ html[data-lang="hi"] .tagline { letter-spacing:0; }
 .story-bar b::after { content:""; position:absolute; inset:0; background:var(--tint); transform:scaleY(var(--f,0)); transform-origin:top; }
 .story-static { display:none; }
 @media (max-width:760px) {
-  .story { height:480vh; }
+  .story { height:480vh; height:480svh; }
   .story .phone { --pw:min(40vw, calc((100svh - 330px) * 1206 / 2622)); }
   .story .phone.and { padding:4px; }
   .story .phone.ios { padding:5px; }

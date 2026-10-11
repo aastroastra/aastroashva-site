@@ -115,17 +115,14 @@
       A.add('fs2', X('M-4 -8L4 -8M-4 -3L4 -3', T), t + 800, 400, p);
       lotus(A, mk(T.ox, T.oy + 44 * T.s, T.s), t + 700, p);
     },
-    // 2 Brahmacharini: a japa mala and a kamandalu.
+    // 2 Brahmacharini: a centred mala with a small tassel.
     function (A, T, t, p) {
       for (var i = 0; i < 24; i++) {
         var a = Math.PI / 2 + (i + .5) * 2 * Math.PI / 25;
-        A.add('fs', C(T, -20 + 25 * Math.cos(a), -8 + 25 * Math.sin(a), 2.3), t + i * 40, 300, p);
+        A.add('fs', C(T, 25 * Math.cos(a), -8 + 25 * Math.sin(a), 2.3), t + i * 40, 300, p);
       }
-      A.add('ff', C(T, -20, 19.5, 3.4), t + 1000, 300, p);
-      A.add('fs2', X('M-20 23L-24 40M-20 23L-20 41M-20 23L-16 40', T), t + 1100, 500, p);
-      A.add('dl3', X('M14 6C11 24 18 36 29 36C40 36 47 24 44 6Q29 0 14 6Z', T), t + 300, 900, p);
-      A.add('dl3', X('M17 4Q29 -2 41 4M16 5C14 -24 44 -24 42 5M44 13C51 11 55 4 57 -3M45 20C53 18 58 9 60 -2', T), t + 700, 800, p);
-      A.add('fs2', X('M15 17Q29 23 44 17', T), t + 1000, 500, p);
+      A.add('ff', C(T, 0, 19.5, 3.4), t + 1000, 300, p);
+      A.add('fs2', X('M0 23L-4 40M0 23L0 41M0 23L4 40', T), t + 1100, 500, p);
     },
     // 3 Chandraghanta: a bell hung from a horned crescent.
     function (A, T, t, p) {

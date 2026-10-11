@@ -38,6 +38,9 @@
         }
       } catch (e) {}
     }
+    document.querySelectorAll('[data-site-theme-select] option[data-name-en]').forEach(function (option) {
+      option.textContent = option.getAttribute('data-name-' + lang);
+    });
     setShots();
   }
   document.querySelectorAll('[data-set-lang]').forEach(function (b) {
@@ -221,8 +224,6 @@
 
   /* ---------- Scroll story: phone pinned, screen changes, mantra drifts ---------- */
   var story = document.querySelector('[data-story]');
-  // Phones get the static grid instead (landing.css): one pinned scene per
-  // page there, and that one is AshvaAI.
   /* Vector device frames: drawn once into every [data-frame] (the story's
      three phones and its reduced-motion grid). The screen is real HTML on
      top of the frame; the camera (Pixel punch-hole, iPhone Dynamic Island)
@@ -271,17 +272,22 @@
       var k = pw.classList.contains('l') ? 'l' : pw.classList.contains('r') ? 'r' : 'c';
       return { lag: LAG[k], slides: Array.prototype.slice.call(pw.querySelectorAll('.sl')) };
     });
-    // One caption per step, shared by both phones (the same feature on each).
+    // One caption per step, shared by all three phones.
     var caps = Array.prototype.slice.call(story.querySelectorAll('.pcaps .cap')), capOn = 0;
     var bars = Array.prototype.slice.call(story.querySelectorAll('.story-bar b'));
-    var N = caps.length || 1, rowW = [], vw = 0, vh = 0, queued = false;
+    var pin = story.querySelector('.story-pin');
+    var N = caps.length || 1, rowW = [], vw = 0, vh = 0, mobile = false, queued = false;
     var size = function () {
-      vw = window.innerWidth; vh = window.innerHeight;
+      vw = window.innerWidth;
+      // CSS uses the small viewport, which stays steady as mobile browser
+      // controls appear. Use that same height for the scroll progress.
+      vh = pin.clientHeight;
+      mobile = vw <= 760;
       rowW = rows.map(function (r) { return r.scrollWidth; });
       frame();
     };
-    // Each step holds still for most of its scroll, then the next screen
-    // fades in as the current one fades out; the iPhone follows a beat later.
+    // Each step holds still, then the next screen covers it with a fade.
+    // Mobile phones change together so their caption stays in sync.
     var stepAt = function (u, lag) {
       var base = Math.min(Math.floor(u), N - 1), frac = u - base;
       if (base >= N - 1) return N - 1;
@@ -301,17 +307,16 @@
         row.style.transform = 'translate3d(' + x.toFixed(1) + 'px,0,0)';
       });
       var u = clamp(p * N - 0.5, 0, N - 1);
-      // The caption changes on the second phone's beat, so it never names a
-      // feature the iPhone is not showing yet.
+      // The caption follows the centre iPhone's dominant screen.
       var capNow = Math.round(stepAt(u, 0));
       if (capNow !== capOn && caps[capNow]) { caps[capOn].classList.remove('on'); caps[capNow].classList.add('on'); capOn = capNow; }
       phones.forEach(function (ph) {
-        var f = stepAt(u, ph.lag);
+        var f = stepAt(u, mobile ? 0 : ph.lag);
         var cur = Math.floor(f), mix = f - cur;
         ph.slides.forEach(function (sl, i) {
-          // Out, then in: the current screen fades away before the next one
-          // appears, so two screens never overlap.
-          var o = i === cur ? clamp(1 - 2 * mix, 0, 1) : i === cur + 1 ? clamp(2 * mix - 1, 0, 1) : 0;
+          // Keep an opaque screen underneath the incoming screenshot. A
+          // visitor can stop at any scroll position without a blank phone.
+          var o = i === cur ? 1 : i === cur + 1 ? mix : 0;
           sl.style.opacity = o.toFixed(3);
         });
       });

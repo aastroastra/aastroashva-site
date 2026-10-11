@@ -100,7 +100,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" media="print" onload="this.media='all'" />
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" /></noscript>
 <link rel="stylesheet" href="/site-theme.css?v=6" />
-<link rel="stylesheet" href="/landing.css?v=7" />
+<link rel="stylesheet" href="/landing.css?v=8" />
 <link rel="stylesheet" href="/mm-section.css" />
 <link rel="stylesheet" href="/thread.css?v=7" />
 <link rel="stylesheet" href="/engine-section.css?v=1" />
@@ -128,7 +128,7 @@
        and swaps only if it differs. Every canvas fills the same rectangle. */
     var CV=['kundali-north','kundali-south','diya','navratri','dussehra','holi','karwa-chauth','chhath','sankranti','shivratri','ganesh-chaturthi','janmashtami','raksha-bandhan','onam','ugadi-gudi-padwa','eid','christmas','new-year','purnima','pitru-paksha','eclipse','transit','dev-uthani','vasant-panchami','ram-navami','hanuman-jayanti','akshaya-tritiya','rath-yatra','teej','nag-panchami'];
     window.AA_CANVASES=CV;
-    window.AA_FEST_V='8';
+    window.AA_FEST_V='9';
     window.AA_pickCanvas=function(c){
       window.AA_CANVAS_PRESET=null;
       if(!c||typeof c!=='object') return null;
@@ -206,8 +206,8 @@
 </script>
 <script src="/site-theme.js" defer></script>
 <link rel="stylesheet" href="/brand-reveal.css?v=1" />
-<link rel="stylesheet" href="/hero-c.css?v=20" />
-<script src="/hero-c.js?v=21" defer></script>
+<link rel="stylesheet" href="/hero-c.css?v=21" />
+<script src="/hero-c.js?v=22" defer></script>
 </head>
 <body>
 <script src="/app-bar.js?v=2"></script>
@@ -215,10 +215,19 @@
 <header class="site-header">
   <a href="/" class="site-brand" aria-label="AstroAshva"><span class="site-mark" aria-hidden="true"></span></a>
   <div class="site-controls">
-    <nav class="site-nav" aria-label="Main"><a href="./pricing/"><span lang="en">Pricing</span><span lang="hi">कीमतें</span></a></nav>
     <div class="lang-seg" role="group" aria-label="Language"><button type="button" data-set-lang="en" aria-pressed="true">EN</button><button type="button" data-set-lang="hi" aria-pressed="false" lang="hi">हिं</button></div>
-    <div class="site-themes" role="group" aria-label="Theme"><button type="button" data-site-theme="yellow-light" title="Yellow · Light" aria-label="Yellow · Light" aria-pressed="false"><span class="site-chip" aria-hidden="true"><i></i></span></button><button type="button" data-site-theme="white-light" title="White · Light" aria-label="White · Light" aria-pressed="false"><span class="site-chip" aria-hidden="true"><i></i></span></button><button type="button" data-site-theme="mono-light" title="B&amp;W · Light" aria-label="B&amp;W · Light" aria-pressed="false"><span class="site-chip" aria-hidden="true"><i></i></span></button><button type="button" data-site-theme="yellow-dark" title="Yellow · Dark" aria-label="Yellow · Dark" aria-pressed="false"><span class="site-chip" aria-hidden="true"><i></i></span></button><button type="button" data-site-theme="mono-dark" title="B&amp;W · Dark" aria-label="B&amp;W · Dark" aria-pressed="false"><span class="site-chip" aria-hidden="true"><i></i></span></button></div>
-    <label class="site-theme-mobile"><span class="sr-only">Theme</span><select class="site-theme-select" data-site-theme-select><option value="yellow-light">Yellow · Light</option><option value="white-light">White · Light</option><option value="mono-light">B&amp;W · Light</option><option value="yellow-dark">Yellow · Dark</option><option value="mono-dark">B&amp;W · Dark</option></select></label>
+    <label class="home-theme-picker">
+      <span class="home-theme-swatch" aria-hidden="true"></span>
+      <span><span lang="en">Theme</span><span lang="hi">थीम</span></span>
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg>
+      <select data-site-theme-select>
+        <option value="yellow-light" data-name-en="Yellow · Light" data-name-hi="पीला · उजला">Yellow · Light</option>
+        <option value="white-light" data-name-en="White · Light" data-name-hi="सफ़ेद · उजला">White · Light</option>
+        <option value="mono-light" data-name-en="B&amp;W · Light" data-name-hi="श्वेत-श्याम · उजला">B&amp;W · Light</option>
+        <option value="yellow-dark" data-name-en="Yellow · Dark" data-name-hi="पीला · गहरा">Yellow · Dark</option>
+        <option value="mono-dark" data-name-en="B&amp;W · Dark" data-name-hi="श्वेत-श्याम · गहरा">B&amp;W · Dark</option>
+      </select>
+    </label>
   </div>
 </header>
 
@@ -777,7 +786,7 @@
   </div>
 </footer>
 
-<script src="/landing.js?v=10"></script>
+<script src="/landing.js?v=11"></script>
 <script src="/mm-section.js?v=3"></script>
 <script src="/engine-section.js?v=1"></script>
 <script src="/thread.js?v=3"></script>
