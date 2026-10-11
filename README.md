@@ -1,5 +1,20 @@
 ## Calculation transparency, 11 October 2026
 
+The section is an illustrated scroll journey: details → positions → our Vedic
+code → sample reference comparisons → reading and correction. On desktop the
+orbital SVG stays in view beside five stages; on mobile the page thread visits
+five stations with smaller diagrams. `engine-section.js` draws the wires from
+scroll progress and reverses them when scrolling back. It measures again after
+font, language, disclosure, viewport and upstream layout changes. Reduced motion
+shows the whole diagram and removes pinning; all copy and disclosures work
+without JavaScript. The artwork is labelled as an illustration, not a live API call.
+
+`thread.js` hands off at the instrument's inlet and resumes at its outlet.
+The exit uses a separate SVG path because dash patterns restart at each move
+command; otherwise the exit would draw before its scroll window. Keep the
+mobile station centres aligned with the 18px page spine. Colours follow the
+five site palettes. Public source and review details use native disclosures.
+
 The public home section `/#our-engine` explains the staged API rollout in English
 and Hindi, credits Astronomy Engine 2.1.19 (MIT), distinguishes JPL position
 comparisons from astrological claims, and provides a correction email template

@@ -4,6 +4,7 @@
    - Why: the connector across the four steps (each step lights as it passes);
    - Multi-match: the ranking line beside the list (the rows sort when it
      arrives, then each place lights);
+   - Engine: hands off to the sticky instrument, or visits the five mobile stations;
    - Download: it ends in the AA mark.
    Wide screens (> 1000px): it weaves between a left and a right rail.
    Phones and tablets: a straight rail down the left edge.
@@ -19,18 +20,27 @@
 
   var path = svg.querySelector('.thread-path');
   var tip = svg.querySelector('.thread-tip');
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduceMq = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)');
+  var reduce = reduceMq && reduceMq.matches;
   var wideMq = window.matchMedia ? matchMedia('(min-width: 1001px)') : { matches: true };
   var endEl = document.querySelector('[data-thread-end]');
   var steps = Array.prototype.slice.call(document.querySelectorAll('#why .steps > li'));
   var mmList = document.querySelector('[data-mm-list]');
+  var engineInlet = document.querySelector('[data-engine-inlet]');
+  var engineOutlet = document.querySelector('[data-engine-outlet]');
+  var engineStations = Array.prototype.slice.call(document.querySelectorAll('[data-engine-station]'));
   // Measures a path while it is being built (in the SVG, so every engine
   // can measure it; never painted).
   var probe = document.createElementNS('http://www.w3.org/2000/svg', 'path');
   probe.setAttribute('class', 'thread-probe');
   svg.appendChild(probe);
+  // SVG dash patterns restart at every M. Draw the path after the engine in
+  // its own element so the handoff cannot reveal the entire exit line early.
+  var tail = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  tail.setAttribute('class', 'thread-path thread-tail');
+  svg.insertBefore(tail, tip || probe);
 
-  var segs = [], stops = [], total = 0, drawn = -1, sorted = false, queued = false;
+  var segs = [], stops = [], total = 0, headLength = 0, tailLength = 0, drawn = -1, sorted = false, queued = false;
 
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   // Position inside <main>, ignoring transforms (reveals, pinned scenes).
@@ -118,8 +128,16 @@
         line(railR, Y + vh * 0.6);
         sweep(railL, Y + vh * 1.2);
       }
-      // Down the left rail through Features, then into the mark at Download.
-      line(railL, ey - 240);
+      // The instrument continues this same line inside its sticky column.
+      // A move, timed over the story, leaves that stretch to its local SVG.
+      if (shown(engineInlet) && shown(engineOutlet)) {
+        var inlet = box(engineInlet), outlet = box(engineOutlet);
+        line(railL, inlet.y - 100);
+        sweep(inlet.x, inlet.y);
+        add('M' + outlet.x.toFixed(1) + ' ' + outlet.y.toFixed(1), [outlet.x, outlet.y], inlet.y, outlet.y);
+        sweep(railL, outlet.y + 80);
+      }
+      line(railL, Math.max(cur[1], ey - 240));
       sweep(ex, ey);
     } else {
       // Phones and tablets: one straight rail at the left edge. On phones it
@@ -130,18 +148,27 @@
       var storyEl = main.querySelector('.story');
       var y0 = phone && storyEl && shown(storyEl) ? box(storyEl).y + box(storyEl).h + 12 : heroBox.y + heroBox.h - 8;
       cur = [x, y0]; d = 'M' + x + ' ' + y0.toFixed(1);
-      line(x, ey - 160);
+      var engineVisible = engineStations.filter(shown);
+      var firstEngine = engineVisible.length ? box(engineVisible[0]) : null;
+      var firstEnd = firstEngine ? firstEngine.y - 40 : ey - 160;
+      line(x, firstEnd);
+      engineVisible.forEach(function (station) {
+        var b = box(station);
+        sweep(b.x + b.w / 2, b.y + b.h / 2);
+      });
+      if (firstEngine) sweep(x, cur[1] + 80);
+      line(x, Math.max(cur[1], ey - 160));
       sweep(ex, ey);
       steps.forEach(function (li) {
         var b = box(li);
         // On phones the step's number is a node on the rail: light it as the
         // line reaches the node's centre.
         var n = phone && li.querySelector('.n'), ny = n ? box(n).y + n.offsetHeight / 2 : b.y + 34;
-        stopList.push({ piece: 0, along: clamp(ny - y0, 0, ey - 160 - y0), on: li, kind: 'step' });
+        stopList.push({ piece: 0, along: clamp(ny - y0, 0, firstEnd - y0), on: li, kind: 'step' });
       });
       slots.forEach(function (li, i) {
         var b = box(li);
-        stopList.push({ piece: 0, along: clamp(b.y + b.h / 2 - y0, 0, ey - 160 - y0), slot: i, kind: 'slot' });
+        stopList.push({ piece: 0, along: clamp(b.y + b.h / 2 - y0, 0, firstEnd - y0), slot: i, kind: 'slot' });
       });
     }
 
@@ -164,8 +191,14 @@
     });
     svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
     svg.style.height = H + 'px';
-    path.setAttribute('d', dd);
-    path.style.strokeDasharray = total.toFixed(1) + ' ' + (total + 10).toFixed(1);
+    var handoff = pieces.findIndex(function (piece) { return piece.cmd.charAt(0) === 'M'; });
+    headLength = handoff < 0 ? total : segs[handoff].L0;
+    tailLength = total - headLength;
+    path.setAttribute('d', handoff < 0 ? dd : d + pieces.slice(0, handoff).map(function (p) { return p.cmd; }).join(''));
+    tail.setAttribute('d', handoff < 0 ? '' : pieces.slice(handoff).map(function (p) { return p.cmd; }).join(''));
+    tail.style.display = handoff < 0 ? 'none' : '';
+    path.style.strokeDasharray = headLength.toFixed(1) + ' ' + (headLength + 10).toFixed(1);
+    tail.style.strokeDasharray = tailLength.toFixed(1) + ' ' + (tailLength + 10).toFixed(1);
     drawn = -1;
     return true;
   }
@@ -183,12 +216,13 @@
   function apply(len) {
     if (Math.abs(len - drawn) < 0.5) return;
     drawn = len;
-    path.style.strokeDashoffset = (total - len).toFixed(1);
+    path.style.strokeDashoffset = Math.max(0, headLength - len).toFixed(1);
+    tail.style.strokeDashoffset = (tailLength - Math.max(0, len - headLength)).toFixed(1);
     if (tip) {
       var live = !reduce && len > 2 && len < total - 2;
       tip.classList.toggle('on', live);
       if (live) {
-        var p = path.getPointAtLength(len);
+        var p = probe.getPointAtLength(len);
         tip.setAttribute('cx', p.x.toFixed(1)); tip.setAttribute('cy', p.y.toFixed(1));
       }
     }
@@ -224,6 +258,11 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', rebuild);
   window.addEventListener('load', rebuild);
+  document.addEventListener('aa:engine-layout', rebuild);
+  if (reduceMq && reduceMq.addEventListener) reduceMq.addEventListener('change', function () {
+    reduce = reduceMq.matches;
+    rebuild();
+  });
   if (wideMq.addEventListener) wideMq.addEventListener('change', rebuild);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(rebuild);
   document.querySelectorAll('[data-set-lang]').forEach(function (b) { b.addEventListener('click', rebuild); });

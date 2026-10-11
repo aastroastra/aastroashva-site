@@ -403,29 +403,6 @@ html[data-lang="hi"] .feat h3 { letter-spacing:0; line-height:1.3; }
   .feat .peek > div { width:min(66%,220px); }
 }
 
-/* ---------- Calculation API, sources and correction requests ---------- */
-.engine { border-block:1px solid var(--line); background:color-mix(in srgb,var(--tint) 3%,var(--bg)); }
-.engine .sec-head { margin-bottom:36px; }
-.engine .lead { max-width:760px; }
-.engine-rollout { padding:24px clamp(20px,3vw,32px); border:1px solid var(--line); border-radius:22px; background:var(--card); }
-.engine-rollout > p + p { margin-top:10px; color:var(--fg2); line-height:1.7; }
-.engine-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:16px; }
-.engine-card { padding:clamp(20px,2.5vw,30px); border:1px solid var(--line); border-radius:22px; background:var(--card); display:flex; flex-direction:column; align-items:flex-start; }
-.engine-number { font-family:var(--font-heading); font-size:32px; color:var(--fg2); }
-.engine-card h3 { font-size:21px; line-height:1.35; margin:18px 0 12px; }
-.engine-card p { font-size:15px; line-height:1.75; color:var(--fg2); }
-.engine a { text-underline-offset:4px; text-decoration-thickness:1px; }
-.engine a:hover { text-decoration-thickness:2px; }
-.engine-report { display:inline-flex; align-items:center; min-height:48px; margin-top:20px; padding:10px 16px; border-radius:12px; background:var(--btn-bg); color:var(--btn-fg); font-size:14px; font-weight:700; text-decoration:none; }
-.engine-review { border-block:1px solid var(--line); margin-top:32px; }
-.engine-review summary { cursor:pointer; padding:22px 4px; font-weight:600; font-size:17px; }
-.engine-review ol { padding:0 8px 24px 28px; color:var(--fg2); line-height:1.7; max-width:900px; }
-.engine-review li + li { margin-top:12px; }
-.engine-review strong { color:var(--fg); }
-.engine-limits { margin:24px auto 0; max-width:980px; font-size:14px; line-height:1.7; color:var(--fg2); }
-.engine-limits p + p { margin-top:12px; }
-@media (max-width:860px) { .engine-grid { grid-template-columns:1fr; } }
-
 /* ---------- 5. Reviews (hidden until reviews.json holds three) ---------- */
 .reviews[hidden] { display:none; }
 .rev-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
