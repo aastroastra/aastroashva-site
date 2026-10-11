@@ -187,19 +187,10 @@ html[data-lang="hi"] .hc-eyebrow { font-size:14px; letter-spacing:.04em; padding
   margin-top:24px;
   font-family:'Noto Serif',Georgia,serif; font-weight:700; text-transform:uppercase; white-space:nowrap;
   font-size:clamp(56px,6.4vw,96px); line-height:1; letter-spacing:-.005em;
-  /* Ink in every theme. A narrow gold sheen (hero B's sweep) crosses it once
-     on load and again on hover; at rest only the ink part of the gradient
-     shows. site-theme.css paints h1 with the tint gradient; this replaces it. */
-  color:var(--hc-ink,var(--fg)); -webkit-text-fill-color:transparent;
-  background:linear-gradient(105deg,var(--hc-ink,var(--fg)) 0 46.5%,var(--sweep,var(--tint)) 50%,var(--hc-ink,var(--fg)) 53.5% 100%);
-  background-size:260% 100%; background-position:100% 0;
-  -webkit-background-clip:text; background-clip:text;
-  margin-right:-.005em;
+  color:var(--hc-ink,var(--fg)); -webkit-text-fill-color:currentColor;
+  background:none; margin-right:-.005em;
 }
-[data-theme$="dark"] .hc-word { --sweep:#FFE7A8; }
-/* White·Light: the wordmark is the theme's orange (3.3:1, large text), with a gold sweep. */
-[data-theme="white-light"] .hc-word { --hc-ink:var(--tint); --sweep:#F5B93A; }
-[data-theme^="mono"] .hc-word { --sweep:color-mix(in srgb,var(--fg) 35%,var(--bg)); }
+[data-theme="white-light"] .hc-word { --hc-ink:var(--tint); }
 .hc-tag { margin-top:16px; font-family:var(--font-heading); font-weight:600; font-size:clamp(20px,1.9vw,28px); line-height:1.25; color:var(--fg2); letter-spacing:-.005em; }
 html[data-lang="hi"] .hc-tag { letter-spacing:0; }
 .hc-stores { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; align-items:center; margin-top:40px; }
@@ -214,15 +205,11 @@ html[data-lang="hi"] .hc-tag { letter-spacing:0; }
 .hc-note a { color:var(--fg); text-underline-offset:3px; }
 .hc-note a:focus-visible { outline:2px solid var(--fg); outline-offset:2px; border-radius:2px; }
 
-/* ---------- Entrance: the chart draws itself, then the words arrive ---------- */
+/* ---------- Entrance: the brand settles, then its surroundings appear ---------- */
 @media (prefers-reduced-motion:no-preference) {
-  /* The wordmark, store badges, stats line and note are there from the first
-     frame (nothing gates the download). Only the eyebrow and the tagline
-     settle in, and the gold sheen crosses the wordmark once. */
-  .hc-copy > .hc-eyebrow, .hc-copy > .hc-tag { animation:hc-up var(--m-slow) var(--m-ease) both; }
-  .hc-copy > .hc-eyebrow { animation-delay:.2s; }
-  .hc-copy > .hc-tag { animation-delay:.32s; }
-  .hc-copy > .hc-word { animation:hc-sweep 1.6s cubic-bezier(.45,0,.25,1) 1.1s both; }
+  .hc-copy > .hc-eyebrow, .hc-copy > .hc-tag { animation:hc-up 1.2s var(--m-ease) 1.65s both; }
+  .hc-stage { animation:hc-in 1.6s ease 1.65s both; }
+  .hc-sky svg { animation:hc-in 1.6s ease 1.65s both; }
   .hc-copy > .hc-cue { animation:hc-in .8s ease 1.4s both, hc-bob 2.4s ease-in-out 2.2s infinite; }
   .hc-copy > .hc-cue.gone { animation:none; }
   /* House words wait for the chart to start drawing (hero-c.js adds .go). */
@@ -231,7 +218,6 @@ html[data-lang="hi"] .hc-tag { letter-spacing:0; }
   .hc.paused, .hc.paused * { animation-play-state:paused !important; }
 }
 @keyframes hc-up { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
-@keyframes hc-sweep { from { background-position:100% 0; } to { background-position:0 0; } }
 @media (prefers-reduced-motion:no-preference) and (max-width:768px) {
   .hc-sky .ring { animation:hc-spin 240s linear infinite; }
   .hc-sky .spin { animation:hc-spin var(--p) linear infinite; animation-delay:var(--d); }
