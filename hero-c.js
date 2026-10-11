@@ -177,10 +177,13 @@
     var W = Math.round(r.width), Ht = Math.round(r.height);
     if (W < 10 || Ht < 10) return;
     lastW = W; lastH = Ht;
-    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + Ht);
+    var cv = canvasId(), phone = narrow.matches;
+    // Festival motifs use a 390px minimum design width. Scale the whole
+    // drawing proportionally on narrow phones, with no cropped side motifs.
+    if (phone && W < 390) { Ht = Ht * 390 / W; W = 390; }
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + f2(Ht));
     svg.innerHTML = '';
     hits = {};
-    var cv = canvasId(), phone = narrow.matches;
     // Half a pixel in so the 1px frame lands on whole device pixels.
     var o = .5, L = o, T = o, R = W - o, B = Ht - o, cx = W / 2, cy = Ht / 2;
     var q = { tm: [cx, T], rm: [R, cy], bm: [cx, B], lm: [L, cy], tl: [L, T], tr: [R, T], br: [R, B], bl: [L, B], c: [cx, cy],
@@ -272,8 +275,13 @@
     document.head.appendChild(s);
   }
   function festApi(q, lines, W, H, phone) {
+    var scale = W / Math.max(1, stage.clientWidth);
+    var eyebrow = hc.querySelector('.hc-eyebrow'), stats = hc.querySelector('.hc-stat');
     return {
       L: q.tl[0], T: q.tl[1], R: q.br[0], B: q.br[1], W: W, H: H, phone: phone, reduce: reduce, svg: svg, hc: hc,
+      // Mobile particles and peripheral lines stay outside the text band.
+      copyTop: phone ? eyebrow.offsetTop * scale : 0,
+      copyBottom: phone ? (stats.offsetTop + stats.offsetHeight) * scale : 0,
       // A stroke drawn on at t ms over dur ms ([class, d, "t,dur", parent, fade]).
       add: function (cls, d, t, dur, parent, fade) { lines.push([cls, d, Math.round(t) + ',' + Math.round(dur), parent, fade]); },
       el: function (tag, attrs, parent) { return el(tag, attrs, parent || svg); },
@@ -290,13 +298,14 @@
     };
   }
 
-  /* Switch to another canvas in place (config arriving after paint). The
-     rectangle is the same, so only the drawing and the labels change. */
+  /* Switch to another canvas in place (config arriving after paint),
+     reserving the new illustration's space before rebuilding its drawing. */
   function setCanvas(id) {
     if ((window.AA_CANVASES || []).indexOf(id) < 0 || id === canvasId()) return;
     hide();
     root.setAttribute('data-canvas', id);
     if (window.AA_festGreet) window.AA_festGreet();
+    fitHero();
     build();
     svg.classList.remove('swap'); void svg.getBoundingClientRect(); svg.classList.add('swap');
   }
@@ -340,15 +349,39 @@
      The gap grows gently with the screen (24px at 670px tall, 32 at 900,
      at most 44), and the canvas takes the height that is left, so the
      whole rectangle and both gaps always fit the first screen. */
+  // Clear space around the copy, in the mobile illustration's design units.
+  // Most festivals have a small upper emblem and a scene below. Canvases
+  // without an upper emblem keep a much smaller gap under the invocation.
+  var PHONE_ART_SPACE = {
+    'kundali-north': [32, 160], 'kundali-south': [32, 160],
+    navratri: [32, 220], diya: [96, 170], dussehra: [180, 200],
+    holi: [200, 260], 'karwa-chauth': [200, 220], chhath: [32, 340],
+    sankranti: [190, 260], shivratri: [160, 210],
+    'ganesh-chaturthi': [180, 200], janmashtami: [160, 250],
+    'raksha-bandhan': [32, 210], onam: [110, 180],
+    'ugadi-gudi-padwa': [140, 270], eid: [180, 250],
+    christmas: [140, 210], 'new-year': [220, 220], purnima: [190, 240],
+    'pitru-paksha': [150, 220], eclipse: [150, 220], transit: [160, 220],
+    'dev-uthani': [140, 280], 'vasant-panchami': [160, 190],
+    'ram-navami': [160, 200], 'hanuman-jayanti': [160, 260],
+    'akshaya-tritiya': [32, 240], 'rath-yatra': [32, 200],
+    teej: [210, 220], 'nag-panchami': [32, 210]
+  };
   var header = document.querySelector('.hero-invocation') || document.querySelector('.site-header');
   function fitHero() {
     if (narrow.matches || !header) {
       hc.style.height = ''; stage.style.top = ''; stage.style.bottom = '';
       // Deduct the real header and invocation, including wrapped text/fonts.
       hc.style.setProperty('--hc-top', (hc.getBoundingClientRect().top + window.scrollY) + 'px');
+      var space = PHONE_ART_SPACE[canvasId()] || [180, 220];
+      var scale = Math.min(1, hc.clientWidth / 390);
+      hc.style.setProperty('--hc-art-top', Math.round(space[0] * scale) + 'px');
+      hc.style.setProperty('--hc-art-bottom', Math.round(space[1] * scale) + 'px');
       return;
     }
     hc.style.removeProperty('--hc-top');
+    hc.style.removeProperty('--hc-art-top');
+    hc.style.removeProperty('--hc-art-bottom');
     var y = window.scrollY || window.pageYOffset || 0;
     var hb = header.getBoundingClientRect().bottom + y, ht = hc.getBoundingClientRect().top + y;
     var vh = window.innerHeight, extra = Math.max(0, ht - hb);

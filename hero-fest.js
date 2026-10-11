@@ -553,8 +553,10 @@
   // A night sky: tiny stars, a few twinkling.
   function stars(A, n, box, seed, parent) {
     var rn = rnd(seed), u = unit(A);
+    var bottom = A.phone ? Math.min(box[3], A.copyTop - 18) : box[3];
+    if (bottom <= box[1]) return;
     for (var i = 0; i < n; i++) {
-      var x = box[0] + rn() * (box[2] - box[0]), y = box[1] + rn() * (box[3] - box[1]), big = rn() < .3;
+      var x = box[0] + rn() * (box[2] - box[0]), y = box[1] + rn() * (bottom - box[1]), big = rn() < .3;
       var sg = g(A, '', parent);
       if (big) A.add('fs2', sparkle(x, y, (3 + rn() * 2.5) * u), 1200 + i * 50, 400, sg);
       else A.el('circle', { 'class': 'idot', cx: f(x), cy: f(y), r: f((.8 + rn() * .9) * u), 'data-t': (1000 + i * 40) + ',500' }, sg);
@@ -740,7 +742,7 @@
     K.forEach(function (k, i) {
       var x = L + k[0] * W, y = T0 + (phone ? k[1] * H + 30 : k[1] * H + 40 * u), s = k[2] * (phone ? 1 : u);
       var holder = g(A, ''), kk = kite(A, x, y, s, k[3], k[4], 900 + i * 220, holder);
-      var ex = k[0] < .5 ? L : R, ey = phone ? T0 + H * .3 : B, mx = (kk.at[0] + ex) / 2 + (k[0] < .5 ? 30 : -30), my = Math.max(kk.at[1], ey) - (ey - kk.at[1]) * .18;
+      var ex = k[0] < .5 ? L : R, ey = phone ? Math.min(T0 + H * .3, A.copyTop - 20) : B, mx = (kk.at[0] + ex) / 2 + (k[0] < .5 ? 30 : -30), my = Math.max(kk.at[1], ey) - (ey - kk.at[1]) * .18;
       A.add('dl2', 'M' + pt(kk.at) + 'Q' + pt([mx, my]) + ' ' + pt([ex, ey]), 1400 + i * 220, 1600);
       holder.style.transformOrigin = f(kk.at[0]) + 'px ' + f(kk.at[1]) + 'px';
       A.loop(holder, [{ transform: 'rotate(-3deg) translateY(0)' }, { transform: 'rotate(3deg) translateY(-4px)' }], { duration: 2600 + i * 500, delay: 3000 + i * 200, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
@@ -1834,7 +1836,7 @@
     // Glints rising, slow, and soft sparkles.
     var nS = phone ? 10 : 20;
     for (var q = 0; q < nS; q++) {
-      var sx = phone ? L + 20 + rn() * (W - 40) : (q % 2 ? L + 40 + rn() * W * .22 : R - 40 - rn() * W * .22), sy2 = T0 + H * (phone ? .05 + rn() * .2 : .15 + rn() * .6);
+      var sx = phone ? L + 20 + rn() * (W - 40) : (q % 2 ? L + 40 + rn() * W * .22 : R - 40 - rn() * W * .22), sy2 = phone ? B - 30 - rn() * Math.max(0, Math.min(160, B - A.copyBottom - 54)) : T0 + H * (.15 + rn() * .6);
       var sp = g(A, '');
       A.add('fs2', sparkle(sx, sy2, (3 + rn() * 4) * u), 1600 + q * 60, 400, sp);
       A.loop(sp, [{ opacity: 1 }, { opacity: .2 }, { opacity: 1 }], { duration: 2400 + rn() * 2400, delay: 3000 + rn() * 3000, iterations: Infinity, easing: 'ease-in-out' });
@@ -1915,7 +1917,7 @@
       A.loop(dr, [{ transform: 'translate(0,0)', opacity: 0 }, { opacity: .8, offset: .2 }, { transform: 'translate(-8px,' + f(phone ? 70 : H * .3) + 'px)', opacity: 0 }], { duration: 3000 + rn() * 2500, delay: 2600 + rn() * 4000, iterations: Infinity, fill: 'backwards', easing: 'ease-in' });
     }
     // A flower-twined swing hanging from a branch, left column, gently swinging.
-    var sx = phone ? L + 60 : sideX(A, u)[0], top = T0 + (phone ? 16 : 40 * u), seatY = phone ? T0 + H * .26 : T0 + H * .62, sw = (phone ? 28 : 46) * u, swg = g(A, '');
+    var sx = phone ? L + 60 : sideX(A, u)[0], top = T0 + (phone ? 16 : 40 * u), seatY = phone ? Math.min(T0 + H * .26, A.copyTop - 24) : T0 + H * .62, sw = (phone ? 28 : 46) * u, swg = g(A, '');
     // The branch it hangs from, leafy, reaching in from the frame.
     var br = g(A, ''), bd = 'M' + pt([L, top - 14 * u]) + 'Q' + pt([sx, top - 18 * u]) + ' ' + pt([sx + sw * 2.2, top + 6 * u]);
     A.add('dl3', bd + 'M' + pt([L, top - 8 * u]) + 'Q' + pt([sx, top - 10 * u]) + ' ' + pt([sx + sw * 2.2, top + 8 * u]), 800, 1200, br);
