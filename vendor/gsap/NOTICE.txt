@@ -1,0 +1,9 @@
+GSAP, ScrollTrigger and MorphSVGPlugin 3.15.0
+Copyright 2026 GreenSock. All rights reserved.
+
+Distributed under the GSAP Standard "No Charge" License:
+https://gsap.com/community/standard-license/
+
+Original proprietary notices are retained in each distribution file.
+See version.json for the official npm package URL and verified SHA-512 integrity.
+These dependencies are not licensed under MIT.

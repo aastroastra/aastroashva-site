@@ -38,7 +38,7 @@ jobs:
         run: |
           python -m unittest discover -s release-tools -p 'test_*.py'
           python -m unittest discover -s . -p 'test_publish_storage.py'
-          node --test test_auth_link.mjs ownapi/test_ownapi.mjs differences/test_diff.mjs
+          node --test test_auth_link.mjs ownapi/test_ownapi.mjs differences/test_diff.mjs release-tools/test_jyotish.mjs
           python -m unittest discover -s parity-tools -p 'test_*.py'
       - name: Restore permanent report history
         run: |

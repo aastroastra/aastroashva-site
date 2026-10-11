@@ -334,13 +334,13 @@
   var anims = [];
 
   /* ---------- Equal space above and below the chart (desktop) ----------
-     The hero runs from the header to the bottom of the first screen, and the
-     canvas sits in it with the same gap above (from the header's bottom) as
+     The hero runs from the invocation to the bottom of the first screen, and the
+     canvas sits in it with the same gap above (from the invocation's bottom) as
      below (to the screen's bottom), whatever sits between header and hero.
      The gap grows with the screen (40px at 670px tall, 54 at 900, 65 at
      1080, at most 72), and the canvas takes the height that is left, so the
      whole rectangle and both gaps always fit the first screen. */
-  var header = document.querySelector('.site-header');
+  var header = document.querySelector('.hero-invocation') || document.querySelector('.site-header');
   function fitHero() {
     if (narrow.matches || !header) { hc.style.height = ''; stage.style.top = ''; stage.style.bottom = ''; return; }
     var y = window.scrollY || window.pageYOffset || 0;
