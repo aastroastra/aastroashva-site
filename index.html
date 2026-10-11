@@ -100,7 +100,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" media="print" onload="this.media='all'" />
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@600;700&family=Noto+Serif+Devanagari:wght@600;700&family=Noto+Sans+Devanagari:wght@500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" /></noscript>
 <link rel="stylesheet" href="/site-theme.css?v=6" />
-<link rel="stylesheet" href="/landing.css?v=6" />
+<link rel="stylesheet" href="/landing.css?v=7" />
 <link rel="stylesheet" href="/mm-section.css" />
 <link rel="stylesheet" href="/thread.css?v=7" />
 <link rel="stylesheet" href="/engine-section.css?v=1" />
@@ -128,7 +128,7 @@
        and swaps only if it differs. Every canvas fills the same rectangle. */
     var CV=['kundali-north','kundali-south','diya','navratri','dussehra','holi','karwa-chauth','chhath','sankranti','shivratri','ganesh-chaturthi','janmashtami','raksha-bandhan','onam','ugadi-gudi-padwa','eid','christmas','new-year','purnima','pitru-paksha','eclipse','transit','dev-uthani','vasant-panchami','ram-navami','hanuman-jayanti','akshaya-tritiya','rath-yatra','teej','nag-panchami'];
     window.AA_CANVASES=CV;
-    window.AA_FEST_V='7';
+    window.AA_FEST_V='8';
     window.AA_pickCanvas=function(c){
       window.AA_CANVAS_PRESET=null;
       if(!c||typeof c!=='object') return null;
@@ -206,8 +206,8 @@
 </script>
 <script src="/site-theme.js" defer></script>
 <link rel="stylesheet" href="/brand-reveal.css?v=1" />
-<link rel="stylesheet" href="/hero-c.css?v=19" />
-<script src="/hero-c.js?v=20" defer></script>
+<link rel="stylesheet" href="/hero-c.css?v=20" />
+<script src="/hero-c.js?v=21" defer></script>
 </head>
 <body>
 <script src="/app-bar.js?v=2"></script>
@@ -733,8 +733,33 @@
 </section>
 </main>
 
-<!-- 7. Footer (same as the previous home page) -->
+<!-- 7. Discover Jyotish and footer -->
 <footer>
+  <a class="jyotish-invite" href="./vedic-astrology/" aria-labelledby="jyotish-invite-title">
+    <div class="jyotish-invite-copy">
+      <p class="jyotish-invite-kicker"><span lang="en">The sky. The sages. And you.</span><span lang="hi">आकाश। ऋषि। और आप।</span></p>
+      <h2 id="jyotish-invite-title"><span lang="en">Discover Jyotish</span><span lang="hi">ज्योतिष जानें</span><span class="jyotish-invite-arrow" aria-hidden="true">↗</span></h2>
+      <p class="jyotish-invite-description"><span lang="en">Follow an illustrated journey from the sages to the signs, planets and houses.</span><span lang="hi">चित्रों के साथ ऋषियों से राशियों, ग्रहों और भावों तक की यात्रा पर चलें।</span></p>
+      <span class="jyotish-invite-action"><span lang="en">Begin the story</span><span lang="hi">कहानी शुरू करें</span> <span aria-hidden="true">→</span></span>
+    </div>
+    <svg class="jyotish-invite-art" viewBox="0 0 280 250" aria-hidden="true" focusable="false">
+      <g fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="140" cy="106" r="83" opacity=".22"/>
+        <circle cx="140" cy="106" r="69" stroke-dasharray="1 7" opacity=".38"/>
+        <ellipse cx="140" cy="106" rx="112" ry="47" transform="rotate(-27 140 106)" opacity=".6"/>
+        <circle cx="225" cy="54" r="12" fill="var(--bg)"/>
+        <path d="M223 39L223 33M243 54H249M238 39L243 34"/>
+        <path d="M79 73A16 16 0 1 0 94 98A15 15 0 0 1 79 73Z" fill="var(--bg)"/>
+        <path d="M140 75V105M125 90H155" opacity=".55"/>
+        <circle cx="140" cy="90" r="3" fill="currentColor" stroke="none"/>
+        <path d="M112 38L115 31L118 38L125 41L118 44L115 51L112 44L105 41Z"/>
+        <path d="M199 130L201 124L203 130L209 132L203 134L201 140L199 134L193 132Z"/>
+        <path d="M46 162Q92 143 140 173Q188 143 234 162V217Q186 201 140 230Q94 201 46 217Z" fill="var(--bg)"/>
+        <path d="M140 173V230M39 171V225Q91 212 140 237Q189 212 241 225V171"/>
+        <path d="M61 175Q96 166 124 182M61 187Q96 178 124 194M61 199Q96 190 124 206M156 182Q184 166 219 175M156 194Q184 178 219 187M156 206Q184 190 219 199" opacity=".5"/>
+      </g>
+    </svg>
+  </a>
   <div class="foot-word">
     <svg viewBox="0 0 1000 150" role="img" aria-label="AstroAshva"><text x="500" y="118" text-anchor="middle" font-size="126" textLength="980" lengthAdjust="spacingAndGlyphs" aria-hidden="true">ASTROASHVA</text></svg>
     <div class="fw-sub"><span lang="en">For the one who believes</span><span lang="hi">विश्वास करने वाले के लिए</span></div>

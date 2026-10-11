@@ -271,15 +271,17 @@
       }
     }
 
-    // The day's form, top centre, in the day's colour.
-    var sy = phone ? T0 + Math.max(84, H * .12) : T0 + Math.max(66, H * .1), ss = phone ? u * .95 : u * 1.12;
-    var sym = g(A, '');
-    veil(A, cx, sy, 58 * ss, 62 * ss, sym);
-    glow(A, cx, sy, 70 * ss, 300, sym, .22);
-    var spin = DEVI[day - 1](A, mk(cx, sy, ss), 700, sym);
-    if (spin && spin.spin) {
-      spin.spin.style.transformOrigin = f(spin.cx) + 'px ' + f(spin.cy) + 'px';
-      A.loop(spin.spin, [{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }], { duration: 90000, iterations: Infinity, delay: 3000 });
+    // The day's form stays on desktop; phones keep the invocation above the hero.
+    if (!phone) {
+      var sy = T0 + Math.max(66, H * .1), ss = u * 1.12;
+      var sym = g(A, 'nav-day-symbol');
+      veil(A, cx, sy, 58 * ss, 62 * ss, sym);
+      glow(A, cx, sy, 70 * ss, 300, sym, .22);
+      var spin = DEVI[day - 1](A, mk(cx, sy, ss), 700, sym);
+      if (spin && spin.spin) {
+        spin.spin.style.transformOrigin = f(spin.cx) + 'px ' + f(spin.cy) + 'px';
+        A.loop(spin.spin, [{ transform: 'rotate(0deg)' }, { transform: 'rotate(360deg)' }], { duration: 90000, iterations: Infinity, delay: 3000 });
+      }
     }
 
     // Nine lamps along the bottom, one for each night: the nights gone glow

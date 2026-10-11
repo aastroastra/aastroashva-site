@@ -337,8 +337,8 @@
      The hero runs from the invocation to the bottom of the first screen, and the
      canvas sits in it with the same gap above (from the invocation's bottom) as
      below (to the screen's bottom), whatever sits between header and hero.
-     The gap grows with the screen (40px at 670px tall, 54 at 900, 65 at
-     1080, at most 72), and the canvas takes the height that is left, so the
+     The gap grows gently with the screen (24px at 670px tall, 32 at 900,
+     at most 44), and the canvas takes the height that is left, so the
      whole rectangle and both gaps always fit the first screen. */
   var header = document.querySelector('.hero-invocation') || document.querySelector('.site-header');
   function fitHero() {
@@ -346,7 +346,7 @@
     var y = window.scrollY || window.pageYOffset || 0;
     var hb = header.getBoundingClientRect().bottom + y, ht = hc.getBoundingClientRect().top + y;
     var vh = window.innerHeight, extra = Math.max(0, ht - hb);
-    var g = Math.round(Math.min(72, Math.max(40, vh * 0.06)));
+    var g = Math.round(Math.min(44, Math.max(24, vh * 0.035)));
     var h = Math.max(560, vh - ht);
     // Below the minimum height the canvas still keeps equal gaps inside it.
     hc.style.height = h + 'px';
