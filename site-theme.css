@@ -1,12 +1,12 @@
 /* Homepage palette, type and navigation for Releases and Credits.
    Palette values and aa-theme identifiers match index.html. */
-  [data-theme="yellow-light"] { --bg:#FFFFFF; --card:#FFFFFF; --line:#ECE6D8; --fg:#1A1A1A; --fg2:#565043; --muted:#6E6859; --tint:#B7791F; --on-accent:#FFFFFF; --cosmos:55,55,55; --pa:#B7791F; --btn-bg:#0B0B0C; --btn-fg:#FFFFFF; }
+  [data-theme="yellow-light"] { --bg:#FFFFFF; --card:#FFFFFF; --line:#ECE6D8; --fg:#1A1A1A; --fg2:#565043; --muted:#6E6859; --tint:#DCA015; --on-accent:#FFFFFF; --cosmos:55,55,55; --pa:#DCA015; --btn-bg:#0B0B0C; --btn-fg:#FFFFFF; }
   [data-theme="white-light"] { --bg:#FFFFFF; --card:#FFFFFF; --line:#ECECEC; --fg:#1A1A1A; --fg2:#565043; --muted:#6B6B6B; --tint:#F0632E; --on-accent:#FFFFFF; --cosmos:55,55,55; --pa:#FB8C3A; --btn-bg:#0B0B0C; --btn-fg:#FFFFFF; }
   [data-theme="mono-light"]   { --bg:#FFFFFF; --card:#FFFFFF; --line:#E6E6E6; --fg:#0A0A0A; --fg2:#4A4A4A; --muted:#6B6B6B; --tint:#0A0A0A; --on-accent:#FFFFFF; --cosmos:40,40,40;   --pa:#EDEDED; --btn-bg:#0A0A0A; --btn-fg:#FFFFFF; }
   [data-theme="yellow-dark"]  { --bg:#0B0B0C; --card:#151515; --line:#242424; --fg:#F4F4F4; --fg2:#BDBDBD; --muted:#7C7C7C; --tint:#F5B93A; --on-accent:#0B0B0C; --cosmos:225,225,225; --pa:#F5B93A; --btn-bg:#FAFAFA; --btn-fg:#0B0B0C; }
   [data-theme="mono-dark"]    { --bg:#0A0A0A; --card:#141414; --line:#262626; --fg:#FAFAFA; --fg2:#C8C8C8; --muted:#7A7A7A; --tint:#FAFAFA; --on-accent:#0A0A0A; --cosmos:235,235,235; --pa:#EDEDED; --btn-bg:#FAFAFA; --btn-fg:#0A0A0A; }
   /* Tint fill: yellow->orange gradient for the yellow themes, solid for mono */
-  [data-theme="yellow-light"] { --tint-grad:linear-gradient(110deg,#AD7818 0%,#BD7B1D 50%,#C16A28 100%); }
+  [data-theme="yellow-light"] { --tint-grad:linear-gradient(110deg,#DCA015 0%,#E1A51B 55%,#E29A24 100%); }
   [data-theme="yellow-dark"] { --tint-grad:linear-gradient(100deg,#FACC15 0%,#FB923C 55%,#EAB308 100%); }
   [data-theme="white-light"] { --tint-grad:linear-gradient(100deg,#FB8C3A 0%,#F0632E 55%,#E4551F 100%); }
   [data-theme="mono-light"], [data-theme="mono-dark"] { --tint-grad:var(--tint); }
@@ -55,7 +55,7 @@ body { font-family:var(--font-body); letter-spacing:-.01em; -webkit-font-smoothi
 .site-themes button[aria-pressed="true"] { border-color:var(--tint); }
 .site-chip { width:18px; height:18px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; border:1px solid rgba(140,140,140,.42); background:#fff; }
 .site-chip i { width:8px; height:8px; border-radius:50%; }
-[data-site-theme="yellow-light"] i { background:#B7791F; }
+[data-site-theme="yellow-light"] i { background:#DCA015; }
 [data-site-theme="white-light"] i { background:#F0632E; }
 [data-site-theme="mono-light"] i { background:#111; }
 [data-site-theme="yellow-dark"] .site-chip,[data-site-theme="mono-dark"] .site-chip { background:#000; }
@@ -86,3 +86,6 @@ h2 { font-family:var(--font-heading); font-weight:700; letter-spacing:-.02em; }
 
 /* Keep the light gold invocation and accents on the same readable gold. */
 [data-theme="yellow-light"] .invocation-mantra { color:var(--tint); }
+
+/* Golden yellow and a cream wash, matching the app’s zodiac cards. */
+[data-theme="yellow-light"] { --soft:#FFFCF2; --accent-soft:#FBF3DB; }
