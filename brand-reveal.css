@@ -32,3 +32,21 @@
   from { opacity:0; }
   to { opacity:1; }
 }
+
+/* A softer ASHVA wordmark across all five palettes and hero variants. */
+.brand-ashva,
+.hc-word .brand-cell:nth-child(n+6) {
+  color:var(--fg2);
+  -webkit-text-fill-color:currentColor;
+  font-weight:500;
+}
+.hero-positioning {
+  margin:12px 20px 0;
+  color:var(--fg2);
+  font:500 clamp(14px,1.4vw,19px)/1.5 var(--font-body);
+  letter-spacing:.025em;
+}
+html[data-lang="hi"] .hero-positioning { letter-spacing:0; }
+@media (prefers-reduced-motion:no-preference) {
+  .hc-copy > .hero-positioning { animation:hc-in 1.2s ease var(--hc-intro-end) both; }
+}
