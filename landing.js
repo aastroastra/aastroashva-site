@@ -88,7 +88,7 @@
   }
   // The folder for one screen in one family, or null when it was never captured.
   function capture(name, ios, fam) {
-    if (fam === 'yl' && name === '18-palm-start') return null; // This legacy capture is white/orange; use the matching yellow result.
+    if (fam === 'yl' && (name === '18-palm-start' || name === '14-chat-empty' || name === '21-prediction-weekly')) return null; // Legacy white/orange captures: use the matching yellow story screen.
     if (fam === 'yl') return ios && IOS_YL[name] ? lang + '-ios/yl/' + name : lang + '/' + name;   // else Android size; the iPhone frame crops it a little
     if (fam === 'wl') return ios ? (IOS[name] ? lang + '-ios/' + name : null) : (WL[name] ? lang + '-and/' + name : null);
     if (fam === 'ml') return ios ? (ML_IOS[name] ? lang + '-ios/ml/' + name : null) : (ML[name] ? lang + '-and/ml/' + name : null);
