@@ -549,3 +549,25 @@ footer { max-width:var(--maxw); margin:0 auto; }
 @media (prefers-reduced-motion:reduce) and (max-width:760px) {
   .story-static { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 12px; }
 }
+
+/* TestFlight companion badge follows the Play badge's proportions. */
+.store-badge[data-store="ios"] {
+  width:188px; min-width:0; height:56px; box-sizing:border-box;
+  padding:0 12px; gap:10px; border:1px solid #a6a6a6;
+  border-radius:7px; justify-content:center; text-align:left;
+}
+.store-badge[data-store="ios"] .ico { width:32px; height:38px; }
+.store-badge[data-store="ios"] small { font-size:10px; letter-spacing:.025em; opacity:1; line-height:1.25; }
+.store-badge[data-store="ios"] b { font-size:23px; font-weight:500; letter-spacing:-.035em; line-height:1.12; }
+@media(max-width:640px) {
+  .store-badge[data-store="ios"] { width:168px; height:50px; padding:0 10px; gap:8px; }
+  .store-badge[data-store="ios"] b { font-size:21px; }
+}
+@media(max-width:400px) {
+  .store-badge[data-store="ios"] { width:154px; height:46px; }
+  .store-badge[data-store="ios"] .ico { width:28px; height:34px; }
+  .store-badge[data-store="ios"] b { font-size:19px; }
+  .store-badge[data-store="ios"] small { font-size:9px; }
+}
+
+@media(max-width:380px) { .hc .store-badge[data-store="ios"] { width:168px; height:50px; } }
