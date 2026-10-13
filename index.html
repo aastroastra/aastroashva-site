@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="white-light">
+<html lang="hi" data-lang="hi" data-theme="white-light">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -115,7 +115,7 @@
     d.setAttribute('data-theme',t);
     try{ q=new URLSearchParams(location.search).get('lang'); }catch(e){}
     if(q!=='hi'&&q!=='en'){ try{ q=localStorage.getItem('aa-lang'); }catch(e){} }
-    l=q==='hi'?'hi':'en'; d.setAttribute('data-lang',l); d.lang=l; window.AA_LANG=l;
+    l=q==='en'?'en':'hi'; d.setAttribute('data-lang',l); d.lang=l; window.AA_LANG=l;
     /* Hero: C (the kundali) by default; ?hero=a or ?hero=b shows an alternate.
        Only the URL decides; a choice saved by an earlier preview is cleared. */
     var h=null; try{ h=new URLSearchParams(location.search).get('hero'); }catch(e){}
