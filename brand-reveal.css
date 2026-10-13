@@ -52,9 +52,9 @@ html[data-lang="hi"] .hero-positioning { letter-spacing:0; }
 }
 
 /* The light gold wordmark uses the palette tint, with a softer ASHVA. */
-[data-theme="yellow-light"] h1.hc-word,
-[data-theme="yellow-light"] h1.hb-word,
-[data-theme="yellow-light"] h1.wordmark {
+html[data-theme="yellow-light"] h1.hc-word,
+html[data-theme="yellow-light"] h1.hb-word,
+html[data-theme="yellow-light"] h1.wordmark {
   color:var(--tint);
   -webkit-text-fill-color:currentColor;
   background:none;
