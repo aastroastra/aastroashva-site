@@ -50,3 +50,12 @@ html[data-lang="hi"] .hero-positioning { letter-spacing:0; }
 @media (prefers-reduced-motion:no-preference) {
   .hc-copy > .hero-positioning { animation:hc-in 1.2s ease var(--hc-intro-end) both; }
 }
+
+/* The light gold wordmark uses the palette tint, with a softer ASHVA. */
+[data-theme="yellow-light"] h1.hc-word,
+[data-theme="yellow-light"] h1.hb-word,
+[data-theme="yellow-light"] h1.wordmark {
+  color:var(--tint);
+  -webkit-text-fill-color:currentColor;
+  background:none;
+}
