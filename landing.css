@@ -571,3 +571,6 @@ footer { max-width:var(--maxw); margin:0 auto; }
 }
 
 @media(max-width:380px) { .hc .store-badge[data-store="ios"] { width:168px; height:50px; } }
+
+[data-theme="yellow-light"] .says { background:var(--soft); color:var(--fg); border:1px solid var(--accent-soft); }
+[data-theme="yellow-light"] .says .eyebrow { color:var(--muted); }
