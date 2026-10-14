@@ -308,6 +308,20 @@
       "title": "Store review prompt policy",
       "expected": "Equivalent account-scoped eligibility, quiet-moment rules and remote kill switch govern native App Store and Google Play review requests.",
       "priority": "P2"
+    },
+    {
+      "id": "app-icons",
+      "area": "Settings",
+      "title": "App icons and festival colour preference",
+      "expected": "Explicit choice of supported bundled icons; retain the chosen icon and provide a separate dated-festival-colour opt-out. Remote config cannot install a new launcher resource.",
+      "priority": "P2"
+    },
+    {
+      "id": "billing-invoices",
+      "area": "Wallet and billing",
+      "title": "Billing details and private tax documents",
+      "expected": "Versioned customer details before purchase when enabled, immutable owned invoices/credit notes, private downloads, and account-safe async state. Invoice processing must not change existing credit fulfillment.",
+      "priority": "P1"
     }
   ]
 }
