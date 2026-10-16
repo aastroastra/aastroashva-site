@@ -27,7 +27,7 @@ presskit/
 **Signature gradient**: `#FACC15` → `#FB923C` → `#EAB308`
 **Themes**: Yellow · Light (default), B&W · Light, Yellow · Dark, B&W · Dark
 **Fonts**: Noto Serif (display), Inter (body)
-**Tagline**: *One who believes.*
+**Tagline**: *AI Precision. Human Soul.*
 
 ## Logo Usage
 
@@ -40,7 +40,7 @@ presskit/
 | | |
 |---|---|
 | **App Name** | AstroAshva |
-| **Tagline** | One who believes. |
+| **Tagline** | AI Precision. Human Soul. |
 | **Platforms** | Android (live beta), iOS (in development) |
 | **Languages** | English, हिन्दी |
 | **Website** | https://www.astroashva.com/ |

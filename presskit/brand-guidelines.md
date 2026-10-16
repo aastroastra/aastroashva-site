@@ -13,10 +13,12 @@ AstroAshva is a personal Vedic astrology companion. It turns a person's birth de
 - **Warm**: gold light, never cold or clinical
 - **Cosmic**: the math of the heavens, made personal
 - **Precise**: real charts, real calculations, no vagueness
-- **Believer-first**: *"for the one who believes"*
+- **Human soul**: the AI does the exact math, the voice stays warm and human (*"AI Precision. Human Soul."*)
 
 ### Tagline
-> **One who believes.**
+> **AI Precision. Human Soul.**
+
+The first half is the promise of exact charts and calculations; the second is the promise of how they are read: with warmth, care and respect for the person asking.
 
 Supporting line (logo lockup): *One Place · Every Ritual · Every Solution.*
 
@@ -137,7 +139,7 @@ Each graha has a fixed accent, used in charts, planet rows, and dasha timelines:
 
 | Role | Font | Notes |
 |------|------|-------|
-| **Display / Headings** | **Noto Serif** (700) | the title voice: "One who believes" |
+| **Display / Headings** | **Noto Serif** (700) | the title voice: "AI Precision. Human Soul." |
 | **Body / UI** | **Inter** (400–700) | everything functional |
 | **Devanagari** | Noto Serif / Noto Sans Devanagari | full Hindi support |
 
@@ -191,7 +193,7 @@ Product copy avoids the "—" character; use commas, colons, or full stops.
 |----|-------|
 | Warm, sure, respectful of tradition | Superstitious, fear-selling, vague |
 | "Mars trines your Ascendant. Energy peaks Wed & Thu." | "Something big might happen soon." |
-| "for the one who believes" | "guaranteed predictions" |
+| "AI Precision. Human Soul." | "guaranteed predictions" |
 | Guidance and reflection | Medical / legal / financial advice |
 
 Readings are interpretive guidance, never a substitute for professional advice.

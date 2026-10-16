@@ -9,7 +9,7 @@ Everything needed for press coverage, store listings, and partnership materials.
 | | |
 |---|---|
 | **App Name** | AstroAshva |
-| **Tagline** | One who believes. |
+| **Tagline** | AI Precision. Human Soul. |
 | **Category** | Astrology · Lifestyle |
 | **Platforms** | Android (live beta) · iOS (in development) |
 | **Languages** | English, हिन्दी (Hindi) |
@@ -22,7 +22,7 @@ Everything needed for press coverage, store listings, and partnership materials.
 
 AstroAshva is a personal Vedic astrology companion. It turns your birth details (name, date, time and place) into a complete, living picture of your sky, and sends notifications timed to your exact chart, written by an AI trained on classical Vedic texts.
 
-It is built for **the one who believes**: precise calculations, traditional methods, and a warm, modern interface, in English and Hindi.
+Its promise is in the tagline, **AI Precision. Human Soul.** The calculations are exact and follow traditional methods; the readings are written with warmth and care, in a modern interface, in English and Hindi.
 
 ---
 
@@ -80,7 +80,7 @@ presskit/
 > AstroAshva is a personal Vedic astrology companion that turns your birth details into a living chart and sends notifications timed to your exact sky, in English and Hindi.
 
 **One-liner**
-> Personalised Vedic astrology, for the one who believes.
+> Personalised Vedic astrology. AI Precision. Human Soul.
 
 ---
 
