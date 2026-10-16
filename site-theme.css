@@ -51,12 +51,14 @@ body { font-family:var(--font-body); letter-spacing:-.01em; -webkit-font-smoothi
    (logo-mark-open.png, petal left empty) and the chart are two masks painted
    with the same --tint-grad, so both follow every theme. Chart centre and size
    are fractions of the 500x466 mark drawn with contain in a square box:
-   x 403/500, y .034 + 380/466 x .932, side 26/500 (its turning corners clear
-   the petal outline). Reduced motion keeps it still. */
+   x 403/500, y .034 + 380/466 x .932 (the petal's widest point, where its
+   largest inscribed circle sits, r 23/500). Side 28.5/500 is the largest whose
+   turning corners (side x .707 + half the 7% line) keep 2/600 of the mark
+   clear of the petal walls. Reduced motion keeps it still. */
 .site-mark--live { position:relative; background:none; -webkit-mask:none; mask:none; }
 .site-mark--live::before, .site-mark--live::after { content:""; position:absolute; background:var(--tint-grad); }
 .site-mark--live::before { inset:0; -webkit-mask:url('/logo-mark-open.png') center/contain no-repeat; mask:url('/logo-mark-open.png') center/contain no-repeat; }
-.site-mark--live::after { --k:5.2%; width:var(--k); height:var(--k); left:calc(80.6% - var(--k) / 2); top:calc(79.4% - var(--k) / 2); transform-origin:50% 50%; -webkit-mask:var(--kundali-glyph) center/100% 100% no-repeat; mask:var(--kundali-glyph) center/100% 100% no-repeat; animation:site-mark-turn 16s linear infinite; }
+.site-mark--live::after { --k:5.7%; width:var(--k); height:var(--k); left:calc(80.6% - var(--k) / 2); top:calc(79.4% - var(--k) / 2); transform-origin:50% 50%; -webkit-mask:var(--kundali-glyph) center/100% 100% no-repeat; mask:var(--kundali-glyph) center/100% 100% no-repeat; animation:site-mark-turn 16s linear infinite; }
 :root { --kundali-glyph:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M5 5H95V95H5Z M5 5L95 95 M95 5L5 95 M50 5L95 50L50 95L5 50Z' fill='none' stroke='%23000' stroke-width='7' stroke-linejoin='round'/%3E%3C/svg%3E"); }
 @keyframes site-mark-turn { to { transform:rotate(360deg); } }
 @media (prefers-reduced-motion:reduce) { .site-mark--live::after { animation:none; } }
