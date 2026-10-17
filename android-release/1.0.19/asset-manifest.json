@@ -1,0 +1,4507 @@
+{
+  "version": "1.0.19",
+  "versionCode": 279,
+  "images": [
+    {
+      "width": 512,
+      "height": 512,
+      "bytes": 38577,
+      "sha256": "ca439e8b628a39db6fc87f2777afa564991b558f662765fae2c5de049ca092f9",
+      "file": "yellow-light/icon-512.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 52829,
+      "sha256": "184709b8e7ab7822a9b66891c80b94dd6f30a235f164fd737a1799ab2b054a0f",
+      "file": "yellow-light/en-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 172067,
+      "sha256": "029b4c41b5ffcde0d986cc9df7ad2c905acc4e417f0fa7347125778a67d4a493",
+      "file": "yellow-light/en-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 200512,
+      "sha256": "28677948f9f38a2c803d7bbb22e67caf67c629d96dbafc8bd97ff88e395e264d",
+      "file": "yellow-light/en-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 160850,
+      "sha256": "afaf42031288aba152afd89c1755df98166ec5168c39a322bbfa12cf2aa0420c",
+      "file": "yellow-light/en-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 149069,
+      "sha256": "ebaddb52abcbf4978fadaa8d13718defdec55bbaf61c12a7c9c4675dc852f7b2",
+      "file": "yellow-light/en-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 135214,
+      "sha256": "39acfb5a5ad6043785bcbfcceddec5dadc2f9414cae1e90cbd42e3301eba7197",
+      "file": "yellow-light/en-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 158309,
+      "sha256": "46fda1b4e2f6a520e97f6857a6f3b17f6eec744d4091b554998727907be10633",
+      "file": "yellow-light/en-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 49692,
+      "sha256": "7ec43c356ccb3dc95112c80985bc817226a4ba95e5639ac5dca4a93f7127f63b",
+      "file": "yellow-light/hi-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 163539,
+      "sha256": "0f968598fcc60c540f78bbe1544cbbee22a92e38add233d8f789078429747446",
+      "file": "yellow-light/hi-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 167109,
+      "sha256": "32a388d8c1a76dd32bdb0dfc4848dc639ba266e3bec3c128ee3a296c794367c3",
+      "file": "yellow-light/hi-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 152265,
+      "sha256": "38842e3a74133d7628fc00949a86189c9cd8b91a4799e4d264542cb849474837",
+      "file": "yellow-light/hi-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 129176,
+      "sha256": "90ef7a2d8aa930c5decf638b99c98075acee75359129d0223bb0297d1fe3569b",
+      "file": "yellow-light/hi-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 115336,
+      "sha256": "06cd693e41236afc7daf7a8ecc12168a6ab8dbd8ec1d76e1e9cae4ec91de4ac7",
+      "file": "yellow-light/hi-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 129823,
+      "sha256": "3af7a220fd461078e1e629dffb30a6af07d6115424aa30f2a14934926e297b76",
+      "file": "yellow-light/hi-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 49129,
+      "sha256": "c38480c7c0cf4d65c21502fbc3a8ee8a48d248ac46b2aaf56bc6f91699d7b3bd",
+      "file": "yellow-light/mr-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 162713,
+      "sha256": "9cbe26534d6d42aefc6a3b80518ac68e9d52a83140b7f397d4ff4dbc662643ac",
+      "file": "yellow-light/mr-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 169226,
+      "sha256": "75217e4eaf1dd806f1819e46646aa5305f64ee28fa70608fa711130f00b71389",
+      "file": "yellow-light/mr-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 156799,
+      "sha256": "f056b2a7b9ab7ae04d1c9ff0ca095ad3e2b6c74e09d378cd8f7acbbcf90aa9d0",
+      "file": "yellow-light/mr-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 129655,
+      "sha256": "14d9f98e997920e6eb1f04f6b31e497c6ce013ec374aace49c17e0c1d02eb528",
+      "file": "yellow-light/mr-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 110717,
+      "sha256": "53eceb51e4b15bea211fb645c3fbc175582d35fab1aa9d566a5b85c6e5213efb",
+      "file": "yellow-light/mr-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 129181,
+      "sha256": "cfd1487196995068bd3ca8c73eb70ca920da899c3a0b2126c5cae27cb7780ee9",
+      "file": "yellow-light/mr-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 49581,
+      "sha256": "5936e72f4e685a32d99b1cc8278adb277241189b927e786ef5f91413942c7a10",
+      "file": "yellow-light/gu/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168837,
+      "sha256": "5881abe527a55c53b0e63db9e0c8fb3c30ebdcd8ec76f7c8249c9c861a33973c",
+      "file": "yellow-light/gu/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 179919,
+      "sha256": "65781316213c74ad57e7439f61150374ff6e9c051d09d4f31cd8a1a8082eb306",
+      "file": "yellow-light/gu/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 159190,
+      "sha256": "1dcbc292a718e83d474e5b8154da2790dbb41f586460bf79152ac7f953c18223",
+      "file": "yellow-light/gu/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 137915,
+      "sha256": "e8b4133e77f6fe6d15aa9d778fb23a19edd53a63856f9a51b36e42475ec8fea6",
+      "file": "yellow-light/gu/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 118740,
+      "sha256": "ee77fd443218d958253c89f66061e45d09f53fef6b37c5801de55b436607e6b2",
+      "file": "yellow-light/gu/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 141254,
+      "sha256": "cc075ee898337c076f5345aa20cd387b668221f5183d0e1b3aebbefce12c9727",
+      "file": "yellow-light/gu/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50609,
+      "sha256": "64971f955be89042f0091fd2598b747ffdb0f95b1e8ebddf9bebc9803eae6c6f",
+      "file": "yellow-light/ta-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 192677,
+      "sha256": "7a22de739ea79026c6773c2cd1f320233cf011f09ebf3aabf510982521e4a994",
+      "file": "yellow-light/ta-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 220387,
+      "sha256": "06e843d8312ebb60899d2a6f8d7f7d185113b0f5dabefe11867fcb1cb9adc1e6",
+      "file": "yellow-light/ta-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 212506,
+      "sha256": "27128239c6586d7fc75a0679a045ed64f95f8e6ed3a4d4f6d806ea0af576dce8",
+      "file": "yellow-light/ta-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 218404,
+      "sha256": "de5adfa151a66fdfb11416a3d251278acacae67ca773cd2bb7a7c7f4b194c708",
+      "file": "yellow-light/ta-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 141721,
+      "sha256": "4d0dcc23de3542d6f017952576277ebc835d0f9c0c231668352bcd3a8fd4875e",
+      "file": "yellow-light/ta-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 204647,
+      "sha256": "807540b2bbb684369c6edf048d9d25567c2e17ba804a7b7064656b3f59817ce0",
+      "file": "yellow-light/ta-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 51303,
+      "sha256": "e23fd2d38bceeeeccbca6c38a5d23b43b7596600c757a30f6f9aedded950fc34",
+      "file": "yellow-light/bn-BD/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 177121,
+      "sha256": "3aa17c6a091ad8842c952ac7784189646f498f113ba7ccbff8195de8a62eeb05",
+      "file": "yellow-light/bn-BD/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 199382,
+      "sha256": "e4a4044276dc6ab63043c42bbeb9239d8086cf230efcb9d3e64b499dec66a38f",
+      "file": "yellow-light/bn-BD/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 176251,
+      "sha256": "d2774bbef8794135f5cb72beb7ce41adc51322bd7cf9f3b833a1ba6941c69aa4",
+      "file": "yellow-light/bn-BD/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 148941,
+      "sha256": "7907efa1e9caf0181028144bb6ab347af6e1ae9356df1e4e51e0824158ae45a0",
+      "file": "yellow-light/bn-BD/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 136777,
+      "sha256": "0bc6dc2fa4b749cc96ef6aba00d5a27c2c2e20536345151aa7a94c524d4180d1",
+      "file": "yellow-light/bn-BD/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 154764,
+      "sha256": "bd49d6c705cdacd441116a206b14127d8b5f20b2c9240ffb57cf02cdc47b1a0f",
+      "file": "yellow-light/bn-BD/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 49191,
+      "sha256": "6c2c764808de9fe22dd2e853b5ed0b5484c02991b85d48e455d4216abde5af91",
+      "file": "yellow-light/pa/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 165181,
+      "sha256": "784aa7a6762afe97c32605cfcc00bd3505331347ca6e985c920945fa54eb6d77",
+      "file": "yellow-light/pa/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 189541,
+      "sha256": "c37240475cdd2ced1144ffa1a02554878d3f5806ca26f935950e9bfd23ea6ce4",
+      "file": "yellow-light/pa/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 155430,
+      "sha256": "fdeb221ec9f6382779c2848be03b217b7edb421bfed6c58a7edd8f795ea5d839",
+      "file": "yellow-light/pa/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 135005,
+      "sha256": "3d66be98e61f8046ed3e7f662c6a24dfe78e4e2845c0c663239775230f7a9d6d",
+      "file": "yellow-light/pa/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 123369,
+      "sha256": "c74329c2e9de6422c193590249ed613fd677e4b5dfcd5957b8b0543309fcabf1",
+      "file": "yellow-light/pa/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 134148,
+      "sha256": "b6c06915c639170fd824f59199b8fb7d9dfdca31bfdb4e04095a533fc8cd5f50",
+      "file": "yellow-light/pa/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 52144,
+      "sha256": "54b51f081c14fc0fc901e2bfdff0d7c0415cbc8024e5f3a90d7f47a866375764",
+      "file": "yellow-light/kn-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 214226,
+      "sha256": "4892727171daee0da5144a582de319c33ed57d35ae141c3088e802749108ddf2",
+      "file": "yellow-light/kn-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 225072,
+      "sha256": "09be1a7a64296c9bb123cb7c5d3e132cb69ee1e90bf1536bba2d850fb166d7e4",
+      "file": "yellow-light/kn-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 221884,
+      "sha256": "fcf4be1a62360ae5b4d8b4a807341b50bd82d711eaeca8fa7fc5b0927f69bd1c",
+      "file": "yellow-light/kn-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 210021,
+      "sha256": "1baee08e620b5dc4f98bbd691ed9d9a4e6f3aeca884e0c0863065ae72e364978",
+      "file": "yellow-light/kn-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 157789,
+      "sha256": "1360bd257a803c19d6a8c1144c0ccf5d5c5a90731de1f2a263f9bb27f9912707",
+      "file": "yellow-light/kn-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 182352,
+      "sha256": "69e5920cd7a49104de553f2aa1c22a45acae79d8110c358d5947d919c07c5e7d",
+      "file": "yellow-light/kn-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 53232,
+      "sha256": "d667ce961275994f65d332cc789845624c8138d7f64ccf5631de13bdf7c76e33",
+      "file": "yellow-light/ml-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 215071,
+      "sha256": "f06a80456b3c61b2cc455682b3671a961f5ded9b25c1a4dc3bb74171d650a484",
+      "file": "yellow-light/ml-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 242020,
+      "sha256": "d1e7419cca4f42833b33bf161080645b6019e7ab65ff3f9fd1e69d4383143f84",
+      "file": "yellow-light/ml-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 250678,
+      "sha256": "21a46047b6ce57d5dff004cb641683f9fdacec7a517c5279f780ae1193708e0b",
+      "file": "yellow-light/ml-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 234089,
+      "sha256": "cb0c55534d2a002c277bee6ce1329b33af677385e456413c12a4e6591738b272",
+      "file": "yellow-light/ml-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 173126,
+      "sha256": "85a0790848f32f7a606ae34ab37f20f849dbc591072b41c369a0ef8dd55cad69",
+      "file": "yellow-light/ml-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 211062,
+      "sha256": "f478d28c41765f862289c43fcf771b88dfcd6b8dd7aec875f4a691338490372e",
+      "file": "yellow-light/ml-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 52559,
+      "sha256": "2c26c3124f72b01a5ad2f52da9add4078c4cfc5678851fb6e61cc4e5a54c03b8",
+      "file": "yellow-light/or/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 192061,
+      "sha256": "f42e5b504af01b069091077a273edb2a95f2a7302e1c1e95c36e1fe27a70e80e",
+      "file": "yellow-light/or/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 214916,
+      "sha256": "819f128f7d1fe99ab39aae032a6755e622d8aaa43f8e85df5d6bcb68a5f2bc38",
+      "file": "yellow-light/or/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 197215,
+      "sha256": "03177ffc04058af89d66288909aa4e41388d3498a5934f1c06674b70e93346a1",
+      "file": "yellow-light/or/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 181522,
+      "sha256": "74f3dbe82d2b618089bff90e3bca500db45c33d58192d6b268560084c1cf7ffc",
+      "file": "yellow-light/or/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 141996,
+      "sha256": "25e9df26fc515387c5c8c141e9bfacb0d0fd7d461a55787316680c655b6ac809",
+      "file": "yellow-light/or/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 152146,
+      "sha256": "5fdbeffeff0c9bf77149a2f186a099b4b27139200bc77ab59fd63f7521511b0a",
+      "file": "yellow-light/or/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 52588,
+      "sha256": "fc883e646349c8c0f37e50cb0637fba82c0eb28ebbadcb69be916e351012c7a9",
+      "file": "yellow-light/es-ES/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 174842,
+      "sha256": "d199104c691b00f4723352f5dd623f984334791843abfefb7c371fa565da2983",
+      "file": "yellow-light/es-ES/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 217969,
+      "sha256": "640b9acd5078bff99297c35cbe2d46de2c55eb737e731f9cb46748cc39bc6063",
+      "file": "yellow-light/es-ES/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 178547,
+      "sha256": "ee308142cd00ad178240e9094d5c00fc7f43ab5d6f13dacc03a370f4cf27d614",
+      "file": "yellow-light/es-ES/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 159413,
+      "sha256": "f317cf6d907877b4bd47786366f4afab801f4fa234daa3ac45690be84577f135",
+      "file": "yellow-light/es-ES/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 135551,
+      "sha256": "58b2bab2b2dadd816e6b9dad3244b93d92a37f22ba84bf22306993192b74f58b",
+      "file": "yellow-light/es-ES/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 156343,
+      "sha256": "7c8bfc9b67b642c88963372de1395eddbee8d35ee077177f065ea6258ad3b4a5",
+      "file": "yellow-light/es-ES/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50104,
+      "sha256": "e4f8cf9baee0a65b7365de15f01443e08ccded81f8b1a428ed1eef189f450de3",
+      "file": "yellow-light/zh-CN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 172138,
+      "sha256": "e524d4bc0f5eaecd2c5b2988a851b8dd4ab55a381d5534e10c147a71117f9d09",
+      "file": "yellow-light/zh-CN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 192813,
+      "sha256": "9dab5bb700ef04727a9c0b8a3d3563071cecf52b4a68bcd7833113bd43929781",
+      "file": "yellow-light/zh-CN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 157094,
+      "sha256": "52a3fcf61d25b7106e7b7c0a5efc67b0662bc9eee41bea995f5eb1c0d8566389",
+      "file": "yellow-light/zh-CN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 142542,
+      "sha256": "dc8a2af16b8d6cf6ff276487ea420a91ab5836ecb22af027d8f4fa9118978dd6",
+      "file": "yellow-light/zh-CN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 130221,
+      "sha256": "032aca9c17834de06a4ea2e1f69b6c04995d6c78cdf8b21e70b63946c30dc5d9",
+      "file": "yellow-light/zh-CN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 137890,
+      "sha256": "005b8b50ff5a6c350bb97e4ee8526cffa7de317eec5cdb7dc609310048453004",
+      "file": "yellow-light/zh-CN/06-panchang.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "bytes": 36654,
+      "sha256": "c8e901a888f29feeb39c8f196f4caf3a81f39ee1aad17cddc8cd370d1bd51ff5",
+      "file": "white-light/icon-512.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 51193,
+      "sha256": "ea3f4a0708b7ee02a1fdcb0728e6eb86fce35294799380782fba7f741788f500",
+      "file": "white-light/en-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168620,
+      "sha256": "efb4cd24544b08b56e2ad535f8462e69df89524216484951cae5ea6b5868d8ba",
+      "file": "white-light/en-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 201227,
+      "sha256": "aa4c7aadae23bf7cb3c6cb0fa75d9c116ca00f6955c21a4c1bf68962c2952798",
+      "file": "white-light/en-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 155685,
+      "sha256": "5c97457c7c115c680de54556b0952096cf9f92601c63953a29feeedfb08d0acb",
+      "file": "white-light/en-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 146031,
+      "sha256": "e73912b9533d7153f50d3d421f6703d805caa2808e68d9f41c62e1e1f746fa78",
+      "file": "white-light/en-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 130892,
+      "sha256": "811e518931999987a6ffd9b1866d3ef0d76fc7801e1be2f5955858e0eb292345",
+      "file": "white-light/en-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 148237,
+      "sha256": "55887753c4ecbe8a0e3566aa4cc7d4160a9b38a14552367b2aef7c665f2a8b35",
+      "file": "white-light/en-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 48072,
+      "sha256": "028c0811c6914ea38a371d5af95adbc95468291c9efe2219cd299569d2e0d056",
+      "file": "white-light/hi-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 159166,
+      "sha256": "66fcb5fb5f373fde588adf7b6ae83b7a8727f7c28c9bc91842a76c43ce4eae95",
+      "file": "white-light/hi-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168966,
+      "sha256": "898e66ef0c55b4d0358d2708ece86dbdbec18aae20ce05f74d5752c739b103ed",
+      "file": "white-light/hi-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 147810,
+      "sha256": "2dba1bfe8de27502c48dbbd774399049564e5458f151becd40d194581438e37f",
+      "file": "white-light/hi-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 125546,
+      "sha256": "a1df56fe5d3abdef7de0df81923c20b00c7102b8704269deae30f13bc1a8fbb1",
+      "file": "white-light/hi-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 108815,
+      "sha256": "07497331cabe53252633f5e4b51eb7137aead7b6971c739b61b40c4a0304657b",
+      "file": "white-light/hi-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 121735,
+      "sha256": "75a6c8d53fc092b2acceaf3ce290ccc4660102703971d723bbfae8bd34a68f2b",
+      "file": "white-light/hi-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 47504,
+      "sha256": "97a8da124279d072af00c5d5e0c5010bdf776aedb58d5a2e5ad6be4e7b17af03",
+      "file": "white-light/mr-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 160039,
+      "sha256": "9a179898930041e37aa20785c1f80ebe204c2ceb6671567e0082667587f02cff",
+      "file": "white-light/mr-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 167500,
+      "sha256": "5e70190a037bfff6adf352c50e27e504575280863943de5201a5478ffbd5a5a2",
+      "file": "white-light/mr-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 151739,
+      "sha256": "c1a057979438e26cb36e3b0d8fa0cbb7cc47ea1c1b1763fa9341aecdae120e98",
+      "file": "white-light/mr-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 126346,
+      "sha256": "fdc647040c88acc2130b6b1750abc8c13f6fa484817223f38ca3791ec1ac007f",
+      "file": "white-light/mr-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 110187,
+      "sha256": "4a4e47c495453bd9e880e4e043abfe5138c492892e23183d7e1b182543b676ba",
+      "file": "white-light/mr-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 121054,
+      "sha256": "f098fb3ff231e84e23ce0a43005bdb012465ae0336c4de6d53b9470ec059b113",
+      "file": "white-light/mr-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 47998,
+      "sha256": "c2e0f04f3aba5bcd8ee559d03854b8de47d8bcc197e638c2f233d58d5590c122",
+      "file": "white-light/gu/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 166593,
+      "sha256": "3bea06a92001ceaedc2c81c9db111ddcfd4d59594b52c058cd2e1df9e4057afa",
+      "file": "white-light/gu/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 175406,
+      "sha256": "b066009b9489f095b6c5b6d4912b02bb1614ac2439855a53f6099d45a68d88a7",
+      "file": "white-light/gu/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 154901,
+      "sha256": "abf6c00270894a0329e51931a45c6d47707b69cbea4ef02fd600dda8c0149e90",
+      "file": "white-light/gu/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 134679,
+      "sha256": "d6ced6cc49fa55c5aad41bd94cb21f2ac486a00f414c282dd64ca0c0f9dc6eb8",
+      "file": "white-light/gu/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 113167,
+      "sha256": "8f448af8e3886c54655d76e60571a9564feb6be49162cf69dfaaea1f1776c236",
+      "file": "white-light/gu/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 132843,
+      "sha256": "28ce1c33352353ebc1fc7631d37b0c915d373db1b2ceb80e078f1f13b0cb6589",
+      "file": "white-light/gu/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 48993,
+      "sha256": "9a6c0b711f16e8d97894b65fa3d92423d8fd712d543ead06224fe8d842d3b0e4",
+      "file": "white-light/ta-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 189971,
+      "sha256": "218ae3a77db55787a63a6817e8f55d7734cf1936bca192c92433f224d1e73fa7",
+      "file": "white-light/ta-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 222727,
+      "sha256": "44d6b868a1cc71c8deff6a5df39b414dabaa8fb45aff0b1ebfa41fd4ce4348cb",
+      "file": "white-light/ta-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 205558,
+      "sha256": "d9bab73b61513200af17bdbf491da451e225b8fe390e7f376854a2b976b9264c",
+      "file": "white-light/ta-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 211274,
+      "sha256": "c22241e872137099832a1b91acaae573ce4be5845292b5b8a4b887c58741fcbd",
+      "file": "white-light/ta-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 146960,
+      "sha256": "d2625caca796370f8050a7660d83c20a6b1c912d3b9c6175193ce35f75ab77f5",
+      "file": "white-light/ta-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 192481,
+      "sha256": "15062eb8a006b94aeb54a38d0d5a553b1a288ffec3309af167bd48124cb4d49a",
+      "file": "white-light/ta-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 49589,
+      "sha256": "90d08e67183fee40fe77e129ea1bcee6a171e958862efd69f05c453d68b70759",
+      "file": "white-light/bn-BD/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 174375,
+      "sha256": "eb3befe61a1b081a49a18e3cadd2bf47bd2a4907004ebf4f75e0c7deabf9c9e4",
+      "file": "white-light/bn-BD/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 201895,
+      "sha256": "40640fae68695bd9f46d98bcb1e94960b4706ac4d25ebae41145eb0e9bd62d34",
+      "file": "white-light/bn-BD/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171172,
+      "sha256": "eed2a94ec5a048b42e28b054c7df65ffe562175532ec17d87a0acf2b3d006272",
+      "file": "white-light/bn-BD/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 145692,
+      "sha256": "0f348fcc8d45efe6f3e77c76f6892373b0518e841710f0354b853e945515e639",
+      "file": "white-light/bn-BD/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 131296,
+      "sha256": "9b961395e83eaaafdc05f1e74b64e8da089a34b4cb845d28dec3b4aa5e5af2a9",
+      "file": "white-light/bn-BD/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 145958,
+      "sha256": "4cf1aeba817cdc456a12183e95e15868a54056dc42e59fd7a1ae90d7a2eab612",
+      "file": "white-light/bn-BD/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 47529,
+      "sha256": "3c1565c93b45c8eceb5c3ff98b97418df9f159676e350492a028018f7c729431",
+      "file": "white-light/pa/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 162839,
+      "sha256": "a39ce0b0631497a4d10cb508b4430baa98b81bd25ff881d3c213a67cdf36a1ba",
+      "file": "white-light/pa/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 181515,
+      "sha256": "03f713e5dda63a62fbd55301dd884b583101996314b336d0425514cf3e4ab6e0",
+      "file": "white-light/pa/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 151322,
+      "sha256": "d6e8eaa97f6e17ba84fcb508637133aba1d6d59b176b59b8b01fb97da724a9aa",
+      "file": "white-light/pa/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 131123,
+      "sha256": "6a1c1f9ee37eb2f125963fc78ed6f644d83aa8f98dd8fb62e0edbdc58f1309d8",
+      "file": "white-light/pa/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 114436,
+      "sha256": "279c42b90b8cac1fc87c4a6ce9588321c4781c9771219054e48bc3ae4149f368",
+      "file": "white-light/pa/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 125111,
+      "sha256": "92eecbf20cdda9e6212ad4885471f4788b5f09346a0ce84230585e16975a06c7",
+      "file": "white-light/pa/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50619,
+      "sha256": "b6593b56a3011ea52de31f3bc39dd01105fcacb77918ab5b3b56619b1430056b",
+      "file": "white-light/kn-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 210461,
+      "sha256": "33c4b40708eda504459131366322d3869ceed05b1a87aa11fd42cf057984c1f9",
+      "file": "white-light/kn-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 221640,
+      "sha256": "ca49bc1d1e719794ccd7244e73d4572136351189f01f8937f85a95a2ba14191e",
+      "file": "white-light/kn-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 214079,
+      "sha256": "7fdc7d716d25cba90fcfa3250153c79a11f1b269799492cd498e74d909e57fb0",
+      "file": "white-light/kn-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 204345,
+      "sha256": "2cc60b2e0871f1a34d5666c38d14156b03e318716c1bdec7afb6d140b0e6ccb6",
+      "file": "white-light/kn-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 153982,
+      "sha256": "7480d881de9bcaca1e3c7e7ffc6e052240bcc287533130d34f940a841ac83ad5",
+      "file": "white-light/kn-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171301,
+      "sha256": "39273016e81fd128d518abcfbf9bffe63bef859e5a395090ca7dbc2e50c7daa2",
+      "file": "white-light/kn-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 51401,
+      "sha256": "7bfd317efecbad767c02157258127d90a72cc531f462f5db90d71b24bb12d7f6",
+      "file": "white-light/ml-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 209478,
+      "sha256": "3728f4fc0ccb8b2eb1d34cd3f994109c31d051c5daaa192fde78cf639a8a271a",
+      "file": "white-light/ml-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 238844,
+      "sha256": "221125f2cdce6b8e56d10c16d7b8c59d1cb0397b87a99a67855fe4a5499db946",
+      "file": "white-light/ml-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 241417,
+      "sha256": "85277b5a71fdff5c841ff08f205f28c40a1f465b7a31da40ac52ba1e57ae4fa6",
+      "file": "white-light/ml-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 228162,
+      "sha256": "48023d2fcc382bdd5493a5ad3b7051209eebdd0dd507994097caa41fd48c16ca",
+      "file": "white-light/ml-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168440,
+      "sha256": "7992649d6f26436a4779b2013b43a324d50d49aa435e077a71d2bb0e66fa1e57",
+      "file": "white-light/ml-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 197919,
+      "sha256": "c3f70a7f08aeb7ea44fb062e807cf1e887a2e1dbf7c006aa5d03bcaff8bdcc24",
+      "file": "white-light/ml-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50946,
+      "sha256": "ed0ad80e4709c9668de6f97f773e07e8bc01b6a3614ce6e2dd8e14adf4d55574",
+      "file": "white-light/or/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 188884,
+      "sha256": "3dd45dbd08fa3fddd4ce83797a26fbd24aba0e4fd339bc8c238ba8a428bff9fe",
+      "file": "white-light/or/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 212519,
+      "sha256": "c0ccefda14950cbc61a5b519a0af47269e3b4626f02211b3725a26469ad36bd3",
+      "file": "white-light/or/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 191342,
+      "sha256": "78d3f6b1423746df2dc67385782f8899f06b6808cd31c2e693a78acd667c4455",
+      "file": "white-light/or/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 177005,
+      "sha256": "7df275abff65e6c94b598fb5cd63293d0b6a2040488c9ed68a65c588cc9a7572",
+      "file": "white-light/or/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 137716,
+      "sha256": "323e22c7a1f37f1c380322dc267d4f43b7a4645beabd63966590a4ec53e92806",
+      "file": "white-light/or/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 143558,
+      "sha256": "e0e56452968cb44872f70166f6ef7067221a1fb603f1dca97b7bc3317b1ca073",
+      "file": "white-light/or/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 51018,
+      "sha256": "5d8cf734206258d5eba6eef79bb10b92ca2acde4656d045bb73d17bcb4cc1b1c",
+      "file": "white-light/es-ES/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171188,
+      "sha256": "f24178c5260dc094d4b7f34271116724c4b062af25e75af66e96664f03eaddde",
+      "file": "white-light/es-ES/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 203685,
+      "sha256": "780ec71df2c4c1561b6453a717a9b9ecb5aa8423ba931ab4643f40dd404b4e94",
+      "file": "white-light/es-ES/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 173038,
+      "sha256": "5452d67f7a4ec60afb42ecf0ec6d28bc02b38bd5d77867a7d48664621b1cf5d2",
+      "file": "white-light/es-ES/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 156132,
+      "sha256": "091d60245021efb3c1856cc41d89381ab2b30b156320777b7b16fa9a2bc18da3",
+      "file": "white-light/es-ES/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 124976,
+      "sha256": "9812c53ebd78bef7a2741ebaf5a18f85cbebe34b870e788206aee872bacd6703",
+      "file": "white-light/es-ES/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 146054,
+      "sha256": "5e199999f228fed9477a503714669ddcd05dbbfe6af782214177ba1eeb4f7049",
+      "file": "white-light/es-ES/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 48373,
+      "sha256": "fa13018285a2d0112c0a37143c95110f5b1d8d357397530e15a15782413e52aa",
+      "file": "white-light/zh-CN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 167556,
+      "sha256": "954dbbd9b8ee7c717a30afcafd29c8a0e1d5121eb28cdeef29a914f3cbd53f29",
+      "file": "white-light/zh-CN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 190215,
+      "sha256": "75092431524255d00ae6314a1613a0ecab1ed84e7166d228953c72d840ffff12",
+      "file": "white-light/zh-CN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 151930,
+      "sha256": "7b1b14dcf069e9870a61246c7c1f71858a775f6e505a3501d6ac647c28af0940",
+      "file": "white-light/zh-CN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 139701,
+      "sha256": "37ead4d1f0a9010d55549447170c64d37a4497bb090f3daba46041e42c40b6f0",
+      "file": "white-light/zh-CN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 126822,
+      "sha256": "0b80eace6290a5b7c9ee56f20d0e7171b8132338bcfb76a89644f5a54951d825",
+      "file": "white-light/zh-CN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 129154,
+      "sha256": "ff4a65b0e4133bcea50c953c8ebcd5c33a10fb084564b4124302f546a57cfc32",
+      "file": "white-light/zh-CN/06-panchang.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "bytes": 39166,
+      "sha256": "50f28f10f3d3ed1b53cb30063f9071311983f518bb70c6679bf54dc11c20ead3",
+      "file": "mono-light/icon-512.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 52608,
+      "sha256": "1822b98bf533e5a4cc7ed2377d81c3e1bf4689196df8f7b7681233e8f92ae159",
+      "file": "mono-light/en-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168509,
+      "sha256": "264b6012cbfcadc6f8a47138b1d3123b20fd16c0064f34d9354d5030d11941e1",
+      "file": "mono-light/en-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 201580,
+      "sha256": "01edea97ff46e945302c1e4b687c8786ec7f83242dc5ad76c1406e0df2a1e99d",
+      "file": "mono-light/en-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 153942,
+      "sha256": "04629aa4da986668bc2ff1084f9d7f6e3ae4c7e452d3c8925436b24b8bccdb44",
+      "file": "mono-light/en-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 145129,
+      "sha256": "5a82dc5c8cc624d9d4a4c4c9b2dab245e48a8f4491264562f6a5e46329b076df",
+      "file": "mono-light/en-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 125233,
+      "sha256": "9af70774441000cf93f43c44cc9925bcd712e51c2b2cee1e6fd92ff329180eca",
+      "file": "mono-light/en-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 148337,
+      "sha256": "4abcb7523635385782bfd56e0c7015ac7b6c0fd9bc43ddbf46852ae410340b41",
+      "file": "mono-light/en-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50007,
+      "sha256": "81c0cb6d8e610fc9e768b2d1ea9c70c7ccf2a5d9e3eaec1f8b8d466b2b231c8f",
+      "file": "mono-light/hi-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 160169,
+      "sha256": "41eb5b0b431bad3d537c2509010c088442d5caeef1a28857683f371ce29b3350",
+      "file": "mono-light/hi-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 165908,
+      "sha256": "931f78dbec3db503a0e83b5312b0b81d8a98252c462d7d8aaa8d2834841584d7",
+      "file": "mono-light/hi-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 146253,
+      "sha256": "7ef5149fc01b7a8ebcff299f2abb3d23f2749aa3ec52edfda92e81a963ed3d10",
+      "file": "mono-light/hi-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 125472,
+      "sha256": "f488ef1321f039cfb6f35e9e03cc54112cd41846f7f86daa785a996258853ed0",
+      "file": "mono-light/hi-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 111755,
+      "sha256": "d3642735580ea8b58a844ccffe834f2771cd18da66ea6e7200b3fbbdd531ea42",
+      "file": "mono-light/hi-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 122231,
+      "sha256": "ada4dcea44e442749ffadda82713ca13e3a495ba1e892a7045b2a52cd5cb4009",
+      "file": "mono-light/hi-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 49503,
+      "sha256": "7f1d91fa73488ac07a9c2105343d316208bf1edd8268741998b80f1c2cf8e3d2",
+      "file": "mono-light/mr-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 160609,
+      "sha256": "91bc2d16853e3e0f06b26c7a1c64a14027358af3cede7a8c1c46ec8be195bf03",
+      "file": "mono-light/mr-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168066,
+      "sha256": "c5b649b33e015a129d8e0feaef46ebeea43cc65e2a22f69a1b66b4cb04ef8700",
+      "file": "mono-light/mr-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 149901,
+      "sha256": "21c84ca974a3af417a53a5184272c565e60cafaf62f69de7f41b986484b87128",
+      "file": "mono-light/mr-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 126195,
+      "sha256": "1fa9f27e9bd83bfa93477fa512e52231ac5efa42a050f7f9086ebe0696f19a27",
+      "file": "mono-light/mr-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 108551,
+      "sha256": "a2413c20f5e5ae766798d823a94cbbabe0ed15a5220d49a87856d31327ad525a",
+      "file": "mono-light/mr-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 121735,
+      "sha256": "031e22f724e5113b258e68cbdba263d9267752926d4337f6e4e55554cbf8e324",
+      "file": "mono-light/mr-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 49885,
+      "sha256": "3570ce75458e96e6159e91e3564725c8ab7b3b8ca0b6168258d46776d801ef89",
+      "file": "mono-light/gu/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 167036,
+      "sha256": "851eb6a1b452d6045d4b57a8c756ad9162e1d28c5ae903dc1af53730c817fd2d",
+      "file": "mono-light/gu/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 169601,
+      "sha256": "1db5632d26ffce164e8f35fbf9fd5bfec7c9c38326073a90203c34456be94e26",
+      "file": "mono-light/gu/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 153307,
+      "sha256": "f536b5eab3ffcea6fb5f6e00a0a5a1c68376aa655f6c6a7df20cc704ac93cb3a",
+      "file": "mono-light/gu/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 134007,
+      "sha256": "9cb493fca142a9684e32be2c00f12c67cb103000889dd346dcad02ab1d5e5eee",
+      "file": "mono-light/gu/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 114482,
+      "sha256": "57b6f5c9a1a8f77df340ddf70f9ee857ca24af06bbd00852b5c9bc03e71cc9d4",
+      "file": "mono-light/gu/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 133141,
+      "sha256": "2f2d01de4ecc8277cbf9c293f113cc354f421dcb0a53aa1ec924e86a9e03f0b1",
+      "file": "mono-light/gu/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50912,
+      "sha256": "0a4beea606c91d6d0cca2161b72116ef799a5d036cc5b7ee94219c8f2dad0a2f",
+      "file": "mono-light/ta-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 189929,
+      "sha256": "ee28da7a067b1ed1ba37f427cb3dae95c83db1bfe4d35a923cefcf4ee7d5feba",
+      "file": "mono-light/ta-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 211929,
+      "sha256": "3684d7d73e8d35f7964a7eb85fe6d2627fb88831b22c26df98e176499865d44b",
+      "file": "mono-light/ta-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 203018,
+      "sha256": "df4e8339aeefd31070bbcbbe8e4ecc8ed1ce0ccc21c3fe0ea77764ef593d28bc",
+      "file": "mono-light/ta-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 209690,
+      "sha256": "d21193bf1e4970f67860e4cd020af04335594f7f408e4c08177dbfa16cb2d246",
+      "file": "mono-light/ta-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 148286,
+      "sha256": "8c8795de5e337274aea6119ee036e0c78864b331fbcb449a10171053287c8b3a",
+      "file": "mono-light/ta-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 193326,
+      "sha256": "399b34f547fcad4dbcd09464dc05c132f1874a4be45d65a11869f1088e33ddd4",
+      "file": "mono-light/ta-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 51419,
+      "sha256": "12a3e1e791118dc9e6427e2e378705c86dbaa5c026abb94530752659afc4d698",
+      "file": "mono-light/bn-BD/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 175138,
+      "sha256": "fb751b0239dd246066013826097faab20b742c10c8dbda287202a550310971df",
+      "file": "mono-light/bn-BD/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 207034,
+      "sha256": "309090b3787c18c3d3f850d625011e8c076748474136395418783c73acc64ee2",
+      "file": "mono-light/bn-BD/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 169422,
+      "sha256": "57893fabea87eab47d419433fd15a4fe0d57c3b6ee02bcbd3b22c3b89e46681d",
+      "file": "mono-light/bn-BD/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 145441,
+      "sha256": "0a29ed0c2e902b27c94636c6afb4aa4106140c49ae14fd1f3f5ea58bf337bdb2",
+      "file": "mono-light/bn-BD/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 131546,
+      "sha256": "946ccd405d1f0b8e3a5e6011cec9ac9a5ab7e3244e4e8dbcdec923bb269cdf9e",
+      "file": "mono-light/bn-BD/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 145897,
+      "sha256": "274ff1bb85bdeb7ad864b36e71ba35754c49c11b3a0496d2ecd0689e2e632164",
+      "file": "mono-light/bn-BD/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 49536,
+      "sha256": "baaffe75b464694d641732dc5914dfce971412628b5860f82d7f8a5c3b8aad27",
+      "file": "mono-light/pa/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 162648,
+      "sha256": "7eee1e4b08c0cb3afd8bccdcf02bb0bc474cf74518dfd2f39349f86c261f925a",
+      "file": "mono-light/pa/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 192952,
+      "sha256": "d86e287fe020d5c7f0e685caa13cd6037006642b490630417ed7e8a46ca36200",
+      "file": "mono-light/pa/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 149445,
+      "sha256": "a3b925c095cbb6763f7973dce1f759114f8f541b343df5d7e98e960ceea127ed",
+      "file": "mono-light/pa/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 130596,
+      "sha256": "d6bd590fdd292187361116dbecfaf29912395f33ad35f30e549f94900f10f3ed",
+      "file": "mono-light/pa/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 120719,
+      "sha256": "1368479b401eb83af0b414323bf358faf60ff53a8bddcf9c58f2daf5a38e2bef",
+      "file": "mono-light/pa/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 125542,
+      "sha256": "77c186d71d64d084cccfc33d0f1cb7aa6a0223a8f870749b54799202b2131965",
+      "file": "mono-light/pa/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 51855,
+      "sha256": "327e9a418a33a5ac3376d01160710a4b16b3f2db0baaab0a9a51c6ae3964d2ac",
+      "file": "mono-light/kn-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 209385,
+      "sha256": "3311846ecba6761d368c537a21d4531f4697ba4e536ddfa4b9c6ff53b26c6c58",
+      "file": "mono-light/kn-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 210470,
+      "sha256": "852e4142fd7de0ce25ff57cbc93a853439f68245ac94033443d48a576f0b1793",
+      "file": "mono-light/kn-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 211248,
+      "sha256": "af6cf63c128741edd81bcf1b56cd0e50bf7cd260e82c0dbbaef334bdbcdbb954",
+      "file": "mono-light/kn-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 202120,
+      "sha256": "cb087788fc0f00af75bd4682dbb24f41f8d3b41aff9456d80af94cc6f05c39d8",
+      "file": "mono-light/kn-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 152945,
+      "sha256": "2f97d05ef038222fafff0f8631d87ca194ddb071dc763f3851c68455d464faf8",
+      "file": "mono-light/kn-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 170633,
+      "sha256": "58ede5c10f25f539af794b50ee4fb24ebfeb51489a48a71f99621b9b73ae5120",
+      "file": "mono-light/kn-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 52573,
+      "sha256": "c1c9e0c190e76241ef57b63d7481241a88559e5dde73712a7b69b544a1de39da",
+      "file": "mono-light/ml-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 206870,
+      "sha256": "f581d693b86596c9f2213456334354aa7e31446e53f4630fa57b18d1baf143ef",
+      "file": "mono-light/ml-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 235877,
+      "sha256": "16cccbcd0e0667578debdd04dd32540ed68f1e8e4506261c88110a0f78a995fa",
+      "file": "mono-light/ml-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 237579,
+      "sha256": "c50b31a17c681e02f8ab24b2d29d7410def5022cb4035fcf83c5fa53f090f69b",
+      "file": "mono-light/ml-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 224130,
+      "sha256": "db99ccd54f56aa589afb14214b1c4548b4b02661a0692716ed0bca6face1482b",
+      "file": "mono-light/ml-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 165402,
+      "sha256": "66550af10e4d9044331617178e23e8195e9a24a23f5d21efb50ce262e1ca3f28",
+      "file": "mono-light/ml-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 196075,
+      "sha256": "96d2b032f51f7c4ac224845888a4163c0b9de4f7ac9b63c1d55a13a40ec4748a",
+      "file": "mono-light/ml-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 52648,
+      "sha256": "199055f18b3a3f820364f537b844674e186a7979d54e186ab698134471965efa",
+      "file": "mono-light/or/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 188847,
+      "sha256": "7e83dd88341bf311b7e4a5b33782f292cafadccc44d4b9c3007ed68c02471af9",
+      "file": "mono-light/or/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 207948,
+      "sha256": "0c77d75377b0b1b0bf29ebaaee8e2e1dbe9ee0902f63b9e140d26164de23dcdf",
+      "file": "mono-light/or/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 189207,
+      "sha256": "4c553f81bec6af40f39cbc1bb26a1b05c959379eb8d993daa522e68551f20e6b",
+      "file": "mono-light/or/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 175762,
+      "sha256": "c1023ac199c8b333091efa24632bc4425ee33a32da1792a18e6021830099c300",
+      "file": "mono-light/or/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 130202,
+      "sha256": "69bec110798cd172f1cfe6189ad5692cf4df6815bdf15119c4fd71c1229f2fc8",
+      "file": "mono-light/or/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 143648,
+      "sha256": "6439cd7cab19586e1a99d9394e7e13bab1114e6d351a475e35dd3337f11afeb6",
+      "file": "mono-light/or/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 52151,
+      "sha256": "ea7111ff7ad286d7a5da5a98ef01dd593009fbb653c3cd3cfd0f5ba6a349fe01",
+      "file": "mono-light/es-ES/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171165,
+      "sha256": "a47d2933fa1a2d3e86fbc3bfaa4c06eaac9c508fe13f2dc1674fd4affe36766c",
+      "file": "mono-light/es-ES/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 213079,
+      "sha256": "c2d9e08caa10dd417f81eeb808af9183e784ece1b1cc3f726ec10809c3d6b8d0",
+      "file": "mono-light/es-ES/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171544,
+      "sha256": "2bc2ee12e8d01fc9befc216472b783df9e6a6adaf1c9b4ccf505042c9dda210f",
+      "file": "mono-light/es-ES/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 155861,
+      "sha256": "596b8a645d03dd2d8c07340c0253ac61ff0956c7bce9f3912ce1e75a814ce663",
+      "file": "mono-light/es-ES/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 123715,
+      "sha256": "cb18bb53bc29975ca45f9f83da7ec017b3a49889b637a23189c0038e0025edac",
+      "file": "mono-light/es-ES/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 146401,
+      "sha256": "21172cda94a4d2fdf00032c51499161466ec08eb441274f78b9cb0caa640e4ad",
+      "file": "mono-light/es-ES/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50449,
+      "sha256": "ac3da2ab916c0d2a1e2dc35bd5ab278eb2bf955406229bb957e8df684570b5c8",
+      "file": "mono-light/zh-CN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168075,
+      "sha256": "106e7a644e3b3860dc945e11dd4e09797355b32723ed72d2783939d057cfdeed",
+      "file": "mono-light/zh-CN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 187292,
+      "sha256": "29889d1711c14c1678cf497b57dd6387c278937910e2265a032a41127f70949e",
+      "file": "mono-light/zh-CN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 150275,
+      "sha256": "11e6db82e0f22e6d05d4e48acc01fb7919dbc7dc8e9d7dc90bc091969a9f8b8c",
+      "file": "mono-light/zh-CN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 139779,
+      "sha256": "e0794222d46284d4c1f6dbef9bff3bdfb8b045d09cfa27bf37dffc598831350a",
+      "file": "mono-light/zh-CN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 122693,
+      "sha256": "29e31a020c092b37e48132f9efa41d8892fd65aeccd9aa5ee9a4afbb805c243e",
+      "file": "mono-light/zh-CN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 129389,
+      "sha256": "df849312fdb28af25d0d32dc69cf57f2dfc6e6b367d739cb93a5d179f93fec06",
+      "file": "mono-light/zh-CN/06-panchang.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "bytes": 39378,
+      "sha256": "cd01a607eb53936bb25e021237e8da0a9a77a55caba60531a2cde1c04d9ed700",
+      "file": "yellow-dark/icon-512.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 53898,
+      "sha256": "ca6673506525801483a5969e7ff22e00001bca45e971e815da9e9c1504228f3b",
+      "file": "yellow-dark/en-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 166335,
+      "sha256": "339b3e94b9b0de964cf45acc3314d9eb108f2ae7581424e78cbdeaf7c9c3d5a1",
+      "file": "yellow-dark/en-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 196327,
+      "sha256": "6fa760542029bea2fcec6b796e520060480aeef1274b272fb71b2babe18ae904",
+      "file": "yellow-dark/en-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 150454,
+      "sha256": "0e9b5ca3e8b5cc35949d9b4c076bb65450359b367153749d8ef71a5b4186ca97",
+      "file": "yellow-dark/en-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 142856,
+      "sha256": "f4d3fb375dda8a34e1bd4836f988f02304711de629edd2c445ad80fa365eecbe",
+      "file": "yellow-dark/en-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 125502,
+      "sha256": "6c5fa820dbbe51e6a5f25042288ab90f3983b2e092a8cad967a624d7feeae215",
+      "file": "yellow-dark/en-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 151744,
+      "sha256": "1fb836c87b49401721f9a91262e2ab46f10b3d04655ac4b0a68a10018d26ed97",
+      "file": "yellow-dark/en-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50740,
+      "sha256": "8c1e9c3d41d1dac45001151b36818805604713f1038c9fb4070e634278e9f5cd",
+      "file": "yellow-dark/hi-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 156736,
+      "sha256": "8637d23a9ba5dca7cd0d0b4f09da5e2a12ece6e80fe9a8ed651b3691a14596ab",
+      "file": "yellow-dark/hi-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 156984,
+      "sha256": "9ed1ed97757e07c7e27cb2c6cb9ad5b2420ac9b47ffc334901c867788f8563f2",
+      "file": "yellow-dark/hi-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 142832,
+      "sha256": "bde657bca6b2452ebce574b852e9a81b434697a2cdb3bac5f84ac535de8ff9a0",
+      "file": "yellow-dark/hi-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 122474,
+      "sha256": "9e3ccb97f9ea0912e02c388fc2a184f8f04b3e737687b116d76fccc07c8088c6",
+      "file": "yellow-dark/hi-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 114762,
+      "sha256": "adc4a03f09b50e07be8e8b3e8b378029b318b92b881790337c488714bd0f65ca",
+      "file": "yellow-dark/hi-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 124915,
+      "sha256": "f5fa54a0be27c509c1faef59d631ac995e00cd4f1a6347e90a43cff56058c8bd",
+      "file": "yellow-dark/hi-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50113,
+      "sha256": "7d1c9bd86205c01b07ddb3a6491926399ad9a82c2bc84e1b99bb85c541410c50",
+      "file": "yellow-dark/mr-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 157333,
+      "sha256": "bda2f211c1db78be121bd3858e631ebc52b265a0a9c4998dafdb5bd6c92e937f",
+      "file": "yellow-dark/mr-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 158560,
+      "sha256": "5cf8b919fda3c24053cb28a2f31fb13131c42120d179033f76089aaad9bee141",
+      "file": "yellow-dark/mr-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 146849,
+      "sha256": "1d88dec75002aa8524e50630bb1c8952880c5f0e3a2974434cbfd63a5869d784",
+      "file": "yellow-dark/mr-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 122684,
+      "sha256": "a53dc3bcb3849e4fa3707255f913cc3df3651cda5d78219e3234250a179222a5",
+      "file": "yellow-dark/mr-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 109143,
+      "sha256": "45d250073cb0aeff07fc10b07751b2de32693b7e419dc70f580e5554055dec07",
+      "file": "yellow-dark/mr-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 124263,
+      "sha256": "1fb3e94131b2f4efb9171fe612d1e9f37dfee84512123acdd7babbbba14480e9",
+      "file": "yellow-dark/mr-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50645,
+      "sha256": "f1c4e6c057b95ced88bca8e5d4dd6866241400cb30f38657c5badede4316365e",
+      "file": "yellow-dark/gu/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 164026,
+      "sha256": "7241096c0ae23219234366bcd490a1587a5133fc156e86c08447bba511ea0903",
+      "file": "yellow-dark/gu/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 164663,
+      "sha256": "edfccc958fd14d00db2aae30cec2a5e9c0f530a2d38326da03f7746085657175",
+      "file": "yellow-dark/gu/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 149977,
+      "sha256": "e6441d5df77034fde74f1eb679c4be5aa6c6045c91b65a4a337498ffcd30db53",
+      "file": "yellow-dark/gu/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 131343,
+      "sha256": "060b0302e7a1934d778908ad5dd384eb1cde33772b439c15f5566d685a9b651e",
+      "file": "yellow-dark/gu/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 122842,
+      "sha256": "bbb5a4793a3b27f07795d75ea27cad31649af9b3c16dcb63edab7245306db2dc",
+      "file": "yellow-dark/gu/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 136996,
+      "sha256": "d0be40a24b8d1c267dae1cec9bdebe6cdd66a435556f6a1a42860ad2e6f53e63",
+      "file": "yellow-dark/gu/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 51588,
+      "sha256": "104de15d775841edf8a58c4f225244a18ac45f564224928d8d13f15fb6902fd4",
+      "file": "yellow-dark/ta-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 187177,
+      "sha256": "b3b26eee53cef80a88a8bd04bb4a8546d85adb10e6bb333e17d1a71356418985",
+      "file": "yellow-dark/ta-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 204099,
+      "sha256": "0bdd08742cff4dd937d422ea0856247573fda92cf32a92a8d5850da61f8be460",
+      "file": "yellow-dark/ta-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 197107,
+      "sha256": "c3ee9b962a8d6affbdadaa6d613f10f43d087283fc0027e6f5713388a36f9e00",
+      "file": "yellow-dark/ta-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 210563,
+      "sha256": "bae11f84bb8718001c264d7fd71cd752c8a297c69862115e9c370ace4c11932e",
+      "file": "yellow-dark/ta-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 138163,
+      "sha256": "a7e7e25dc20e873a12fa93686a05e13cfa6bd3426a2e80d85854c5b1364f11a6",
+      "file": "yellow-dark/ta-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 195521,
+      "sha256": "b120ef174904476784e423624278a75ae2e8d0dc9c250c306aae2c06cd008c16",
+      "file": "yellow-dark/ta-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 52294,
+      "sha256": "0d83ea3cda1b030c10410ebeae5f05ce531d6e1537b07e5635f4b7ba5b5d3d8b",
+      "file": "yellow-dark/bn-BD/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 172107,
+      "sha256": "446e79057ebf961e59e7036d4ea8a5c551b1302df7f819190fe165ef0cc23d2e",
+      "file": "yellow-dark/bn-BD/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 187027,
+      "sha256": "9b8d4705b337dfedd42525f6180d2f5c13cd9cccece5d77cb0c7aefdfa72fe6a",
+      "file": "yellow-dark/bn-BD/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 165899,
+      "sha256": "9abecce36d1b686e20a5f36104b4cb0a294c72d0db1a994ca88598c269653ecf",
+      "file": "yellow-dark/bn-BD/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 142174,
+      "sha256": "ebb57042f24e82aa8ac919a926bba96a087a001f8b43ef5ab0a0a8bae06dc78f",
+      "file": "yellow-dark/bn-BD/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 133326,
+      "sha256": "9d14fde6d40388005a09d21463ff9f3e3a2b2046112303b6cd14644419cb4042",
+      "file": "yellow-dark/bn-BD/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 149445,
+      "sha256": "bc54e2a9ca8ffbfda46c7f8ed45c1dd263438470aa01bdc5b3b7cc49412daf13",
+      "file": "yellow-dark/bn-BD/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50325,
+      "sha256": "6346d5b811dbc0b670c38f1a719f61f87d30e0b4af48664ade8732a285e1c332",
+      "file": "yellow-dark/pa/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 159264,
+      "sha256": "aedcf883b0153488ed4ced7022e51e27babc9ad202d27b493fd705884d583ca7",
+      "file": "yellow-dark/pa/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 176769,
+      "sha256": "ea9a77b6132449d13e51c609142ab3a6f25a21a7ec906511206ecab44856bac5",
+      "file": "yellow-dark/pa/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 146423,
+      "sha256": "3ed13e84aa800534ba2ea6079bcf4a03dcc8a88b89f77e788b457b3b7ecdd5f7",
+      "file": "yellow-dark/pa/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 127539,
+      "sha256": "577159183c27a4808173f0f2664e16eb91fc1efc5881beba69e8343cf2e1522b",
+      "file": "yellow-dark/pa/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 118233,
+      "sha256": "bbe3fa1909de91b31112e845a8f81f44af73c493888432d3bc33d0cdf516904f",
+      "file": "yellow-dark/pa/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 128423,
+      "sha256": "085d2bc2fea774105597faafd70324a1574af09fed47157220ced7c0db54cb4f",
+      "file": "yellow-dark/pa/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 53204,
+      "sha256": "70d63212a43ba6c8437a17f3fb9c14e7158b0deaee313bf342fe08505b4570e7",
+      "file": "yellow-dark/kn-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 207707,
+      "sha256": "a710c6954f9c2fafcc5d5323b71111ee693cd542a3472b59b46201bc6d7a0943",
+      "file": "yellow-dark/kn-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 205508,
+      "sha256": "6b47582308240b9ca179428051869c3d531322c3ebc1473e1b67613c153064dc",
+      "file": "yellow-dark/kn-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 206919,
+      "sha256": "7f04639492c3d23e7099391a8d9d4b69269547ca69f5a5a22322fb77810f5af8",
+      "file": "yellow-dark/kn-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 202470,
+      "sha256": "a51ee365ad4ba7a76921d237171624a267160051a412902f2f62b1051294116d",
+      "file": "yellow-dark/kn-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 158001,
+      "sha256": "49cf3d1231ebf726f12c405860dbdac583cbdc314e26a1fbb82117bb16051a10",
+      "file": "yellow-dark/kn-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 174367,
+      "sha256": "f80192d5e3364d4460fcbb4ac21620078a7685ea8b32fae6cf9bb91f70ed8dca",
+      "file": "yellow-dark/kn-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 54355,
+      "sha256": "ed12eb62bb99fb20d503a44dc7fadeaaac65e511d7ca1ac19dab7e0a3cf939f6",
+      "file": "yellow-dark/ml-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 206305,
+      "sha256": "a615cf5d63aa3021b42c35ddf29627e15b91fe3c8ae621e4f128602b4d9407b7",
+      "file": "yellow-dark/ml-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 225534,
+      "sha256": "c98c1c7ac3f1fc13c63666dbd5a29155550d302cd1c7b69211e309b3d5678c64",
+      "file": "yellow-dark/ml-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 231886,
+      "sha256": "02351c8accacdc0c668573524c478275a857549bc5b7c2cf73109a647d6dda97",
+      "file": "yellow-dark/ml-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 225697,
+      "sha256": "94d20cb63c08b76d13bf2e4028bd538f610c78fbc65c1fe40bf6984566b3141b",
+      "file": "yellow-dark/ml-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 157071,
+      "sha256": "674f6466e04827d194c20155180b10cb220927cc43707f57ea89073a83b61628",
+      "file": "yellow-dark/ml-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 199805,
+      "sha256": "2e1c0e9af774624b43d34b75d0680298ee25fbb894af80dc879d31dbafbe02f4",
+      "file": "yellow-dark/ml-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 53642,
+      "sha256": "fa473500456b98dbd37f8f9bca79623207a02222301e7d1cba431ed05714a4e8",
+      "file": "yellow-dark/or/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 186543,
+      "sha256": "793bd628417da0de1e459300a2ac3b12e1c0a0d0bdd362ace7477c97ced78a38",
+      "file": "yellow-dark/or/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 213459,
+      "sha256": "2ce536b9dee6f9be53d7a6ad7515e567e0dc46604bcfea20203c1dd30110ec94",
+      "file": "yellow-dark/or/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 186001,
+      "sha256": "8e9f39fc65e26b332997107aa56d4ab79c745f34f342d04cb2798785745e82c9",
+      "file": "yellow-dark/or/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 174434,
+      "sha256": "1b66fba450dae266a81ee6fa443903fd120170b8c02f02293aec01a3498c17f6",
+      "file": "yellow-dark/or/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 133494,
+      "sha256": "2fe3b7c4bb65135747723cd0d4639699b64735f124c768929bde0db7a6a4a673",
+      "file": "yellow-dark/or/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 146909,
+      "sha256": "f5874c200411c063f3bccab6fc79f91246aee1c000d15ee7256ff34bdf460abd",
+      "file": "yellow-dark/or/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 53638,
+      "sha256": "82ccf7922d974367cb82ca32486a24849ff64469bc474312ef87b95ab36883df",
+      "file": "yellow-dark/es-ES/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 169059,
+      "sha256": "a3bf750119a9133e791b9d0151823a824bed38df7153a914a8d453edd663a53c",
+      "file": "yellow-dark/es-ES/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 206823,
+      "sha256": "819d3a39fb5743a3ed871e41ad066d62e64222da21049784888ea3fe8449c1c8",
+      "file": "yellow-dark/es-ES/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 166417,
+      "sha256": "296d9136dd576cef38dddac03e3332bb57c8615f64c8092c723e817f4e34a212",
+      "file": "yellow-dark/es-ES/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 154437,
+      "sha256": "05fdd37a12015bf843a84481ddac31d188ed39fc5b2810bf6deb85dceac22ceb",
+      "file": "yellow-dark/es-ES/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 125024,
+      "sha256": "36b035eba85da805957a8cd63a4ab6cd408aec300df5006b0591d51f2ea04e9e",
+      "file": "yellow-dark/es-ES/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 149617,
+      "sha256": "7c0c3deb0b6c5c9d37156fe29caf97a5d36e60c35db4c80f205ba8779f128a22",
+      "file": "yellow-dark/es-ES/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 51059,
+      "sha256": "830f7e8035ea448b8f65ee8314cbdfe927b1808d468ca639683b52b3c5f80aa9",
+      "file": "yellow-dark/zh-CN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 165245,
+      "sha256": "ae4d71d439857e6a32dbee7181f405048bab09d955af03ccd8c1a0b519bfaf82",
+      "file": "yellow-dark/zh-CN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 177910,
+      "sha256": "1eb344edb608c09b25c5316ca280cd60351ac5d1454154004d53451b7d7f27ed",
+      "file": "yellow-dark/zh-CN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 147304,
+      "sha256": "3d05ff3aa82296035c5851365a30a8a2a4977b740bbb01d7b05ca852a21dc5e9",
+      "file": "yellow-dark/zh-CN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 137229,
+      "sha256": "a769b94d4ba4e9d55751bce9739f57d8e1a3e3817011a4e8620aeee61a7c0532",
+      "file": "yellow-dark/zh-CN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 165393,
+      "sha256": "48665c47ee10cf8a3dca4ac271dc54ee8a3b3985d01e782b7a708e809a38aa6c",
+      "file": "yellow-dark/zh-CN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 129852,
+      "sha256": "baf85e6943e1589909c3cdc83b3039b65df410d66f6ac8ad4a993308d055d01e",
+      "file": "yellow-dark/zh-CN/06-panchang.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "bytes": 39339,
+      "sha256": "fe8c24e6503692c8cbe011343de6bdab366021e10eec32b65d56e18661b569c2",
+      "file": "mono-dark/icon-512.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 53276,
+      "sha256": "2b63b2c346e752edc8b71d321e1964615160fde40dbfad4606dfb5865b0db682",
+      "file": "mono-dark/en-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 165819,
+      "sha256": "5df8f4de586d0fe0fd32ed823627fb37a794578129b13b9c615c49b07bef6af7",
+      "file": "mono-dark/en-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 191126,
+      "sha256": "115c9d9661c8f5c7da46c20de6e627887b7850e3cc0a6d7f771628f6e76b3487",
+      "file": "mono-dark/en-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 147536,
+      "sha256": "68663c35a311fd3adba59e0c8648eb5173ece3f9f19249d83bab60b7e797d2b6",
+      "file": "mono-dark/en-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 140305,
+      "sha256": "7b3c6c5085f3f859a60019a86126afe57138acaf94db93be791a38818defd8b2",
+      "file": "mono-dark/en-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 125284,
+      "sha256": "0af9d6583dc5229a73f279e9fa5614d83c17aa182f8d8ffbf2f23dde4b295fbd",
+      "file": "mono-dark/en-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 151061,
+      "sha256": "59751109f3a1250554333b1cf83523036c442ab2e0e69fef43eeb3ecde420a25",
+      "file": "mono-dark/en-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50324,
+      "sha256": "65a55b074f75a4411ab01ccf6a291f74bd608aba15cddba4f79e2a13731cb5e5",
+      "file": "mono-dark/hi-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 156695,
+      "sha256": "7e78edd7c42aed72d298e1195f9d97945e6b5c57759bcdc3e46102effaf66911",
+      "file": "mono-dark/hi-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 153743,
+      "sha256": "b20c5ee5f4e2bb84df7869b450459df06c4b436028419b313207eff9d304d076",
+      "file": "mono-dark/hi-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 140320,
+      "sha256": "1f3cc025becebc80f819e2d4b8c002dadf851c3a316818323299f92552f5df6d",
+      "file": "mono-dark/hi-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 120576,
+      "sha256": "b37617ea3dda247a9cac06978bff628fb4bd9451c1034a897a37cba40fa96c77",
+      "file": "mono-dark/hi-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 112777,
+      "sha256": "8a43880f63ee73f23465d246e6d4b47c5d8804d4273af71a01a0a9e75fa34c0b",
+      "file": "mono-dark/hi-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 124595,
+      "sha256": "3b6234fc6d8630b542965e8163944312b0b965d2787513a4e98cbbe00f4d9492",
+      "file": "mono-dark/hi-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 49687,
+      "sha256": "3e0b15026968e2b4208be099f31fecade6c1faa28313e0ef52a1c84b223995cd",
+      "file": "mono-dark/mr-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 156851,
+      "sha256": "0edff14bbffc74909483891c433588f0b1846f40d32ab5737cb98ab3356b4bdb",
+      "file": "mono-dark/mr-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 160398,
+      "sha256": "7a8ee3a41e0919c16bad1419d0e43b1f92f2c9419a92dfe6ec1a4c088d20d684",
+      "file": "mono-dark/mr-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 143971,
+      "sha256": "368609d38c5cab8abab14742b2c3ae8be5795ce410e0886115b020cde40890d7",
+      "file": "mono-dark/mr-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 121065,
+      "sha256": "6a67f82d25e4ba8600159435d5f22a7758e8f059a1d8bc00043d903a6540c6bc",
+      "file": "mono-dark/mr-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 108488,
+      "sha256": "42339f3670d9b87980587db36cab09613ee98c3621b3e17ba69e5651c51dbf93",
+      "file": "mono-dark/mr-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 124267,
+      "sha256": "7c5d2c1d68ee0e66adb76279ab0d509063a8c3655b2628439f7483ae136fea9b",
+      "file": "mono-dark/mr-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50256,
+      "sha256": "980fd060f0beb24646792cb32c2ce797dfefb49d2c189162e8a5da4f15137e06",
+      "file": "mono-dark/gu/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 141867,
+      "sha256": "ed2c1c0b6579e307e6d58d122c61376859572359dda7a514f45dd7160ec3e8c9",
+      "file": "mono-dark/gu/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 165070,
+      "sha256": "1da1ec8d21ae87d639b1c7860d6b44fe82537e08ce654f77c88d2f252e7b1fc2",
+      "file": "mono-dark/gu/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 147261,
+      "sha256": "19690b4df6a75ca91af631ba58ebd2b8664e9d274cc40d9566a6c46dd057eda8",
+      "file": "mono-dark/gu/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 129104,
+      "sha256": "b7c6228a01c067d687f5b509b6d7c615b0c8e2c321d819c574972c4de5bd1bd7",
+      "file": "mono-dark/gu/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 116011,
+      "sha256": "6e91d18c3b40388865512941590a051a68dcb185b2299908be2ed41c8f691d3d",
+      "file": "mono-dark/gu/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 136535,
+      "sha256": "0cb5313b84f55c0782968487896d74c6404fa26c19f4b856459f25b26df5bc2f",
+      "file": "mono-dark/gu/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 51271,
+      "sha256": "5a5023de604c1f27dbe1e6f7c68315bfc5714c88a87156bdb8a6f4f05ea35f92",
+      "file": "mono-dark/ta-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 183379,
+      "sha256": "1cded17845686e30d41786df01e3159ff96641de6e7536a688301f2fc36b7eb4",
+      "file": "mono-dark/ta-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 199525,
+      "sha256": "6be5975e31bf8461b65d19b5fa0156f620f3e5548ca93be839345910ef208265",
+      "file": "mono-dark/ta-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 193328,
+      "sha256": "2061a4bb03faef09015266c648998f9dc71883b860df4908055111ce0ca1130b",
+      "file": "mono-dark/ta-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 204517,
+      "sha256": "4b6e43bf2cc384b71018310dedd4e79f869068f5b8f61cad3db2ef5b1a37f922",
+      "file": "mono-dark/ta-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 147937,
+      "sha256": "f4a4c2284373f2d6b745cb32b58873527545daf5d7de0123316930f5135d4ab4",
+      "file": "mono-dark/ta-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 194832,
+      "sha256": "e45e8ade6b5e12f4294f122fe22cbf2e7cb15e8734d64d9e011d0269931ca36d",
+      "file": "mono-dark/ta-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 51824,
+      "sha256": "12d02edef4fe466e410f1ff0baba6a7430839a7f9b31b8fe97599b82f0d8d36d",
+      "file": "mono-dark/bn-BD/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171542,
+      "sha256": "cfa9ab2cbdaed743c6d36d94d6baca4b154064b6ebdd3b7e4dc9be46ebe75561",
+      "file": "mono-dark/bn-BD/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 190374,
+      "sha256": "5c285376cace70666419bca98fb26c69fd3e56f435ad37318f31f76dfee402e1",
+      "file": "mono-dark/bn-BD/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 163024,
+      "sha256": "4caa91618913f2f16487431b0594ab2e5b99335e50052fbcfa3ff144e7503f7e",
+      "file": "mono-dark/bn-BD/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 139669,
+      "sha256": "7f1dd545719d5c42c1856c8b93e6311aba2917953fccee8dfaa892b537e5bae8",
+      "file": "mono-dark/bn-BD/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 133899,
+      "sha256": "2473ada31ccc106f91a76f57fc871b4c9a3bd7172c286a5e3703ae6353971d10",
+      "file": "mono-dark/bn-BD/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 148632,
+      "sha256": "8df41c5bfe4c2fe891e3c2bc5e7f93d220fbb98afb1ad5313b8093b874ae5ea6",
+      "file": "mono-dark/bn-BD/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 49763,
+      "sha256": "7947d45136569c241be29607bd30b2a138d288481a5fe2ffd6b74d7b031582cd",
+      "file": "mono-dark/pa/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 158879,
+      "sha256": "0cf1941a22889f87b6914152a711f92e89b2b47345f8c8e913e4841f06a73c59",
+      "file": "mono-dark/pa/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 175229,
+      "sha256": "0cb383615579ba5b6977f2255cfa2d5c44c6138328b46a54a51fd327175c584d",
+      "file": "mono-dark/pa/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 143466,
+      "sha256": "791e103e47c71601c1c6afaa9ddbe0341246ba289fb2d38ef7260fb7f5c7159b",
+      "file": "mono-dark/pa/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 125468,
+      "sha256": "07173401e6889a4368d8ea9856e6b229adebda3d343f44c8834b4bb1dd6a2fd0",
+      "file": "mono-dark/pa/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 121811,
+      "sha256": "f3cd55ce2c7edcbe69bbe2da813c2405bd88ba9d13de374c18541bbb9c8299ca",
+      "file": "mono-dark/pa/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 128101,
+      "sha256": "62d8bdd71fca694942d2836917e206b2e9f7d0d45f4293931de7bc261a6431a8",
+      "file": "mono-dark/pa/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 52640,
+      "sha256": "c68159db77f0a5280bdf277dbebec8e6a58fd780a9baf8e164c455bdaaa39c8b",
+      "file": "mono-dark/kn-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 186690,
+      "sha256": "2481f1bee3a6cc7616441ee5189964ef54495ab74be02ddad4f11ceb4dccee89",
+      "file": "mono-dark/kn-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 213151,
+      "sha256": "bb2613486436fdef8a5365acb89ac6dad2740603d327d0262d76102d1158708f",
+      "file": "mono-dark/kn-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 202261,
+      "sha256": "696cd7cd94aff73af966bc3d7764ccd5ba9aeec3eaf02aa77dd7427cc50e8e60",
+      "file": "mono-dark/kn-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 197268,
+      "sha256": "11355df59506bf3e78f64c51c5679e898f97d5ce67cc3e540bf77c5e5324fea8",
+      "file": "mono-dark/kn-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 147604,
+      "sha256": "d40ad5086d23f8ea82e3e641318aa8cb5bf32f516f1b11d509f778dd2665f450",
+      "file": "mono-dark/kn-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 172606,
+      "sha256": "b98b2c49698c1555667c5befea630fe223f77b54ad7df54bfea5e4626a1a5613",
+      "file": "mono-dark/kn-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 53393,
+      "sha256": "690356ba3a8fddc2780f4b1ecd6fa26f52c0b328c24ea7a310a759dcd7f145cf",
+      "file": "mono-dark/ml-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 203759,
+      "sha256": "be621d7c5a0c961d5494948e9540ad2a128633036f7a89a372310a52644916cb",
+      "file": "mono-dark/ml-IN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 220228,
+      "sha256": "d4390ce7fcc9337ae674f953cd3fe339d9db368c65244a74b7d7e8c4f8dc5c7f",
+      "file": "mono-dark/ml-IN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 227685,
+      "sha256": "2e6ee9ff8bd1c6b1ed85f0fd48735a2c97737df1fa02230e88ec8becc65fe295",
+      "file": "mono-dark/ml-IN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 218167,
+      "sha256": "ebd81c480bab30f2dd719572d2bf5230500b92e6e641bad718de708156eb162a",
+      "file": "mono-dark/ml-IN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168013,
+      "sha256": "6b56b4894290e6a376ab72719c6222a4dde10ffac104258802d2a3c91ed27b94",
+      "file": "mono-dark/ml-IN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 197745,
+      "sha256": "81fd679f7bc4d0027b93b6ebd1c1c8e97337a7dab46fd46863dda29b966f7c62",
+      "file": "mono-dark/ml-IN/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 53063,
+      "sha256": "f6e1d03759d4f1f0cbada7063ac18c44e040721cb6e43d071ed4f207d66c7e5f",
+      "file": "mono-dark/or/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 185736,
+      "sha256": "fb91011012d3cba33af1f48c2081f5c3e5b5e36e0f46b20d6787bb08f921126c",
+      "file": "mono-dark/or/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 199844,
+      "sha256": "c043c84d3cb1d7d2861667b10760bc9513c0c76b3f5d64e4c4ec9ee9aa23d453",
+      "file": "mono-dark/or/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 183005,
+      "sha256": "7afd84d4fe6f8f9e4e31e7dd60646c219b86c3893b43b6d73193c9bad4bbff96",
+      "file": "mono-dark/or/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 170373,
+      "sha256": "024072988c1519c82b6b9b524b59c07240d2d46dc5767201cc0866e048404152",
+      "file": "mono-dark/or/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 138138,
+      "sha256": "40f86820ceebd933cd8a2edc3ebb7fba851b0c15da7d319e65a1253a7876ac3d",
+      "file": "mono-dark/or/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 146025,
+      "sha256": "ed98326a1d820c44b42f72c5e283a8b7b678f6f35b1c2a192061d045a1e1ae3a",
+      "file": "mono-dark/or/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 53001,
+      "sha256": "816d43a330c2d8aa369b35780c5d84b1a570dbbd98ae0d626e7e48b5a3191b66",
+      "file": "mono-dark/es-ES/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 154529,
+      "sha256": "90e2706151bbafdfda9280503ba9ede8b9886e295ef5cfd1e4b60ef880b4861a",
+      "file": "mono-dark/es-ES/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 195867,
+      "sha256": "e9bf64cdc6f960e7829c8d6dea23bbedc283226a759db15ac4d6333fcb1c3240",
+      "file": "mono-dark/es-ES/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 163623,
+      "sha256": "f101e0adf3471cf05268324b4ed03fd385f4acd5f1311252d7ed491d566a7d96",
+      "file": "mono-dark/es-ES/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 150910,
+      "sha256": "dbaf4ff229af39df3a5756993644efc59c90eb9992ae4f6f6cf2c201ee5cce7e",
+      "file": "mono-dark/es-ES/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 131984,
+      "sha256": "9a2c9562bbd811556c6562d4a8d1734beb8b56ac7905d7087ac226088ca531ab",
+      "file": "mono-dark/es-ES/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 149088,
+      "sha256": "049da28b14f7b593d2788a3c88f2516e8dc6c856bc4ba64a809f881427dc4eab",
+      "file": "mono-dark/es-ES/06-panchang.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 50759,
+      "sha256": "d5916021ec17624f1b6297a39ba96c6f4e85db2992b2650c87f313bc65ae7539",
+      "file": "mono-dark/zh-CN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 164347,
+      "sha256": "0eb9aa71408d6ad07fe75d39db688a0992791e531877af9ceafe02994c18efb5",
+      "file": "mono-dark/zh-CN/01-dashboard.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 170719,
+      "sha256": "7050e3310f514c282f2118ccfcb177b8e336cf56de94913529b1f71f45cc8b01",
+      "file": "mono-dark/zh-CN/02-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 144388,
+      "sha256": "df3d55659037712be4dca3c136cc63266578ad12280bd87b799d3f3ee50ef391",
+      "file": "mono-dark/zh-CN/03-chat.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 134853,
+      "sha256": "bd5cf41fe36648359abe1066b1e2131692cc57b34d8a0a876db27a7bc2211df1",
+      "file": "mono-dark/zh-CN/04-multimatch.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 126894,
+      "sha256": "2e45c3c58b5b61280c8cf24eb5457d6367dcb9a80ebed26a7a6e834d8b1c25e7",
+      "file": "mono-dark/zh-CN/05-numerology.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 132018,
+      "sha256": "f92feacc693228775a8e5bd686b6f72b56056c8e98bee599883ab5a6c93fcf53",
+      "file": "mono-dark/zh-CN/06-panchang.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "bytes": 36125,
+      "sha256": "9e3766a3df31a08575e1cdff8dfb67db8d5b0ef35e66f40d20e1222496e0e7c0",
+      "file": "store-light/icon-512.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 68778,
+      "sha256": "c184b08cf99a0041a04ac3e1594b4ab3f5a2d3475911216ab125a8d3ece269ae",
+      "file": "store-light/en-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 172768,
+      "sha256": "f06aa32170cca0d3f88d09e9faacff085f0f49a6dad284f32dd79935b3c6800d",
+      "file": "store-light/en-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 203616,
+      "sha256": "fd5181117cd7590a091ac6dac85b579090f600ade86ceed1d7bbb59f49bcd671",
+      "file": "store-light/en-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 191336,
+      "sha256": "f164e6d88f2f9e97a6331df476abe512f7a72799625853a34b2cb258279dda32",
+      "file": "store-light/en-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 198384,
+      "sha256": "cc23e18f9c37e6cfdb12cbdf4322eed4ba94b3c452f29aa7caac3337e9e9d2d6",
+      "file": "store-light/en-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 251145,
+      "sha256": "5e00b14188ecaabf583f88f1d6af59fff3ed9aa114440794e6a8ea07667cd1db",
+      "file": "store-light/en-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 318455,
+      "sha256": "a47f62dc73a875e19ad41fbf4c11c6cabc9b046dcdf979b8449b6ec91dc01052",
+      "file": "store-light/en-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 181851,
+      "sha256": "ba9dacd50de1bb43569cdc5f1259305fccfd35d6c562c560d4eadbc3cf5c3ad2",
+      "file": "store-light/en-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 133594,
+      "sha256": "115745e2724ca74219dc24aa7c5db1b0d994f8ce25b4c57df93f2688fb8d1696",
+      "file": "store-light/en-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 66209,
+      "sha256": "00d4e2b69b2a0425a805a73b6a49a90949fd6ff74d09495d5190b8294146cb26",
+      "file": "store-light/hi-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 162755,
+      "sha256": "ed46bde19f30e188baddc3dbc35759671175e86ee098c7e0916091d961704d19",
+      "file": "store-light/hi-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 205438,
+      "sha256": "02a8dad7027a6669aa739347ff70c97b8a9785c0b61ea928ec05488e6dfdc243",
+      "file": "store-light/hi-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 187887,
+      "sha256": "d948482c6c0c85d4320902f0d63d3cb77eac692340278816e90598cf369215bf",
+      "file": "store-light/hi-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 189055,
+      "sha256": "2a6d60561d1fd90140a7bc7999025e4e67e42420a391909075ff08280e9fe376",
+      "file": "store-light/hi-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 243964,
+      "sha256": "4c721901213fafcf3ec2742db18f1d7e23b3949b72abbf8f75e9b5226b77c462",
+      "file": "store-light/hi-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 305708,
+      "sha256": "ec9faa4d20ba899549345cdf11ff1eeef7d66611baac117374affc95f477aec1",
+      "file": "store-light/hi-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 180192,
+      "sha256": "f6bd099070bfe1544ce10467e64aa6a86b5394772af66480bb6fa426035e1a54",
+      "file": "store-light/hi-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 130558,
+      "sha256": "77c89203943444ea1bbb9ea8fb526487ecd5cf722d3af6ff6fc24163f045db64",
+      "file": "store-light/hi-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 64733,
+      "sha256": "7ebcaad1ee94934a0aff6ddf728e6dd3bc18baf6dc18659e128781ab641e50c2",
+      "file": "store-light/mr-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 162037,
+      "sha256": "12bc3b6b6f82ba4bdbaaf47b97733067b1006ec071f8df0c688312088b539e1f",
+      "file": "store-light/mr-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 205414,
+      "sha256": "ae196221811fd0192b948ddaad367d4568b933f90aac75df3111d1cad6f26c60",
+      "file": "store-light/mr-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 195162,
+      "sha256": "fb15f3e60465664340e32fdc6f9b306a852703d93c96e1aae94303fbe64da4c4",
+      "file": "store-light/mr-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 193525,
+      "sha256": "13aa277d0cc376791743a88bed4ffa67ba9426f782b3f9b08c193b4e8d2e099f",
+      "file": "store-light/mr-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 239651,
+      "sha256": "3c5e55704536df3498ecf48c6cb37f965abeb869e4bfdc3a61882a6654b4ba3a",
+      "file": "store-light/mr-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 305207,
+      "sha256": "0a182e8b345708c2598295ad5183d273b2e758c6ed6a5603a68397be155f58ef",
+      "file": "store-light/mr-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 174993,
+      "sha256": "ab07c79fb22a5962b8ad929e81f67f099ac0f88dc37710386fa55bb1e8edecc5",
+      "file": "store-light/mr-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 131504,
+      "sha256": "3df491269ef1dba5e8dba3becb3b18a60a6dfbad4e333b4c6c5cb36661c4240d",
+      "file": "store-light/mr-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 63968,
+      "sha256": "6d97438d364a35c4fdda6c5fc3abfd176ba92083cae0f6956b01f8679aaa9dab",
+      "file": "store-light/gu/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 161841,
+      "sha256": "bb177ba52dbe18c10ad9b5e32fd963b5e940dacf286bfcf1b7c224e6f05c0266",
+      "file": "store-light/gu/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 203833,
+      "sha256": "928fdbb92f732f1e409483d341e67821a204c0a09d866e91b791d94df6340980",
+      "file": "store-light/gu/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 191021,
+      "sha256": "c901d04380f56d65ccd9dc86ed05b8ed8042ca12ce0f1a09c1dc3a225030320c",
+      "file": "store-light/gu/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 188112,
+      "sha256": "84e1b8cc4f93e999ebcbfb62fe32343862e13065a66b474cc16fa760d62d2593",
+      "file": "store-light/gu/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 245294,
+      "sha256": "cd0b6b515f4b108d96832e9d5aa15ffa2916c82d739f866df7b55961ea88c396",
+      "file": "store-light/gu/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 306218,
+      "sha256": "0a7a988a224f0a2010380c1271583d2cd943ef1b7f1ce60eea7577a66853f380",
+      "file": "store-light/gu/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 170615,
+      "sha256": "a711e4efeac0d04fbeb99b2551e8aa106791ec8a56637bd00667d1c235c59876",
+      "file": "store-light/gu/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 132222,
+      "sha256": "49a6a48d3991731565e27c505de5b24bf46454b67d2a7780c34af0c220efe06f",
+      "file": "store-light/gu/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 71054,
+      "sha256": "ae94a71c48142eba949e302d551ff16f2f87b9632c4987204471a76e7e41b9cf",
+      "file": "store-light/ta-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 173603,
+      "sha256": "b94894f34cdd1c987ddf1a9a5a9bd8916f1d4583de22ce20938d34a8c9a166fd",
+      "file": "store-light/ta-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 212665,
+      "sha256": "a18234c63ada36c2134ba59957866f48fafc0c938c5ecf62cdfaa4ede0aa9651",
+      "file": "store-light/ta-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 224685,
+      "sha256": "a395e7e03e9f89545285e02b3f20ae7fcb6dbe3df1877ca35f742ea9b06ffb65",
+      "file": "store-light/ta-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 211974,
+      "sha256": "7654456753c99c167e2ce9651397e953f5a3304be2b45158911dfe56c6477053",
+      "file": "store-light/ta-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 257915,
+      "sha256": "4fe5add80826f2083915416295929056660bb76fda1fb9e20fd1310515fa3c81",
+      "file": "store-light/ta-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 313701,
+      "sha256": "1691cc32a7e74c1b4903c83b9e7b8b60bf44c6780ff18f3cc76b1bb111438cdc",
+      "file": "store-light/ta-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 185307,
+      "sha256": "d5a890009c17fa2c85fef32f170157c61137c47f9a4b2d144baf7c2423bdbdd1",
+      "file": "store-light/ta-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 138188,
+      "sha256": "a2155b9cb265798a3b0ef081e2d067c94890622f4af6b12b295f958fa962b5bd",
+      "file": "store-light/ta-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 71993,
+      "sha256": "d31188293ccb1c9553c9d46661a2bfbeb441fd937571ea36c72da30496979c55",
+      "file": "store-light/bn-BD/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171415,
+      "sha256": "bbe0df322d42c99eb04c98b970ac44e4156342e6ddec3eb5a0875484ba9ce8be",
+      "file": "store-light/bn-BD/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 213028,
+      "sha256": "486415048e782b269bc4b6736a4cd9ddd05d517f17ac2c34c63944cde9246469",
+      "file": "store-light/bn-BD/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 206984,
+      "sha256": "46346d272290ccf2ef26d656d3d0c75f3fa8cfb6802272c0c95226dfbf85b5f0",
+      "file": "store-light/bn-BD/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 199676,
+      "sha256": "b63fd9db8749a84bec0961d5977bd2f19b6b31f971c4fc0e718a403a12d26634",
+      "file": "store-light/bn-BD/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 249587,
+      "sha256": "67ce21fd35b90f72aa7ee342833cc7eed241b21163016bdab3be66017b86cd87",
+      "file": "store-light/bn-BD/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 307868,
+      "sha256": "ddb247016ef475a743f6ccdac1856722595cd761c93764be531ed926b2779005",
+      "file": "store-light/bn-BD/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 181588,
+      "sha256": "c9eeaabb94beb98524c0cdc6327b200c05706040acd5765121119ca764ce5af1",
+      "file": "store-light/bn-BD/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 135757,
+      "sha256": "2d1d423cf6067d62ec543c629cc1cae8728a41ae3e115bd6f4f8de02647f5864",
+      "file": "store-light/bn-BD/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 62736,
+      "sha256": "842f9a2d7fb35245801ee7010574752b345f9915ba4cead8327d61e4a3505128",
+      "file": "store-light/pa/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 156592,
+      "sha256": "4f1c7bb246232294e7e936e462383e017a6f8772a4fb9e654ad1d9993a79472f",
+      "file": "store-light/pa/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 202640,
+      "sha256": "20e91125326c2dd528e9a171316b4afaee9376fc47c1507d492604750d51cecc",
+      "file": "store-light/pa/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 186864,
+      "sha256": "c13580ab40add73f31eb9f1a225ab1276a85a9b8ef7df3a980546c2937cd86e1",
+      "file": "store-light/pa/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 193945,
+      "sha256": "70b84e2edf80ca458bde831e16644cb8b487b4a3c2944feebfe290f6f69471cd",
+      "file": "store-light/pa/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 241385,
+      "sha256": "4999ab720d7427b91409948e718bafcca72b8379ef710b83951166f7cdb4d5c4",
+      "file": "store-light/pa/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 301312,
+      "sha256": "d855d250b4fa92b0673b35d94ae8d3e9b2a6f8b79c7358b98fc1fdbaaf26475b",
+      "file": "store-light/pa/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 170502,
+      "sha256": "f73d55d187e3de8fc74feab8adeeae981cb8748570a350f32adef74769bea012",
+      "file": "store-light/pa/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 128266,
+      "sha256": "b15cce6c38eb02e72f26d8101851aeb6ab35c2b21c7c4b972d5204cf649d8a6b",
+      "file": "store-light/pa/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 73798,
+      "sha256": "aee436953bbee9e84c538dec1d19ef158fd46cf810b0e3410a2b93e110289dcf",
+      "file": "store-light/kn-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 185498,
+      "sha256": "68db856845fd3dde5bcba4b65e979d76a5ed8c7db9799ad2c6984d337ff8db4e",
+      "file": "store-light/kn-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 217062,
+      "sha256": "5efcdaa980a748744f11c717b36bfc333ebe2d2b78fd467940331ab92d93728f",
+      "file": "store-light/kn-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 221945,
+      "sha256": "15f62cc6785ec774a6ccb97693bb0a77bbd31b4c7146261ec9456e70fe156865",
+      "file": "store-light/kn-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 223794,
+      "sha256": "98f88ca45dfaddfa0acc64810bf29f4ae7066c6b5fa5aa51544bad2b5412b8b6",
+      "file": "store-light/kn-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 260414,
+      "sha256": "3bfcc2784157ee31f54ae2328730855fd6918977dafeb083fb096b0eb00a9724",
+      "file": "store-light/kn-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 326024,
+      "sha256": "2c9011f6ec759d450ef890acc4d219cc718446ab75afd1348aa5b432531c9a3a",
+      "file": "store-light/kn-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 204276,
+      "sha256": "5d3db939a145ff56addc9b614068e6ee94a03f0511df1253bad34dd9113710f5",
+      "file": "store-light/kn-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 151916,
+      "sha256": "c1ade4a54153e95b655e808f3bc0330b80c133490d8ac1aa700ac8737b5fe435",
+      "file": "store-light/kn-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 77997,
+      "sha256": "a6cac27d3b5f5b28ed4f7596c76659b2982b9cc8d1b8c8470c964eb93e7a2292",
+      "file": "store-light/ml-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 189350,
+      "sha256": "1d09cfa3aef442f86c8f192d683d518488b882044695c61478d81deae90f299f",
+      "file": "store-light/ml-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 227461,
+      "sha256": "3d7b53ea4baede64e06baa29931ef0c8e36422364b9f299641b10f953e301ce9",
+      "file": "store-light/ml-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 241088,
+      "sha256": "ef1a596d4f5e99e0f3feee9f928de43852a49c3fac236c5bf8efba810906e3f4",
+      "file": "store-light/ml-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 221105,
+      "sha256": "336e04ce275dabfc74d1135c5510616ed548e250a16c27ba869e9ccfefb01758",
+      "file": "store-light/ml-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 268085,
+      "sha256": "ef002052b524dc981ea835ae7b2499a76699ffe90d9aacb3706c5c1815d73fad",
+      "file": "store-light/ml-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 322140,
+      "sha256": "346d73e72437839afee09dc368041d9fa7dee196dea5eea92348332c03f753af",
+      "file": "store-light/ml-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 201835,
+      "sha256": "a497817cfa5d8c96832569d18b8f0e3f63d0d28adb2896956cd65ffda31fdc47",
+      "file": "store-light/ml-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 154862,
+      "sha256": "2a59e7ef9c2b84506c59608a3a001a31f4d078469024ea40271e57aa7728453d",
+      "file": "store-light/ml-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 73504,
+      "sha256": "9f24acb1b49db64215a076dc73c8ad2cb1ccc5ab1b949cba0ac9369766f6a029",
+      "file": "store-light/or/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 175312,
+      "sha256": "25b044c06ae2ea908a7eb09a9e2189a615a565e47c50ec8cf8d6682f39dec743",
+      "file": "store-light/or/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 224180,
+      "sha256": "92fda9baedf6fc89fac8d55de7827a671500db6f346fa63d62b798852cf9673e",
+      "file": "store-light/or/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 222531,
+      "sha256": "209bff7cf23e67bd56e73c21d66091241c31fc1905bbcf3fcfe3db71f60ae005",
+      "file": "store-light/or/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 212749,
+      "sha256": "8584619ec976a1a2a72be53f0f0809c23cda65de1acb408d0f321997a1e9c573",
+      "file": "store-light/or/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 259244,
+      "sha256": "cf403b0f74d7d49f03d78c61f35f32e842571ef38492feaa9f390e619f7de05c",
+      "file": "store-light/or/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 319639,
+      "sha256": "94e05620b54d378fea521bda84e957a164e19b27ca5b7a16ec9e5b84d41107da",
+      "file": "store-light/or/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 193808,
+      "sha256": "460007fc6831f478750ed872efbccb605d584dc8b160266a09ae69e0c39be73e",
+      "file": "store-light/or/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 151010,
+      "sha256": "e579893e2dd425973cfb988d5546480410a623de980decc1df89eaab6523de36",
+      "file": "store-light/or/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 69484,
+      "sha256": "d9e5dafd6d14c8761aa76988aa4520e84b5379ccc7992ec84a918ca82237c135",
+      "file": "store-light/es-ES/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 177910,
+      "sha256": "ede6ac50ff00ded7101955a482424164d68ca43a1e4eaaf938e396333d79fbdc",
+      "file": "store-light/es-ES/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 198253,
+      "sha256": "33641031cc9a1a8176374d7c1bf12b471cf64f4bc3740f668032fb5484f385e9",
+      "file": "store-light/es-ES/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 191692,
+      "sha256": "9246b8ce82b5a7fe02ebb9af3b62b8bcc73b0e46131bfd009ad62bf93e3c3939",
+      "file": "store-light/es-ES/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 196792,
+      "sha256": "8b5c12b2d47ca53299d0e8509905eb6da49e3e124798c7ced9508cd3cf80eeb4",
+      "file": "store-light/es-ES/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 250043,
+      "sha256": "2c1dba974c5f2d63d3b8ceb95a83a67f04f088a7ed7053f66941c4a662f89dd5",
+      "file": "store-light/es-ES/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 316591,
+      "sha256": "eb4c3bc781ce262cd6f5b6e27a52405dee65bc45d68fd630589a5451f5122565",
+      "file": "store-light/es-ES/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 182832,
+      "sha256": "1d32baec4fcb32776fb63438935893c5ed09830e90af71052ea4cfa3bd3a48fe",
+      "file": "store-light/es-ES/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 127840,
+      "sha256": "79d58c1af9e1d34bb4de5bbe869a4912176d55a420e6fa78052902a26cc9f4db",
+      "file": "store-light/es-ES/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 68372,
+      "sha256": "4a0795efe34c42d88ebdaf3b033b85ca8c57f63593e835882ec6be99b825042f",
+      "file": "store-light/zh-CN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 166809,
+      "sha256": "080e322595ac6bf0a66826b0c3c50fd601ff346859fff5b8ff902a250d26f04d",
+      "file": "store-light/zh-CN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 204114,
+      "sha256": "f2112ee456f007138522a7ae5179da7bdb0cfbed9e5797da66802613366da91e",
+      "file": "store-light/zh-CN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 183660,
+      "sha256": "94497853f0418ed66a959620d505eac5a08d9ccd676ad606d97d2878026d4f2a",
+      "file": "store-light/zh-CN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 193544,
+      "sha256": "32fab174bff37dbade403e5c48224c1dc6ad1ec3fbbba29907630113a9554393",
+      "file": "store-light/zh-CN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 242586,
+      "sha256": "38fdcb6509a4d11276f1aa2fa29438ef15dfaa8eb28723e160882413cac19e58",
+      "file": "store-light/zh-CN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 300819,
+      "sha256": "52a5df1365f2fa96360c42b7d02440771ac1397e85e3eb5873706791a80ba71f",
+      "file": "store-light/zh-CN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171501,
+      "sha256": "552f3a850bd15225d4e14c6c61fcc2fa025597849be4e39eb37d4be363eeb5de",
+      "file": "store-light/zh-CN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 127862,
+      "sha256": "6db1e809acaecc90c2c74d94153b59f595164f0d22be11a912fda4aec84ae099",
+      "file": "store-light/zh-CN/08-share-your-report.png"
+    },
+    {
+      "width": 512,
+      "height": 512,
+      "bytes": 37046,
+      "sha256": "537613fe60344396192b86b747de181cdaad1a8f628d06150c3fa3b8d477cd53",
+      "file": "store-dark/icon-512.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 68260,
+      "sha256": "f54b47e90bea18d45c506ed72fe00c01e994bd69a0a07a36d21868080b4f9a0f",
+      "file": "store-dark/en-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 167734,
+      "sha256": "dbab50da2977bdd53f10018096aea7b0ac6e0af9db11bc6c97ab4f48f665980e",
+      "file": "store-dark/en-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 191591,
+      "sha256": "58682143f3751f3823e7984b11a6d22b9458410b8dc05b0b622915e9a735dfd8",
+      "file": "store-dark/en-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 195080,
+      "sha256": "00c819f1e1a01b55f86676117056650e38d77a0d8d9e5d57f7cf78f264d01899",
+      "file": "store-dark/en-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 179026,
+      "sha256": "b71b1df67a6765d6c9ed9ce8043726f32e943b078b4524bc1de6a2d44d484e88",
+      "file": "store-dark/en-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 236318,
+      "sha256": "c3831ea986e28b7124890db59d87217b18ee5ed5dddade2e7a60a027978feffc",
+      "file": "store-dark/en-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 241945,
+      "sha256": "ca20861336a3ecd2bf8f48b8307ad62bf4247ab08cdee0ebb898ff86eea0548a",
+      "file": "store-dark/en-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 166209,
+      "sha256": "fba772cf4acde99edbc7168d6965ec886f22c9000ace278bc35241e332993861",
+      "file": "store-dark/en-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 169740,
+      "sha256": "6d5db5a1abc8a04a581a3940cf3000eedaeaf941e795c0411cb70ececded3bb8",
+      "file": "store-dark/en-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 65074,
+      "sha256": "b63fce00ea6410436af15e04f6758725ccdb2e69f847a0a479f06f3db155a2ac",
+      "file": "store-dark/hi-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 156733,
+      "sha256": "03481e7b4b75573c4d1068bb431e17a7570f2633bf1071b7e6a5a0af8110d31e",
+      "file": "store-dark/hi-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 192972,
+      "sha256": "914bf71612c1c8f0f3d4270f5660bf1c38d6ee86cbd712f19b72c190da4c7193",
+      "file": "store-dark/hi-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 190995,
+      "sha256": "0eeab72c8cae881eac4f0f81b3e143cd857c5f079132dcbeb99e7ee36b717ac7",
+      "file": "store-dark/hi-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 169406,
+      "sha256": "3524d0d8973d619daf28fd62d4a015093c065938fed59cb62bff372409d5e7e1",
+      "file": "store-dark/hi-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 228067,
+      "sha256": "49013be9b11d5da7cc04a462add07a2adaa2b6c10c38c156206500117b392848",
+      "file": "store-dark/hi-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 234639,
+      "sha256": "af68bb0b03845a842220dabab7ca3466e42c754a1618e38dd7ee306da461a8d5",
+      "file": "store-dark/hi-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 164711,
+      "sha256": "5bbc7dffed1da401447001425fcb5503fcbb617300cbd23274d95fc174915fa3",
+      "file": "store-dark/hi-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 166859,
+      "sha256": "06d4d307ab67f5ceb99875a67c6e91e92c5faf24b28758439455d8f8ec032579",
+      "file": "store-dark/hi-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 63822,
+      "sha256": "4d43ce71fd2e58d5ba6cae24e47d56bf28efad91ce52b0dc2cb013732267433a",
+      "file": "store-dark/mr-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 155628,
+      "sha256": "f8338dfe3475e31fbbcd6375fa75710c4e3a7863173560b4db4a0bfd6201db5c",
+      "file": "store-dark/mr-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 193094,
+      "sha256": "cc31c05cbd91fdcd46102e332a6d7b8052879c2217fd4eb01913e69cabbfd28a",
+      "file": "store-dark/mr-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 198822,
+      "sha256": "73c654b0ba09023ec17786c425b65f1b5199a73e5932e713138d9b7cda2d1737",
+      "file": "store-dark/mr-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 174090,
+      "sha256": "8bcd48ef77b5b5e66d9b74038ca2844a4eef590706254c42b0897ca58302ba12",
+      "file": "store-dark/mr-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 223502,
+      "sha256": "967c4b9cd034bc6ec9c9d7b68bde462209350aeb7610d1ce2389a4b5c370e95c",
+      "file": "store-dark/mr-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 233997,
+      "sha256": "d467303baaa7454369b17efb903f9fbfba90230c337db05b8bf27eda91ae8202",
+      "file": "store-dark/mr-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 158057,
+      "sha256": "3eed5d2005cc4d747a1fd1ca31f4431dda193ef3f12f8ab7c29982939f186276",
+      "file": "store-dark/mr-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168088,
+      "sha256": "924ddb47748c4d6114e9f7ee8056c3dde0e38536ca19e7213bf9d219b10bc04e",
+      "file": "store-dark/mr-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 62709,
+      "sha256": "d8f7bd19b1c975cefb7024214a6821fb0507843ff4a38597ac2af0d329e5c950",
+      "file": "store-dark/gu/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 155384,
+      "sha256": "d03ed744883456291334328b6f4ba0480f20f36e8c1a9fa77f9ebc7e6a007aeb",
+      "file": "store-dark/gu/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 191158,
+      "sha256": "474ec47c7eef4947de5c08306a4548108abce1cb61e60ed89d77dd72031baa99",
+      "file": "store-dark/gu/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 194521,
+      "sha256": "11019194f005972a44aa06b1ecf50c4635885cb60fe338b8d602a2a15fd29129",
+      "file": "store-dark/gu/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168285,
+      "sha256": "308a150a5ab1834a33cae23b7ec1a4b12d84a52dbdba3166fc97f7581637db9c",
+      "file": "store-dark/gu/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 229657,
+      "sha256": "cd4b3ce25833fba21d3f2e242f5bac539eb29eb84dd3151bf7b66db2c9019d53",
+      "file": "store-dark/gu/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 235131,
+      "sha256": "5703a97a0381150789f08d9a0bceb6ce19dd347bb2ac50c0c491b4008e3be4f6",
+      "file": "store-dark/gu/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 154407,
+      "sha256": "aa59531accfd59735ae3fb1f24bca144167e3bab2ee62185bf10a323b915730d",
+      "file": "store-dark/gu/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168805,
+      "sha256": "9cfc7c1a41c9213f4782240fa89799e0f4bbf4d261a819362310d8f006b2ca04",
+      "file": "store-dark/gu/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 70525,
+      "sha256": "6dda3f28368ca0f587ea91267079a61d3bc935da8582d01465f5191651f31bff",
+      "file": "store-dark/ta-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 168341,
+      "sha256": "9c2dea52a3a0026234dd4195296b97b5ae2072d30896c5f6d67ee0cba3a4088e",
+      "file": "store-dark/ta-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 198738,
+      "sha256": "b868f81085a37151ba189e0cb2b2279a7136b6ac230253135d2d6a00a792494b",
+      "file": "store-dark/ta-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 228351,
+      "sha256": "5b954d0e8a1a9a3c49ab42c433dcfa918fc910927e737c1f6eef518b31cae244",
+      "file": "store-dark/ta-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 199069,
+      "sha256": "3c75f56716a5ddca3f35caec237b3d0a352d7fa517d5c2c38e3dc4c180e1e3b0",
+      "file": "store-dark/ta-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 242654,
+      "sha256": "07319572b1a9f165076f0aff4526594fe6cea87c51d27983b5f19bfbaedc7532",
+      "file": "store-dark/ta-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 243354,
+      "sha256": "71bbd147348c07b4eecc8953c05e44e1659d3a5c58965649eb3ff96c7954e958",
+      "file": "store-dark/ta-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 169537,
+      "sha256": "8c057aaa61259b04c97ca4e2e6df2812e575ce5f7197ed2158fe1f7783a15278",
+      "file": "store-dark/ta-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 175097,
+      "sha256": "9de516e00a4ae103a46c03eb2000cf8a80d79b001205b03fedf9c0705c7db06e",
+      "file": "store-dark/ta-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 71255,
+      "sha256": "b35ec77fdb07d590f395918c25aa158faf77524105c8963c37a943fae68d15c5",
+      "file": "store-dark/bn-BD/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 166066,
+      "sha256": "59cbfef6fe9429b32d9042301e5ccd783bd1033d8c1cf0e92177b625b2f78923",
+      "file": "store-dark/bn-BD/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 201176,
+      "sha256": "a1b81eac423eba3d12bb29f305851be33cdc072f66e89f8334af136d70499362",
+      "file": "store-dark/bn-BD/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 210692,
+      "sha256": "e6b52985c52f42ccbf365f6b454ed9f602aefccb32e1decffd31906c8c0b6008",
+      "file": "store-dark/bn-BD/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 180434,
+      "sha256": "984a9cfe362b57d5aacd799e784744553fc89503a907cc8e3a7ebe8f3b373acd",
+      "file": "store-dark/bn-BD/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 234514,
+      "sha256": "cdb052f67436dab5d3618d6375128bd5d6b15a4bea145b3c322104aa50acd187",
+      "file": "store-dark/bn-BD/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 236665,
+      "sha256": "faa89232286f3c7b9cdc98911245e0505ba1dd5720a36aeab33d7998223d1768",
+      "file": "store-dark/bn-BD/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 165949,
+      "sha256": "8bb71b6375e98f0cfb819dbc3aa376e8186e46f17e5a58a92395495a1ad0e86b",
+      "file": "store-dark/bn-BD/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171466,
+      "sha256": "06004a01fa47e5e26a3f0c66132a3cabf9f4c1821a4bffbf9fae13a4f2b3e117",
+      "file": "store-dark/bn-BD/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 61258,
+      "sha256": "7bfe3f27c7ac452dbdc3f23b1d3b78ee00f2ec6f313a784a4d9251a209139f87",
+      "file": "store-dark/pa/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 150236,
+      "sha256": "a683aaa5f84cbe239c4435ef75269d5abd34ee83bf9258a4c38696b7f2a8b505",
+      "file": "store-dark/pa/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 190131,
+      "sha256": "4702f3a897fb00a277832d378c8cb9bb7b54b8e2ad2d4ceae1970259fabde46b",
+      "file": "store-dark/pa/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 190105,
+      "sha256": "d3a663932ec71f1ab8898eb53f75ead338a662e49196a8033731cec2ab90c8d8",
+      "file": "store-dark/pa/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 174450,
+      "sha256": "d675782ee05cbd09b5faaa4298f74c65c79cebb93379a2e2025fe4454fb682f1",
+      "file": "store-dark/pa/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 225492,
+      "sha256": "0b50c6b4bcba0d73b2db9a40e586edbec72eb8d80f9d57bafe8fd949bcbd5afc",
+      "file": "store-dark/pa/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 230317,
+      "sha256": "0c717aeb340545838e2c258296c55de6c454fc5d946e5ec52f458baf7b3c452a",
+      "file": "store-dark/pa/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 154438,
+      "sha256": "0a859bd273419dc5b6c3162b4cf2590f55a692792da5daf82192df2473779613",
+      "file": "store-dark/pa/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 164895,
+      "sha256": "16e4cffba5689f394020a455429bb22cfc5d75161f2e5d7125fc46325d8f7d66",
+      "file": "store-dark/pa/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 73676,
+      "sha256": "abb348cb34ae67cacc8cfd2a43c89a4bd28df96eeb2da505e4cad36d6185b9fa",
+      "file": "store-dark/kn-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 181916,
+      "sha256": "e9caa9a93403304aa5b16ee5b4965dc3297236766654a58c6e88d752e8a27315",
+      "file": "store-dark/kn-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 205956,
+      "sha256": "c4874188aac44f7e2c5b85c0fb78f486e22d51a57d279683585018650098ad74",
+      "file": "store-dark/kn-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 228801,
+      "sha256": "d4edb3c8aa553a02c81913f1e2cb2d30e9172067223bbea0cca930ee73f44ee3",
+      "file": "store-dark/kn-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 211776,
+      "sha256": "bd01625040c7abfaa2d3bf7d59d4e2b8c89b538aef4788c1a016a23747b48dc3",
+      "file": "store-dark/kn-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 247611,
+      "sha256": "ae21fe6a7c37c2aa6254c3fa510c512b0024f2fca139065c0a1144d391f821c9",
+      "file": "store-dark/kn-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 257758,
+      "sha256": "5a490865bc25beb692dca4d6ef9adcfbebf3c98d83880b64240fbbb700da6771",
+      "file": "store-dark/kn-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 188397,
+      "sha256": "5f1e3704bb18cede44f13a878dccdfe810f510143b15232a76357e7960a1ee7d",
+      "file": "store-dark/kn-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 189614,
+      "sha256": "97171b5d03445d2250e286e14edd8b4fae9daa8d42d08f18a4adde1cd44439f8",
+      "file": "store-dark/kn-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 78424,
+      "sha256": "a3afc891a0753ea33148fa974a7929731581a99aaba74f24fc54065dfab6e3cc",
+      "file": "store-dark/ml-IN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 186590,
+      "sha256": "3846f57c466b8ce5ca7c7afbe042a960dbd9c5491dff795e31dfe9bef8e7e8fa",
+      "file": "store-dark/ml-IN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 214878,
+      "sha256": "793a3af5c45593ec41add4a2e7a5b1ea73ae443e302b49e4edf256ea57c05e39",
+      "file": "store-dark/ml-IN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 247048,
+      "sha256": "941c3d40ee04be0a56e17afaa96114ba09206fd36df3c08baad19b609e1e4c8f",
+      "file": "store-dark/ml-IN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 208920,
+      "sha256": "0f8d86145d184b30c65a5c8fc7682ffe9b9f124f841df36a57135439e91543ef",
+      "file": "store-dark/ml-IN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 253975,
+      "sha256": "e8a59e34347559a9fd638dbecf839e09b4a46487646f4079c652df31d8bda0d9",
+      "file": "store-dark/ml-IN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 253671,
+      "sha256": "4ba701a28676b7d047548e30e0c2c319289ebb006cf50a1693c70006a8f2ad5c",
+      "file": "store-dark/ml-IN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 184266,
+      "sha256": "9ba177249901b3832893a53bbb39222d244233b20dd76b261ad5306f82b76395",
+      "file": "store-dark/ml-IN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 193250,
+      "sha256": "84ecc8ac4313fb0aad450af2b13df345bd3c70765f5263a5877b3b01c342b76f",
+      "file": "store-dark/ml-IN/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 73505,
+      "sha256": "a5d5d7581816c6d5e38697c237ba4b080bdd3cca50b5b22f936bb4d6b81610c2",
+      "file": "store-dark/or/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 171149,
+      "sha256": "3caeac9cd0970a7d5d682e8da52df8e3f12a0f958bafde4a79f4692fde0ff4b1",
+      "file": "store-dark/or/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 210963,
+      "sha256": "70e16c27f687cf4b2d54410d8d6722718ce319cb397b2db29cc86bdc34cd85d9",
+      "file": "store-dark/or/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 229449,
+      "sha256": "02b16ddc6d27148be646c0bffba192cf2c5b613df63af49fbfb6280d10294a73",
+      "file": "store-dark/or/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 194567,
+      "sha256": "99e464c70514e397aad1a5aae035e7b29393a2bb23e119b7c58bf192ba3de7a2",
+      "file": "store-dark/or/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 245433,
+      "sha256": "3f20549b177f1e9a6700083f2df44654acd89f2b9d8427d27ef5970e718f7454",
+      "file": "store-dark/or/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 250548,
+      "sha256": "8ef8186ef5383526f9688e164ef71dbc0ae966629110329cafab13beceda3d8d",
+      "file": "store-dark/or/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 178704,
+      "sha256": "84b891ba726e4ea3bb4a4395573b95f4e165f9bef7c4b984fe5d2e6c4d8caa0f",
+      "file": "store-dark/or/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 188029,
+      "sha256": "488ef9fe552140584385b7d15069308a5620fd05e3842550140366d8f477f870",
+      "file": "store-dark/or/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 68313,
+      "sha256": "22eb77c3276d43daeaab03f8ea1417ba199ab2db488c7a4d57a34d680b4fac55",
+      "file": "store-dark/es-ES/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 172764,
+      "sha256": "a7de284f68ea1438134d44a8ea608acc756f26ab51942db927f415b60e3a953f",
+      "file": "store-dark/es-ES/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 185249,
+      "sha256": "6711e431d9606b3727fcd62e7ba168e9ad24bb5fba72794ab616cd7063bf37be",
+      "file": "store-dark/es-ES/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 195850,
+      "sha256": "848d976aed2c83a29ee8b9dadebdda85a1088bab229631bd4b158fc722cecfd4",
+      "file": "store-dark/es-ES/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 177226,
+      "sha256": "88dfcb787624f97cb920b887f8236888310eb045b8d865ac8c4a8f8f3c638d56",
+      "file": "store-dark/es-ES/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 234826,
+      "sha256": "6c6d24a5a333fd76e7b1d89f7738eaa17abe64d54df08c5a3975d68fad23a020",
+      "file": "store-dark/es-ES/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 239706,
+      "sha256": "dc24ea301fc4e90187ba0696f8c90f948fef666d06fd0eddf9b1aed0c37a01a7",
+      "file": "store-dark/es-ES/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 166780,
+      "sha256": "439145590e15a627060c8f36eca1b4350b935523c7ffc735bbc5c2575294a45d",
+      "file": "store-dark/es-ES/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 163205,
+      "sha256": "e36bdf5b4dbcc216fa978a7e99536b9957ce732485e5ef1f7d7df0a9c6b9dd62",
+      "file": "store-dark/es-ES/08-share-your-report.png"
+    },
+    {
+      "width": 1024,
+      "height": 500,
+      "bytes": 67414,
+      "sha256": "ed655298f96861c36d7a888195028d5d7605a45f8f0596992011aac51dab10c8",
+      "file": "store-dark/zh-CN/feature-graphic.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 160877,
+      "sha256": "ed558f293c76430c05a18e69bc8282c75a0d1d5bc2817483c33423621eae305a",
+      "file": "store-dark/zh-CN/01-your-cosmic-companion.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 191678,
+      "sha256": "e482e7692ee04d4eaf5e3b309723a16fc113b15f154a5629b1755f75449e9e94",
+      "file": "store-dark/zh-CN/02-your-kundali.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 186548,
+      "sha256": "eca10c8930714ead6556a05f4d7fabd74451cbc44b331c79c34ce7381b1afd9d",
+      "file": "store-dark/zh-CN/03-your-numbers.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 173920,
+      "sha256": "0916872603aa010c9a852bba62692968d32aa8d18a9ea62cca9e3c3895c9503f",
+      "file": "store-dark/zh-CN/04-multi-match.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 226737,
+      "sha256": "231b1f66ef2fdc8f82bb2547a5486d31767d4fd10969a74ed3b0904b7cbe136b",
+      "file": "store-dark/zh-CN/05-daily-panchang.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 229966,
+      "sha256": "374a19186ba3acaa0698ae47d6c1ab23b32603c061cd9f16ac3ced219452373d",
+      "file": "store-dark/zh-CN/06-daily-horoscope.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 155229,
+      "sha256": "f9faba0bed8a04488fb9498288bec430404c3edee4ae03c5c95de60269d25af3",
+      "file": "store-dark/zh-CN/07-palm-and-face.png"
+    },
+    {
+      "width": 1080,
+      "height": 1920,
+      "bytes": 164105,
+      "sha256": "48d346f3f9c3c68a397b40b2b3489ec08e1410f977548964814e581fc8bff9e1",
+      "file": "store-dark/zh-CN/08-share-your-report.png"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+Novedades:
+- AastroAstra ahora es AstroAshva. La misma app, la misma cuenta, los mismos créditos.
+- Los informes que ya creaste se abren al instante, en Ya generados, sin créditos extra
+- Al iniciar sesión en un teléfono nuevo recuperas tu carta y tus datos de nacimiento
+- Los cambios en tus datos de nacimiento se guardan en tu cuenta
