@@ -526,7 +526,10 @@
   var render = function (st) {
     if (!st) return;
     lastStats = st;
-    var a = whole(st.downloads_android), i = whole(st.downloads_ios);
+    // Android prefers Play's exact "Total User Installs" when the backend has
+    // it (PLAY_REPORTS_BUCKET set); otherwise the GA4 app-user count.
+    var a = whole(st.android_installs) != null ? whole(st.android_installs) : whole(st.downloads_android);
+    var i = whole(st.downloads_ios);
     if (a != null || i != null) {
       var d = (a || 0) + (i || 0);
       var en = live(st.updated_at, false) + '<b>' + fmt(d) + '</b> downloads';
