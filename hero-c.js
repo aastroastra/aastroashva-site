@@ -522,7 +522,7 @@
     var when = ago(iso, inHi);
     return '<span class="hc-live" title="' + when + '"><i aria-hidden="true"></i>' + (inHi ? 'लाइव' : 'Live') + '</span>';
   };
-  var lastStats = null;
+  var lastStats = null, lastLive = null;
   var render = function (st) {
     if (!st) return;
     lastStats = st;
@@ -532,11 +532,16 @@
     var i = whole(st.downloads_ios);
     if (a != null || i != null) {
       var d = (a || 0) + (i || 0);
-      var en = live(st.updated_at, false) + '<b>' + fmt(d) + '</b> downloads';
-      var hiTxt = live(st.updated_at, true) + '<b>' + fmt(d) + '</b> डाउनलोड';
+      var en = '<b>' + fmt(d) + '</b> downloads';
+      var hiTxt = '<b>' + fmt(d) + '</b> डाउनलोड';
       if (a != null && i != null) {
         en += ' · Android <b>' + fmt(a) + '</b> · iPhone <b>' + fmt(i) + '</b>';
         hiTxt += ' · एंड्रॉयड <b>' + fmt(a) + '</b> · आईफ़ोन <b>' + fmt(i) + '</b>';
+      }
+      var n = lastLive && lastLive.active_users > 0 ? lastLive.active_users : 0;
+      if (n) {
+        en = '<span class="hc-now">' + live(lastLive.at, false) + '<b>' + fmt(n) + '</b> using the app now</span>' + en;
+        hiTxt = '<span class="hc-now">' + live(lastLive.at, true) + '<b>' + fmt(n) + '</b> \u0932\u094b\u0917 \u0905\u092d\u0940 \u0910\u092a \u092a\u0930</span>' + hiTxt;
       }
       stat.innerHTML = '<span lang="en">' + en + '</span><span lang="hi">' + hiTxt + '</span>';
       return;
@@ -550,8 +555,17 @@
     fetch('https://gttszlununmqivrqevwv.supabase.co/storage/v1/object/public/site/stats.json?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; }).then(render).catch(function () {});
   };
+  // People using the app in the last 30 minutes (GA4 Realtime via the
+  // site-live function, which caches it for 60 s). Hidden at zero or on error.
+  var loadLive = function () {
+    fetch('https://gttszlununmqivrqevwv.supabase.co/functions/v1/site-live', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (l) { if (l && typeof l.active_users === 'number') { lastLive = l; if (lastStats) render(lastStats); } })
+      .catch(function () {});
+  };
   if (stat && window.fetch) {
-    load();
+    load(); loadLive();
+    setInterval(function () { if (document.visibilityState === 'visible') loadLive(); }, 10000);
     // Re-read every 3 seconds while the tab is visible (a ~1 KB file), so a
     // new count appears on open pages within seconds of the server writing it.
     setInterval(function () { if (document.visibilityState === 'visible') load(); }, 3000);

@@ -225,9 +225,10 @@ html[data-lang="hi"] .hc-tag { letter-spacing:0; }
 .hc-stores { display:flex; flex-wrap:wrap; gap:16px; justify-content:center; align-items:center; margin-top:40px; }
 .hc-stores a { border-radius:12px; }
 .hc-stores a:focus-visible { outline:2px solid var(--fg); outline-offset:4px; }
-.hc-stat { margin-top:16px; min-height:16px; font-size:13px; line-height:16px; color:var(--muted); font-variant-numeric:tabular-nums; }
+.hc-stat { margin-top:16px; min-height:40px; font-size:13px; line-height:16px; color:var(--muted); font-variant-numeric:tabular-nums; }
 .hc-stat b { color:var(--fg2); font-weight:600; }
 .hc-stat + .hc-note { margin-top:8px; }
+.hc-now { display:block; margin-bottom:8px; }
 .hc-live { display:inline-flex; align-items:center; gap:4px; margin-right:8px; font-size:11px; font-weight:600; letter-spacing:.04em; text-transform:uppercase; color:var(--live, #138A4B); }
 .hc-live i { width:8px; height:8px; border-radius:50%; background:currentColor; box-shadow:0 0 0 0 currentColor; }
 @media (prefers-color-scheme:dark) { :root:not([data-theme$="light"]) .hc-live { --live:#3DDC84; } }
