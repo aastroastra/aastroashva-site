@@ -497,40 +497,61 @@
     .observe(root, { attributes: true, attributeFilter: ['data-lang'] });
 
   /* ---------- Downloads under the badges ----------
-     stats.json (backend site-stats, daily 02:30 UTC; update-stats.py by hand):
-     downloads_total / _android / _ios = unique GA4 users since launch, shown
-     rounded down ("550+"; below 10 hidden). Without download numbers it falls
-     back to users_display ("80+ people use AstroAshva"); with neither the line
-     stays empty. Its height is reserved in CSS, so filling it shifts nothing. */
+     stats.json (backend site-stats, every 15 min; update-stats.py by hand):
+     downloads_android / _ios = unique GA4 app users per platform since launch.
+     Shown exact ("1,287 downloads · Android 1,081 · iPhone 206"); the total is
+     the sum of the two, so the parts always add up (someone on an Android
+     phone and an iPhone counts as two downloads). A green "Live" dot carries
+     the time of the last refresh; the page re-reads the file every minute.
+     Without download numbers it falls back to users_display ("300+ people use
+     AstroAshva"); with neither the line stays empty. Its height is reserved
+     in CSS, so filling it shifts nothing. */
   var stat = hc.querySelector('[data-hc-stat]');
-  var bucket = function (n) {
-    if (typeof n !== 'number' || !isFinite(n) || n < 10) return null;
-    n = Math.floor(n);
-    if (n < 100) return Math.floor(n / 10) * 10 + '+';
-    if (n < 1000) return Math.floor(n / 50) * 50 + '+';
-    var h = Math.floor(n / 100) * 100;
-    return (h % 1000 === 0 ? h / 1000 : (h / 1000).toFixed(1)) + 'k+';
-  };
+  var whole = function (n) { return typeof n === 'number' && isFinite(n) && n >= 10 ? Math.floor(n) : null; };
   var ok = function (v) { return typeof v === 'string' && /^[0-9][0-9.]*k?\+$/.test(v) ? v : null; };
-  if (stat && window.fetch) {
+  var fmt = function (n) { return n.toLocaleString('en-IN'); };
+  var ago = function (iso, inHi) {
+    var t = Date.parse(iso); if (!isFinite(t)) return '';
+    var m = Math.max(0, Math.round((Date.now() - t) / 60000));
+    if (m < 1) return inHi ? 'अभी अपडेट' : 'updated just now';
+    if (m < 60) return inHi ? m + ' मिनट पहले अपडेट' : 'updated ' + m + ' min ago';
+    var h = Math.round(m / 60);
+    return inHi ? h + ' घंटे पहले अपडेट' : 'updated ' + h + ' h ago';
+  };
+  var live = function (iso, inHi) {
+    var when = ago(iso, inHi);
+    return '<span class="hc-live" title="' + when + '"><i aria-hidden="true"></i>' + (inHi ? 'लाइव' : 'Live') + '</span>';
+  };
+  var lastStats = null;
+  var render = function (st) {
+    if (!st) return;
+    lastStats = st;
+    var a = whole(st.downloads_android), i = whole(st.downloads_ios);
+    if (a != null || i != null) {
+      var d = (a || 0) + (i || 0);
+      var en = live(st.updated_at, false) + '<b>' + fmt(d) + '</b> downloads';
+      var hiTxt = live(st.updated_at, true) + '<b>' + fmt(d) + '</b> डाउनलोड';
+      if (a != null && i != null) {
+        en += ' · Android <b>' + fmt(a) + '</b> · iPhone <b>' + fmt(i) + '</b>';
+        hiTxt += ' · एंड्रॉयड <b>' + fmt(a) + '</b> · आईफ़ोन <b>' + fmt(i) + '</b>';
+      }
+      stat.innerHTML = '<span lang="en">' + en + '</span><span lang="hi">' + hiTxt + '</span>';
+      return;
+    }
+    var u = ok(st.users_display);
+    if (!u) return;
+    stat.innerHTML = '<span lang="en"><b>' + u + '</b> people use AstroAshva</span>' +
+      '<span lang="hi"><b>' + u + '</b> लोग AstroAshva इस्तेमाल करते हैं</span>';
+  };
+  var load = function () {
     fetch('https://gttszlununmqivrqevwv.supabase.co/storage/v1/object/public/site/stats.json?t=' + Date.now(), { cache: 'no-store' })
-      .then(function (r) { return r.ok ? r.json() : null; }).then(function (st) {
-        if (!st) return;
-        var d = ok(st.downloads_display) || bucket(st.downloads_total);
-        if (d) {
-          var a = ok(st.downloads_android_display) || bucket(st.downloads_android);
-          var i = ok(st.downloads_ios_display) || bucket(st.downloads_ios);
-          var en = '<b>' + d + '</b> downloads', hiTxt = '<b>' + d + '</b> \u0921\u093e\u0909\u0928\u0932\u094b\u0921';
-          if (a) { en += ' \u00b7 Android <b>' + a + '</b>'; hiTxt += ' \u00b7 \u090f\u0902\u0921\u094d\u0930\u0949\u092f\u0921 <b>' + a + '</b>'; }
-          if (i) { en += ' \u00b7 iPhone <b>' + i + '</b>'; hiTxt += ' \u00b7 \u0906\u0908\u092b\u093c\u094b\u0928 <b>' + i + '</b>'; }
-          stat.innerHTML = '<span lang="en">' + en + '</span><span lang="hi">' + hiTxt + '</span>';
-          return;
-        }
-        var u = ok(st.users_display);
-        if (!u) return;
-        stat.innerHTML = '<span lang="en"><b>' + u + '</b> people use AstroAshva</span>' +
-          '<span lang="hi"><b>' + u + '</b> \u0932\u094b\u0917 AstroAshva \u0907\u0938\u094d\u0924\u0947\u092e\u093e\u0932 \u0915\u0930\u0924\u0947 \u0939\u0948\u0902</span>';
-      }).catch(function () {});
+      .then(function (r) { return r.ok ? r.json() : null; }).then(render).catch(function () {});
+  };
+  if (stat && window.fetch) {
+    load();
+    // Re-read every minute while the tab is visible; between reads the
+    // "updated N min ago" text keeps counting from the same file.
+    setInterval(function () { if (document.visibilityState === 'visible') load(); else if (lastStats) render(lastStats); }, 60000);
   }
 
   /* ---------- Scroll cue (phones): to the next section, gone once scrolling ---------- */
