@@ -28,6 +28,31 @@
   document.documentElement.classList.add(isIOS ? 'plat-ios' : isAndroid ? 'plat-android' : 'plat-other');
   if (!isIOS && !isAndroid) return;
 
+  /* First visit to the home page on a phone goes straight to the store:
+     Google Play on Android, the TestFlight beta on iPhone/iPad. Only once per
+     browser: the mark is set before leaving, so the next visit (or the back
+     button) shows the page. Never for crawlers, never when the visitor came
+     from another page of this site, never with ?stay in the URL, and never
+     when the browser cannot remember the visit (no storage = no redirect, so
+     it can never loop). */
+  (function firstVisitToStore() {
+    var path = location.pathname;
+    if (path !== '/' && path !== '/index.html') return;
+    if (/bot|crawl|spider|slurp|lighthouse|inspectiontool|preview|headless/i.test(ua)) return;
+    if (/[?&]stay\b/.test(location.search)) return;
+    try { if (document.referrer && new URL(document.referrer).host === location.host) return; } catch (e) {}
+    var MARK = 'aa-first-visit';
+    var seen = false, stored = false;
+    try { seen = !!localStorage.getItem(MARK); localStorage.setItem(MARK, String(Date.now())); stored = !!localStorage.getItem(MARK); } catch (e) {}
+    if (!stored) {
+      try { seen = seen || /(?:^|; )aa-first-visit=/.test(document.cookie); document.cookie = MARK + '=1; max-age=31536000; path=/; SameSite=Lax'; stored = /(?:^|; )aa-first-visit=/.test(document.cookie); } catch (e) {}
+    }
+    if (seen || !stored) return;
+    var target = isIOS ? TESTFLIGHT : PLAY;
+    try { if (window.gtag) gtag('event', 'first_visit_store_redirect', { platform: isIOS ? 'ios' : 'android', transport_type: 'beacon' }); } catch (e) {}
+    location.href = target;
+  })();
+
   try {
     var t = Number(localStorage.getItem(KEY));
     if (t && Date.now() - t < SNOOZE_DAYS * 864e5) return;
