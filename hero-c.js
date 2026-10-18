@@ -502,7 +502,7 @@
      Shown exact ("1,287 downloads · Android 1,081 · iPhone 206"); the total is
      the sum of the two, so the parts always add up (someone on an Android
      phone and an iPhone counts as two downloads). A green "Live" dot carries
-     the time of the last refresh; the page re-reads the file every minute.
+     the time of the last refresh; the page re-reads the file every 3 seconds.
      Without download numbers it falls back to users_display ("300+ people use
      AstroAshva"); with neither the line stays empty. Its height is reserved
      in CSS, so filling it shifts nothing. */
@@ -549,9 +549,9 @@
   };
   if (stat && window.fetch) {
     load();
-    // Re-read every minute while the tab is visible; between reads the
-    // "updated N min ago" text keeps counting from the same file.
-    setInterval(function () { if (document.visibilityState === 'visible') load(); else if (lastStats) render(lastStats); }, 60000);
+    // Re-read every 3 seconds while the tab is visible (a ~1 KB file), so a
+    // new count appears on open pages within seconds of the server writing it.
+    setInterval(function () { if (document.visibilityState === 'visible') load(); }, 3000);
   }
 
   /* ---------- Scroll cue (phones): to the next section, gone once scrolling ---------- */
