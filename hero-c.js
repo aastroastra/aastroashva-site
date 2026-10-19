@@ -526,9 +526,10 @@
   var render = function (st) {
     if (!st) return;
     lastStats = st;
-    // Android prefers Play's exact "Total User Installs" when the backend has
-    // it (PLAY_REPORTS_BUCKET set); otherwise the GA4 app-user count.
-    var a = whole(st.android_installs) != null ? whole(st.android_installs) : whole(st.downloads_android);
+    // Play's exact installs (st.android_installs) only cover the Play Store since late
+    // Sep 2026; earlier Android users came from the website APK. Until the founder picks,
+    // the line keeps the GA4 Android user count, which covers both.
+    var a = whole(st.downloads_android);
     var i = whole(st.downloads_ios);
     if (a != null || i != null) {
       var d = (a || 0) + (i || 0);
