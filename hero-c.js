@@ -538,10 +538,10 @@
         en += ' · Android <b>' + fmt(a) + '</b> · iPhone <b>' + fmt(i) + '</b>';
         hiTxt += ' · एंड्रॉयड <b>' + fmt(a) + '</b> · आईफ़ोन <b>' + fmt(i) + '</b>';
       }
-      var n = lastLive && lastLive.active_users > 0 ? lastLive.active_users : 0;
+      var n = lastLive && lastLive.dau > 0 ? lastLive.dau : 0;
       if (n) {
-        en = '<span class="hc-now">' + live(lastLive.at, false) + '<b>' + fmt(n) + '</b> using the app now</span>' + en;
-        hiTxt = '<span class="hc-now">' + live(lastLive.at, true) + '<b>' + fmt(n) + '</b> \u0932\u094b\u0917 \u0905\u092d\u0940 \u0910\u092a \u092a\u0930</span>' + hiTxt;
+        en = '<span class="hc-now">' + live(lastLive.at, false) + '<b>' + fmt(n) + '</b> daily active users</span>' + en;
+        hiTxt = '<span class="hc-now">' + live(lastLive.at, true) + '<b>' + fmt(n) + '</b> \u0926\u0948\u0928\u093f\u0915 \u0938\u0915\u094d\u0930\u093f\u092f \u0909\u092a\u092f\u094b\u0917\u0915\u0930\u094d\u0924\u093e</span>' + hiTxt;
       }
       stat.innerHTML = '<span lang="en">' + en + '</span><span lang="hi">' + hiTxt + '</span>';
       return;
@@ -555,8 +555,9 @@
     fetch('https://gttszlununmqivrqevwv.supabase.co/storage/v1/object/public/site/stats.json?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; }).then(render).catch(function () {});
   };
-  // People using the app in the last 30 minutes (GA4 Realtime via the
-  // site-live function, which caches it for 60 s). Hidden at zero or on error.
+  // Daily active users (yesterday's complete day, GA4 via the site-live
+  // function, cached 60 s), the same figure as the Firebase dashboard.
+  // Hidden at zero or on error.
   var loadLive = function () {
     fetch('https://gttszlununmqivrqevwv.supabase.co/functions/v1/site-live', { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; })
