@@ -19,33 +19,22 @@
   function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
   function ease(t) { t = clamp(t, 0, 1); return t * t * (3 - 2 * t); }
 
-  /* ---------- Language (shares aa-lang with every other page) ---------- */
-  var lang = root.getAttribute('data-lang') === 'hi' ? 'hi' : 'en';
-  function setLang(value, persist) {
-    lang = value === 'hi' ? 'hi' : 'en';
-    root.setAttribute('data-lang', lang);
-    root.lang = lang;
-    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
-    });
-    if (persist) {
-      try { localStorage.setItem('aa-lang', lang); } catch (e) {}
-      try {
-        var u = new URL(location.href);
-        if (u.searchParams.has('lang')) {
-          if (lang === 'hi') u.searchParams.set('lang', 'hi'); else u.searchParams.delete('lang');
-          history.replaceState(null, '', u);
-        }
-      } catch (e) {}
-    }
+  /* ---------- Language (shares aa-lang with every other page) ----------
+     i18n.js owns the switch (thirteen languages, the header picker); this
+     follows it: theme option names and the per-language screenshots. */
+  var I18N = window.AA_i18n;
+  var lang = I18N ? I18N.lang : (root.getAttribute('data-lang') === 'hi' ? 'hi' : 'en');
+  var tr = window.AA_tr || function (en, hi) { return lang === 'hi' ? hi : en; };
+  // Screens come from this language's captures when they exist, else English.
+  var shotLang = function () { return I18N ? I18N.shotLang() : (lang === 'hi' ? 'hi' : 'en'); };
+  function setLang() {
+    if (I18N) lang = I18N.lang;
     document.querySelectorAll('[data-site-theme-select] option[data-name-en]').forEach(function (option) {
-      option.textContent = option.getAttribute('data-name-' + lang);
+      option.textContent = tr(option.getAttribute('data-name-en'), option.getAttribute('data-name-hi'));
     });
     setShots();
   }
-  document.querySelectorAll('[data-set-lang]').forEach(function (b) {
-    b.addEventListener('click', function () { setLang(b.getAttribute('data-set-lang'), true); });
-  });
+  document.addEventListener('aa:lang', setLang);
 
   /* ---------- Real app screenshots, per language ----------
      Images carry data-shot="name"; the source is picked here so a Hindi
@@ -88,6 +77,7 @@
   }
   // The folder for one screen in one family, or null when it was never captured.
   function capture(name, ios, fam) {
+    var lang = shotLang();
     if (fam === 'yl' && (name === '18-palm-start' || name === '14-chat-empty' || name === '21-prediction-weekly')) return null; // Legacy white/orange captures: use the matching yellow story screen.
     if (fam === 'yl') return ios && IOS_YL[name] ? lang + '-ios/yl/' + name : lang + '/' + name;   // else Android size; the iPhone frame crops it a little
     if (fam === 'wl') return ios ? (IOS[name] ? lang + '-ios/' + name : null) : (WL[name] ? lang + '-and/' + name : null);
@@ -216,7 +206,7 @@
     }
   }
 
-  setLang(lang, false);
+  setLang();
   // Theme toggles (site-theme.js) swap light and dark captures in place.
   if (window.MutationObserver) {
     new MutationObserver(function () { setShots(); if (window.mqRebuild) window.mqRebuild(); })
@@ -391,7 +381,7 @@
     draw();
     if (window.ResizeObserver) new ResizeObserver(draw).observe(stage); else window.addEventListener('resize', draw);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
-    document.querySelectorAll('[data-set-lang]').forEach(function (b) { b.addEventListener('click', function () { requestAnimationFrame(draw); }); });
+    document.addEventListener('aa:lang', function () { requestAnimationFrame(draw); });
     demo.querySelector('[data-replay]').addEventListener('click', play);
     var aiScroll = document.querySelector('[data-ai-scroll]');
     var fit = aiScroll && aiScroll.querySelector('[data-ai-fit]');
@@ -432,7 +422,7 @@
       window.addEventListener('scroll', aiScrollFn, { passive: true });
       window.addEventListener('resize', function () { fitIt(); aiScrollFn(); });
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { fitIt(); draw(); });
-      document.querySelectorAll('[data-set-lang]').forEach(function (b) { b.addEventListener('click', function () { requestAnimationFrame(function () { fitIt(); draw(); }); }); });
+      document.addEventListener('aa:lang', function () { requestAnimationFrame(function () { fitIt(); draw(); }); });
       fitIt(); aiFrame();
     }
   }
@@ -458,7 +448,7 @@
       dImg.alt = img.alt || '';
       var h = f.querySelector('h3'), t = f.querySelector('p');
       dCap.innerHTML = '<b>' + (h ? h.innerHTML : '') + '</b>' + (t ? '<span class="shot-sub">' + t.innerHTML + '</span>' : '');
-      dX.setAttribute('aria-label', lang === 'hi' ? 'बंद करें' : 'Close');
+      dX.setAttribute('aria-label', tr('Close', 'बंद करें'));
       opener = f;
       root.classList.add('dlg-open');
       dlg.showModal();

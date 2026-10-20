@@ -46,7 +46,7 @@
   font:500 clamp(14px,1.4vw,19px)/1.5 var(--font-body);
   letter-spacing:.025em;
 }
-html[data-lang="hi"] .hero-positioning { letter-spacing:0; }
+html[data-indic] .hero-positioning { letter-spacing:0; }
 @media (prefers-reduced-motion:no-preference) {
   .hc-copy > .hero-positioning { animation:hc-in 1.2s ease var(--hc-intro-end) both; }
 }

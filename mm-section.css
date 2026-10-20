@@ -11,7 +11,7 @@
 .mm-you-sub { font-size:14px; color:var(--fg2); }
 
 .mm-ask { margin-top:clamp(20px,2.6vw,30px); font-family:var(--font-heading); font-weight:700; font-size:clamp(22px,2.4vw,30px); letter-spacing:-.01em; }
-html[data-lang="hi"] .mm-ask { letter-spacing:0; }
+html[data-indic] .mm-ask { letter-spacing:0; }
 .mm-types { margin-top:14px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
 .mm-type { text-align:left; min-height:64px; padding:12px 16px; border-radius:18px; border:1.5px solid var(--line); background:var(--card); color:var(--fg); font:inherit; cursor:pointer;
   display:flex; flex-direction:column; justify-content:center; gap:2px; transition:transform .25s var(--ease), border-color .25s, background .25s; }
@@ -25,7 +25,7 @@ html[data-lang="hi"] .mm-ask { letter-spacing:0; }
 .mm-more { margin-top:14px; font-size:13.5px; line-height:1.5; color:var(--muted); }
 
 .mm-for { font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); min-height:18px; }
-html[data-lang="hi"] .mm-for { letter-spacing:.03em; font-size:13px; }
+html[data-indic] .mm-for { letter-spacing:.03em; font-size:13px; }
 .mm-list { list-style:none; margin-top:12px; display:flex; flex-direction:column; gap:12px; }
 .mm-row { position:relative; display:grid; grid-template-columns:auto auto minmax(0,1fr) auto; align-items:center; gap:14px;
   min-height:138px; padding:16px 18px; border-radius:22px; border:1px solid var(--line); background:var(--card);

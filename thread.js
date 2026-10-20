@@ -266,6 +266,7 @@
   if (wideMq.addEventListener) wideMq.addEventListener('change', rebuild);
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(rebuild);
   document.querySelectorAll('[data-set-lang]').forEach(function (b) { b.addEventListener('click', rebuild); });
+  document.addEventListener('aa:lang', rebuild);
   // The page grows when reviews arrive or images settle: re-measure.
   if ('ResizeObserver' in window) {
     var lastH = main.scrollHeight;

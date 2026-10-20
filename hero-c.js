@@ -36,7 +36,9 @@
     12: ['Moksha', 'मोक्ष', 'Pooja booking and astrologer calls, in preparation.', 'पूजा बुकिंग और ज्योतिषी से कॉल, तैयारी में।']
   };
   function hi() { return root.getAttribute('data-lang') === 'hi'; }
-  function setHint() { cap.setAttribute('data-hint', hi() ? 'किसी भाव को छुएं' : 'Tap a house'); }
+  // English, Hindi, or the page's strings file for the other languages (i18n.js).
+  function tr(en, hiTxt) { return window.AA_tr ? window.AA_tr(en, hiTxt) : (hi() ? hiTxt : en); }
+  function setHint() { cap.setAttribute('data-hint', tr('Tap a house', 'किसी भाव को छुएं')); }
   setHint();
 
   function el(tag, attrs, parent) {
@@ -419,8 +421,7 @@
     active = h;
     labels[h].classList.add('on');
     if (hits[h]) hits[h].classList.add('on');
-    var x = hi();
-    cap.innerHTML = '<small>' + (x ? 'भाव ' : 'House ') + h + ' · ' + (x ? d[1] : d[0]) + '</small>' + (x ? d[3] : d[2]);
+    cap.innerHTML = '<small>' + tr('House', 'भाव') + ' ' + h + ' · ' + tr(d[0], d[1]) + '</small>' + tr(d[2], d[3]);
     if (!narrow.matches) place(labels[h]);
     cap.classList.add('show');
   }
@@ -493,8 +494,9 @@
   hc.addEventListener('focusout', function (e) { if (!pinned && !(e.relatedTarget && houseOf(e.relatedTarget))) hide(); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && active) hide(); });
   document.addEventListener('pointerdown', function (e) { if (pinned && !houseOf(e.target)) hide(); });
-  new MutationObserver(function () { setHint(); var a = active, p = pinned; if (a) { show(a); pinned = p; } })
-    .observe(root, { attributes: true, attributeFilter: ['data-lang'] });
+  var relabel = function () { setHint(); var a = active, p = pinned; if (a) { show(a); pinned = p; } };
+  new MutationObserver(relabel).observe(root, { attributes: true, attributeFilter: ['data-lang'] });
+  document.addEventListener('aa:lang', relabel);
 
   /* ---------- Downloads under the badges ----------
      stats.json (backend site-stats, every 15 min; update-stats.py by hand):
@@ -510,17 +512,22 @@
   var whole = function (n) { return typeof n === 'number' && isFinite(n) && n >= 10 ? Math.floor(n) : null; };
   var ok = function (v) { return typeof v === 'string' && /^[0-9][0-9.]*k?\+$/.test(v) ? v : null; };
   var fmt = function (n) { return n.toLocaleString('en-IN'); };
-  var ago = function (iso, inHi) {
+  // The other languages (i18n.js strings files) use the English text as the
+  // key; {n} is the number. Digits stay Latin, as in the app.
+  var other = function () { var l = root.getAttribute('data-lang'); return l !== 'en' && l !== 'hi' ? l : null; };
+  var L = function (en, n) { var s = window.AA_tr ? window.AA_tr(en) : en; return n == null ? s : s.replace('{n}', n); };
+  var ago = function (iso, inHi, inOther) {
     var t = Date.parse(iso); if (!isFinite(t)) return '';
     var m = Math.max(0, Math.round((Date.now() - t) / 60000));
+    if (inOther) return m < 1 ? L('updated just now') : m < 60 ? L('updated {n} min ago', m) : L('updated {n} h ago', Math.round(m / 60));
     if (m < 1) return inHi ? 'अभी अपडेट' : 'updated just now';
     if (m < 60) return inHi ? m + ' मिनट पहले अपडेट' : 'updated ' + m + ' min ago';
     var h = Math.round(m / 60);
     return inHi ? h + ' घंटे पहले अपडेट' : 'updated ' + h + ' h ago';
   };
-  var live = function (iso, inHi) {
-    var when = ago(iso, inHi);
-    return '<span class="hc-live" title="' + when + '"><i aria-hidden="true"></i>' + (inHi ? 'लाइव' : 'Live') + '</span>';
+  var live = function (iso, inHi, inOther) {
+    var when = ago(iso, inHi, inOther);
+    return '<span class="hc-live" title="' + when + '"><i aria-hidden="true"></i>' + (inOther ? L('Live') : inHi ? 'लाइव' : 'Live') + '</span>';
   };
   var lastStats = null, lastLive = null;
   var render = function (st) {
@@ -544,14 +551,24 @@
         en = '<span class="hc-now">' + live(lastLive.at, false) + '<b>' + fmt(n) + '</b> daily active users</span>' + en;
         hiTxt = '<span class="hc-now">' + live(lastLive.at, true) + '<b>' + fmt(n) + '</b> \u0926\u0948\u0928\u093f\u0915 \u0938\u0915\u094d\u0930\u093f\u092f \u0909\u092a\u092f\u094b\u0917\u0915\u0930\u094d\u0924\u093e</span>' + hiTxt;
       }
+      var o = other();
+      if (o) {
+        var x = L('{n} downloads', '<b>' + fmt(d) + '</b>');
+        if (a != null && i != null) x += ' · ' + L('Android') + ' <b>' + fmt(a) + '</b> · ' + L('iPhone') + ' <b>' + fmt(i) + '</b>';
+        if (n) x = '<span class="hc-now">' + live(lastLive.at, false, true) + L('{n} daily active users', '<b>' + fmt(n) + '</b>') + '</span>' + x;
+        stat.innerHTML = '<span lang="' + o + '">' + x + '</span>';
+        return;
+      }
       stat.innerHTML = '<span lang="en">' + en + '</span><span lang="hi">' + hiTxt + '</span>';
       return;
     }
     var u = ok(st.users_display);
     if (!u) return;
+    if (other()) { stat.innerHTML = '<span lang="' + other() + '">' + L('{n} people use AstroAshva', '<b>' + u + '</b>') + '</span>'; return; }
     stat.innerHTML = '<span lang="en"><b>' + u + '</b> people use AstroAshva</span>' +
       '<span lang="hi"><b>' + u + '</b> लोग AstroAshva इस्तेमाल करते हैं</span>';
   };
+  document.addEventListener('aa:lang', function () { if (lastStats) render(lastStats); });
   var load = function () {
     fetch('https://gttszlununmqivrqevwv.supabase.co/storage/v1/object/public/site/stats.json?t=' + Date.now(), { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; }).then(render).catch(function () {});
@@ -576,9 +593,10 @@
   /* ---------- Scroll cue (phones): to the next section, gone once scrolling ---------- */
   var cue = hc.querySelector('[data-hc-cue]');
   if (cue) {
-    var setCueLabel = function () { cue.setAttribute('aria-label', hi() ? 'और जानने के लिए नीचे स्क्रॉल करें' : 'Scroll to learn more'); };
+    var setCueLabel = function () { cue.setAttribute('aria-label', tr('Scroll to learn more', 'और जानने के लिए नीचे स्क्रॉल करें')); };
     setCueLabel();
     new MutationObserver(setCueLabel).observe(root, { attributes: true, attributeFilter: ['data-lang'] });
+    document.addEventListener('aa:lang', setCueLabel);
     cue.addEventListener('click', function () {
       var n = hc.nextElementSibling;
       while (n && (n.offsetParent === null || n.offsetHeight === 0)) n = n.nextElementSibling;

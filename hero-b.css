@@ -50,8 +50,8 @@ html.hero-b-on .hb { display:grid; }
 [data-theme^="mono"] .hb-word { --sweep:color-mix(in srgb,var(--fg) 35%,var(--bg)); }
 .hb-tag { margin-top:clamp(10px,1.3vw,18px); font-family:var(--font-heading); font-weight:600; font-size:clamp(20px,2vw,30px); color:var(--fg2); letter-spacing:-.01em; }
 .hb-sub { margin-top:clamp(12px,2vh,20px); max-width:33ch; font-size:clamp(16px,1.45vw,20px); line-height:1.5; color:var(--muted); text-wrap:pretty; }
-html[data-lang="hi"] .hb-tag { letter-spacing:0; }
-html[data-lang="hi"] .hb-sub { max-width:34ch; line-height:1.6; }
+html[data-indic] .hb-tag { letter-spacing:0; }
+html[data-indic] .hb-sub { max-width:34ch; line-height:1.6; }
 .hb-stores { display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:clamp(20px,3.4vh,34px); }
 .hb-note { margin-top:12px; font-size:13px; color:var(--muted); }
 .hb-note a { color:var(--fg); text-underline-offset:3px; }
@@ -152,7 +152,7 @@ html[data-lang="hi"] .hb-sub { max-width:34ch; line-height:1.6; }
 }
 .hb-tip.show { opacity:1; }
 .hb-tip b { display:flex; align-items:center; gap:7px; font-size:12px; letter-spacing:.06em; text-transform:uppercase; color:var(--c); margin-bottom:3px; }
-html[data-lang="hi"] .hb-tip b { letter-spacing:.02em; text-transform:none; font-size:13px; }
+html[data-indic] .hb-tip b { letter-spacing:.02em; text-transform:none; font-size:13px; }
 .hb-tip b i { font-style:normal; color:var(--muted); font-weight:500; letter-spacing:.02em; }
 [data-theme$="dark"] .hb-tip { box-shadow:0 0 0 1px #2c2c2c, 0 18px 40px -16px rgba(0,0,0,.8); }
 

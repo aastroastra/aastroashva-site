@@ -95,4 +95,5 @@
   document.querySelectorAll('[data-set-lang]').forEach(function (button) {
     button.addEventListener('click', remeasure);
   });
+  document.addEventListener('aa:lang', remeasure);
 })();

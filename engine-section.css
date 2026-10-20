@@ -77,8 +77,8 @@
 .engine-review strong { color:var(--fg); }
 .engine-limits { margin-top:24px; max-width:980px; font-size:12px; line-height:1.75; color:var(--fg2); }
 .engine-limits p + p { margin-top:10px; }
-html[data-lang="hi"] .engine-step h3 { letter-spacing:0; line-height:1.4; }
-html[data-lang="hi"] .engine-art .micro { letter-spacing:0; }
+html[data-indic] .engine-step h3 { letter-spacing:0; line-height:1.4; }
+html[data-indic] .engine-art .micro { letter-spacing:0; }
 html:not(.engine-motion) .engine-instrument { position:relative; top:0; }
 html:not(.engine-motion) .engine-step { min-height:0; padding-block:32px; }
 @media (min-width:1001px) and (max-height:680px) {

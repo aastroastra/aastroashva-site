@@ -172,7 +172,7 @@
     return t === 'yellow-dark' ? 'yd' : t === 'mono-dark' ? 'md' : '';
   }
   function buildShots() {
-    var v = variant(), lang = root.getAttribute('data-lang') === 'hi' ? 'hi' : 'en';
+    var v = variant(), lang = window.AA_i18n ? window.AA_i18n.shotLang() : (root.getAttribute('data-lang') === 'hi' ? 'hi' : 'en');
     var key = v + lang;
     if (key === shotKey) return;
     shotKey = key;

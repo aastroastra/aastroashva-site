@@ -106,6 +106,7 @@
   var bar = document.createElement('div');
   bar.className = 'aa-appbar';
   bar.setAttribute('role', 'region');
+  bar.setAttribute('data-i18n-skip', '');
   bar.innerHTML =
     '<div class="aa-appbar-in">' +
       '<button type="button" class="aa-appbar-x">&times;</button>' +
@@ -122,8 +123,17 @@
     var l = root.getAttribute('data-lang') || root.getAttribute('lang') || '';
     return l.indexOf('hi') === 0 ? 'hi' : 'en';
   }
+  // Languages beyond English and Hindi (the home page's i18n.js) translate
+  // the English copy through their strings file; elsewhere English stays.
+  function copyFor(l) {
+    var full = root.getAttribute('data-lang') || '';
+    if (l === 'hi' || !full || full === 'en' || !window.AA_tr) return { l: l, c: COPY[l] };
+    var c = {}, k;
+    for (k in COPY.en) c[k] = k === 'big' ? COPY.en[k] : window.AA_tr(COPY.en[k]);
+    return { l: full, c: c };
+  }
   function render() {
-    var l = lang(), c = COPY[l];
+    var lc = copyFor(lang()), l = lc.l, c = lc.c;
     bar.setAttribute('lang', l);
     bar.setAttribute('aria-label', c.label);
     bar.querySelector('.aa-appbar-txt span').textContent = c.sub;
@@ -139,6 +149,7 @@
   if (window.MutationObserver) {
     new MutationObserver(render).observe(root, { attributes: true, attributeFilter: ['lang', 'data-lang'] });
   }
+  document.addEventListener('aa:lang', render);
 
   closeBtn.addEventListener('click', function () {
     try { localStorage.setItem(KEY, String(Date.now())); } catch (e) { /* hide for this page view only */ }
