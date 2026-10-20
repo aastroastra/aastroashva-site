@@ -357,6 +357,13 @@
       "title": "Personal Remedies PDF",
       "expected": "A gated personal PDF option uses the existing report export flow. Exact-version pandit/founder approval is required before previews, cached links, quotes or generation. Paid generation needs an enabled price and explicit confirmation; an owned report is free. English and Hindi only until other translations are reviewed.",
       "priority": "P2"
+    },
+    {
+      "id": "chat-favorites",
+      "area": "AstroAI",
+      "title": "Favorite answers in Chat and Assistant",
+      "expected": "Long press a response to save/remove a favorite; one shared local list with share/remove, Settings and header entry; account clearing rejects stale saves. Saving/reading never requests a model or debits credits.",
+      "priority": "P1"
     }
   ]
 }
