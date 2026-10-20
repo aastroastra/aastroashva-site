@@ -1,0 +1,15 @@
+/* CMP-W01 · shared chart · uses the landing/Company Hub semantic tokens. */
+.activity-chart-toggle{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;width:32px;height:32px;padding:6px;margin:-7px 7px -7px -4px;border:.5px solid var(--line);border-radius:8px;background:transparent;color:var(--fg2);cursor:pointer}
+.activity-chart-toggle:hover{background:var(--soft);color:var(--fg)}
+.activity-chart-toggle:focus-visible,.activity-chart button:focus-visible,.activity-chart summary:focus-visible{outline:2px solid var(--tint);outline-offset:3px}
+.activity-chart[hidden]{display:none}
+.activity-chart{box-sizing:border-box;max-width:100%;margin-top:14px;padding:16px;border:.5px solid var(--line);border-radius:12px;background:var(--card);color:var(--fg);font:13px/1.5 var(--font-body);text-align:left;overflow:hidden}
+.activity-chart[data-presentation="open"]{border:0;border-radius:0;background:transparent;padding-inline:0}
+.activity-chart__head{display:flex;align-items:start;justify-content:space-between;gap:12px;flex-wrap:wrap}.activity-chart h3{margin:0;font:600 16px/1.4 var(--font-body)}
+.activity-chart button{font:inherit;color:var(--fg2);background:transparent;border:.5px solid var(--line);border-radius:8px;min-height:36px;padding:6px 10px;cursor:pointer}
+.activity-chart button[aria-pressed="true"]{border-color:var(--tint);color:var(--fg);background:var(--soft);font-weight:600}.activity-chart button:disabled{cursor:default;opacity:.55}
+.activity-chart__periods,.activity-chart__filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}.activity-chart__filters{margin-top:8px}
+.activity-chart__summary{font-size:15px;font-weight:600;line-height:1.5;margin:14px 0 4px}.activity-chart__state:empty{display:none}.activity-chart__state,.activity-chart__note,.activity-chart figcaption{color:var(--fg2);font-size:12px;line-height:1.6}
+.activity-chart figure{margin:12px 0}.activity-chart svg{display:block;width:100%;height:auto;overflow:visible}.activity-chart__grid{stroke:var(--line);stroke-width:1}.activity-chart__line{stroke:var(--tint);stroke-width:2.5;fill:none;stroke-linejoin:round;stroke-linecap:round}.activity-chart__point{fill:var(--card);stroke:var(--tint);stroke-width:2;cursor:crosshair}.activity-chart__point:focus{fill:var(--tint);outline:none;stroke-width:4}.activity-chart__axis{fill:var(--fg2);font:12px var(--font-body)}
+.activity-chart details{margin:12px 0}.activity-chart summary{cursor:pointer;color:var(--fg2);min-height:30px}.activity-chart table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}.activity-chart caption{font-weight:600;text-align:left;padding-block:8px}.activity-chart th,.activity-chart td{border-bottom:.5px solid var(--line);padding:6px;text-align:right}.activity-chart th:first-child{text-align:left}.activity-chart__note{margin:6px 0 0}
+@media(max-width:390px){.activity-chart{padding:12px}.activity-chart button{padding:6px 8px}.activity-chart__axis{font-size:13px}}

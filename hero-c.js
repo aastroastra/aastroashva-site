@@ -527,9 +527,16 @@
   };
   var live = function (iso, inHi, inOther) {
     var when = ago(iso, inHi, inOther);
-    return '<span class="hc-live" title="' + when + '"><i aria-hidden="true"></i>' + (inOther ? L('Live') : inHi ? 'लाइव' : 'Live') + '</span>';
+    return '<span class="hc-live" title="' + when + '"><i aria-hidden="true"></i>' + (inOther ? L('Live') : inHi ? 'लाइव' : 'Live') + '</span>' + (window.AAActivityChart ? window.AAActivityChart.triggerMarkup('landing-dau-chart', inHi ? 'दैनिक सक्रिय उपयोगकर्ताओं का ग्राफ़ दिखाएँ' : L('Show daily active users chart')) : '');
   };
   var lastStats = null, lastLive = null;
+  var setStat = function (html) {
+    var content = document.createElement('template'); content.innerHTML = html;
+    if (stat.innerHTML === content.innerHTML) return;
+    var focused = stat.contains(document.activeElement) && document.activeElement.matches('[data-activity-target]');
+    stat.replaceChildren(content.content);
+    if (focused) { var next = Array.from(stat.querySelectorAll('[data-activity-target]')).find(function (button) { return button.getClientRects().length > 0; }); if (next) next.focus(); }
+  };
   var render = function (st) {
     if (!st) return;
     lastStats = st;
@@ -546,20 +553,20 @@
         en += ' · Android <b>' + fmt(a) + '</b> · iPhone <b>' + fmt(i) + '</b>';
         hiTxt += ' · एंड्रॉयड <b>' + fmt(a) + '</b> · आईफ़ोन <b>' + fmt(i) + '</b>';
       }
-      var n = lastLive && lastLive.dau > 0 ? lastLive.dau : 0;
-      if (n) {
-        en = '<span class="hc-now">' + live(lastLive.at, false) + '<b>' + fmt(n) + '</b> daily active users</span>' + en;
-        hiTxt = '<span class="hc-now">' + live(lastLive.at, true) + '<b>' + fmt(n) + '</b> \u0926\u0948\u0928\u093f\u0915 \u0938\u0915\u094d\u0930\u093f\u092f \u0909\u092a\u092f\u094b\u0917\u0915\u0930\u094d\u0924\u093e</span>' + hiTxt;
+      var n = lastLive && typeof lastLive.dau === 'number' && isFinite(lastLive.dau) && lastLive.dau >= 0 ? lastLive.dau : null;
+      if (n !== null) {
+        en = '<span class="hc-now">' + live(lastLive.history && lastLive.history.updated_at || lastLive.at, false) + '<b>' + fmt(n) + '</b> daily active users</span>' + en;
+        hiTxt = '<span class="hc-now">' + live(lastLive.history && lastLive.history.updated_at || lastLive.at, true) + '<b>' + fmt(n) + '</b> \u0926\u0948\u0928\u093f\u0915 \u0938\u0915\u094d\u0930\u093f\u092f \u0909\u092a\u092f\u094b\u0917\u0915\u0930\u094d\u0924\u093e</span>' + hiTxt;
       }
       var o = other();
       if (o) {
         var x = L('{n} downloads', '<b>' + fmt(d) + '</b>');
         if (a != null && i != null) x += ' · ' + L('Android') + ' <b>' + fmt(a) + '</b> · ' + L('iPhone') + ' <b>' + fmt(i) + '</b>';
-        if (n) x = '<span class="hc-now">' + live(lastLive.at, false, true) + L('{n} daily active users', '<b>' + fmt(n) + '</b>') + '</span>' + x;
-        stat.innerHTML = '<span lang="' + o + '">' + x + '</span>';
+        if (n !== null) x = '<span class="hc-now">' + live(lastLive.history && lastLive.history.updated_at || lastLive.at, false, true) + L('{n} daily active users', '<b>' + fmt(n) + '</b>') + '</span>' + x;
+        setStat('<span lang="' + o + '">' + x + '</span>');
         return;
       }
-      stat.innerHTML = '<span lang="en">' + en + '</span><span lang="hi">' + hiTxt + '</span>';
+      setStat('<span lang="en">' + en + '</span><span lang="hi">' + hiTxt + '</span>');
       return;
     }
     var u = ok(st.users_display);
@@ -575,7 +582,7 @@
   };
   // Daily active users (yesterday's complete day, GA4 via the site-live
   // function, cached 60 s), the same figure as the Firebase dashboard.
-  // Hidden at zero or on error.
+  // A real zero is displayed; failures preserve the prior successful reading.
   var loadLive = function () {
     fetch('https://gttszlununmqivrqevwv.supabase.co/functions/v1/site-live', { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; })
