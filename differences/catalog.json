@@ -322,6 +322,34 @@
       "title": "Billing details and private tax documents",
       "expected": "Versioned customer details before purchase when enabled, immutable owned invoices/credit notes, private downloads, and account-safe async state. Invoice processing must not change existing credit fulfillment.",
       "priority": "P1"
+    },
+    {
+      "id": "first-visit",
+      "area": "Onboarding",
+      "title": "First-visit chart introduction",
+      "expected": "A localized first-visit introduction grounded in the saved person, with clear continuation and accessible motion.",
+      "priority": "P1"
+    },
+    {
+      "id": "home-festival-header",
+      "area": "Home",
+      "title": "Festival header and AshvaAI question",
+      "expected": "Use the current dated festival preset, theme-aware art and localized caption. A tap prefills an unsent AshvaAI question; respect reduced motion.",
+      "priority": "P1"
+    },
+    {
+      "id": "tablet-layout",
+      "area": "Navigation",
+      "title": "Tablet navigation and layout",
+      "expected": "Adapt navigation and reading width to supported tablet sizes, documenting platform differences and verification limits.",
+      "priority": "P2"
+    },
+    {
+      "id": "match-remedies",
+      "area": "Match",
+      "title": "Match remedies and shared plan",
+      "expected": "A separately gated Match plan with deterministic, sourced rules, raw and effective scores, accessible lotus navigation, localized steps and an unsent AshvaAI handover. Rule sign-off is required before broad rollout.",
+      "priority": "P1"
     }
   ]
 }
