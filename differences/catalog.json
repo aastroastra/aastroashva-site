@@ -350,6 +350,13 @@
       "title": "Match remedies and shared plan",
       "expected": "A separately gated Match plan with deterministic, sourced rules, raw and effective scores, accessible lotus navigation, localized steps and an unsent AshvaAI handover. Rule sign-off is required before broad rollout.",
       "priority": "P1"
+    },
+    {
+      "id": "remedies-report",
+      "area": "Remedies",
+      "title": "Personal Remedies PDF",
+      "expected": "A gated personal PDF option uses the existing report export flow. Exact-version pandit/founder approval is required before previews, cached links, quotes or generation. Paid generation needs an enabled price and explicit confirmation; an owned report is free. English and Hindi only until other translations are reviewed.",
+      "priority": "P2"
     }
   ]
 }
