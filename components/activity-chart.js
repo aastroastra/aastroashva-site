@@ -42,14 +42,22 @@
  const METRICS={active:{periods:['daily']},downloads:{periods:['daily','weekly','monthly']}};
  class ActivityChart {
   constructor(root,options={}){
-   if(!root.id)throw new Error('A stable chart id is required');this.root=root;this.options=options;this.platform='all';this.metric='active';this.period='daily';this.store={};this.data=null;this.error=false;this.loading=false;this.open=!root.hidden;this.lastTrigger=null;
+   if(!root.id)throw new Error('A stable chart id is required');if(root.dataset.presentation==='sheet'&&root.parentElement!==document.body)document.body.append(root);this.root=root;this.options=options;this.platform='all';this.metric='active';this.period='daily';this.store={};this.data=null;this.error=false;this.loading=false;this.open=!root.hidden;this.lastTrigger=null;
    this.loadData=options.load||((metric='active')=>{
     const url=root.dataset.source+(metric==='downloads'?'&metric=downloads':'');const saved=cache.get(url);if(saved&&Date.now()-saved.at<60000)return saved.promise;
     const promise=fetch(url,{cache:'no-store',signal:AbortSignal.timeout(15000)}).then(r=>{if(!r.ok)throw new Error('unavailable');return r.json();}).then(normalize);
     cache.set(url,{at:Date.now(),promise});promise.catch(()=>cache.delete(url));return promise;
    });this.render();instances.set(root.id,this);
   }
-  toggle(trigger){this.open=!this.open;this.root.hidden=!this.open;this.lastTrigger=trigger;this.syncTriggers();if(this.open)this.load();}
+  get sheet(){return this.root.dataset.presentation==='sheet';}
+  /* Sheet: fixed under the top edge, slides down; leaves upward on close, drag up or outside tap. */
+  toggle(trigger){this.open=!this.open;clearTimeout(this.leaving);this.root.classList.remove('is-leaving');this.root.style.removeProperty('--drag');
+   if(!this.open&&this.sheet&&!this.root.hidden&&!matchMedia('(prefers-reduced-motion: reduce)').matches){this.root.classList.add('is-leaving');this.leaving=setTimeout(()=>{this.root.hidden=true;this.root.classList.remove('is-leaving');},220);}else this.root.hidden=!this.open;this.lastTrigger=trigger;this.syncTriggers();if(this.open)this.load();}
+  dismiss(){if(this.open){this.toggle(this.lastTrigger);this.restoreFocus();}}
+  dragToClose(handle){handle.addEventListener('pointerdown',e=>{if(e.button||e.target.closest('button')!==(handle.matches('button')?handle:null))return;const y0=e.clientY;let dy=0;handle.setPointerCapture(e.pointerId);this.root.classList.add('is-dragging');
+   const move=ev=>{dy=Math.min(0,ev.clientY-y0);this.root.style.setProperty('--drag',dy+'px');};
+   const up=()=>{handle.removeEventListener('pointermove',move);this.root.classList.remove('is-dragging');if(dy<-60)this.dismiss();else this.root.style.removeProperty('--drag');};
+   handle.addEventListener('pointermove',move);handle.addEventListener('pointerup',up,{once:true});handle.addEventListener('pointercancel',up,{once:true});});}
   restoreFocus(){const target=this.lastTrigger?.isConnected?this.lastTrigger:Array.from(document.querySelectorAll('[data-activity-target]')).find(b=>b.dataset.activityTarget===this.root.id&&b.getClientRects().length);target?.focus();}
   syncTriggers(){for(const b of document.querySelectorAll('[data-activity-target]'))if(b.dataset.activityTarget===this.root.id)b.setAttribute('aria-expanded',String(this.open));}
   async load(){const metric=this.metric;this.data=this.store[metric]||null;if(this.loading)return;this.loading=!this.data;this.error=false;this.render();try{this.store[metric]=normalize(await this.loadData(metric));}catch{this.error=!this.store[metric];}finally{this.loading=false;if(this.metric===metric)this.data=this.store[metric]||null;this.render();if(this.metric!==metric)this.load();}}
@@ -61,7 +69,7 @@
    const metrics=el('div',null,'activity-chart__metric');metrics.setAttribute('role','group');metrics.setAttribute('aria-label',copy('Chart','ग्राफ़'));
    for(const [key,en,hi] of [['active','Active users','सक्रिय उपयोगकर्ता'],['downloads','Downloads','डाउनलोड']]){const b=el('button',copy(en,hi));b.type='button';b.dataset.metric=key;b.setAttribute('aria-pressed',String(this.metric===key));b.addEventListener('click',()=>this.choose('metric',key));metrics.append(b);}
    head.append(title,metrics);
-   const close=el('button',copy('Close chart','ग्राफ़ बंद करें'),'activity-chart__close');close.type='button';close.addEventListener('click',()=>{this.toggle(this.lastTrigger);this.restoreFocus();});head.append(close);root.append(head);
+   const close=el('button',copy('Close chart','ग्राफ़ बंद करें'),'activity-chart__close');close.type='button';close.addEventListener('click',()=>this.dismiss());head.append(close);root.append(head);if(this.sheet)this.dragToClose(head);
    const periods=el('div',null,'activity-chart__periods');periods.setAttribute('role','group');periods.setAttribute('aria-label',copy('Time range','समय अवधि'));
    for(const [key,en,hi] of [['daily','Daily','दैनिक'],['weekly','Weekly','साप्ताहिक'],['monthly','Monthly','मासिक'],['yearly','Yearly','वार्षिक']]){const b=el('button',copy(en,hi));b.type='button';b.dataset.period=key;b.disabled=!METRICS[this.metric].periods.includes(key);b.setAttribute('aria-pressed',String(key===period));if(b.disabled)b.title=copy('Available later','बाद में उपलब्ध');else b.addEventListener('click',()=>this.choose('period',key));periods.append(b);}root.append(periods);
    const filters=el('div',null,'activity-chart__filters');filters.setAttribute('role','group');filters.setAttribute('aria-label',copy('Platform','प्लैटफ़ॉर्म'));
@@ -84,6 +92,7 @@
    }
    root.append(el('p',downloads?copy('Completed days · GA4 new users (first app opens) · app streams only. Weeks start Monday; * marks a period still in progress.','पूरे दिन · GA4 नए उपयोगकर्ता (ऐप पहली बार खोला) · केवल ऐप। सप्ताह सोमवार से; * अभी चल रही अवधि है।'):copy('Completed days · GA4 active users · app streams only. Platform counts can overlap.','पूरे दिन · GA4 सक्रिय उपयोगकर्ता · केवल ऐप। प्लैटफ़ॉर्म की संख्याओं में एक ही व्यक्ति शामिल हो सकता है।'),'activity-chart__note'));
    root.append(el('p',copy('Timezone: ','समय क्षेत्र: ')+data.time_zone+' · '+copy('Updated: ','अपडेट: ')+new Intl.DateTimeFormat(undefined,{dateStyle:'medium',timeStyle:'short'}).format(new Date(data.updated_at)),'activity-chart__note'));
+   if(this.sheet){const grab=el('button',null,'activity-chart__grab');grab.type='button';grab.setAttribute('aria-label',copy('Close chart','ग्राफ़ बंद करें'));grab.addEventListener('click',()=>this.dismiss());this.dragToClose(grab);root.append(grab);}
    if(data.thresholded||data.data_loss||data.sampled)root.append(el('p',copy('Analytics reports limitations; missing values are gaps, not zero.','एनालिटिक्स की सीमाएँ हैं; गायब संख्या को शून्य नहीं दिखाया गया है।'),'activity-chart__note'));
    const stale=Date.now()-Date.parse(data.updated_at)>36*60*60*1000;if(stale)root.append(el('p',copy('This data is older than 36 hours.','यह डेटा 36 घंटे से अधिक पुराना है।'),'activity-chart__note'));
   }
@@ -93,7 +102,8 @@
  global.AAActivityChart={mount:(root,options)=>instances.get(root.id)||new ActivityChart(root,options),triggerMarkup,normalize,pathFor};
  if(typeof document==='undefined')return;
  document.addEventListener('click',e=>{const trigger=e.target.closest?.('[data-activity-target]');if(trigger){const chart=instances.get(trigger.dataset.activityTarget);if(chart)chart.toggle(trigger);}});
- document.addEventListener('keydown',e=>{if(e.key==='Escape')for(const chart of instances.values())if(chart.open&&chart.root.contains(document.activeElement)){chart.toggle(chart.lastTrigger);chart.restoreFocus();}});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')for(const chart of instances.values())if(chart.open&&(chart.sheet||chart.root.contains(document.activeElement)))chart.dismiss();});
+ document.addEventListener('pointerdown',e=>{if(e.target.closest?.('[data-activity-target]'))return;for(const chart of instances.values())if(chart.open&&chart.sheet&&!chart.root.contains(e.target))chart.dismiss();});
  document.addEventListener('aa:lang',()=>{for(const chart of instances.values())chart.render();});
  for(const root of document.querySelectorAll('[data-activity-chart]'))global.AAActivityChart.mount(root);
 })(typeof window==='undefined'?globalThis:window);

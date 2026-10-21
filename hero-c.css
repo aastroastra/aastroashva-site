@@ -337,6 +337,4 @@ html[data-canvas^="kundali"] .hc-eyebrow{display:none}
 
 /* Expanded activity participates in desktop flow so it cannot overlap the next section. */
 @media(min-width:769px){
- .hc:has(.activity-chart:not([hidden])){height:auto;min-height:var(--hc-h)}
- .hc:has(.activity-chart:not([hidden])) .hc-copy{position:relative;left:auto;top:auto;transform:none;margin-inline:auto;padding-block:72px}
 }
