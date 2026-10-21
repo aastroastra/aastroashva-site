@@ -1,0 +1,33 @@
+# AstroAshva
+
+> AstroAshva (Hindi: एस्ट्रोअश्व; earlier named AastroAstra) is a Vedic astrology (Jyotish) app for Android, with a public iPhone beta on Apple TestFlight. It calculates a person's Kundali (birth chart) from date, time and place of birth, and its AI chat, AshvaAI, explains that calculated chart in plain language. It is built and published by AVD Studiox Private Limited, Mumbai, India. Website: https://www.astroashva.com/
+
+Key facts (as of 21 October 2026):
+
+- Name: AstroAshva. Also written Astro Ashva, एस्ट्रोअश्व. Earlier name: AastroAstra. AI chat name: AshvaAI. Tagline: "AI Precision. Human Soul."
+- Publisher: AVD Studiox Private Limited, 1503 A Asher Titan, Valabh, Baug Lane, Ghatkopar East, Mumbai, Maharashtra 400077, India. Contact: hello@astroashva.com
+- Platforms: Android on Google Play (https://play.google.com/store/apps/details?id=com.avdstudiox.android). iPhone: public beta on Apple TestFlight (https://testflight.apple.com/join/HZXJ4Dav). The website does not offer APK or IPA downloads.
+- Features: Kundali (North or South Indian chart; lagna, nakshatra, dasha), Kundli matching (Ashtakoot guna milan, 36 gunas, koota by koota), Multi-match (ranks several saved Kundalis against yours), Panchang for your city (tithi, vaar, nakshatra, yoga, karana), daily, weekly and monthly horoscope (rashifal) for your Moon sign, numerology (Mulank, Bhagyank, Lo Shu grid; Chaldean name numbers), Lal Kitab remedies, palm reading and face reading from a photo, PDF reports, AshvaAI chat.
+- Languages: the app and website can be used in 13 languages: English, Hindi, Marathi, Gujarati, Tamil, Bengali, Punjabi, Kannada, Telugu, Malayalam, Odia, Spanish and Chinese.
+- Price: free to install; the first Kundali is free. Horoscope, Panchang, numerology, and matching between Kundalis already saved use no credits. Credits (one-time in-app purchases, no subscription, they do not expire): a new Kundali for another person 10 credits, an AshvaAI reply 5, a palm or face reading 10. Packs in India: 100 credits ₹100, 500 credits ₹500, 1,000 credits ₹1,000. Current details: https://www.astroashva.com/pricing/
+- How readings are made: the app calculates positions, dashas and transits deterministically first; the AI only explains those calculated facts. Planetary positions use an open-source astronomy library (Astronomy Engine, MIT licence) and sample positions are checked against saved JPL reference results. These are position checks, not certification of readings, and there is no NASA or JPL endorsement.
+- Limits: astrology, numerology, palm and face readings are interpretations offered for guidance and entertainment. They are not guaranteed predictions and not a substitute for medical, legal, financial or psychological advice. AI explanations can be wrong.
+
+## Main pages
+
+- [Home](https://www.astroashva.com/): what AstroAshva does, how calculations work, download links and FAQ (Hindi by default; English at https://www.astroashva.com/?lang=en)
+- [Pricing and credits](https://www.astroashva.com/pricing/): what is free, what uses credits, credit packs, expiry and refunds
+- [Discover Jyotish](https://www.astroashva.com/vedic-astrology/): an illustrated introduction to Vedic astrology: sages, signs, nakshatras, nine grahas, twelve houses and KP
+- [Calculations and corrections](https://www.astroashva.com/#our-engine): how a reading is calculated and how to report a difference
+- [Service status](https://www.astroashva.com/status.html)
+
+## Policies
+
+- [Privacy Policy](https://www.astroashva.com/privacy.html)
+- [Terms of Use](https://www.astroashva.com/terms.html)
+- [Refund policy](https://www.astroashva.com/refund-policy.html)
+- [Delete your account](https://www.astroashva.com/delete-account.html)
+
+## Optional
+
+- [Full text for language models](https://www.astroashva.com/llms-full.txt): the FAQ and feature descriptions in English and Hindi

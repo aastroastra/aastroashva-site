@@ -582,3 +582,20 @@ html[data-tr] .h2, html[data-tr] h2, html[data-tr] h3 { overflow-wrap:break-word
 @media (max-width:480px) {
   html[data-lang="ta"] .h2, html[data-lang="ml"] .h2, html[data-lang="te"] .h2, html[data-lang="kn"] .h2 { font-size:30px; }
 }
+
+/* Questions (#faq): a hairline list of native disclosures, like the engine
+   review. Answers are in the HTML for every visitor and crawler; the FAQPage
+   JSON-LD in <head> mirrors the English text. */
+.faq { padding-top:0; }
+.faq-list { max-width:820px; margin:0 auto; border-top:.5px solid var(--line); }
+.faq-item { border-bottom:.5px solid var(--line); }
+.faq-item summary { list-style:none; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 2px; min-height:44px; }
+.faq-item summary::-webkit-details-marker { display:none; }
+.faq-item summary::after { content:""; flex:none; width:9px; height:9px; margin-right:4px; border-right:1.5px solid var(--muted); border-bottom:1.5px solid var(--muted); transform:translateY(-3px) rotate(45deg); transition:transform .3s var(--ease); }
+.faq-item[open] summary::after { transform:translateY(2px) rotate(-135deg); }
+.faq-item summary:focus-visible { outline:2px solid var(--tint); outline-offset:2px; border-radius:6px; }
+.faq-item h3 { font-size:clamp(16px,1.6vw,18px); font-weight:600; line-height:1.4; color:var(--fg); }
+.faq-item p { padding:0 2px 22px; max-width:720px; font-size:15px; line-height:1.7; color:var(--fg2); }
+.faq-more { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 22px; margin-top:28px; font-size:14px; }
+.faq-more a { color:var(--fg); text-underline-offset:3px; padding-block:6px; }
+@media (prefers-reduced-motion:reduce) { .faq-item summary::after { transition:none; } }

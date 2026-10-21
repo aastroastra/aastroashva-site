@@ -1,45 +1,306 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- Public pages only. The home page has one URL per language (hreflang below). -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.astroashva.com/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=en</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=mr</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=gu</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=ta</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=bn</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=pa</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=kn</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=te</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=ml</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=or</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=es</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/?lang=zh</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://www.astroashva.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.astroashva.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="mr" href="https://www.astroashva.com/?lang=mr"/>
+    <xhtml:link rel="alternate" hreflang="gu" href="https://www.astroashva.com/?lang=gu"/>
+    <xhtml:link rel="alternate" hreflang="ta" href="https://www.astroashva.com/?lang=ta"/>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://www.astroashva.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://www.astroashva.com/?lang=pa"/>
+    <xhtml:link rel="alternate" hreflang="kn" href="https://www.astroashva.com/?lang=kn"/>
+    <xhtml:link rel="alternate" hreflang="te" href="https://www.astroashva.com/?lang=te"/>
+    <xhtml:link rel="alternate" hreflang="ml" href="https://www.astroashva.com/?lang=ml"/>
+    <xhtml:link rel="alternate" hreflang="or" href="https://www.astroashva.com/?lang=or"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.astroashva.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.astroashva.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.astroashva.com/"/>
+  </url>
+  <url>
+    <loc>https://www.astroashva.com/vedic-astrology/</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.astroashva.com/pricing/</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.astroashva.com/privacy.html</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.astroashva.com/terms.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.astroashva.com/refund-policy.html</loc>
-    <lastmod>2026-09-29</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
     <loc>https://www.astroashva.com/delete-account.html</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.astroashva.com/vedic-astrology/</loc>
-    <lastmod>2026-10-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://www.astroashva.com/status.html</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

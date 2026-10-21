@@ -1,0 +1,125 @@
+# AstroAshva: full text
+
+> AstroAshva (Hindi: एस्ट्रोअश्व; earlier named AastroAstra) is a Vedic astrology (Jyotish) app for Android, with a public iPhone beta on Apple TestFlight. It calculates a person's Kundali (birth chart) from date, time and place of birth, and its AI chat, AshvaAI, explains that calculated chart in plain language. It is built and published by AVD Studiox Private Limited, Mumbai, India. Website: https://www.astroashva.com/
+
+Key facts (as of 21 October 2026):
+
+- Name: AstroAshva. Also written Astro Ashva, एस्ट्रोअश्व. Earlier name: AastroAstra. AI chat name: AshvaAI. Tagline: "AI Precision. Human Soul."
+- Publisher: AVD Studiox Private Limited, 1503 A Asher Titan, Valabh, Baug Lane, Ghatkopar East, Mumbai, Maharashtra 400077, India. Contact: hello@astroashva.com
+- Platforms: Android on Google Play (https://play.google.com/store/apps/details?id=com.avdstudiox.android). iPhone: public beta on Apple TestFlight (https://testflight.apple.com/join/HZXJ4Dav). The website does not offer APK or IPA downloads.
+- Features: Kundali (North or South Indian chart; lagna, nakshatra, dasha), Kundli matching (Ashtakoot guna milan, 36 gunas, koota by koota), Multi-match (ranks several saved Kundalis against yours), Panchang for your city (tithi, vaar, nakshatra, yoga, karana), daily, weekly and monthly horoscope (rashifal) for your Moon sign, numerology (Mulank, Bhagyank, Lo Shu grid; Chaldean name numbers), Lal Kitab remedies, palm reading and face reading from a photo, PDF reports, AshvaAI chat.
+- Languages: the app and website can be used in 13 languages: English, Hindi, Marathi, Gujarati, Tamil, Bengali, Punjabi, Kannada, Telugu, Malayalam, Odia, Spanish and Chinese.
+- Price: free to install; the first Kundali is free. Horoscope, Panchang, numerology, and matching between Kundalis already saved use no credits. Credits (one-time in-app purchases, no subscription, they do not expire): a new Kundali for another person 10 credits, an AshvaAI reply 5, a palm or face reading 10. Packs in India: 100 credits ₹100, 500 credits ₹500, 1,000 credits ₹1,000. Current details: https://www.astroashva.com/pricing/
+- How readings are made: the app calculates positions, dashas and transits deterministically first; the AI only explains those calculated facts. Planetary positions use an open-source astronomy library (Astronomy Engine, MIT licence) and sample positions are checked against saved JPL reference results. These are position checks, not certification of readings, and there is no NASA or JPL endorsement.
+- Limits: astrology, numerology, palm and face readings are interpretations offered for guidance and entertainment. They are not guaranteed predictions and not a substitute for medical, legal, financial or psychological advice. AI explanations can be wrong.
+
+## Main pages
+
+- [Home](https://www.astroashva.com/): what AstroAshva does, how calculations work, download links and FAQ (Hindi by default; English at https://www.astroashva.com/?lang=en)
+- [Pricing and credits](https://www.astroashva.com/pricing/): what is free, what uses credits, credit packs, expiry and refunds
+- [Discover Jyotish](https://www.astroashva.com/vedic-astrology/): an illustrated introduction to Vedic astrology: sages, signs, nakshatras, nine grahas, twelve houses and KP
+- [Calculations and corrections](https://www.astroashva.com/#our-engine): how a reading is calculated and how to report a difference
+- [Service status](https://www.astroashva.com/status.html)
+
+## Policies
+
+- [Privacy Policy](https://www.astroashva.com/privacy.html)
+- [Terms of Use](https://www.astroashva.com/terms.html)
+- [Refund policy](https://www.astroashva.com/refund-policy.html)
+- [Delete your account](https://www.astroashva.com/delete-account.html)
+
+## What each feature does
+
+- Kundali (कुंडली, janam kundali, birth chart): computed from date, time and place of birth. Shows lagna (rising sign), Moon sign, nakshatra, the running dasha periods and the full chart in North or South Indian style, with Lal Kitab remedies. The first Kundali on an account is free.
+- Kundli matching (कुंडली मिलान, guna milan): Ashtakoot comparison of two charts across eight kootas (Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot, Nadi), 36 gunas in total, shown koota by koota. Free between Kundalis already saved.
+- Multi-match: ranks many saved Kundalis against yours for what matters to you, with the reasons shown.
+- Panchang (पंचांग, aaj ka panchang): tithi, vaar, nakshatra, yoga and karana for your city. Free.
+- Horoscope (राशिफल, rashifal): daily, weekly and monthly, for your Moon sign. Free.
+- Numerology (अंक ज्योतिष): Mulank (driver), Bhagyank (conductor), Lo Shu grid, every step of the working shown; name numbers use the Chaldean system. Free.
+- Palm reading (हस्तरेखा) and face reading (Samudrika): from one clear photo. 10 credits each.
+- AshvaAI: AI astrologer chat that answers from your own calculated chart. The app computes positions, dashas and transits; the AI explains them. 5 credits per reply. Answers are interpretive and can be wrong.
+- Reports: PDF reports generated from the app.
+
+## Frequently asked questions (English)
+
+### What is AstroAshva?
+
+AstroAshva (एस्ट्रोअश्व, earlier named AastroAstra) is a Vedic astrology (Jyotish) app for Android and iPhone. It calculates your Kundali, or birth chart, from your date, time and place of birth, and AshvaAI explains it in plain language. It also has Kundli matching, Multi-match, Panchang, daily, weekly and monthly horoscope, numerology, Lal Kitab remedies, and palm and face reading.
+
+### Who makes AstroAshva?
+
+AstroAshva is built and published by AVD Studiox Private Limited, a company in Mumbai, India. You can reach the team at hello@astroashva.com.
+
+### Is AstroAshva free?
+
+It is free to install and your first Kundali is free. Horoscope, Panchang, numerology, and Kundali matching between Kundalis you have saved use no credits. A new Kundali for another person uses 10 credits, an AshvaAI chat reply 5, and a palm or face reading 10. There is no subscription. The pricing page has the full list.
+
+### How does Kundli matching (guna milan) work?
+
+Kundali Matching compares two birth charts with the Ashtakoot system: eight kootas (Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot and Nadi) worth 36 gunas in all, shown koota by koota. Multi-match ranks several saved Kundalis against yours, with the reasons shown. A guna score is a traditional guide, not a decision.
+
+### Does it show today's Panchang and rashifal?
+
+Yes. The app shows today's Panchang for your city, with tithi, vaar, nakshatra, yoga and karana, and a daily, weekly and monthly horoscope (rashifal) for your Moon sign.
+
+### What does the numerology section include?
+
+Your Mulank (driver number), Bhagyank (conductor number) and Lo Shu grid, with every step of the working shown. Name numbers use the Chaldean system.
+
+### What is AshvaAI?
+
+AshvaAI is the app's AI astrologer chat. It answers from your own Kundali: the app calculates positions, dashas and transits first, and the AI explains them. AI explanations are interpretive and can be wrong.
+
+### Which languages does AstroAshva support?
+
+The app and this website can be used in 13 languages: English, Hindi, Marathi, Gujarati, Tamil, Bengali, Punjabi, Kannada, Telugu, Malayalam, Odia, Spanish and Chinese.
+
+### Are the predictions guaranteed?
+
+No. Planetary positions are calculated, and sample positions are checked against JPL reference data, but astrological readings are interpretations. Use them for guidance and reflection, not as a substitute for medical, legal, financial or psychological advice.
+
+### How do I download AstroAshva?
+
+On Android, install AstroAshva from Google Play. On iPhone, join the public beta through Apple TestFlight. Both links are in the Download section above.
+
+## अक्सर पूछे जाने वाले सवाल (हिन्दी)
+
+### एस्ट्रोअश्व क्या है?
+
+एस्ट्रोअश्व (AstroAshva, पहले AastroAstra) एंड्रॉयड और आईफ़ोन के लिए वैदिक ज्योतिष ऐप है। यह आपकी जन्म तारीख, समय और स्थान से आपकी कुंडली (जन्म कुंडली) की गणना करता है, और AshvaAI उसे आसान भाषा में समझाता है। इसमें कुंडली मिलान, मल्टी-मैच, पंचांग, दैनिक, साप्ताहिक और मासिक राशिफल, अंक ज्योतिष, लाल किताब उपाय, और हस्तरेखा व चेहरा पठन भी हैं।
+
+### एस्ट्रोअश्व कौन बनाता है?
+
+एस्ट्रोअश्व को मुंबई, भारत की कंपनी AVD Studiox Private Limited बनाती और प्रकाशित करती है। टीम से hello@astroashva.com पर संपर्क करें।
+
+### क्या एस्ट्रोअश्व मुफ़्त है?
+
+इंस्टॉल मुफ़्त है और आपकी पहली कुंडली मुफ़्त है। राशिफल, पंचांग, अंक ज्योतिष, और सहेजी कुंडलियों के बीच कुंडली मिलान में क्रेडिट नहीं लगते। किसी और व्यक्ति की नई कुंडली में 10 क्रेडिट, AshvaAI चैट के हर उत्तर में 5, और हस्तरेखा या चेहरा पठन में 10 क्रेडिट लगते हैं। कोई सब्सक्रिप्शन नहीं है। पूरी सूची कीमतों वाले पेज पर है।
+
+### कुंडली मिलान (गुण मिलान) कैसे होता है?
+
+कुंडली मिलान दो जन्म कुंडलियों की अष्टकूट पद्धति से तुलना करता है: आठ कूट (वर्ण, वश्य, तारा, योनि, ग्रह मैत्री, गण, भकूट और नाड़ी), कुल 36 गुण, हर कूट अलग दिखाया जाता है। मल्टी-मैच कई सहेजी कुंडलियों को आपकी कुंडली से मिलाकर, कारण सहित क्रम देता है। गुणों का अंक एक पारंपरिक संकेत है, फ़ैसला नहीं।
+
+### क्या इसमें आज का पंचांग और राशिफल है?
+
+हाँ। ऐप आपके शहर के लिए आज का पंचांग दिखाता है, तिथि, वार, नक्षत्र, योग और करण के साथ, और आपकी चंद्र राशि के लिए दैनिक, साप्ताहिक और मासिक राशिफल।
+
+### अंक ज्योतिष में क्या मिलता है?
+
+आपका मूलांक, भाग्यांक और लो शू ग्रिड, हिसाब के हर चरण के साथ। नाम के अंक कल्डियन पद्धति से निकाले जाते हैं।
+
+### AshvaAI क्या है?
+
+AshvaAI ऐप का AI ज्योतिषी चैट है। यह आपकी अपनी कुंडली से जवाब देता है: ऐप पहले ग्रह स्थितियों, दशाओं और गोचर की गणना करता है, फिर AI उन्हें समझाता है। AI की व्याख्याएँ व्याख्या ही हैं और गलत भी हो सकती हैं।
+
+### एस्ट्रोअश्व किन भाषाओं में है?
+
+ऐप और यह वेबसाइट 13 भाषाओं में उपयोग किए जा सकते हैं: अंग्रेज़ी, हिन्दी, मराठी, गुजराती, तमिल, बंगाली, पंजाबी, कन्नड़, तेलुगु, मलयालम, ओड़िया, स्पैनिश और चीनी।
+
+### क्या भविष्यवाणियाँ पक्की होती हैं?
+
+नहीं। ग्रह स्थितियों की गणना होती है, और नमूना स्थितियाँ JPL संदर्भ डेटा से जाँची जाती हैं, लेकिन ज्योतिषीय फलादेश व्याख्याएँ हैं। इन्हें मार्गदर्शन और विचार के लिए लें, चिकित्सा, कानूनी, वित्तीय या मनोवैज्ञानिक सलाह के विकल्प के रूप में नहीं।
+
+### एस्ट्रोअश्व कैसे डाउनलोड करें?
+
+एंड्रॉयड पर Google Play से एस्ट्रोअश्व इंस्टॉल करें। आईफ़ोन पर Apple TestFlight से पब्लिक बीटा से जुड़ें। दोनों लिंक ऊपर डाउनलोड भाग में हैं।

@@ -1,3 +1,18 @@
+## Search and AI answer engines, 21 October 2026
+
+- `/` renders Hindi for a new visitor, so it is the `hi` and `x-default` URL. Every
+  other language is `/?lang=<code>`; the head script makes that URL its own canonical.
+  Keep `index.html` hreflang, `sitemap.xml` alternates and `i18n.js` codes in step.
+- One JSON-LD graph in `index.html` (Organization, Brand, WebSite, WebPage,
+  MobileApplication, FAQPage). The FAQPage text must equal the English text of the
+  visible `#faq` section; change both together. No ratings or reviews unless real.
+- Public pages carry Open Graph tags and WebPage + BreadcrumbList JSON-LD.
+- `llms.txt` and `llms-full.txt` are the factual summary for AI crawlers. Update them
+  when prices, platforms, languages or features change. `robots.txt` names the main
+  search and AI crawlers explicitly; every group carries the same Disallow list.
+- New FAQ strings are in `i18n/_source.json` and all eleven language files
+  (machine drafts, native review pending).
+
 ## Calculation transparency, 11 October 2026
 
 The section is an illustrated scroll journey: details → positions → our Vedic
