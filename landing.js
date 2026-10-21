@@ -531,16 +531,8 @@
         bi(heroStat, 'downloads on Android and iOS', 'डाउनलोड, एंड्रॉइड और iOS पर');
         heroStat.hidden = false;
       }
-      if (!statsEl || a == null) return;
-      var items = [[a, 'Android installs', 'एंड्रॉइड इंस्टॉल']];
-      if (i != null) items.push([i, 'iPhone installs', 'आईफ़ोन इंस्टॉल']);
-      items.forEach(function (x) {
-        var d = document.createElement('div');
-        var nEl = document.createElement('div'); nEl.className = 'n'; nEl.textContent = human(+x[0]);
-        var l = document.createElement('div'); l.className = 'l';
-        bi(l, x[1], x[2]); d.appendChild(nEl); d.appendChild(l); statsEl.appendChild(d);
-      });
-      statsEl.hidden = false;
+      // Store install counts stay hidden: App Store Connect only counts TestFlight testers
+      // marked INSTALLED (6 vs 267 GA4 iPhone users), Play only the Play era. Hero shows GA4.
     }).catch(function () {});
   }
 
