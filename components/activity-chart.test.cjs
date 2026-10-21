@@ -5,3 +5,8 @@ test('aggregate stays independent of platform totals',()=>assert.equal(normalize
 test('missing activity remains missing and breaks the plotted line',()=>{const g=pathFor([1,null,2]);assert.equal(g.points[1],null);assert.equal((g.path.match(/M/g)||[]).length,2);assert.equal(g.path.includes('NaN'),false);});
 test('zero is a real point, not a missing value',()=>{assert.equal(pathFor([0]).points[0].value,0);assert.equal(normalize(fixture).days[0].all,0);});
 test('duplicate dates, malformed values and oversized series are refused',()=>{for(const x of [{...fixture,days:[fixture.days[1],fixture.days[0]]},{...fixture,days:[{...fixture.days[0],all:NaN}]},{...fixture,days:Array(367).fill(fixture.days[0])},{...fixture,days:[{...fixture.days[0],date:'2026-02-30'}]}])assert.throws(()=>normalize(x));});
+const{bucket}=require('./activity-chart.js');
+const run=(from,n,v=1)=>Array.from({length:n},(_,i)=>{const d=new Date(from+'T00:00:00Z');d.setUTCDate(d.getUTCDate()+i);return{date:d.toISOString().slice(0,10),all:v,ios:v,android:null};});
+test('weekly downloads sum Monday-to-Sunday and mark the running week',()=>{const w=bucket(run('2026-10-05',16),'weekly');assert.deepEqual(w.map(x=>[x.date,x.all,x.partial]),[['2026-10-05',7,false],['2026-10-12',7,false],['2026-10-19',2,true]]);assert.equal(w[0].android,null);});
+test('a period the data starts in the middle of is dropped, not undercounted',()=>{const m=bucket(run('2026-08-20',60),'monthly');assert.deepEqual(m.map(x=>[x.date,x.all,x.partial]),[['2026-09-01',30,false],['2026-10-01',18,true]]);});
+test('daily passes values through unchanged',()=>assert.deepEqual(bucket(run('2026-10-19',2,0),'daily').map(x=>x.all),[0,0]));
