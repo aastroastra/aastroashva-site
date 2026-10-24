@@ -40,9 +40,20 @@
   return out.map(b=>({date:b.date,all:b.all,ios:b.ios,android:b.android,partial:b.last<end(b.date)}));
  }
  const METRICS={active:{periods:['daily']},downloads:{periods:['daily','weekly','monthly']}};
+ /* Usage milestones from stats.json (site-stats, daily). The server lists only totals of 1,000 or more in `show`. */
+ const STATS_URL='https://gttszlununmqivrqevwv.supabase.co/storage/v1/object/public/site/stats.json';
+ const USAGE_LABELS={answers:['{n} AshvaAI answers','{n} AshvaAI उत्तर'],kundalis:['{n} kundalis made','{n} कुंडलियाँ बनीं'],matches:['{n} kundali matches','{n} कुंडली मिलान'],multimatches:['{n} multi-matches','{n} मल्टी-मैच'],palm:['{n} palm readings','{n} हस्तरेखा विश्लेषण'],face:['{n} face readings','{n} चेहरा विश्लेषण']};
+ let usagePromise=null;
+ function loadUsage(){if(!usagePromise)usagePromise=fetch(STATS_URL+'?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(s=>{const u=s&&s.usage;return u&&Array.isArray(u.show)&&u.display?u:null;}).catch(()=>null);return usagePromise;}
+ function usageRow(u){
+  const items=u.show.filter(k=>USAGE_LABELS[k]&&typeof u.display[k]==='string');if(!items.length)return null;
+  const box=el('div',null,'activity-chart__usage');const list=el('ul');
+  for(const k of items){const [en,hi]=USAGE_LABELS[k];const li=el('li');const parts=copy(en,hi).split('{n}');li.append(parts[0]||'',el('b',u.display[k]),parts.slice(1).join('{n}'));list.append(li);}
+  box.append(list,el('p',copy('Totals so far · updated daily','अब तक का कुल · रोज़ अपडेट'),'activity-chart__note'));return box;
+ }
  class ActivityChart {
   constructor(root,options={}){
-   if(!root.id)throw new Error('A stable chart id is required');if(root.dataset.presentation==='sheet'&&root.parentElement!==document.body)document.body.append(root);this.root=root;this.options=options;this.platform='all';this.metric='active';this.period='daily';this.store={};this.data=null;this.error=false;this.loading=false;this.open=!root.hidden;this.lastTrigger=null;
+   if(!root.id)throw new Error('A stable chart id is required');if(root.dataset.presentation==='sheet'&&root.parentElement!==document.body)document.body.append(root);this.root=root;this.options=options;this.platform='all';this.metric='active';this.period='daily';this.store={};this.data=null;this.error=false;this.loading=false;this.open=!root.hidden;this.lastTrigger=null;this.usage=null;loadUsage().then(u=>{this.usage=u;if(u&&this.open)this.render();});
    this.loadData=options.load||((metric='active')=>{
     const url=root.dataset.source+(metric==='downloads'?'&metric=downloads':'');const saved=cache.get(url);if(saved&&Date.now()-saved.at<60000)return saved.promise;
     const promise=fetch(url,{cache:'no-store',signal:AbortSignal.timeout(15000)}).then(r=>{if(!r.ok)throw new Error('unavailable');return r.json();}).then(normalize);
@@ -70,6 +81,7 @@
    for(const [key,en,hi] of [['active','Active users','सक्रिय उपयोगकर्ता'],['downloads','Downloads','डाउनलोड']]){const b=el('button',copy(en,hi));b.type='button';b.dataset.metric=key;b.setAttribute('aria-pressed',String(this.metric===key));b.addEventListener('click',()=>this.choose('metric',key));metrics.append(b);}
    head.append(title,metrics);
    const close=el('button',copy('Close chart','ग्राफ़ बंद करें'),'activity-chart__close');close.type='button';close.addEventListener('click',()=>this.dismiss());head.append(close);root.append(head);if(this.sheet)this.dragToClose(head);
+   if(this.usage){const row=usageRow(this.usage);if(row)root.append(row);}
    const periods=el('div',null,'activity-chart__periods');periods.setAttribute('role','group');periods.setAttribute('aria-label',copy('Time range','समय अवधि'));
    for(const [key,en,hi] of [['daily','Daily','दैनिक'],['weekly','Weekly','साप्ताहिक'],['monthly','Monthly','मासिक'],['yearly','Yearly','वार्षिक']]){const b=el('button',copy(en,hi));b.type='button';b.dataset.period=key;b.disabled=!METRICS[this.metric].periods.includes(key);b.setAttribute('aria-pressed',String(key===period));if(b.disabled)b.title=copy('Available later','बाद में उपलब्ध');else b.addEventListener('click',()=>this.choose('period',key));periods.append(b);}root.append(periods);
    const filters=el('div',null,'activity-chart__filters');filters.setAttribute('role','group');filters.setAttribute('aria-label',copy('Platform','प्लैटफ़ॉर्म'));

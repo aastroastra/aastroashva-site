@@ -411,5 +411,12 @@
  "No. Planetary positions are calculated, and sample positions are checked against JPL reference data, but astrological readings are interpretations. Use them for guidance and reflection, not as a substitute for medical, legal, financial or psychological advice.": "No. Las posiciones planetarias se calculan y una muestra de ellas se verifica con datos de referencia de JPL, pero las lecturas astrológicas son interpretaciones. Úsalas como orientación y reflexión, no como sustituto de asesoramiento médico, legal, financiero o psicológico.",
  "How do I download AstroAshva?": "¿Cómo descargo AstroAshva?",
  "On Android, install AstroAshva from Google Play. On iPhone, join the public beta through Apple TestFlight. Both links are in the Download section above.": "En Android, instala AstroAshva desde Google Play. En iPhone, únete a la beta pública a través de Apple TestFlight. Ambos enlaces están en la sección Descargar de arriba.",
- "Pricing and credits": "Precios y créditos"
+ "Pricing and credits": "Precios y créditos",
+ "{n} AshvaAI answers": "{n} respuestas de AshvaAI",
+ "{n} kundalis made": "{n} kundalis creadas",
+ "{n} kundali matches": "{n} emparejamientos de kundali",
+ "{n} multi-matches": "{n} emparejamientos múltiples",
+ "{n} palm readings": "{n} lecturas de palma",
+ "{n} face readings": "{n} lecturas de rostro",
+ "Totals so far · updated daily": "Totales hasta hoy · se actualiza a diario"
 }
