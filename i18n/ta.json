@@ -418,5 +418,13 @@
  "{n} multi-matches": "{n} பல-பொருத்தங்கள்",
  "{n} palm readings": "{n} கைரேகை வாசிப்புகள்",
  "{n} face readings": "{n} முக வாசிப்புகள்",
- "Totals so far · updated daily": "இதுவரை மொத்தம் · தினமும் புதுப்பிக்கப்படும்"
+ "Totals so far · updated daily": "இதுவரை மொத்தம் · தினமும் புதுப்பிக்கப்படும்",
+ "{n} AshvaAI questions per person": "ஒருவருக்கு சராசரி {n} AshvaAI கேள்விகள்",
+ "{n}% come back within a week": "{n}% பேர் ஒரு வாரத்தில் மீண்டும் வருகிறார்கள்",
+ "{n} on Google Play": "Google Play-இல் {n}",
+ "Kundalis from {n} cities": "{n} நகரங்களின் ஜாதகங்கள்",
+ "In {n} languages": "{n} மொழிகளில்",
+ "More": "மேலும்",
+ "Less": "குறைவாக",
+ "Signed-in accounts, our team left out · updated daily": "உள்நுழைந்த கணக்குகள் மட்டும், எங்கள் குழு தவிர · தினமும் புதுப்பிக்கப்படும்"
 }

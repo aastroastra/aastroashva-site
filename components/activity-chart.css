@@ -27,4 +27,12 @@
 @media(max-width:390px){.activity-chart .activity-chart__metric button{padding:3px 9px}.activity-chart{padding:12px}.activity-chart button{padding:6px 8px}.activity-chart__axis{font-size:13px}}
 .activity-chart__usage{margin-top:12px;padding:10px 12px;border:.5px solid var(--line);border-radius:12px;background:var(--soft)}
 .activity-chart__usage ul{display:flex;flex-wrap:wrap;gap:6px 16px;margin:0;padding:0;list-style:none;font-size:14px;color:var(--fg2)}
+.activity-chart__bigs{display:flex;flex-wrap:wrap;gap:12px 28px;margin:2px 0 8px}
+.activity-chart__big{display:flex;flex-direction:column;min-width:0;flex:1 1 140px}
+.activity-chart__big strong{font-size:clamp(34px,8vw,44px);line-height:1.05;font-weight:700;color:var(--tint);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.activity-chart__big span{font-size:14px;line-height:1.35;color:var(--fg2);margin-top:2px}
+.activity-chart__rating{margin:0 0 6px;font-size:14px;color:var(--fg2)}
+.activity-chart__toggle{appearance:none;border:0;background:none;padding:6px 0;font:inherit;font-size:14px;font-weight:600;color:var(--tint);cursor:pointer;min-height:32px}
+.activity-chart__toggle:focus-visible{outline:2px solid var(--tint);outline-offset:2px;border-radius:6px}
+.activity-chart__more{margin-top:4px !important}.activity-chart__usage ul[hidden]{display:none}
 .activity-chart__usage b{color:var(--fg);font-weight:600;font-variant-numeric:tabular-nums}.activity-chart__usage .activity-chart__note{margin:6px 0 0}

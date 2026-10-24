@@ -418,5 +418,13 @@
  "{n} multi-matches": "{n} মাল্টি-ম্যাচ",
  "{n} palm readings": "{n} হস্তরেখা পাঠ",
  "{n} face readings": "{n} মুখ পাঠ",
- "Totals so far · updated daily": "এখন পর্যন্ত মোট · প্রতিদিন আপডেট"
+ "Totals so far · updated daily": "এখন পর্যন্ত মোট · প্রতিদিন আপডেট",
+ "{n} AshvaAI questions per person": "প্রতি জনে গড়ে {n}টি AshvaAI প্রশ্ন",
+ "{n}% come back within a week": "{n}% এক সপ্তাহের মধ্যে আবার আসেন",
+ "{n} on Google Play": "Google Play-তে {n}",
+ "Kundalis from {n} cities": "{n}টি শহরের কুণ্ডলী",
+ "In {n} languages": "{n}টি ভাষায়",
+ "More": "আরও দেখুন",
+ "Less": "কম দেখুন",
+ "Signed-in accounts, our team left out · updated daily": "শুধু সাইন-ইন অ্যাকাউন্ট, আমাদের টিম বাদ · প্রতিদিন আপডেট"
 }

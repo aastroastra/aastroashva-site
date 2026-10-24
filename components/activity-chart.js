@@ -40,20 +40,38 @@
   return out.map(b=>({date:b.date,all:b.all,ios:b.ios,android:b.android,partial:b.last<end(b.date)}));
  }
  const METRICS={active:{periods:['daily']},downloads:{periods:['daily','weekly','monthly']}};
- /* Usage milestones from stats.json (site-stats, daily). The server lists only totals of 1,000 or more in `show`. */
+ /* Performance and usage from stats.json (site-stats, daily, real signed-in accounts for the ratios).
+    Big numbers: AshvaAI questions per person, then the 7-day return rate; the Play rating only when
+    the server sends it (4.3 or more). Reach and the exact usage counts sit under "More". */
  const STATS_URL='https://gttszlununmqivrqevwv.supabase.co/storage/v1/object/public/site/stats.json';
  const USAGE_LABELS={answers:['{n} AshvaAI answers','{n} AshvaAI उत्तर'],kundalis:['{n} kundalis made','{n} कुंडलियाँ बनीं'],matches:['{n} kundali matches','{n} कुंडली मिलान'],multimatches:['{n} multi-matches','{n} मल्टी-मैच'],palm:['{n} palm readings','{n} हस्तरेखा विश्लेषण'],face:['{n} face readings','{n} चेहरा विश्लेषण']};
  let usagePromise=null;
- function loadUsage(){if(!usagePromise)usagePromise=fetch(STATS_URL+'?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(s=>{const u=s&&s.usage;return u&&Array.isArray(u.show)&&u.display?u:null;}).catch(()=>null);return usagePromise;}
- function usageRow(u){
-  const items=u.show.filter(k=>USAGE_LABELS[k]&&typeof u.display[k]==='string');if(!items.length)return null;
-  const box=el('div',null,'activity-chart__usage');const list=el('ul');
-  for(const k of items){const [en,hi]=USAGE_LABELS[k];const li=el('li');const parts=copy(en,hi).split('{n}');li.append(parts[0]||'',el('b',u.display[k]),parts.slice(1).join('{n}'));list.append(li);}
-  box.append(list,el('p',copy('Totals so far · updated daily','अब तक का कुल · रोज़ अपडेट'),'activity-chart__note'));return box;
+ function loadUsage(){if(!usagePromise)usagePromise=fetch(STATS_URL+'?t='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():null).then(s=>{if(!s)return null;const u=s.usage&&Array.isArray(s.usage.show)&&s.usage.display?s.usage:null;const p=s.performance&&typeof s.performance==='object'?s.performance:null;return u||p?{usage:u,perf:p}:null;}).catch(()=>null);return usagePromise;}
+ function phrase(en,hi,n){const parts=copy(en,hi).split('{n}');const f=document.createDocumentFragment();f.append(parts[0]||'',el('b',String(n)),parts.slice(1).join('{n}'));return f;}
+ function bigStat(value,en,hi){const box=el('div',null,'activity-chart__big');box.append(el('strong',value));box.append(el('span',copy(en,hi).replace('{n}%','').replace('{n}','').replace(/\s+/g,' ').trim()));return box;}
+ function usageRow(state,onToggle){
+  const {usage:u,perf:p}=state;const box=el('div',null,'activity-chart__usage');
+  const hero=el('div',null,'activity-chart__bigs');
+  if(p&&p.questions_per_person!=null)hero.append(bigStat(String(p.questions_per_person),'{n} AshvaAI questions per person','हर व्यक्ति औसतन {n} AshvaAI सवाल पूछता है'));
+  if(p&&p.return_7d_pct!=null)hero.append(bigStat(p.return_7d_pct+'%','{n}% come back within a week','{n}% लोग एक हफ़्ते में दोबारा आते हैं'));
+  if(hero.childNodes.length){box.append(hero);box.append(el('p',copy('Signed-in accounts, our team left out · updated daily','सिर्फ़ साइन-इन खाते, हमारी टीम शामिल नहीं · रोज़ अपडेट'),'activity-chart__note'));}
+  if(p&&p.play_rating!=null){const r=el('p',null,'activity-chart__rating');r.append(phrase('{n} on Google Play','Google Play पर {n}',p.play_rating+' ★'));box.append(r);}
+  const more=[];
+  if(p&&p.cities!=null)more.push(['Kundalis from {n} cities','{n} शहरों की कुंडलियाँ',Number(p.cities).toLocaleString('en-IN')]);
+  if(p&&p.languages!=null)more.push(['In {n} languages','{n} भाषाओं में',p.languages]);
+  if(u)for(const k of u.show){if(USAGE_LABELS[k]&&typeof u.display[k]==='string'){const [en,hi]=USAGE_LABELS[k];more.push([en,hi,u.display[k]]);}}
+  if(more.length){
+   const list=el('ul',null,'activity-chart__more');list.id=(state.id||'activity')+'-more';list.hidden=!state.expanded;
+   for(const [en,hi,n] of more){const li=el('li');li.append(phrase(en,hi,n));list.append(li);}
+   const btn=el('button',copy(state.expanded?'Less':'More',state.expanded?'कम देखें':'और देखें'),'activity-chart__toggle');btn.type='button';btn.setAttribute('aria-expanded',String(!!state.expanded));btn.setAttribute('aria-controls',list.id);
+   btn.addEventListener('click',()=>onToggle());box.append(btn,list);
+  }
+  if(!box.childNodes.length)return null;
+  return box;
  }
  class ActivityChart {
   constructor(root,options={}){
-   if(!root.id)throw new Error('A stable chart id is required');if(root.dataset.presentation==='sheet'&&root.parentElement!==document.body)document.body.append(root);this.root=root;this.options=options;this.platform='all';this.metric='active';this.period='daily';this.store={};this.data=null;this.error=false;this.loading=false;this.open=!root.hidden;this.lastTrigger=null;this.usage=null;loadUsage().then(u=>{this.usage=u;if(u&&this.open)this.render();});
+   if(!root.id)throw new Error('A stable chart id is required');if(root.dataset.presentation==='sheet'&&root.parentElement!==document.body)document.body.append(root);this.root=root;this.options=options;this.platform='all';this.metric='active';this.period='daily';this.store={};this.data=null;this.error=false;this.loading=false;this.open=!root.hidden;this.lastTrigger=null;this.usage=null;this.usageExpanded=false;loadUsage().then(u=>{this.usage=u;if(u&&this.open)this.render();});
    this.loadData=options.load||((metric='active')=>{
     const url=root.dataset.source+(metric==='downloads'?'&metric=downloads':'');const saved=cache.get(url);if(saved&&Date.now()-saved.at<60000)return saved.promise;
     const promise=fetch(url,{cache:'no-store',signal:AbortSignal.timeout(15000)}).then(r=>{if(!r.ok)throw new Error('unavailable');return r.json();}).then(normalize);
@@ -81,7 +99,7 @@
    for(const [key,en,hi] of [['active','Active users','सक्रिय उपयोगकर्ता'],['downloads','Downloads','डाउनलोड']]){const b=el('button',copy(en,hi));b.type='button';b.dataset.metric=key;b.setAttribute('aria-pressed',String(this.metric===key));b.addEventListener('click',()=>this.choose('metric',key));metrics.append(b);}
    head.append(title,metrics);
    const close=el('button',copy('Close chart','ग्राफ़ बंद करें'),'activity-chart__close');close.type='button';close.addEventListener('click',()=>this.dismiss());head.append(close);root.append(head);if(this.sheet)this.dragToClose(head);
-   if(this.usage){const row=usageRow(this.usage);if(row)root.append(row);}
+   if(this.usage){const row=usageRow({...this.usage,id:root.id,expanded:this.usageExpanded},()=>{this.usageExpanded=!this.usageExpanded;this.render();});if(row)root.append(row);}
    const periods=el('div',null,'activity-chart__periods');periods.setAttribute('role','group');periods.setAttribute('aria-label',copy('Time range','समय अवधि'));
    for(const [key,en,hi] of [['daily','Daily','दैनिक'],['weekly','Weekly','साप्ताहिक'],['monthly','Monthly','मासिक'],['yearly','Yearly','वार्षिक']]){const b=el('button',copy(en,hi));b.type='button';b.dataset.period=key;b.disabled=!METRICS[this.metric].periods.includes(key);b.setAttribute('aria-pressed',String(key===period));if(b.disabled)b.title=copy('Available later','बाद में उपलब्ध');else b.addEventListener('click',()=>this.choose('period',key));periods.append(b);}root.append(periods);
    const filters=el('div',null,'activity-chart__filters');filters.setAttribute('role','group');filters.setAttribute('aria-label',copy('Platform','प्लैटफ़ॉर्म'));
