@@ -1,6 +1,350 @@
 [
   {
     "schema": 1,
+    "id": "android:published:288",
+    "platform": "android",
+    "repo": "astroashva/astroashva-android",
+    "sha": "5fae088734d234959eacb85f74ae7ed249fee368",
+    "tag": null,
+    "version": "1.0.20",
+    "build": "288",
+    "date": "2026-10-21",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "Google Play internal, open testing and production: completed (Publisher API read-back)",
+    "changes": [
+      {
+        "sha": "5fae088",
+        "subject": "Uniform first experience: chart facts from your own birth details, one ready first question, constellation onboarding and welcome."
+      },
+      {
+        "sha": "5fae088",
+        "subject": "Shared colour palette and thinner borders across the app."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "Signed AAB SHA256 dc3ba8ae\u2026a5d1. Source: uniform build publication report, 21 Oct 2026."
+  },
+  {
+    "schema": 1,
+    "id": "android:published:289",
+    "platform": "android",
+    "repo": "astroashva/astroashva-android",
+    "sha": "78edf5b3a7d5272733a9ed1fb55adbffb95cfc92",
+    "tag": null,
+    "version": "1.0.21",
+    "build": "289",
+    "date": "2026-10-21",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "Google Play internal, open testing and production: completed (Publisher API read-back)",
+    "changes": [
+      {
+        "sha": "78edf5b",
+        "subject": "Long-press any answer to save it as a favourite or share it; saved answers open from Settings."
+      },
+      {
+        "sha": "78edf5b",
+        "subject": "Assistant follow-up questions sit in one scrollable row."
+      },
+      {
+        "sha": "78edf5b",
+        "subject": "Kundali picker: clearer Add, Done, edit and delete targets."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "Signed AAB SHA256 f757b015\u2026bc4a. Source: experience build publication report, 21 Oct 2026."
+  },
+  {
+    "schema": 1,
+    "id": "android:published:290",
+    "platform": "android",
+    "repo": "astroashva/astroashva-android",
+    "sha": "27a77d79e06adced575180236b1b0c28bf4957c0",
+    "tag": null,
+    "version": "1.0.22",
+    "build": "290",
+    "date": "2026-10-21",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "Google Play internal, open testing and production: completed (Publisher API read-back)",
+    "changes": [
+      {
+        "sha": "27a77d7",
+        "subject": "Assistant asks before each paid question and keeps charts open while you read."
+      },
+      {
+        "sha": "27a77d7",
+        "subject": "Saved answers keep the chart they cited."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "Signed AAB SHA256 b9e3a824\u2026ef2c. Source: assistant consent report, 21 Oct 2026."
+  },
+  {
+    "schema": 1,
+    "id": "android:published:291",
+    "platform": "android",
+    "repo": "astroashva/astroashva-android",
+    "sha": "f44f1e044db5481687a0575adf8852bc6dde33ca",
+    "tag": null,
+    "version": "1.0.23",
+    "build": "291",
+    "date": "2026-10-21",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "Google Play internal, open testing and production: completed (Publisher API read-back)",
+    "changes": [
+      {
+        "sha": "f44f1e0",
+        "subject": "Calmer floating assistant: one Done button and the AA mark."
+      },
+      {
+        "sha": "f44f1e0",
+        "subject": "White text on selected orange controls."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "Signed AAB SHA256 55cfa65b\u20268030. Source: assistant calm header report, 21 Oct 2026."
+  },
+  {
+    "schema": 1,
+    "id": "android:published:292",
+    "platform": "android",
+    "repo": "astroashva/astroashva-android",
+    "sha": "fda1211b3b6747226e870bb27010d7001a1377c4",
+    "tag": null,
+    "version": "1.0.23",
+    "build": "292",
+    "date": "2026-10-22",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "Google Play internal and open testing: completed (Publisher API read-back). Not released to production; superseded by 293.",
+    "changes": [
+      {
+        "sha": "fda1211",
+        "subject": "Morning brief and transit alerts as push notifications from our own backend, with notification channels and settings."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "Signed AAB SHA256 674bcca9\u2026c6c1f."
+  },
+  {
+    "schema": 1,
+    "id": "android:published:293",
+    "platform": "android",
+    "repo": "astroashva/astroashva-android",
+    "sha": "715a5298af58744e71066becb66501c5dfd5d667",
+    "tag": null,
+    "version": "1.0.24",
+    "build": "293",
+    "date": "2026-10-24",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "Google Play internal, open testing and production: completed (Publisher API read-back, 25 Oct 2026). Google review outcome is not visible through the API.",
+    "changes": [
+      {
+        "sha": "715a529",
+        "subject": "Sign-in methods: link a phone number, email or Google to your account (not yet visible to users)."
+      },
+      {
+        "sha": "715a529",
+        "subject": "Brings the push notification build to production."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "Signed AAB SHA256 3932e8bc\u2026c9df07."
+  },
+  {
+    "schema": 1,
+    "id": "ios:published:283",
+    "platform": "ios",
+    "repo": "astroashva/astroashva-ios",
+    "sha": "c1b78d5f059cac2764481d2a7e6ecd11f492beba",
+    "tag": null,
+    "version": "1.0.0",
+    "build": "283",
+    "date": "2026-10-20",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "TestFlight: processing VALID; Internal Beta and External Beta IN_BETA_TESTING (App Store Connect API read-back, 25 Oct 2026)",
+    "changes": [
+      {
+        "sha": "c1b78d5",
+        "subject": "Uniform first experience: chart facts from your own birth details and one ready first question."
+      },
+      {
+        "sha": "c1b78d5",
+        "subject": "Shared colour palette and thinner borders."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "IPA SHA256 d295088b\u20261b74."
+  },
+  {
+    "schema": 1,
+    "id": "ios:published:284",
+    "platform": "ios",
+    "repo": "astroashva/astroashva-ios",
+    "sha": "af5137f4e19e14d714a48200ce5dc7a964c9c12d",
+    "tag": null,
+    "version": "1.0.0",
+    "build": "284",
+    "date": "2026-10-20",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "TestFlight: processing VALID; Internal Beta and External Beta IN_BETA_TESTING (App Store Connect API read-back, 25 Oct 2026)",
+    "changes": [
+      {
+        "sha": "af5137f",
+        "subject": "Long-press answers to favourite or share them."
+      },
+      {
+        "sha": "af5137f",
+        "subject": "Onboarding keeps your place when you change language."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "IPA SHA256 3801dfca\u20269157."
+  },
+  {
+    "schema": 1,
+    "id": "ios:published:285",
+    "platform": "ios",
+    "repo": "astroashva/astroashva-ios",
+    "sha": "b983d33c62f316a7db94a082cb3cd710dd1066e3",
+    "tag": null,
+    "version": "1.0.0",
+    "build": "285",
+    "date": "2026-10-20",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "TestFlight: processing VALID; Internal Beta and External Beta IN_BETA_TESTING (App Store Connect API read-back, 25 Oct 2026)",
+    "changes": [
+      {
+        "sha": "b983d33",
+        "subject": "Assistant asks before each paid question; charts stay open."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "IPA SHA256 89769faa\u2026d262."
+  },
+  {
+    "schema": 1,
+    "id": "ios:published:286",
+    "platform": "ios",
+    "repo": "astroashva/astroashva-ios",
+    "sha": "a4f92f5575293d66aa34cfc60da016d1012179ca",
+    "tag": null,
+    "version": "1.0.0",
+    "build": "286",
+    "date": "2026-10-21",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "TestFlight: processing VALID; Internal Beta and External Beta IN_BETA_TESTING (App Store Connect API read-back, 25 Oct 2026)",
+    "changes": [
+      {
+        "sha": "a4f92f5",
+        "subject": "Calmer floating assistant: one Done button and the AA mark."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "IPA SHA256 6c4907ef\u2026e11a."
+  },
+  {
+    "schema": 1,
+    "id": "ios:published:287",
+    "platform": "ios",
+    "repo": "astroashva/astroashva-ios",
+    "sha": "fd440d1b8e07d6b0730970c6ffbff8d7ad114074",
+    "tag": null,
+    "version": "1.0.0",
+    "build": "287",
+    "date": "2026-10-23",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "TestFlight: processing VALID; Internal Beta and External Beta IN_BETA_TESTING (App Store Connect API read-back, 25 Oct 2026)",
+    "changes": [
+      {
+        "sha": "fd440d1",
+        "subject": "Sign-in methods: link a phone number, email or Google to your account (not yet visible to users)."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "Upload date is App Store Connect UTC."
+  },
+  {
+    "schema": 1,
+    "id": "ios:published:1196",
+    "platform": "ios",
+    "repo": "astroashva/astroashva-ios",
+    "sha": "ae9c302e45113cf760c171e2c7a02135f5a40e47",
+    "tag": null,
+    "version": "1.0.0",
+    "build": "1196",
+    "date": "2026-10-24",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "TestFlight: processing VALID; Internal Beta and External Beta IN_BETA_TESTING (App Store Connect API read-back, 25 Oct 2026)",
+    "changes": [
+      {
+        "sha": "ae9c302",
+        "subject": "Choose kundali and Add Kundali: the Generate chart button sits under the name, so long names stay visible."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "Build number jumped from 288 to 1196 because the TestFlight lookup failed and the script used the git commit count."
+  },
+  {
+    "schema": 1,
+    "id": "ios:published:1197",
+    "platform": "ios",
+    "repo": "astroashva/astroashva-ios",
+    "sha": "7d33ac50c85cd1b0ae181c7cdb449db1220613bd",
+    "tag": null,
+    "version": "1.0.0",
+    "build": "1197",
+    "date": "2026-10-24",
+    "kind": "published-build",
+    "status": "not_recorded",
+    "deployment": "store",
+    "store_status": "TestFlight: processing VALID; Internal Beta and External Beta IN_BETA_TESTING (App Store Connect API read-back, 25 Oct 2026)",
+    "changes": [
+      {
+        "sha": "7d33ac5",
+        "subject": "Wide windows (iPhone Duo unfolded, iPad split view) keep a comfortable reading width; the kundali chart stays square and centred."
+      }
+    ],
+    "checks": [],
+    "downloads": [],
+    "note": "Upload date is App Store Connect UTC. Checked with width tests on the iPad simulator; no iPhone Duo simulator yet."
+  },
+  {
+    "schema": 1,
     "id": "ios:published:193",
     "platform": "ios",
     "repo": "aastroastra/aastroastra-ios",
