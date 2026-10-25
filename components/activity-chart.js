@@ -54,7 +54,9 @@
   const hero=el('div',null,'activity-chart__bigs');
   if(p&&p.questions_per_person!=null)hero.append(bigStat(String(p.questions_per_person),'{n} AshvaAI questions per person','हर व्यक्ति औसतन {n} AshvaAI सवाल पूछता है'));
   if(p&&p.return_7d_pct!=null)hero.append(bigStat(p.return_7d_pct+'%','{n}% come back within a week','{n}% लोग एक हफ़्ते में दोबारा आते हैं'));
-  if(hero.childNodes.length){box.append(hero);box.append(el('p',copy('Signed-in accounts, our team left out · updated daily','सिर्फ़ साइन-इन खाते, हमारी टीम शामिल नहीं · रोज़ अपडेट'),'activity-chart__note'));}
+  // Benchmark line: our classic Day-7 rate (active on exactly day 7) against the published app average, shown only when we beat it. The 'within a week' rate is never compared.
+  if(hero.childNodes.length&&p&&p.beats_benchmark===true&&p.d7_pct!=null&&p.d7_benchmark_pct!=null){const b=el('p',null,'activity-chart__note');b.append(copy('{n}% use it again on day 7, above the app average of about {b}%','{n}% लोग 7वें दिन फिर इस्तेमाल करते हैं, ऐप औसत (लगभग {b}%) से ज़्यादा').replace('{n}',String(Math.round(p.d7_pct))).replace('{b}',String(p.d7_benchmark_pct)));box.append(hero);box.append(b);hero.dataset.benchmark='1';}
+  if(hero.childNodes.length){if(!hero.dataset.benchmark)box.append(hero);box.append(el('p',copy('Signed-in accounts, our team left out · updated daily','सिर्फ़ साइन-इन खाते, हमारी टीम शामिल नहीं · रोज़ अपडेट'),'activity-chart__note'));}
   if(p&&p.play_rating!=null){const r=el('p',null,'activity-chart__rating');r.append(phrase('{n} on Google Play','Google Play पर {n}',p.play_rating+' ★'));box.append(r);}
   const more=[];
   if(p&&p.cities!=null)more.push(['Kundalis from {n} cities','{n} शहरों की कुंडलियाँ',Number(p.cities).toLocaleString('en-IN')]);
