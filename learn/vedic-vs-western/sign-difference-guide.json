@@ -1,0 +1,836 @@
+{
+  "schema": "astroashva.sign-difference-guide",
+  "version": "guide.signs.v1",
+  "updated": "2026-10-26",
+  "status": "Draft, Amit to review",
+  "review": "Every line, English and Hindi, is a draft for Amit to review. Copy comes from the private Company Hub plan /astrology-guide/ (index.html, guide.js, plan.json, 21 Oct 2026) and the founder brief of 26 Oct 2026. Sources are only the six listed in the plan.",
+  "rules": [
+    "Static content only: the guide computes nothing and no model writes any of it.",
+    "No date-only personal Moon sign or Lagna. Nothing here takes birth details.",
+    "No fetch and no credit charge from opening or using the guide.",
+    "No fear copy, no confidence percentages, no em dashes.",
+    "Never rank one tradition as proven. Explain conventions, not predictive accuracy.",
+    "English mode may show a term as Roman then Devanagari (Rashi · राशि); Hindi mode shows Devanagari first."
+  ],
+  "sync": "Canonical: workspace/docs/sign-difference-guide.json. Byte-identical copies: astroashva-ios Aastroastra/Resources/sign-difference-guide.json, astroashva-android app/src/main/assets/sign-difference-guide.json, astroashva-site learn/vedic-vs-western/sign-difference-guide.json. Edit the canonical file, then copy.",
+  "engine_basis": {
+    "verified_on": "2026-10-26",
+    "zodiac": "sidereal",
+    "ayanamsha": "Lahiri (Chitrapaksha)",
+    "configurable": false,
+    "approx_offset_deg_2026": 24.2,
+    "evidence": [
+      "astroashva-backend supabase/functions/astro-engine/ephemeris/astronomy-engine.ts: Lahiri anchored at 23°15'00.658\" on 21 March 1956; any other ayanamsa throws 'not implemented'.",
+      "astroashva-backend supabase/functions/astro-engine/engine.ts: KP requests with a non-Lahiri ayanamsha are refused.",
+      "Apps have no ayanamsha setting; iOS AyanamshaMethod lists vendor methods for display only."
+    ],
+    "note": "Apps agent may refine this block after tracing the horoscope endpoints and stored sign basis. Personalised labels must use that trace, not this summary.",
+    "apps_trace": [
+      "Added by the apps agent, 26 Oct 2026, after tracing both apps.",
+      "Daily Horoscope sign: the chart's Moon sign (Rashi); with no chart yet, the sidereal (Lahiri) Sun sign from the birth date by ingress dates, labelled 'Sun sign' (iOS Core/Astrology/Models/HoroscopeSign.swift, Android features/dashboard/HoroscopeSignSource). A noon chart for an unknown birth time is not trusted for the Rashi.",
+      "KP screens request ayanamsha KP_NEW; the engine refuses non-Lahiri KP, so those requests are answered by the vendor (supabase/functions/_shared/engine-methods.ts kp_ayanamsa lahiri-only@1). The guide says nothing about KP.",
+      "The app guide shows no personalised label (no 'See my labels'); it is static."
+    ]
+  },
+  "ui": {
+    "title": {
+      "en": "Why is my sign different?",
+      "hi": "मेरी राशि अलग क्यों दिखती है?"
+    },
+    "subtitle": {
+      "en": "Western and Vedic signs, explained simply",
+      "hi": "पश्चिमी और वैदिक राशि, आसान भाषा में"
+    },
+    "entry_row": {
+      "en": "Why is my sign different?",
+      "hi": "मेरी राशि अलग क्यों दिखती है?"
+    },
+    "read_full": {
+      "en": "Read the full guide",
+      "hi": "पूरी गाइड पढ़ें"
+    },
+    "back": {
+      "en": "Back",
+      "hi": "वापस"
+    },
+    "done": {
+      "en": "Done",
+      "hi": "हो गया"
+    },
+    "language_label": {
+      "en": "Guide language",
+      "hi": "गाइड की भाषा"
+    },
+    "draft_badge": {
+      "en": "Draft, Amit to review",
+      "hi": "ड्राफ्ट, अमित की समीक्षा बाकी"
+    },
+    "free_note": {
+      "en": "Reading this guide is free. It does not use your birth details.",
+      "hi": "यह गाइड पढ़ना मुफ़्त है। इसमें आपका जन्म-विवरण इस्तेमाल नहीं होता।"
+    },
+    "kundali_entry": {
+      "en": "Why do my Sun, Moon and Lagna differ?",
+      "hi": "मेरे सूर्य, चंद्र और लग्न अलग क्यों हैं?"
+    },
+    "settings_section": {
+      "en": "Learn",
+      "hi": "सीखें"
+    },
+    "back_to_signs": {
+      "en": "Back to signs",
+      "hi": "राशियों पर वापस"
+    },
+    "glossary_heading": {
+      "en": "Words used here",
+      "hi": "यहाँ इस्तेमाल हुए शब्द"
+    },
+    "explorer_body": {
+      "en": "Body",
+      "hi": "ग्रह"
+    },
+    "explorer_zodiac": {
+      "en": "Zodiac",
+      "hi": "राशि-चक्र"
+    },
+    "lang_en": {
+      "en": "English",
+      "hi": "English"
+    },
+    "lang_hi": {
+      "en": "हिन्दी",
+      "hi": "हिन्दी"
+    }
+  },
+  "concepts": [
+    {
+      "id": "sun",
+      "symbol": "sun",
+      "title": {
+        "en": "Sun sign",
+        "hi": "सूर्य राशि"
+      },
+      "body": {
+        "en": "The sign the Sun was in when you were born. This is the sign most birthday lists give.",
+        "hi": "जन्म के समय सूर्य जिस राशि में था। जन्मदिन वाली सूचियाँ अक्सर यही राशि बताती हैं।"
+      },
+      "needs": {
+        "en": "Needs: birth date (time only near a sign change)",
+        "hi": "चाहिए: जन्म तिथि (राशि बदलने के पास समय भी)"
+      }
+    },
+    {
+      "id": "moon",
+      "symbol": "moon",
+      "title": {
+        "en": "Moon sign · Rashi",
+        "hi": "चंद्र राशि · जन्म राशि"
+      },
+      "body": {
+        "en": "The sign the Moon was in when you were born. In Vedic astrology this is usually what Rashi means.",
+        "hi": "जन्म के समय चंद्रमा जिस राशि में था। वैदिक ज्योतिष में राशि का अर्थ अक्सर यही होता है।"
+      },
+      "needs": {
+        "en": "Needs: birth date, time and place",
+        "hi": "चाहिए: जन्म तिथि, समय और स्थान"
+      }
+    },
+    {
+      "id": "lagna",
+      "symbol": "horizon",
+      "title": {
+        "en": "Lagna · Ascendant",
+        "hi": "लग्न · उदय राशि"
+      },
+      "body": {
+        "en": "The sign rising on the eastern horizon at the moment and place of birth.",
+        "hi": "जन्म के समय और स्थान पर पूर्वी क्षितिज पर उदित हो रही राशि।"
+      },
+      "needs": {
+        "en": "Needs: exact birth time and place",
+        "hi": "चाहिए: जन्म का सही समय और स्थान"
+      }
+    }
+  ],
+  "lanes": {
+    "western": {
+      "title": {
+        "en": "A common Western birthday sign",
+        "hi": "आम पश्चिमी जन्मदिन वाली राशि"
+      },
+      "label": {
+        "en": "Sun · Tropical",
+        "hi": "सूर्य · सायन (ट्रॉपिकल)"
+      },
+      "example": {
+        "en": "23 April: the familiar Taurus from a birthday list",
+        "hi": "23 अप्रैल: जन्मदिन की सूची वाली परिचित वृषभ राशि"
+      }
+    },
+    "vedic": {
+      "title": {
+        "en": "A common Vedic Janma Rashi",
+        "hi": "आम वैदिक जन्म राशि"
+      },
+      "label": {
+        "en": "Moon · Sidereal",
+        "hi": "चंद्रमा · निरयन (सिडीरियल)"
+      },
+      "example": {
+        "en": "Your birth chart: the Moon's sign, never guessed from a birthday list",
+        "hi": "आपकी जन्म कुंडली: चंद्रमा की राशि, जन्मदिन की सूची से अनुमान नहीं"
+      }
+    }
+  },
+  "concise": {
+    "heading": {
+      "en": "One birthday. Several useful labels.",
+      "hi": "एक जन्मदिन। राशि बताने के कई तरीके।"
+    },
+    "intro": {
+      "en": "A birthday list often calls 23 April “Taurus”. That usually means the Sun in the Western, tropical zodiac. A Vedic Janma Rashi usually names the Moon in the sidereal zodiac. So first check two things: which body, and which zodiac.",
+      "hi": "23 अप्रैल के जन्मदिन को अक्सर “वृषभ” कहा जाता है। इसका मतलब आम तौर पर पश्चिमी, सायन राशि-चक्र में सूर्य की राशि होता है। वैदिक जन्म राशि अक्सर निरयन राशि-चक्र में चंद्रमा की राशि होती है। इसलिए पहले दो बातें देखें: किस ग्रह की राशि, और कौन-सा राशि-चक्र।"
+    },
+    "takeaway": {
+      "en": "Two things can differ: which body is named, and where the zodiac starts.",
+      "hi": "दो बातें अलग हो सकती हैं: किसकी राशि बताई जा रही है, और राशि-चक्र कहाँ से शुरू माना गया है।"
+    }
+  },
+  "sections": [
+    {
+      "id": "intro",
+      "eyebrow": {
+        "en": "The surprise",
+        "hi": "हैरानी की बात"
+      },
+      "heading": {
+        "en": "You were told one sign. Your kundali shows another.",
+        "hi": "आपको एक राशि बताई गई थी। कुंडली में दूसरी दिखती है।"
+      },
+      "body": [
+        {
+          "en": "Most people learn their sign from a birthday list in a magazine or an app. Then a Vedic kundali names a different sign, and it can feel as if something is wrong.",
+          "hi": "ज़्यादातर लोग अपनी राशि किसी पत्रिका या ऐप की जन्मदिन वाली सूची से जानते हैं। फिर वैदिक कुंडली कोई दूसरी राशि बताती है, और लगता है कि कहीं कोई गलती है।"
+        },
+        {
+          "en": "Usually nothing is wrong. The two labels answer different questions. Two things can differ: which body in the sky is being named, and where the zodiac is measured from.",
+          "hi": "आम तौर पर कोई गलती नहीं होती। दोनों राशियाँ अलग-अलग सवालों के जवाब हैं। दो बातें अलग हो सकती हैं: आकाश में किस ग्रह की राशि बताई जा रही है, और राशि-चक्र कहाँ से मापा जा रहा है।"
+        }
+      ]
+    },
+    {
+      "id": "object",
+      "eyebrow": {
+        "en": "Difference one: which body",
+        "hi": "पहला अंतर: किसकी राशि"
+      },
+      "heading": {
+        "en": "Sun, Moon and Lagna: three questions about one sky",
+        "hi": "सूर्य, चंद्रमा और लग्न: एक आकाश, तीन सवाल"
+      },
+      "body": [
+        {
+          "en": "At the moment you were born, the Sun, the Moon and the eastern horizon each pointed to a sign. Each one is a real label, and they are often three different signs.",
+          "hi": "आपके जन्म के समय सूर्य, चंद्रमा और पूर्वी क्षितिज, तीनों किसी न किसी राशि में थे। तीनों सही राशियाँ हैं, और अक्सर ये तीन अलग राशियाँ होती हैं।"
+        },
+        {
+          "en": "The Sun spends about a month in each sign, so a birth date is usually enough for the Sun sign. The Moon moves through a sign in about two and a half days, so the Moon sign needs your birth time and place. The Lagna changes roughly every two hours, so it needs an exact birth time.",
+          "hi": "सूर्य हर राशि में लगभग एक महीना रहता है, इसलिए सूर्य राशि के लिए जन्म तिथि अक्सर काफ़ी है। चंद्रमा एक राशि लगभग ढाई दिन में पार करता है, इसलिए चंद्र राशि के लिए जन्म का समय और स्थान चाहिए। लग्न लगभग हर दो घंटे में बदलता है, इसलिए उसके लिए जन्म का सही समय चाहिए।"
+        },
+        {
+          "en": "Western birthday lists name the Sun. Vedic astrology usually means the Moon when it says Rashi.",
+          "hi": "पश्चिमी जन्मदिन सूचियाँ सूर्य की राशि बताती हैं। वैदिक ज्योतिष में राशि कहने का मतलब अक्सर चंद्रमा की राशि होता है।"
+        }
+      ],
+      "diagram": {
+        "id": "one-sky",
+        "caption": {
+          "en": "One sky at one moment of birth. The Sun, the Moon and the rising point each sit in a sign. An illustration, not your chart.",
+          "hi": "जन्म के एक क्षण का एक आकाश। सूर्य, चंद्रमा और उदय बिंदु, हर एक किसी राशि में है। यह चित्र है, आपकी कुंडली नहीं।"
+        },
+        "labels": {
+          "sun": {
+            "en": "Sun",
+            "hi": "सूर्य"
+          },
+          "moon": {
+            "en": "Moon",
+            "hi": "चंद्रमा"
+          },
+          "lagna": {
+            "en": "Lagna",
+            "hi": "लग्न"
+          },
+          "east": {
+            "en": "East",
+            "hi": "पूर्व"
+          },
+          "west": {
+            "en": "West",
+            "hi": "पश्चिम"
+          },
+          "horizon": {
+            "en": "Horizon",
+            "hi": "क्षितिज"
+          },
+          "earth": {
+            "en": "You",
+            "hi": "आप"
+          }
+        }
+      }
+    },
+    {
+      "id": "zodiac",
+      "eyebrow": {
+        "en": "Difference two: where the zodiac starts",
+        "hi": "दूसरा अंतर: राशि-चक्र की शुरुआत"
+      },
+      "heading": {
+        "en": "Tropical and sidereal: the same twelve signs, a different starting point",
+        "hi": "सायन और निरयन: वही बारह राशियाँ, अलग शुरुआत"
+      },
+      "body": [
+        {
+          "en": "Both systems divide the sky into twelve equal signs of 30 degrees each. They differ in where Aries begins.",
+          "hi": "दोनों पद्धतियाँ आकाश को 30-30 अंश की बारह बराबर राशियों में बाँटती हैं। अंतर इसमें है कि मेष कहाँ से शुरू होता है।"
+        },
+        {
+          "en": "The tropical zodiac, used by most Western astrologers, starts Aries at the March equinox. The sidereal zodiac, used in Jyotish, ties the signs to a reference among the stars.",
+          "hi": "सायन (ट्रॉपिकल) राशि-चक्र, जो ज़्यादातर पश्चिमी ज्योतिषी लेते हैं, मेष की शुरुआत मार्च के विषुव से करता है। निरयन (सिडीरियल) राशि-चक्र, जो ज्योतिष में लिया जाता है, राशियों को तारों के एक संदर्भ से जोड़ता है।"
+        },
+        {
+          "en": "Because Earth's axis slowly wobbles, the equinox drifts against the stars by about one degree every 72 years. The gap between the two zodiacs is called the ayanamsha. Today it is roughly 24 degrees, and different schools use slightly different values.",
+          "hi": "पृथ्वी की धुरी धीरे-धीरे डोलती है, इसलिए विषुव तारों के सापेक्ष लगभग हर 72 साल में एक अंश खिसक जाता है। दोनों राशि-चक्रों के बीच के अंतर को अयनांश कहते हैं। आज यह लगभग 24 अंश है, और अलग-अलग पद्धतियाँ थोड़े अलग मान लेती हैं।"
+        },
+        {
+          "en": "So the same Sun can carry two names. With a gap of about 24 degrees, the sidereal Sun sign is usually one sign earlier than the Western one. Not always: if the Sun sits in the last six degrees or so of a Western sign, both systems name the same sign.",
+          "hi": "इसलिए एक ही सूर्य के दो नाम हो सकते हैं। लगभग 24 अंश के अंतर से निरयन सूर्य राशि अक्सर पश्चिमी राशि से एक राशि पहले आती है। हमेशा नहीं: अगर सूर्य किसी पश्चिमी राशि के आख़िरी लगभग छह अंशों में है, तो दोनों पद्धतियाँ एक ही राशि बताती हैं।"
+        }
+      ],
+      "diagram": {
+        "id": "zodiac-wheel",
+        "offset_deg": 24,
+        "caption": {
+          "en": "Outer ring: tropical signs, starting at the March equinox. Inner ring: sidereal signs, turned back by the ayanamsha of about 24 degrees. Equal 30 degree signs, not the uneven star constellations.",
+          "hi": "बाहरी घेरा: सायन राशियाँ, मार्च के विषुव से शुरू। भीतरी घेरा: निरयन राशियाँ, लगभग 24 अंश के अयनांश से पीछे घूमी हुई। ये 30 अंश की बराबर राशियाँ हैं, अलग-अलग आकार के तारामंडल नहीं।"
+        },
+        "labels": {
+          "tropical": {
+            "en": "Tropical",
+            "hi": "सायन"
+          },
+          "sidereal": {
+            "en": "Sidereal",
+            "hi": "निरयन"
+          },
+          "equinox": {
+            "en": "March equinox",
+            "hi": "मार्च विषुव"
+          },
+          "ayanamsha": {
+            "en": "Ayanamsha ≈ 24°",
+            "hi": "अयनांश ≈ 24°"
+          },
+          "example_shift": {
+            "en": "Tropical 10° Taurus = sidereal 16° Aries",
+            "hi": "सायन वृषभ 10° = निरयन मेष 16°"
+          },
+          "example_same": {
+            "en": "Tropical 27° Taurus = sidereal 3° Taurus",
+            "hi": "सायन वृषभ 27° = निरयन वृषभ 3°"
+          }
+        },
+        "examples_tropical_deg": [
+          40,
+          57
+        ]
+      }
+    },
+    {
+      "id": "you",
+      "eyebrow": {
+        "en": "What this means for you",
+        "hi": "आपके लिए इसका मतलब"
+      },
+      "heading": {
+        "en": "Your Vedic Rashi comes from your birth chart, not your birthday",
+        "hi": "आपकी वैदिक राशि कुंडली से आती है, जन्मदिन से नहीं"
+      },
+      "body": [
+        {
+          "en": "Put the two differences together and a Western Sun sign and a Vedic Moon Rashi can be far apart. That is expected. Neither label cancels the other.",
+          "hi": "दोनों अंतर साथ रखें तो पश्चिमी सूर्य राशि और वैदिक चंद्र राशि काफ़ी अलग हो सकती हैं। यह स्वाभाविक है। कोई भी राशि दूसरी को गलत नहीं बनाती।"
+        },
+        {
+          "en": "A birth date alone cannot give your Moon sign or Lagna. They need your birth time and place, and the chosen zodiac and ayanamsha.",
+          "hi": "सिर्फ़ जन्म तिथि से आपकी चंद्र राशि या लग्न नहीं निकलते। इनके लिए जन्म का समय और स्थान, और चुना हुआ राशि-चक्र और अयनांश चाहिए।"
+        },
+        {
+          "en": "If two charts still disagree, compare the inputs first: the date format, AM or PM, the time zone and daylight saving at birth, the place, the zodiac and the ayanamsha. If they all match and the charts still differ, that is worth reporting.",
+          "hi": "अगर दो कुंडलियाँ फिर भी अलग हों, तो पहले विवरण मिलाएँ: तारीख़ का प्रारूप, सुबह या शाम, जन्म के समय का समय-क्षेत्र और डेलाइट सेविंग, स्थान, राशि-चक्र और अयनांश। सब मिलने पर भी कुंडलियाँ अलग हों, तो इसकी सूचना देना ठीक है।"
+        }
+      ]
+    },
+    {
+      "id": "astroashva",
+      "eyebrow": {
+        "en": "What AstroAshva uses",
+        "hi": "AstroAshva क्या इस्तेमाल करता है"
+      },
+      "heading": {
+        "en": "Sidereal zodiac, Lahiri ayanamsha",
+        "hi": "निरयन राशि-चक्र, लाहिड़ी अयनांश"
+      },
+      "body": [
+        {
+          "en": "AstroAshva's own chart engine calculates positions in the sidereal zodiac with the Lahiri (Chitrapaksha) ayanamsha. It is the only ayanamsha the engine computes, and the app has no setting to change it today.",
+          "hi": "AstroAshva का अपना कुंडली इंजन ग्रहों की स्थिति निरयन राशि-चक्र में लाहिड़ी (चित्रापक्ष) अयनांश से निकालता है। इंजन यही एक अयनांश इस्तेमाल करता है, और अभी ऐप में इसे बदलने की कोई सेटिंग नहीं है।"
+        },
+        {
+          "en": "So the Rashi you see in a kundali you make in the app is the Moon's sidereal sign from that chart's date, time and place.",
+          "hi": "इसलिए ऐप में बनाई गई कुंडली में दिखने वाली राशि, उस कुंडली की तिथि, समय और स्थान से निकली चंद्रमा की निरयन राशि है।"
+        }
+      ],
+      "facts": [
+        {
+          "k": {
+            "en": "Zodiac",
+            "hi": "राशि-चक्र"
+          },
+          "v": {
+            "en": "Sidereal",
+            "hi": "निरयन"
+          }
+        },
+        {
+          "k": {
+            "en": "Ayanamsha",
+            "hi": "अयनांश"
+          },
+          "v": {
+            "en": "Lahiri (Chitrapaksha)",
+            "hi": "लाहिड़ी (चित्रापक्ष)"
+          }
+        },
+        {
+          "k": {
+            "en": "Rashi means",
+            "hi": "राशि का अर्थ"
+          },
+          "v": {
+            "en": "The Moon's sign in your chart",
+            "hi": "आपकी कुंडली में चंद्रमा की राशि"
+          }
+        },
+        {
+          "k": {
+            "en": "Can I change it?",
+            "hi": "क्या इसे बदल सकते हैं?"
+          },
+          "v": {
+            "en": "Not in the app today",
+            "hi": "अभी ऐप में नहीं"
+          }
+        }
+      ]
+    },
+    {
+      "id": "explorer",
+      "eyebrow": {
+        "en": "Try it",
+        "hi": "ख़ुद देखें"
+      },
+      "heading": {
+        "en": "Explore the label",
+        "hi": "राशि के लेबल को समझें"
+      },
+      "body": [
+        {
+          "en": "Pick a body and a zodiac. This is a learning demo: no birth details are entered and nothing is calculated.",
+          "hi": "एक ग्रह और एक राशि-चक्र चुनें। यह समझने का उदाहरण है: यहाँ जन्म-विवरण नहीं लिया जाता और कुछ भी गणना नहीं होती।"
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "eyebrow": {
+        "en": "Questions",
+        "hi": "सवाल"
+      },
+      "heading": {
+        "en": "Common questions",
+        "hi": "आम सवाल"
+      },
+      "body": []
+    },
+    {
+      "id": "sources",
+      "eyebrow": {
+        "en": "Sources",
+        "hi": "स्रोत"
+      },
+      "heading": {
+        "en": "Sources and limits",
+        "hi": "स्रोत और सीमाएँ"
+      },
+      "body": [
+        {
+          "en": "These sources support the definitions on this page. They do not validate any prediction.",
+          "hi": "ये स्रोत इस पेज की परिभाषाओं का आधार हैं। ये किसी भविष्यवाणी को प्रमाणित नहीं करते।"
+        },
+        {
+          "en": "Both traditions can use the Sun, the Moon and the Ascendant. These are common conventions, not a claim that every Western or Vedic astrologer uses one method. Astrology is a tradition of interpretation; an accurately computed sky position does not show that a prediction is accurate.",
+          "hi": "दोनों परंपराओं में सूर्य, चंद्रमा और लग्न देखे जा सकते हैं। यहाँ आम प्रचलन समझाया गया है; हर पश्चिमी या वैदिक ज्योतिषी एक ही तरीका नहीं अपनाता। ज्योतिष व्याख्या की परंपरा है। ग्रह की सही स्थिति निकालना भविष्यवाणी की सटीकता का प्रमाण नहीं है।"
+        }
+      ]
+    }
+  ],
+  "explorer": {
+    "objects": {
+      "sun": {
+        "en": "Sun",
+        "hi": "सूर्य"
+      },
+      "moon": {
+        "en": "Moon",
+        "hi": "चंद्रमा"
+      },
+      "lagna": {
+        "en": "Lagna",
+        "hi": "लग्न"
+      }
+    },
+    "zodiacs": {
+      "tropical": {
+        "en": "Tropical",
+        "hi": "सायन"
+      },
+      "sidereal": {
+        "en": "Sidereal",
+        "hi": "निरयन"
+      }
+    },
+    "states": {
+      "sun.tropical": {
+        "en": "The familiar birthday-list question. 23 April is usually called Taurus here. Near the change of sign, the exact time and time zone matter.",
+        "hi": "जन्मदिन की सूची वाला परिचित सवाल। यहाँ 23 अप्रैल को आम तौर पर वृषभ कहा जाता है। राशि बदलने के आसपास जन्म का सही समय और समय-क्षेत्र मायने रखते हैं।"
+      },
+      "sun.sidereal": {
+        "en": "Still the Sun, now measured from the sidereal start. The ayanamsha usually moves the name back one sign, but not always, so the label needs a real calculation for the date.",
+        "hi": "सूर्य वही है, पर अब निरयन शुरुआत से मापा गया। अयनांश से नाम अक्सर एक राशि पीछे जाता है, पर हमेशा नहीं, इसलिए उस तिथि की असली गणना चाहिए।"
+      },
+      "moon.tropical": {
+        "en": "The Moon's sign in the Western zodiac. Western astrologers also read it, but it is rarely the sign people mean by their birthday sign. It needs birth time and place.",
+        "hi": "पश्चिमी राशि-चक्र में चंद्रमा की राशि। पश्चिमी ज्योतिषी भी इसे देखते हैं, पर जन्मदिन वाली राशि का मतलब आम तौर पर यह नहीं होता। इसके लिए जन्म का समय और स्थान चाहिए।"
+      },
+      "moon.sidereal": {
+        "en": "This is what a Vedic kundali usually calls your Rashi. Only a birth chart with date, time and place gives it. We do not guess it here.",
+        "hi": "वैदिक कुंडली में आम तौर पर इसी को आपकी राशि कहते हैं। यह सिर्फ़ तिथि, समय और स्थान वाली जन्म कुंडली से मिलती है। यहाँ इसका अनुमान नहीं लगाया जाता।"
+      },
+      "lagna.tropical": {
+        "en": "The Western Ascendant or rising sign. It needs the exact birth time and place, and it changes about every two hours.",
+        "hi": "पश्चिमी लग्न या राइज़िंग साइन। इसके लिए जन्म का सही समय और स्थान चाहिए, और यह लगभग हर दो घंटे में बदलता है।"
+      },
+      "lagna.sidereal": {
+        "en": "The Vedic Lagna. Same rising point, measured from the sidereal start. It needs the exact birth time and place. No personal Lagna is calculated in this guide.",
+        "hi": "वैदिक लग्न। वही उदय बिंदु, निरयन शुरुआत से मापा गया। इसके लिए जन्म का सही समय और स्थान चाहिए। इस गाइड में आपका व्यक्तिगत लग्न नहीं निकाला जाता।"
+      }
+    }
+  },
+  "faq": [
+    {
+      "id": "shift",
+      "q": {
+        "en": "Does everyone's sign move back by one?",
+        "hi": "क्या हर किसी की राशि एक पीछे हो जाती है?"
+      },
+      "a": {
+        "en": "No. For the Sun, the sidereal sign is usually one sign earlier, but people born in the last week or so of a Western sign keep the same sign. And the Vedic Rashi is usually the Moon, a different body, so no simple shift gives it.",
+        "hi": "नहीं। सूर्य के लिए निरयन राशि अक्सर एक राशि पहले आती है, पर किसी पश्चिमी राशि के आख़िरी लगभग एक हफ़्ते में जन्मे लोगों की राशि वही रहती है। और वैदिक राशि आम तौर पर चंद्रमा की होती है, जो अलग ग्रह है, इसलिए कोई आसान खिसकाव उसे नहीं बताता।"
+      }
+    },
+    {
+      "id": "which",
+      "q": {
+        "en": "Which horoscope should I read?",
+        "hi": "मुझे कौन-सा राशिफल पढ़ना चाहिए?"
+      },
+      "a": {
+        "en": "Read the one whose basis is stated, and compare like with like. You can browse any sign; browsing does not change your birth chart. This guide explains conventions and does not rank either tradition as a proven predictor.",
+        "hi": "वह राशिफल पढ़ें जिसका आधार साफ़ बताया गया हो, और एक जैसी चीज़ों की तुलना करें। आप कोई भी राशि देख सकते हैं; इससे आपकी जन्म कुंडली नहीं बदलती। यह गाइड प्रचलन समझाती है, किसी परंपरा को सिद्ध भविष्यवक्ता नहीं बताती।"
+      }
+    },
+    {
+      "id": "nasa",
+      "q": {
+        "en": "Did NASA change my zodiac sign?",
+        "hi": "क्या NASA ने मेरी राशि बदल दी?"
+      },
+      "a": {
+        "en": "No. Astronomical constellations and the twelve equal astrological signs are different definitions. Precession explains why the reference points drift; it does not assign anyone a new sign. NASA's astronomy material does not endorse astrology.",
+        "hi": "नहीं। खगोलीय तारामंडल और ज्योतिष की बारह बराबर राशियाँ अलग परिभाषाएँ हैं। अयन-चलन बताता है कि संदर्भ बिंदु क्यों खिसकते हैं; इससे किसी की नई राशि तय नहीं होती। NASA की खगोल सामग्री ज्योतिष का समर्थन नहीं करती।"
+      }
+    },
+    {
+      "id": "wrong",
+      "q": {
+        "en": "Is my old sign wrong?",
+        "hi": "क्या मेरी पुरानी राशि गलत थी?"
+      },
+      "a": {
+        "en": "Not necessarily. A Western Sun sign and a Vedic Moon Rashi are both valid labels for different things. Just say which one you mean.",
+        "hi": "ज़रूरी नहीं। पश्चिमी सूर्य राशि और वैदिक चंद्र राशि, दोनों अलग चीज़ों के लिए सही नाम हैं। बस यह बताएँ कि आप किसकी बात कर रहे हैं।"
+      }
+    }
+  ],
+  "glossary": [
+    {
+      "term": {
+        "en": "Rashi · राशि",
+        "hi": "राशि · Rashi"
+      },
+      "def": {
+        "en": "A sign. In Vedic use, often short for the Moon sign.",
+        "hi": "राशि। वैदिक प्रयोग में अक्सर चंद्र राशि के लिए।"
+      }
+    },
+    {
+      "term": {
+        "en": "Lagna · लग्न",
+        "hi": "लग्न · Lagna"
+      },
+      "def": {
+        "en": "The sign rising in the east at birth; the Ascendant.",
+        "hi": "जन्म के समय पूर्व में उदित राशि; असेंडेंट।"
+      }
+    },
+    {
+      "term": {
+        "en": "Tropical · सायन",
+        "hi": "सायन · Tropical"
+      },
+      "def": {
+        "en": "Zodiac measured from the March equinox.",
+        "hi": "मार्च विषुव से मापा गया राशि-चक्र।"
+      }
+    },
+    {
+      "term": {
+        "en": "Sidereal · निरयन",
+        "hi": "निरयन · Sidereal"
+      },
+      "def": {
+        "en": "Zodiac tied to a reference among the stars.",
+        "hi": "तारों के संदर्भ से जुड़ा राशि-चक्र।"
+      }
+    },
+    {
+      "term": {
+        "en": "Ayanamsha · अयनांश",
+        "hi": "अयनांश · Ayanamsha"
+      },
+      "def": {
+        "en": "The gap between the tropical and sidereal zodiacs, about 24 degrees today.",
+        "hi": "सायन और निरयन राशि-चक्र के बीच का अंतर, आज लगभग 24 अंश।"
+      }
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.astro.com/astrowiki/en/Taurus",
+      "label": {
+        "en": "Astrodienst: Taurus",
+        "hi": "Astrodienst: वृषभ"
+      },
+      "supports": "late-April Taurus birthday label"
+    },
+    {
+      "url": "https://www.drikpanchang.com/utilities/horoscope/hindu-moonsign-calculator.html",
+      "label": {
+        "en": "Drik Panchang: Moon sign (Rashi) calculator",
+        "hi": "द्रिक पंचांग: चंद्र राशि कैलकुलेटर"
+      },
+      "supports": "Janma Rashi is the Moon sign"
+    },
+    {
+      "url": "https://www.astro.com/astrowiki/en/Zodiac",
+      "label": {
+        "en": "Astrodienst: Zodiac",
+        "hi": "Astrodienst: राशि-चक्र"
+      },
+      "supports": "tropical and sidereal signs; signs are not constellations"
+    },
+    {
+      "url": "https://www.astro.com/swisseph/swisseph.htm",
+      "label": {
+        "en": "Swiss Ephemeris documentation: ayanamshas",
+        "hi": "स्विस एफ़ेमेरिस दस्तावेज़: अयनांश"
+      },
+      "supports": "date-dependent offset; several ayanamsha conventions"
+    },
+    {
+      "url": "https://www.astro.com/faq/fq_fh_natal_e.htm",
+      "label": {
+        "en": "Astrodienst: birth chart FAQ",
+        "hi": "Astrodienst: जन्म कुंडली FAQ"
+      },
+      "supports": "Ascendant definition; birth time needed"
+    },
+    {
+      "url": "https://science.nasa.gov/learn/basics-of-space-flight/chapter2-1/",
+      "label": {
+        "en": "NASA: reference systems",
+        "hi": "NASA: संदर्भ प्रणालियाँ"
+      },
+      "supports": "precession of the equinoxes"
+    }
+  ],
+  "analytics": {
+    "events": {
+      "sign_guide_opened": [
+        "entry"
+      ],
+      "sign_guide_section_viewed": [
+        "section"
+      ]
+    },
+    "section_ids": [
+      "intro",
+      "object",
+      "zodiac",
+      "you",
+      "astroashva",
+      "explorer",
+      "faq",
+      "sources"
+    ],
+    "privacy": "No birth data, sign values, profile ids or question text in these events.",
+    "app_entry_ids": [
+      "horoscope_sheet",
+      "horoscope_sign_help",
+      "kundali_labels",
+      "settings_learn"
+    ],
+    "app_note": "Apps: sign_guide_opened {entry} once per open; sign_guide_section_viewed {section} once per section per open (intro when the short in-sheet guide shows, the rest as the full guide scrolls to them)."
+  },
+  "signs": [
+    {
+      "en": "Aries",
+      "hi": "मेष"
+    },
+    {
+      "en": "Taurus",
+      "hi": "वृषभ"
+    },
+    {
+      "en": "Gemini",
+      "hi": "मिथुन"
+    },
+    {
+      "en": "Cancer",
+      "hi": "कर्क"
+    },
+    {
+      "en": "Leo",
+      "hi": "सिंह"
+    },
+    {
+      "en": "Virgo",
+      "hi": "कन्या"
+    },
+    {
+      "en": "Libra",
+      "hi": "तुला"
+    },
+    {
+      "en": "Scorpio",
+      "hi": "वृश्चिक"
+    },
+    {
+      "en": "Sagittarius",
+      "hi": "धनु"
+    },
+    {
+      "en": "Capricorn",
+      "hi": "मकर"
+    },
+    {
+      "en": "Aquarius",
+      "hi": "कुंभ"
+    },
+    {
+      "en": "Pisces",
+      "hi": "मीन"
+    }
+  ],
+  "web": {
+    "path": "/learn/vedic-vs-western/",
+    "title": {
+      "en": "Why is my sign different? Western vs Vedic · AstroAshva",
+      "hi": "मेरी राशि अलग क्यों दिखती है? पश्चिमी और वैदिक · AstroAshva"
+    },
+    "description": {
+      "en": "A short illustrated guide: why your Western birthday sign and your Vedic Rashi can differ. Sun, Moon and Lagna, tropical and sidereal zodiacs, and the ayanamsha.",
+      "hi": "एक छोटी सचित्र गाइड: आपकी पश्चिमी जन्मदिन वाली राशि और वैदिक राशि अलग क्यों हो सकती हैं। सूर्य, चंद्रमा और लग्न, सायन और निरयन राशि-चक्र, और अयनांश।"
+    },
+    "eyebrow": {
+      "en": "Learn · Western and Vedic",
+      "hi": "सीखें · पश्चिमी और वैदिक"
+    },
+    "nav": {
+      "object": {
+        "en": "01 · Which body",
+        "hi": "०१ · किसकी राशि"
+      },
+      "zodiac": {
+        "en": "02 · Which zodiac",
+        "hi": "०२ · कौन-सा राशि-चक्र"
+      },
+      "you": {
+        "en": "03 · For you",
+        "hi": "०३ · आपके लिए"
+      }
+    },
+    "cta": {
+      "en": "Read the full guide",
+      "hi": "पूरी गाइड पढ़ें"
+    },
+    "needs_heading": {
+      "en": "What each label needs",
+      "hi": "हर राशि के लिए क्या चाहिए"
+    },
+    "explorer_body": {
+      "en": "Body",
+      "hi": "ग्रह"
+    },
+    "explorer_zodiac": {
+      "en": "Zodiac",
+      "hi": "राशि-चक्र"
+    },
+    "glossary_heading": {
+      "en": "Words used here",
+      "hi": "यहाँ इस्तेमाल हुए शब्द"
+    },
+    "related": {
+      "en": "Discover Jyotish: the illustrated journey",
+      "hi": "ज्योतिष को जानें: चित्रों के साथ यात्रा"
+    },
+    "back_home": {
+      "en": "Back to AstroAshva",
+      "hi": "AstroAshva पर वापस"
+    },
+    "back_top": {
+      "en": "Back to the top ↑",
+      "hi": "ऊपर जाएँ ↑"
+    },
+    "terms": {
+      "en": "Terms",
+      "hi": "शर्तें"
+    },
+    "footer_line": {
+      "en": "Know which sign you mean. Then read it well.",
+      "hi": "पहले जानें कौन-सी राशि। फिर उसे ध्यान से पढ़ें।"
+    }
+  }
+}
