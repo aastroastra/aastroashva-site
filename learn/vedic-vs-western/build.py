@@ -10,8 +10,10 @@ apps. Edit the canonical file, copy it here, then rebuild. All copy and both
 diagrams are static HTML/SVG, so the page reads fully without JavaScript;
 guide.js only drives the label explorer.
 
-DRAFT: the page carries noindex and stays out of sitemap.xml and llms.txt
-until Amit approves the content (PUBLISHED = False below).
+Copy: only the approved_copy block (Amit approved the Hub plan and prototype
+copy, 26 Oct 2026), rendered verbatim. Lines added for the web page are listed
+in approved_copy.web_added_lines. PUBLISHED = True: indexable, in sitemap.xml
+and llms.txt.
 """
 import html
 import json
@@ -21,11 +23,23 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 SITE = "https://www.astroashva.com"
-PUBLISHED = False  # flip only after Amit's review; then drop the draft banner too
+PUBLISHED = True  # Amit approved the copy 26 Oct 2026; False restores noindex and the draft banner
 
 G = json.loads((HERE / "sign-difference-guide.json").read_text())
-W = G["web"]
+A = G["approved_copy"]  # Amit-approved EN/HI copy (Hub plan + prototype), rendered verbatim
+W = G["web"]            # page chrome only: path and footer links
 SEC = {s["id"]: s for s in G["sections"]}
+
+
+def T(en, hi):
+    return {"en": en, "hi": hi}
+
+
+# Diagram labels: names only, no numbers or worked examples (see approved_copy.web_added_lines).
+SKY = {"sun": A["explorer"]["names"]["sun"], "moon": A["explorer"]["names"]["moon"], "lagna": T("Lagna", "लग्न"),
+       "east": T("East", "पूर्व"), "west": T("West", "पश्चिम"), "horizon": T("Horizon", "क्षितिज"), "earth": T("You", "आप")}
+WHEEL = {"tropical": A["explorer"]["names"]["tropical"], "sidereal": A["explorer"]["names"]["sidereal"],
+         "equinox": T("March equinox", "मार्च विषुव"), "ayanamsha": T("Ayanamsha", "अयनांश")}
 
 
 def esc(s):
@@ -77,13 +91,12 @@ def arc(cx, cy, r, a0, a1):
 
 
 def wheel_svg():
-    d = SEC["zodiac"]["diagram"]
-    lab = d["labels"]
-    off = d["offset_deg"]
+    lab = WHEEL
+    off = SEC["zodiac"]["diagram"]["offset_deg"]  # drawing only; no number is printed
     cx = cy = 300
     ro, rm, ri, rc = 282, 228, 174, 120  # outer edge, ring split, inner edge, core
     parts = [f'<svg viewBox="0 0 600 600" class="illustration wheel" role="img" aria-labelledby="wheel-title">',
-             f'<title id="wheel-title">{esc(d["caption"]["en"])}</title>',
+             f'<title id="wheel-title">{esc(A["technical"]["body"]["en"])}</title>',
              f'<circle cx="{cx}" cy="{cy}" r="{ro}" class="ring-tropical"/>',
              f'<circle cx="{cx}" cy="{cy}" r="{rm}" class="ring-sidereal"/>',
              f'<circle cx="{cx}" cy="{cy}" r="{ri}" class="paper-fill fine"/>']
@@ -93,13 +106,6 @@ def wheel_svg():
         parts.append(f'<path d="M{x0:.1f} {y0:.1f}L{x1:.1f} {y1:.1f}" class="wheel-tick"/>')
         x0, y0 = pt(cx, cy, ri, 30 * k + off); x1, y1 = pt(cx, cy, rm, 30 * k + off)
         parts.append(f'<path d="M{x0:.1f} {y0:.1f}L{x1:.1f} {y1:.1f}" class="wheel-tick"/>')
-    # Two example Suns: one that moves back a sign, one that keeps its sign.
-    for i, lam in enumerate(d["examples_tropical_deg"]):
-        x0, y0 = pt(cx, cy, rc + 26, lam); x1, y1 = pt(cx, cy, ro, lam)
-        parts.append(f'<path d="M{x0:.1f} {y0:.1f}L{x1:.1f} {y1:.1f}" class="example-ray ex{i}"/>')
-        x, y = pt(cx, cy, rc + 26, lam)
-        parts.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="7" class="sun-fill ex{i}"/>'
-                     f'<text x="{x:.1f}" y="{y:.1f}" class="ex-num">{i + 1}</text>')
     # The equinox line and the ayanamsha arc between the two Aries starts.
     x0, y0 = pt(cx, cy, rc - 8, 0); x1, y1 = pt(cx, cy, ro + 12, 0)
     parts.append(f'<path d="M{x0:.1f} {y0:.1f}L{x1:.1f} {y1:.1f}" class="equinox-line"/>')
@@ -111,23 +117,20 @@ def wheel_svg():
         parts.append(svg_text(name, x, y, "sign-name" + (" is-aries" if k == 0 else "")))
         x, y = pt(cx, cy, (rm + ri) / 2, 30 * k + 15 + off)
         parts.append(svg_text(name, x, y, "sign-name sidereal" + (" is-aries" if k == 0 else "")))
-    # Core labels (the example lines sit under the drawing as text).
+    # Core labels.
     parts.append(svg_text(lab["tropical"], cx, cy - 64, "diagram-caption"))
     parts.append(svg_text(lab["sidereal"], cx, cy - 42, "diagram-caption sidereal-text"))
     parts.append(svg_text(lab["equinox"], cx - 44, cy - 12, "diagram-small"))
-    parts.append(svg_text(lab["ayanamsha"], cx - 36, cy + 40, "diagram-name accent-text"))
+    parts.append(svg_text(lab["ayanamsha"], cx - 30, cy + 40, "diagram-name accent-text"))
     parts.append("</svg>")
-    # The two example lines also sit under the drawing as text, for small screens and readers.
-    legend = (f'<ol class="wheel-legend"><li>{L(lab["example_shift"])}</li><li>{L(lab["example_same"])}</li></ol>')
-    return "".join(parts), legend
+    return "".join(parts)
 
 
 def sky_svg():
-    d = SEC["object"]["diagram"]
-    lab = d["labels"]
+    lab = SKY
     cx, cy, rx, ry = 300, 400, 250, 250
     p = [f'<svg viewBox="0 0 600 470" class="illustration sky" role="img" aria-labelledby="sky-title">',
-         f'<title id="sky-title">{esc(d["caption"]["en"])}</title>']
+         f'<title id="sky-title">{esc(" ".join(c["body"]["en"] for c in A["concepts"]))}</title>']
     # Faint stars.
     for x, y, r in [(90, 90, 1.6), (160, 40, 1.2), (250, 70, 1.4), (350, 34, 1.2), (430, 80, 1.7), (520, 50, 1.2),
                     (560, 150, 1.4), (40, 190, 1.2), (120, 250, 1.1), (480, 230, 1.3), (300, 120, 1.0)]:
@@ -172,17 +175,11 @@ def sky_svg():
 
 # ---- Page ------------------------------------------------------------------
 
-def paras(sec, cls="lead"):
-    return "".join(L(b, "p", cls if i == 0 else "body") for i, b in enumerate(sec["body"]))
-
-
-def chapter(num, sec, art="", wide=False, extra=""):
-    return (f'<section class="chapter{" chapter-wide" if wide else ""}" id="{sec["id"]}" data-section="{sec["id"]}">'
+def section(num, sid, heading, inner, art="", wide=False):
+    return (f'<section class="chapter{" chapter-wide" if wide else ""}" id="{sid}">'
             f'<div class="chapter-pin"><span class="chapter-number">{num:02d}</span></div>'
-            f'<div class="chapter-grid"><div class="chapter-copy">{L(sec["eyebrow"], "p", "eyebrow")}{L(sec["heading"], "h2")}'
-            f'{paras(sec)}{extra}</div>'
-            + (f'<div class="art-panel">{art}</div>' if art else "")
-            + "</div></section>")
+            f'<div class="chapter-grid"><div class="chapter-copy">{L(heading, "h2")}{inner}</div>'
+            + (f'<div class="art-panel">{art}</div>' if art else "") + "</div></section>")
 
 
 SYMBOL = {
@@ -190,65 +187,54 @@ SYMBOL = {
            + "".join(f'<path d="M{24 + 14 * math.cos(math.radians(a)):.1f} {24 + 14 * math.sin(math.radians(a)):.1f}L{24 + 19 * math.cos(math.radians(a)):.1f} {24 + 19 * math.sin(math.radians(a)):.1f}"/>' for a in range(0, 360, 45))
            + "</g></svg>",
     "moon": '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M28 8A17 17 0 1 0 40 32A13 13 0 0 1 28 8Z" class="moon-fill"/></svg>',
-    "horizon": '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 34H44" class="ink-line"/><path d="M12 34A12 12 0 0 1 36 34" class="accent-line"/><path d="M24 22V8M18 14L24 7L30 14" class="accent-line"/></svg>',
+    "lagna": '<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 34H44" class="ink-line"/><path d="M12 34A12 12 0 0 1 36 34" class="accent-line"/><path d="M24 22V8M18 14L24 7L30 14" class="accent-line"/></svg>',
 }
 
 
 def concept_cards():
-    out = []
-    for c in G["concepts"]:
-        out.append(f'<article class="concept">{SYMBOL[c["symbol"]]}{L(c["title"], "h3")}{L(c["body"], "p")}'
-                   f'{L(c["needs"], "p", "needs")}</article>')
-    return f'<div class="concepts">{"".join(out)}</div>'
+    return '<div class="concepts">' + "".join(
+        f'<article class="concept">{SYMBOL[c["id"]]}{L(c["title"], "h3")}{L(c["body"], "p")}</article>'
+        for c in A["concepts"]) + "</div>"
 
 
 def lanes():
-    w, v = G["lanes"]["western"], G["lanes"]["vedic"]
     lane = lambda x, cls: (f'<article class="lane {cls}">{L(x["title"], "p", "lane-title")}'
                            f'{L(x["label"], "p", "lane-label")}{L(x["example"], "p", "lane-example")}</article>')
-    return (f'<div class="lanes">{lane(w, "western")}<span class="lane-bridge" aria-hidden="true">↔</span>'
-            f'{lane(v, "vedic")}</div>{L(G["concise"]["takeaway"], "p", "takeaway")}')
-
-
-def needs_table():
-    rows = "".join(f'<li>{SYMBOL[c["symbol"]]}<div>{L(c["title"], "strong")}{L(c["needs"], "span")}</div></li>' for c in G["concepts"])
-    return f'<div class="needs-card">{L(W["needs_heading"], "p", "eyebrow")}<ul class="needs-list">{rows}</ul></div>'
-
-
-def facts():
-    rows = "".join(f'<div class="fact"><dt>{L(f["k"])}</dt><dd>{L(f["v"])}</dd></div>' for f in SEC["astroashva"]["facts"])
-    return f'<dl class="facts">{rows}</dl>'
+    return (f'<div class="lanes">{lane(A["lanes"]["western"], "western")}<span class="lane-bridge" aria-hidden="true">↔</span>'
+            f'{lane(A["lanes"]["vedic"], "vedic")}</div>{L(A["takeaway"], "p", "takeaway")}')
 
 
 def explorer():
-    ex = G["explorer"]
-    objs = "".join(f'<button type="button" data-object="{k}" aria-pressed="{str(k == "sun").lower()}">{L(v)}</button>' for k, v in ex["objects"].items())
-    zods = "".join(f'<button type="button" data-zodiac="{k}" aria-pressed="{str(k == "tropical").lower()}">{L(v)}</button>' for k, v in ex["zodiacs"].items())
+    ex = A["explorer"]
+    n = ex["names"]
+    objs = "".join(f'<button type="button" data-object="{k}" aria-pressed="{str(k == "sun").lower()}">{L(n[k])}</button>' for k in ("sun", "moon", "rising"))
+    zods = "".join(f'<button type="button" data-zodiac="{k}" aria-pressed="{str(k == "tropical").lower()}">{L(n[k])}</button>' for k in ("tropical", "sidereal"))
     states = []
-    for key, text in ex["states"].items():
-        o, z = key.split(".")
-        head = {"en": f'{ex["objects"][o]["en"]} · {ex["zodiacs"][z]["en"]}', "hi": f'{ex["objects"][o]["hi"]} · {ex["zodiacs"][z]["hi"]}'}
-        states.append(f'<div class="explain" data-state="{key}">{L(head, "strong")}{L(text, "p")}</div>')
+    # The prototype's rule: the Sun has a text per zodiac; the Moon and Lagna have one each.
+    for o in ("sun", "moon", "rising"):
+        for z in ("tropical", "sidereal"):
+            text = ex["explanations"][f"{o}.{z}" if o == "sun" else o]
+            head = {k: f'{n[o][k]} · {n[z][k]}' for k in ("en", "hi")}
+            states.append(f'<div class="explain" data-state="{o}.{z}">{L(head, "strong")}{L(text, "p")}</div>')
     return (f'<div class="explorer" data-explorer>'
-            f'<div class="choice-row">{L(W["explorer_body"], "span", "choice-label")}<div class="choices" role="group" aria-label="Body">{objs}</div></div>'
-            f'<div class="choice-row">{L(W["explorer_zodiac"], "span", "choice-label")}<div class="choices" role="group" aria-label="Zodiac">{zods}</div></div>'
+            f'<div class="choice-row"><div class="choices" role="group" aria-label="Object">{objs}</div></div>'
+            f'<div class="choice-row"><div class="choices" role="group" aria-label="Zodiac">{zods}</div></div>'
             f'<div class="explain-out" aria-live="polite">{"".join(states)}</div></div>')
 
 
 def faq():
-    items = "".join(f'<details id="faq-{f["id"]}"><summary>{L(f["q"])}</summary>{L(f["a"], "p")}</details>' for f in G["faq"])
-    gl = "".join(f'<div><dt>{L(g["term"])}</dt><dd>{L(g["def"])}</dd></div>' for g in G["glossary"])
-    return f'<div class="faq">{items}</div><div class="glossary">{L(W["glossary_heading"], "h3")}<dl>{gl}</dl></div>'
+    return '<div class="faq">' + "".join(f'<details><summary>{L(f["q"])}</summary>{L(f["a"], "p")}</details>' for f in A["faq"]["items"]) + "</div>"
 
 
 def sources():
-    items = "".join(f'<li><a href="{attr(s["url"])}" rel="noopener" target="_blank">{L(s["label"])}</a><small>{esc(s["url"])}</small></li>' for s in G["sources"])
-    return f'<ul class="source-index">{items}</ul>'
+    items = "".join(f'<li><a href="{attr(s["url"])}" rel="noopener" target="_blank">{L(s["label"])}</a><small>{L(s["supports"])}</small></li>' for s in A["sources"]["items"])
+    return f'<ul class="source-index">{items}</ul>{L(A["sources"]["limit"], "p", "body")}{L(A["scope"], "p", "body")}'
 
 
 def page():
     url = SITE + W["path"]
-    title, desc = W["title"]["en"], W["description"]["en"]
+    title = A["title"]["en"] + " Western and Vedic signs · AstroAshva"
+    desc = A["intro"]["en"]
     robots = "" if PUBLISHED else '<meta name="robots" content="noindex,nofollow">\n'
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "WebPage", "@id": url + "#webpage", "url": url, "name": title, "description": desc,
@@ -257,9 +243,7 @@ def page():
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "AstroAshva", "item": SITE + "/"},
             {"@type": "ListItem", "position": 2, "name": "Discover Jyotish", "item": SITE + "/vedic-astrology/"},
-            {"@type": "ListItem", "position": 3, "name": "Why is my sign different?", "item": url}]}]}
-    wheel, legend = wheel_svg()
-    zsec = SEC["zodiac"]
+            {"@type": "ListItem", "position": 3, "name": A["title"]["en"], "item": url}]}]}
     head = f"""<!doctype html>
 <html lang="en" data-lang="en" data-theme="white-light">
 <head>
@@ -271,9 +255,9 @@ def page():
 <link rel="alternate" hreflang="en" href="{url}"><link rel="alternate" hreflang="hi" href="{url}?lang=hi"><link rel="alternate" hreflang="x-default" href="{url}">
 <link rel="icon" href="/favicon.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/site-theme.css?v=6"><link rel="stylesheet" href="/vedic-astrology/story.css?v=1"><link rel="stylesheet" href="./guide.css?v=1">
+<link rel="stylesheet" href="/site-theme.css?v=6"><link rel="stylesheet" href="/vedic-astrology/story.css?v=1"><link rel="stylesheet" href="./guide.css?v=2">
 <script>try{{var t=localStorage.getItem('aa-theme');if(['yellow-light','white-light','mono-light','yellow-dark','mono-dark'].includes(t))document.documentElement.dataset.theme=t;var q=new URLSearchParams(location.search).get('lang');var l=q==='hi'||q==='en'?q:localStorage.getItem('aa-lang');if(l==='hi'){{document.documentElement.dataset.lang='hi';document.documentElement.lang='hi';}}}}catch(e){{}}</script>
-<script src="/site-theme.js" defer></script><script src="/pages.js" defer></script><script src="./guide.js?v=1" defer></script>
+<script src="/site-theme.js" defer></script><script src="/pages.js" defer></script><script src="./guide.js?v=2" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="AstroAshva">
 <meta property="og:url" content="{url}">
@@ -295,24 +279,19 @@ def page():
                                   ("yellow-dark", "Gold dark"), ("mono-dark", "Monochrome dark")])
     draft = "" if PUBLISHED else (f'<div class="draft-banner" role="note">{L(G["ui"]["draft_badge"], "strong")}'
                                   f'<span lang="en">Preview only. Not on the live site yet.</span><span lang="hi">केवल प्रीव्यू। अभी लाइव साइट पर नहीं।</span></div>')
-    nav = "".join(f'<a href="#{k}">{L(v)}</a>' for k, v in W["nav"].items())
     body = f"""<body>
 <a class="skip-link" href="#guide">{L({"en": "Skip to the guide", "hi": "गाइड पर जाएँ"})}</a>{draft}<header class="story-header"><a href="/" class="site-brand"><span class="site-mark" aria-hidden="true"></span>AstroAshva</a><div class="header-controls"><div class="language" role="group" aria-label="Language"><button data-set-lang="en" aria-pressed="true">EN</button><button data-set-lang="hi" aria-pressed="false">हिं</button></div><div class="site-themes" role="group" aria-label="Theme">{themes}</div></div></header>
-<nav class="chapter-nav" aria-label="Guide sections">{nav}</nav>
 <main id="guide">
-<section class="story-hero guide-hero" id="top" data-section="concise"><div class="hero-copy">{L(W["eyebrow"], "p", "eyebrow")}<h1>{title_split(G["ui"]["title"])}</h1>{L(G["concise"]["intro"], "p", "lead")}<a class="story-button" href="#intro">{L(W["cta"])} <span aria-hidden="true">↓</span></a>{L(G["ui"]["free_note"], "p", "hero-note")}</div><div class="hero-art">{L(G["concise"]["heading"], "p", "lanes-heading")}{lanes()}</div></section>
+<section class="story-hero guide-hero" id="top"><div class="hero-copy"><h1>{title_split(A["title"])}</h1>{L(A["intro"], "p", "lead")}<a class="story-button" href="#labels">{L(A["read_full"])} <span aria-hidden="true">↓</span></a></div><div class="hero-art">{lanes()}</div></section>
 <div class="story-body">
-{chapter(1, SEC["intro"], wide=True, extra=concept_cards())}
-{chapter(2, SEC["object"], art=sky_svg() + L(SEC["object"]["diagram"]["caption"], "p", "diagram-note"))}
-{chapter(3, zsec, art=wheel + legend + L(zsec["diagram"]["caption"], "p", "diagram-note"))}
-{chapter(4, SEC["you"], art=needs_table())}
-{chapter(5, SEC["astroashva"], art=facts())}
-{chapter(6, SEC["explorer"], art=explorer())}
-{chapter(7, SEC["faq"], wide=True, extra=faq())}
-{chapter(8, SEC["sources"], wide=True, extra=sources())}
+{section(1, "labels", A["heading"], concept_cards(), art=sky_svg())}
+{section(2, "zodiac", A["technical"]["title"], L(A["technical"]["body"], "p", "lead"), art=wheel_svg())}
+{section(3, "explore", A["explorer"]["title"], L(A["explorer"]["note"], "p", "lead"), art=explorer())}
+{section(4, "faq", A["faq"]["title"], faq(), wide=True)}
+{section(5, "sources", A["sources"]["title"], sources(), wide=True)}
 </div>
 </main>
-<footer class="story-footer"><a class="site-brand" href="/"><span class="site-mark" aria-hidden="true"></span>AstroAshva</a>{L(W["footer_line"], "p")}<nav><a href="/vedic-astrology/">{L(W["related"])}</a><a href="/">{L(W["back_home"])}</a><a href="#top">{L(W["back_top"])}</a><a href="/terms.html">{L(W["terms"])}</a></nav><small>{esc(G["version"])} · © 2026 AstroAshva · AVD Studiox Private Limited</small></footer>
+<footer class="story-footer"><a class="site-brand" href="/"><span class="site-mark" aria-hidden="true"></span>AstroAshva</a><nav><a href="/vedic-astrology/">{L(W["related"])}</a><a href="/">{L(W["back_home"])}</a><a href="#top">{L(W["back_top"])}</a><a href="/terms.html">{L(W["terms"])}</a></nav><small>{esc(G["version"])} · © 2026 AstroAshva · AVD Studiox Private Limited</small></footer>
 </body></html>
 """
     return head + "\n" + body

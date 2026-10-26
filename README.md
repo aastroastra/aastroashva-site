@@ -1,15 +1,16 @@
-## Why is my sign different? guide, 26 October 2026 (DRAFT)
+## Why is my sign different? guide, 26 October 2026
 
 `/learn/vedic-vs-western/` is generated: `python3 learn/vedic-vs-western/build.py`
 writes `index.html` from `sign-difference-guide.json`, a byte-identical copy of
 the canonical `workspace/docs/sign-difference-guide.json` shared with the iOS and
-Android guide (version `guide.signs.v1`). Edit the canonical JSON, copy it in,
-rebuild; `test_guide.py` fails on a stale page. Both diagrams are inline SVG with
-`<tspan lang>` labels; `guide.js` only drives the static label explorer (no fetch,
-no input). Until Amit approves the copy: `PUBLISHED = False` in build.py (noindex
-plus a draft banner), and the page stays out of `sitemap.xml`, `llms.txt` and
-`llms-full.txt`. To publish: set `PUBLISHED = True`, rebuild, add the URL (with the
-`?lang=hi` alternate) to `sitemap.xml` and a line to `llms.txt`, then merge.
+Android guide (version `guide.signs.v1`). The page renders only the
+`approved_copy` block: Amit approved the Hub plan and prototype EN/HI copy on
+26 Oct 2026; lines added for the web are listed in `approved_copy.web_added_lines`.
+Edit the canonical JSON, copy it in, rebuild; `test_guide.py` fails on a stale
+page. Diagrams are inline SVG with `<tspan lang>` labels; `guide.js` only drives
+the static label explorer (no fetch, no input). `PUBLISHED = True` in build.py:
+indexable and listed in `sitemap.xml`, `llms.txt` and `llms-full.txt` (the test
+keeps the three in step; `False` restores noindex and a draft banner).
 No listen mode yet: record narration only after the copy is final.
 
 ## Search and AI answer engines, 21 October 2026

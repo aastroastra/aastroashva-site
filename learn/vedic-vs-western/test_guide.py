@@ -25,13 +25,23 @@ class SignGuidePage(unittest.TestCase):
             self.skipTest("canonical workspace/docs copy not checked out")
         self.assertEqual((HERE / "sign-difference-guide.json").read_bytes(), CANONICAL.read_bytes())
 
-    def test_version_and_draft_state(self):
+    def test_version_and_publish_state(self):
         self.assertEqual(GUIDE["version"], "guide.signs.v1")
         self.assertIn(f'content="{GUIDE["version"]}"', PAGE)
-        if GUIDE["status"].startswith("Draft"):
-            self.assertIn('name="robots" content="noindex', PAGE)
-            for f in ("sitemap.xml", "llms.txt", "llms-full.txt"):
-                self.assertNotIn("/learn/vedic-vs-western", (SITE / f).read_text(), f)
+        published = "PUBLISHED = True" in (HERE / "build.py").read_text()
+        listed = [("/learn/vedic-vs-western" in (SITE / f).read_text()) for f in ("sitemap.xml", "llms.txt", "llms-full.txt")]
+        self.assertEqual(listed, [published] * 3)
+        self.assertEqual('content="noindex' in PAGE, not published)
+        self.assertEqual("draft-banner" in PAGE, not published)
+
+    def test_renders_only_approved_copy(self):
+        a = GUIDE["approved_copy"]
+        for t in (a["intro"], a["takeaway"], a["technical"]["body"], a["scope"], a["explorer"]["note"]):
+            for lang in ("en", "hi"):
+                self.assertIn(__import__("html").escape(t[lang], quote=False), PAGE)
+        for sec in GUIDE["sections"]:
+            for b in sec["body"]:
+                self.assertNotIn(b["en"][:60], PAGE, "unapproved draft section copy on the page")
 
     def test_metadata(self):
         url = "https://www.astroashva.com/learn/vedic-vs-western/"
@@ -52,11 +62,11 @@ class SignGuidePage(unittest.TestCase):
     def test_both_languages_everywhere(self):
         self.assertEqual(PAGE.count('<span lang="en">'), PAGE.count('<span lang="hi">'))
         self.assertEqual(PAGE.count('<tspan lang="en">'), PAGE.count('<tspan lang="hi">'))
-        self.assertEqual(len(GUIDE["explorer"]["states"]), 6)
+        self.assertEqual(PAGE.count('data-state="'), 6)
 
     def test_sources_are_the_plans_six(self):
-        self.assertEqual(len(GUIDE["sources"]), 6)
-        for s in GUIDE["sources"]:
+        self.assertEqual(len(GUIDE["approved_copy"]["sources"]["items"]), 6)
+        for s in GUIDE["approved_copy"]["sources"]["items"]:
             self.assertIn(f'href="{s["url"]}"', PAGE)
 
     def test_linked_from_discover_jyotish(self):

@@ -832,5 +832,281 @@
       "en": "Know which sign you mean. Then read it well.",
       "hi": "पहले जानें कौन-सी राशि। फिर उसे ध्यान से पढ़ें।"
     }
+  },
+  "approved_copy": {
+    "status": "Approved by Amit, 26 Oct 2026 (founder relay): the EN/HI copy of the Hub /astrology-guide/ plan and prototype, verbatim.",
+    "source": "internal-docs/documents/astrology-guide/guide.js (copy, names, explanations) and index.html (title row, Short FAQ, Sources), backend origin/main 93518f4.",
+    "title": {
+      "en": "Why is my sign different?",
+      "hi": "मेरी राशि अलग क्यों दिखती है?"
+    },
+    "read_full": {
+      "en": "Read full guide",
+      "hi": "पूरी गाइड पढ़ें"
+    },
+    "heading": {
+      "en": "One birthday. Several useful labels.",
+      "hi": "एक जन्मदिन। राशि बताने के अलग तरीके।"
+    },
+    "intro": {
+      "en": "A birthday guide often calls 23 April “Taurus”. That usually means the Sun in the tropical zodiac. A Vedic Janma Rashi usually names the Moon in a sidereal zodiac. First check the object and the zodiac being compared.",
+      "hi": "23 अप्रैल का जन्मदिन देखकर अक्सर “वृषभ” कहा जाता है। यह आम तौर पर ट्रॉपिकल पद्धति में सूर्य की राशि होती है। वैदिक जन्म राशि अक्सर सिडीरियल पद्धति में चंद्रमा की राशि बताती है। पहले देखें: किसकी राशि और कौन-सी पद्धति?"
+    },
+    "concepts": [
+      {
+        "id": "sun",
+        "title": {
+          "en": "Sun sign",
+          "hi": "सूर्य राशि"
+        },
+        "body": {
+          "en": "The sign occupied by the Sun at birth.",
+          "hi": "जन्म के समय सूर्य जिस राशि में था।"
+        }
+      },
+      {
+        "id": "moon",
+        "title": {
+          "en": "Moon sign / Rashi",
+          "hi": "चंद्र राशि / जन्म राशि"
+        },
+        "body": {
+          "en": "Janma Rashi usually names the Moon’s sign at birth.",
+          "hi": "जन्म राशि आम तौर पर जन्म के समय चंद्रमा की राशि है।"
+        }
+      },
+      {
+        "id": "lagna",
+        "title": {
+          "en": "Lagna / Rising",
+          "hi": "लग्न / उदय राशि"
+        },
+        "body": {
+          "en": "The zodiac point rising at the eastern horizon for that time and place.",
+          "hi": "उस समय और स्थान पर पूर्वी क्षितिज पर उदित राशि-बिंदु।"
+        }
+      }
+    ],
+    "lanes": {
+      "western": {
+        "title": {
+          "en": "Common Western birthday label",
+          "hi": "आम पश्चिमी जन्मदिन वाली राशि"
+        },
+        "label": {
+          "en": "Sun + Tropical",
+          "hi": "सूर्य + ट्रॉपिकल"
+        },
+        "example": {
+          "en": "23 April → familiar Taurus birthday label",
+          "hi": "23 अप्रैल → परिचित वृषभ वाला जन्मदिन-लेबल"
+        }
+      },
+      "vedic": {
+        "title": {
+          "en": "Common Vedic Janma Rashi",
+          "hi": "आम वैदिक जन्म राशि"
+        },
+        "label": {
+          "en": "Moon + Sidereal",
+          "hi": "चंद्रमा + सिडीरियल"
+        },
+        "example": {
+          "en": "Your birth chart → Moon sign; not guessed from a birthday list",
+          "hi": "जन्म कुंडली → चंद्र राशि; जन्मदिन की सूची से अनुमान नहीं"
+        }
+      }
+    },
+    "takeaway": {
+      "en": "Two things can differ: which object you name, and where the zodiac starts.",
+      "hi": "दो बातें अलग हो सकती हैं: किसकी राशि बताई जा रही है, और राशि-चक्र की शुरुआत कहाँ मानी गई है।"
+    },
+    "explorer": {
+      "title": {
+        "en": "Explore the label",
+        "hi": "लेबल समझें"
+      },
+      "note": {
+        "en": "Learning demo only. No birth data is entered or calculated.",
+        "hi": "यह समझने का उदाहरण है। यहाँ जन्म-विवरण नहीं लिया जाता और कुंडली नहीं बनती।"
+      },
+      "names": {
+        "sun": {
+          "en": "Sun",
+          "hi": "सूर्य"
+        },
+        "moon": {
+          "en": "Moon",
+          "hi": "चंद्रमा"
+        },
+        "rising": {
+          "en": "Lagna / Ascendant",
+          "hi": "लग्न"
+        },
+        "tropical": {
+          "en": "Tropical",
+          "hi": "ट्रॉपिकल"
+        },
+        "sidereal": {
+          "en": "Sidereal",
+          "hi": "सिडीरियल"
+        }
+      },
+      "explanations": {
+        "sun.tropical": {
+          "en": "The familiar birthday-table question. The 23 April example is usually called Taurus. Near a boundary, exact time and timezone matter.",
+          "hi": "जन्मदिन की सूची वाला परिचित सवाल। 23 अप्रैल के उदाहरण को आम तौर पर वृषभ कहते हैं। राशि बदलने की सीमा पर सही समय और समय-क्षेत्र मायने रखते हैं।"
+        },
+        "rising": {
+          "en": "Lagna uses the birth time and place. Its zodiac system must also be stated. No personal rising sign is calculated in this guide.",
+          "hi": "लग्न के लिए जन्म का समय और स्थान चाहिए। राशि-चक्र की पद्धति भी बतानी होगी। इस गाइड में आपका व्यक्तिगत लग्न नहीं निकाला गया है।"
+        },
+        "moon": {
+          "en": "This asks about the Moon, not the Sun. A verified birth chart supplies the sign; the chosen zodiac can change the label. We do not guess your Moon sign here.",
+          "hi": "यह चंद्रमा की राशि का सवाल है, सूर्य की राशि का नहीं। सही जन्म कुंडली से राशि मिलेगी; चुनी हुई पद्धति से लेबल बदल सकता है। यहाँ आपकी चंद्र राशि का अनुमान नहीं लगाया गया है।"
+        },
+        "sun.sidereal": {
+          "en": "Still the Sun, now with a sidereal reference. A date-specific ayanamsa and verified calculation determine its label. “Move back one sign” is not a reliable rule.",
+          "hi": "सूर्य वही है, लेकिन अब सिडीरियल संदर्भ में। तारीख़ के अनुसार अयनांश और सही गणना से राशि मिलेगी। “एक राशि पीछे कर दो” भरोसेमंद नियम नहीं है।"
+        }
+      },
+      "rule": "sun+tropical, sun+sidereal; moon (either zodiac); rising (either zodiac), as the prototype"
+    },
+    "technical": {
+      "title": {
+        "en": "What changes between tropical and sidereal?",
+        "hi": "ट्रॉपिकल और सिडीरियल में क्या बदलता है?"
+      },
+      "body": {
+        "en": "Tropical signs start from the March equinox; sidereal systems use a star-related reference. Both commonly use twelve equal 30° signs. The offset is called ayanamsa and depends on the date and chosen convention. These sign sectors are not the unequal constellation boundaries.",
+        "hi": "ट्रॉपिकल राशि-चक्र की शुरुआत मार्च के विषुव से होती है; सिडीरियल में तारों से जुड़ा संदर्भ होता है। दोनों में सामान्यतः 30° की बारह राशियाँ हैं। इनके अंतर को अयनांश कहते हैं; यह तारीख़ और चुनी हुई पद्धति पर निर्भर है। ये समान राशि-खंड, अलग-अलग आकार के खगोलीय तारामंडल नहीं हैं।"
+      }
+    },
+    "scope": {
+      "en": "Both traditions can use the Sun, Moon and Ascendant. These are common conventions, not a claim that every Western or Vedic astrologer uses one method. Astrology is a tradition of interpretation; a well-computed sky position does not establish predictive accuracy.",
+      "hi": "दोनों परंपराओं में सूर्य, चंद्रमा और लग्न देखे जा सकते हैं। यहाँ आम प्रचलन समझाया गया है; हर ज्योतिषी एक ही तरीका नहीं अपनाता। ज्योतिष व्याख्या की परंपरा है। ग्रह की सही स्थिति निकालना, भविष्यवाणी की सटीकता का प्रमाण नहीं है।"
+    },
+    "faq": {
+      "title": {
+        "en": "Short FAQ",
+        "hi": "छोटे सवाल-जवाब"
+      },
+      "items": [
+        {
+          "q": {
+            "en": "Does Taurus become Aries for everyone?",
+            "hi": "क्या हर किसी के लिए वृषभ, मेष बन जाता है?"
+          },
+          "a": {
+            "en": "No universal “move back one sign” rule is reliable. Compare the same object in explicitly selected systems, using the date-specific offset and verified chart inputs. This guide does not calculate the 23 April example's sidereal Sun, Moon or Lagna.",
+            "hi": "“एक राशि पीछे कर दो” जैसा कोई सार्वभौमिक नियम भरोसेमंद नहीं है। साफ़ चुनी हुई पद्धतियों में एक ही ग्रह की तुलना करें, तारीख़ के अनुसार अंतर और सत्यापित कुंडली विवरण के साथ। यह गाइड 23 अप्रैल के उदाहरण का सिडीरियल सूर्य, चंद्रमा या लग्न नहीं निकालती।"
+          }
+        },
+        {
+          "q": {
+            "en": "Which horoscope should I read?",
+            "hi": "मुझे कौन-सा राशिफल पढ़ना चाहिए?"
+          },
+          "a": {
+            "en": "Read the basis that the horoscope service actually supports and labels. You may browse another sign, but browsing does not edit your natal chart. The guide explains conventions without ranking either tradition as a proven predictor.",
+            "hi": "वह आधार पढ़ें जिसे राशिफल सेवा सच में अपनाती है और साफ़ बताती है। आप कोई दूसरी राशि भी देख सकते हैं, पर देखने से आपकी जन्म कुंडली नहीं बदलती। यह गाइड प्रचलन समझाती है, किसी परंपरा को सिद्ध भविष्यवक्ता नहीं बताती।"
+          }
+        },
+        {
+          "q": {
+            "en": "Did NASA change my zodiac sign?",
+            "hi": "क्या NASA ने मेरी राशि बदल दी?"
+          },
+          "a": {
+            "en": "Astronomical constellations and twelve equal astrological sign sectors are different definitions. Precession explains a changing reference relationship; it is not a newly assigned personal zodiac sign. NASA's astronomy references do not endorse astrological predictions.",
+            "hi": "खगोलीय तारामंडल और ज्योतिष के बारह बराबर राशि-खंड अलग परिभाषाएँ हैं। अयन-चलन बदलते संदर्भ संबंध को समझाता है; यह कोई नई व्यक्तिगत राशि तय करना नहीं है। NASA की खगोल सामग्री ज्योतिषीय भविष्यवाणियों का समर्थन नहीं करती।"
+          }
+        }
+      ]
+    },
+    "sources": {
+      "title": {
+        "en": "Sources and review limits",
+        "hi": "स्रोत और समीक्षा की सीमाएँ"
+      },
+      "items": [
+        {
+          "url": "https://www.astro.com/astrowiki/en/Taurus",
+          "label": {
+            "en": "Astrodienst's Taurus reference",
+            "hi": "Astrodienst का वृषभ संदर्भ"
+          },
+          "supports": {
+            "en": "The usual late-April Taurus birthday label; this page does not provide a calculated personal chart.",
+            "hi": "अप्रैल के अंत की आम वृषभ जन्मदिन राशि; यह पेज कोई गणना की हुई व्यक्तिगत कुंडली नहीं देता।"
+          }
+        },
+        {
+          "url": "https://www.drikpanchang.com/utilities/horoscope/hindu-moonsign-calculator.html",
+          "label": {
+            "en": "Drik Panchang's own Rashi calculator",
+            "hi": "द्रिक पंचांग का राशि कैलकुलेटर"
+          },
+          "supports": {
+            "en": "The Moon meaning of Janma Rashi.",
+            "hi": "जन्म राशि का चंद्रमा वाला अर्थ।"
+          }
+        },
+        {
+          "url": "https://www.astro.com/astrowiki/en/Zodiac",
+          "label": {
+            "en": "Astrodienst Zodiac",
+            "hi": "Astrodienst राशि-चक्र"
+          },
+          "supports": {
+            "en": "Sign sectors, tropical/sidereal conventions and constellation distinctions.",
+            "hi": "राशि-खंड, ट्रॉपिकल/सिडीरियल प्रचलन और तारामंडल से अंतर।"
+          }
+        },
+        {
+          "url": "https://www.astro.com/swisseph/swisseph.htm",
+          "label": {
+            "en": "Swiss Ephemeris documentation",
+            "hi": "स्विस एफ़ेमेरिस दस्तावेज़"
+          },
+          "supports": {
+            "en": "Date-dependent sidereal offsets and multiple ayanamsa conventions.",
+            "hi": "तारीख़ पर निर्भर सिडीरियल अंतर और कई अयनांश प्रचलन।"
+          }
+        },
+        {
+          "url": "https://www.astro.com/faq/fq_fh_natal_e.htm",
+          "label": {
+            "en": "Astrodienst chart FAQ",
+            "hi": "Astrodienst कुंडली FAQ"
+          },
+          "supports": {
+            "en": "Horizon/Ascendant definition.",
+            "hi": "क्षितिज/लग्न की परिभाषा।"
+          }
+        },
+        {
+          "url": "https://science.nasa.gov/learn/basics-of-space-flight/chapter2-1/",
+          "label": {
+            "en": "NASA reference systems",
+            "hi": "NASA संदर्भ प्रणालियाँ"
+          },
+          "supports": {
+            "en": "Astronomical precession.",
+            "hi": "खगोलीय अयन-चलन।"
+          }
+        }
+      ],
+      "limit": {
+        "en": "These sources support definitions; they do not validate product predictions or grant software/data redistribution rights.",
+        "hi": "ये स्रोत परिभाषाओं का आधार हैं; ये उत्पाद की भविष्यवाणियों को प्रमाणित नहीं करते और न ही सॉफ़्टवेयर/डेटा के पुनर्वितरण का अधिकार देते हैं।"
+      }
+    },
+    "web_added_lines": [
+      "Hindi of the Short FAQ, its heading, the Sources heading, source labels and supports lines and the limit line (the plan has these in English only).",
+      "FAQ edits for a public page: 'This prototype does not calculate' -> 'This guide does not calculate'; 'browsing must not edit' -> 'browsing does not edit'.",
+      "Hindi 'पूरी गाइड पढ़ें' for 'Read full guide'.",
+      "Diagram labels only: Sun, Moon, Lagna, East, West, March equinox, Ayanamsha, the twelve sign names, Tropical/Sidereal ring names. No numbers, no worked examples."
+    ]
   }
 }

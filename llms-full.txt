@@ -18,6 +18,7 @@ Key facts (as of 21 October 2026):
 - [Home](https://www.astroashva.com/): what AstroAshva does, how calculations work, download links and FAQ (Hindi by default; English at https://www.astroashva.com/?lang=en)
 - [Pricing and credits](https://www.astroashva.com/pricing/): what is free, what uses credits, credit packs, expiry and refunds
 - [Discover Jyotish](https://www.astroashva.com/vedic-astrology/): an illustrated introduction to Vedic astrology: sages, signs, nakshatras, nine grahas, twelve houses and KP
+- [Why is my sign different?](https://www.astroashva.com/learn/vedic-vs-western/): Western birthday signs (Sun, tropical) and Vedic Janma Rashi (Moon, sidereal), Lagna and the ayanamsha offset, in English and Hindi (?lang=hi)
 - [Calculations and corrections](https://www.astroashva.com/#our-engine): how a reading is calculated and how to report a difference
 - [Service status](https://www.astroashva.com/status.html)
 
